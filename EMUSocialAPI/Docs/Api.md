@@ -1,15 +1,16 @@
 ## EMU Social Web App API
 
-## Health Check
+## Health Check Request
 
-```php
+```json
 GET {{host}}/auth/register
 ```
 
-## Health Check Responst
+## Health Check Response
 
-```.json{
-    status:200,
-    message:"Healthy"
+```json
+{
+  "status": 200,
+  "message": "Healthy"
 }
 ```
