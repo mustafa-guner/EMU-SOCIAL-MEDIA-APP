@@ -1,0 +1,325 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Infrastructure\\EMUSocial.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Api\\EMUSocial.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Api\\EMUSocial.Api.csproj",
+        "projectName": "EMUSocial.Api",
+        "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Api\\EMUSocial.Api.csproj",
+        "packagesPath": "C:\\Users\\legen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\legen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\EMUSocial.Application.csproj": {
+                "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\EMUSocial.Application.csproj"
+              },
+              "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj": {
+                "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\EMUSocial.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\EMUSocial.Application.csproj",
+        "projectName": "EMUSocial.Application",
+        "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\EMUSocial.Application.csproj",
+        "packagesPath": "C:\\Users\\legen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\legen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj": {
+                "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
+        "projectName": "EMUSocial.Contracts",
+        "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
+        "packagesPath": "C:\\Users\\legen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\legen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj",
+        "projectName": "EMUSocial.Domain",
+        "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj",
+        "packagesPath": "C:\\Users\\legen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\legen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Infrastructure\\EMUSocial.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Infrastructure\\EMUSocial.Infrastructure.csproj",
+        "projectName": "EMUSocial.Infrastructure",
+        "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Infrastructure\\EMUSocial.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\legen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\legen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Api\\EMUSocial.Api.csproj": {
+                "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Api\\EMUSocial.Api.csproj"
+              },
+              "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\EMUSocial.Application.csproj": {
+                "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Application\\EMUSocial.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

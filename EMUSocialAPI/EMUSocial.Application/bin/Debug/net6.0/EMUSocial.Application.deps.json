@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "EMUSocial.Application/1.0.0": {
+        "dependencies": {
+          "EMUSocial.Domain": "1.0.0"
+        },
+        "runtime": {
+          "EMUSocial.Application.dll": {}
+        }
+      },
+      "EMUSocial.Domain/1.0.0": {
+        "runtime": {
+          "EMUSocial.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EMUSocial.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EMUSocial.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
