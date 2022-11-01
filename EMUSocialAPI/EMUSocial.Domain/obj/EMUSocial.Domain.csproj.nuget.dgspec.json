@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj": {}
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Domain\\EMUSocial.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj": {
+    "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Domain\\EMUSocial.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Domain\\EMUSocial.Domain.csproj",
         "projectName": "EMUSocial.Domain",
-        "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\EMUSocial.Domain.csproj",
+        "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Domain\\EMUSocial.Domain.csproj",
         "packagesPath": "C:\\Users\\legen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Domain\\obj\\",
+        "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
       "projectName": "EMUSocial.Contracts",
-      "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
+      "projectPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
       "packagesPath": "C:\\Users\\legen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\obj\\",
+      "outputPath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NcC1a4eChGHdg4fVf4f+rG2t2ZLuSS2dRLrT+5PM2HFPylPpN9jAhZW1MmEq5HP8dxwYh500dr0wnwiBwC4brQ==",
+  "dgSpecHash": "nB7Gq95TJCY+tsANFjHOYELvJR2+rmhIB+tDOjwZ6BmvA7Jjpn+meySnRM12Hd3bAGjnm6DY/9KwA+dD6QXFPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocial\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
+  "projectFilePath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocial.Contracts\\EMUSocial.Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
