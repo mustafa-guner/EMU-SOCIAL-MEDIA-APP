@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="{{asset('assets/css/login.css')}}">
 </head>
 <body>
@@ -36,10 +36,10 @@
                     </div>
                     <div class="questions">
                         <div class="forgot-passwrd">
-                            <a href="#">Forgot your password? Reset your password.</a>
+                            <a href="/forgot-password">Forgot your password? Reset your password.</a>
                         </div>
                         <div class="register">
-                            <a href="#">Don't have account? Register here.</a>
+                            <a href="/registration">Don't have account? Register here.</a>
                         </div>
                     </div>
                     <div class="recaptcha"><p>Google ReCaptcha</p></div>

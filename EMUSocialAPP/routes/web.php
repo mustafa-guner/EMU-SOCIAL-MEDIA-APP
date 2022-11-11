@@ -21,3 +21,11 @@ Route::get('/welcome', function () {
 Route::get('/login', function () {
     return view('auth/login');
 });
+
+Route::get('/forgot-password', function () {
+    return view('auth/login-forgot-password');
+});
+
+Route::get('/create-new-password', function () {
+    return view('auth/login-create-new-password');
+});
