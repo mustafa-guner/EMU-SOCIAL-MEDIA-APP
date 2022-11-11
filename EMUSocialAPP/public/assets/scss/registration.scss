@@ -1,0 +1,36 @@
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    .registration-form {
+        .step {
+            display: none;
+            .step-image {}
+            .step-content {
+                .step-count {
+                    color: var(--light-text-gray-color);
+                    font-size: 15px;
+                }
+                .step-header {
+                    h2.step-title {}
+                    p.step-description {
+                        color: var(--light-text-gray-color);
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        .step.show {
+            display: block;
+            animation: fadeIn 0.2s;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
