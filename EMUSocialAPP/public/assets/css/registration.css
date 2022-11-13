@@ -22,6 +22,18 @@
   animation: fadeIn 0.2s;
 }
 
+.container #back-btn,
+.container #next-btn,
+.container .steps-btns {
+  visibility: hidden;
+}
+
+.container #back-btn.show,
+.container #next-btn.show,
+.container .steps-btns.show {
+  visibility: visible;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -1,68 +1,19 @@
-// //Object for holding all the input data in each steps (for submitting at the end)
-// let inputs = {};
-
-// const STEPS = [];
-
-// const STEPS_COUNT = STEPS.length - 1;
-// let currentStep = 0;
-
-// const nextButton = document.querySelector("#next-btn");
-// const backButton = document.querySelector("#back-btn");
-
-// const showBtn = (btn) => {
-//     btn.disabled = false;
-//     btn.classList.add("show");
-// };
-
-// const hideBtn = (btn) => {
-//     btn.disabled = true;
-//     btn.classList.remove("show");
-// };
-
-// //Hide and disable back button as default (on first step)
-// hideBtn(backButton);
-
-// const hideAllSteps = () =>
-//     STEPS.forEach((element) => element.classList.remove("show"));
-
-// const setCurrentStep = (currentStep) => {
-//     hideAllSteps();
-//     STEPS[currentStep].classList.add("show");
-// };
-
-// const goNextStep = () => {
-//     currentStep++;
-//     if (currentStep > 0) showBtn(backButton);
-//     if (currentStep == STEPS_COUNT) hideBtn(nextButton);
-//     setCurrentStep(currentStep);
-// };
-
-// const goPreviousStep = () => {
-//     currentStep--;
-//     if (currentStep === 0) hideBtn(backButton);
-//     if (currentStep <= STEPS_COUNT) showBtn(nextButton);
-//     setCurrentStep(currentStep);
-// };
-
-// //Event listeners
-// nextButton.addEventListener("click", goNextStep);
-// backButton.addEventListener("click", goPreviousStep);
-
 class FormSteps {
     constructor(steps) {
         //Default starts from 0
-        this.currentStepNumber = 0;
+        this.currentStepNumber = 1;
         this.steps = steps;
         //Calculated properties
         this.getStepsLength();
         this.getCurrentStep();
         this.getCurrentStatus();
     }
+
     getCurrentStep() {
-        return (this.currentStep = this.steps[this.currentStepNumber]);
+        return (this.currentStep = this.steps[this.currentStepNumber - 1]);
     }
     getStepsLength() {
-        return (this.stepsLength = this.steps.length);
+        return (this.stepsLength = this.steps.length - 1);
     }
     getCurrentStatus() {
         const currentStep = this.getCurrentStep();
@@ -78,7 +29,7 @@ class FormSteps {
             this.currentStepNumber;
     }
     decrementStepNumber() {
-        return this.currentStepNumber >= 0 ?
+        return this.currentStepNumber > 1 ?
             this.currentStepNumber--
             :
             this.currentStepNumber;
@@ -89,11 +40,10 @@ class FormSteps {
         return this.getCurrentStep();
     }
     goPreviousStep() {
-        this.incrementStepNumber();
+        this.decrementStepNumber();
         return this.getCurrentStep();
     }
 }
-
 const VALIDATIONS = {
     Array: {
         isArray: (array) => Array.isArray(array),
@@ -105,14 +55,18 @@ const VALIDATIONS = {
 
 class RegistrationFormUIEvent {
     static hideBtn(button) {
-        return button.classList.remove("show");
+        button.disabled = true;
+        button.classList.remove("show");
     }
     static showBtn(button) {
-        return button.classList.add("show");
+        button.disabled = false;
+        button.classList.add("show");
     }
 
     static hideSteps(steps) {
-        return steps.forEach((step) => step.classList.remove("show"));
+        return steps.forEach(({ selector }) =>
+            selector.classList.remove("show")
+        );
     }
     static showStep(selector) {
         return selector.classList.add("show");
@@ -131,11 +85,38 @@ class RegistrationFormWithSteps {
     /* BASIC COMMANDS OF THE REGISTRATION FORM */
 
     goNext() {
-        console.log("Go Next");
+        this.FormSteps.goNextStep();
+        this.switchStep();
     }
 
     goBack() {
-        console.log("Go back");
+        this.FormSteps.goPreviousStep();
+        this.switchStep();
+    }
+
+    switchStep() {
+        const currentStep = this.FormSteps.getCurrentStep();
+        const { hideSteps, showStep } = RegistrationFormUIEvent;
+
+        hideSteps(this.FormSteps.steps);
+        showStep(currentStep.selector);
+
+        this.toggleStepButtonViews(
+            this.FormSteps.currentStepNumber,
+            this.FormSteps.stepsLength
+        );
+    }
+
+    toggleStepButtonViews(currentStepNumber, stepsLength) {
+        console.log(currentStepNumber, stepsLength);
+        if (currentStepNumber > 1)
+            RegistrationFormUIEvent.showBtn(this.backBtn);
+        if (currentStepNumber <= stepsLength)
+            RegistrationFormUIEvent.showBtn(this.nextBtn);
+        if (currentStepNumber == stepsLength + 1)
+            RegistrationFormUIEvent.hideBtn(this.nextBtn);
+        if (currentStepNumber == 1)
+            RegistrationFormUIEvent.hideBtn(this.backBtn);
     }
 
     runOnLoad() {

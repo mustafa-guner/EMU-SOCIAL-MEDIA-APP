@@ -24,6 +24,16 @@
             animation: fadeIn 0.2s;
         }
     }
+    #back-btn,
+    #next-btn,
+    .steps-btns {
+        visibility: hidden;
+    }
+    #back-btn.show,
+    #next-btn.show,
+    .steps-btns.show {
+        visibility: visible;
+    }
 }
 
 @keyframes fadeIn {

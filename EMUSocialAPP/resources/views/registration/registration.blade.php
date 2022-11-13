@@ -192,7 +192,7 @@
             </div>
         </form>
         <button id="back-btn" type="button" class="back-btn steps-btns">Back</button>
-        <button id="next-btn" type="button" class="next-btn steps-btns">Continue</button>
+        <button id="next-btn" type="button" class="next-btn steps-btns show">Continue</button>
     </div>
 
 </body>
