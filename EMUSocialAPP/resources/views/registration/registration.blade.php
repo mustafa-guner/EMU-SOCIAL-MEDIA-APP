@@ -34,26 +34,26 @@
                     <div class="step-form">
                         <div class="step-row">
                             <div class="step-label">
-                                <label>First Name</label>
-                                <input type="text" class="step-input">
+                                <label for="firstname">First Name</label>
+                                <input type="text" class="step-input" name="firstname" id="firstname">
                                 <p class="error-message">Firstname field is required*</p>
                             </div>
                             <div class="step-label">
-                                <label>Last Name</label>
-                                <input type="text" class="step-input">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" class="step-input" name="lastname" id="lastname">
                                 <p class="error-message">Lastname field is required*</p>
                             </div>
                         </div>
                         <div class="step-row">
                             <div class="step-label">
-                                <label>Email</label>
-                                <input type="text" class="step-input">
+                                <label for="email">Email</label>
+                                <input type="text" class="step-input" name="email" id="email">
                                 <p class="error-message">Email field is required*</p>
                             </div>
                             <div class="step-label">
-                                <label>Country</label>
-                                <select>
-                                    <option>Cyprus (CY)</option>
+                                <label for="country">Country</label>
+                                <select data-selected="cyprus" name="country" id="country">
+                                    <option value="cyprus">Cyprus (CY)</option>
                                 </select>
                                 <p class="error-message">Lastname field is required*</p>
                             </div>
@@ -61,12 +61,12 @@
                         <div class="step-row">
                             <div class="step-label">
                                 <label>Password</label>
-                                <input type="password" class="step-input">
+                                <input type="password" class="step-input" name="password" id="password">
                                 <p class="error-message">Password field is required*</p>
                             </div>
                             <div class="step-label">
                                 <label>Date of birth</label>
-                                <input type="date" class="step-input">
+                                <input type="date" class="step-input" id="dob" name="dob">
                                 <p class="error-message">DOB field is required*</p>
                             </div>
                         </div>
@@ -74,16 +74,18 @@
                             <div class="step-label">
                                 <div class="label">Gender</div>
                                 <label>
-                                    <div class="gender-logo female">
+                                    <div class="radio-logo">
                                         <img src="">
-                                        <input type="radio" name="gender" value="female">
+                                        <input type="radio" name="gender" value="female" id="female">
+                                        <p class="radio-label-text">Female</p>
                                     </div>
 
                                 </label>
                                 <label>
-                                    <div class="gender-logo male">
+                                    <div class="radio-logo ">
                                         <img src="">
-                                        <input type="radio" name="gender" value="male">
+                                        <input type="radio" name="gender" value="male" id="male">
+                                        <p class="radio-label-text">Male</p>
                                     </div>
                                 </label>
                             </div>
@@ -92,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div id="step-2" class="personal-information-step step">
+            <div id="step-2" class="academic-information-step step">
                 <div class="step-image">
                     <img src="">
                 </div>
@@ -101,71 +103,77 @@
                         Step 2 of 3
                     </div>
                     <div class="step-header">
-                        <h2 class="step-title">Account Information</h2>
-                        <p class="step-description">Enter your personal details to show them of an your profile</p>
+                        <h2 class="step-title">Academic Information</h2>
+                        <p class="step-description">Enter your academic details to show them of an your profile</p>
                     </div>
                     <div class="step-form">
                         <div class="step-row">
                             <div class="step-label">
-                                <label>First Name</label>
-                                <input type="text" class="step-input">
-                                <p class="error-message">Firstname field is required*</p>
+                                <div class="label">Academic Career</div>
+                                <label for="student">
+                                    <div class="radio-logo">
+                                        <img src="">
+                                        <input type="radio" name="career" value="student" id="student">
+                                        <p class="radio-label-text">I'm student</p>
+                                    </div>
+                                </label>
+                                <label for="male">
+                                    <div class="radio-logo ">
+                                        <img src="">
+                                        <input type="radio" name="career" value="staff" id="staff">
+                                        <p class="radio-label-text">I'm staff</p>
+                                    </div>
+                                </label>
                             </div>
+
                             <div class="step-label">
-                                <label>Last Name</label>
-                                <input type="text" class="step-input">
-                                <p class="error-message">Lastname field is required*</p>
+                                <div class="label">Profile Image</div>
+                                <div class="preview-image">
+                                    <label for="profile-image">
+                                        <input type="file" id="profile-image" name="profile-image">
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="step-row">
                             <div class="step-label">
-                                <label>Email</label>
-                                <input type="text" class="step-input">
+                                <label>Academic Status</label>
+                                <select id="academic-status" name="academic-status" data-selected="notGraduated"
+                                    class="step-input">
+                                    <option value="notGraduated">I am not graduated yet</option>
+                                    <option value="graduated">I am already graduated</option>
+                                </select>
                                 <p class="error-message">Email field is required*</p>
                             </div>
+
+
                             <div class="step-label">
-                                <label>Country</label>
-                                <select>
-                                    <option>Cyprus (CY)</option>
-                                </select>
+                                <label>Estimated Graduation</label>
+                                <input type="date" name="graduate-date" id="graduate-date">
                                 <p class="error-message">Lastname field is required*</p>
                             </div>
+
+
                         </div>
                         <div class="step-row">
                             <div class="step-label">
-                                <label>Password</label>
-                                <input type="password" class="step-input">
+                                <label for="student-number">Student Number</label>
+                                <input id="student-number" name="student-number" type="number" class="step-input">
                                 <p class="error-message">Password field is required*</p>
                             </div>
                             <div class="step-label">
-                                <label>Date of birth</label>
-                                <input type="date" class="step-input">
+                                <label for="academic-degree">Academic Degree</label>
+                                <select id="academic-degree" name="academic-degree" data-selected="masters-degree">
+                                    <option value="masters-degree">Master's degree</option>
+                                </select>
                                 <p class="error-message">DOB field is required*</p>
                             </div>
                         </div>
-                        <div class="step-row">
-                            <div class="step-label">
-                                <div class="label">Gender</div>
-                                <label>
-                                    <div class="gender-logo female">
-                                        <img src="">
-                                        <input type="radio" name="gender" value="female">
-                                    </div>
 
-                                </label>
-                                <label>
-                                    <div class="gender-logo male">
-                                        <img src="">
-                                        <input type="radio" name="gender" value="male">
-                                    </div>
-                                </label>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
-            <div id="step-3" class="personal-information-step step">
+            <div id="step-3" class="confirm-information-step step">
                 <div class="step-image">
                     <img src="">
                 </div>
@@ -178,63 +186,7 @@
                         <p class="step-description">Enter your personal details to show them of an your profile</p>
                     </div>
                     <div class="step-form">
-                        <div class="step-row">
-                            <div class="step-label">
-                                <label>First Name</label>
-                                <input type="text" class="step-input">
-                                <p class="error-message">Firstname field is required*</p>
-                            </div>
-                            <div class="step-label">
-                                <label>Last Name</label>
-                                <input type="text" class="step-input">
-                                <p class="error-message">Lastname field is required*</p>
-                            </div>
-                        </div>
-                        <div class="step-row">
-                            <div class="step-label">
-                                <label>Email</label>
-                                <input type="text" class="step-input">
-                                <p class="error-message">Email field is required*</p>
-                            </div>
-                            <div class="step-label">
-                                <label>Country</label>
-                                <select>
-                                    <option>Cyprus (CY)</option>
-                                </select>
-                                <p class="error-message">Lastname field is required*</p>
-                            </div>
-                        </div>
-                        <div class="step-row">
-                            <div class="step-label">
-                                <label>Password</label>
-                                <input type="password" class="step-input">
-                                <p class="error-message">Password field is required*</p>
-                            </div>
-                            <div class="step-label">
-                                <label>Date of birth</label>
-                                <input type="date" class="step-input">
-                                <p class="error-message">DOB field is required*</p>
-                            </div>
-                        </div>
-                        <div class="step-row">
-                            <div class="step-label">
-                                <div class="label">Gender</div>
-                                <label>
-                                    <div class="gender-logo female">
-                                        <img src="">
-                                        <input type="radio" name="gender" value="female">
-                                    </div>
 
-                                </label>
-                                <label>
-                                    <div class="gender-logo male">
-                                        <img src="">
-                                        <input type="radio" name="gender" value="male">
-                                    </div>
-                                </label>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
@@ -245,60 +197,10 @@
 
 </body>
 
-<script>
-    //Object for holding all the input data in each steps (for submitting at the end)
-    let inputs = {}
-
-
-    const STEPS = [
-        document.querySelector("#step-1"), document.querySelector("#step-2"), document.querySelector("#step-3")
-    ];
-
-    const STEPS_COUNT = STEPS.length - 1
-    let currentStep = 0;
-
-    const nextButton = document.querySelector("#next-btn");
-    const backButton = document.querySelector("#back-btn");
-
-
-    const showBtn = (btn) => {
-        btn.disabled = false;
-        btn.classList.add("show")
-    }
-
-    const hideBtn = (btn) => {
-        btn.disabled = true;
-        btn.classList.remove("show")
-    }
-
-    //Hide and disable back button as default (on first step)
-    hideBtn(backButton)
-
-    const hideAllSteps = () => STEPS.forEach(element => element.classList.remove("show"));
-
-    const setCurrentStep = (currentStep) => {
-        hideAllSteps();
-        STEPS[currentStep].classList.add("show")
-    }
-
-    const goNextStep = () => {
-        currentStep++;
-        if (currentStep > 0) showBtn(backButton)
-        if (currentStep == STEPS_COUNT) hideBtn(nextButton)
-        setCurrentStep(currentStep)
-    }
-
-    const goPreviousStep = () => {
-        currentStep--;
-        if (currentStep === 0) hideBtn(backButton)
-        if (currentStep <= STEPS_COUNT) showBtn(nextButton)
-        setCurrentStep(currentStep)
-    }
-
-    //Event listeners
-    nextButton.addEventListener("click", goNextStep)
-    backButton.addEventListener("click", goPreviousStep)
-</script>
+{{-- Local Storage Class for the application --}}
+<script src={{ asset('assets/js/LocalRepository.js') }}></script>
+{{-- Registration page actions script --}}
+<script src={{ asset('assets/js/Registration.js') }}></script>
 
 
 
