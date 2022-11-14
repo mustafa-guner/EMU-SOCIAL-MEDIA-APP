@@ -1,3 +1,74 @@
+const VALIDATIONS = {
+    Array: {
+        isArray: (array) => Array.isArray(array),
+        isObjectsOfArray: (array) =>
+            VALIDATIONS.Array.isArray(array) &&
+            array.every((value) => typeof value == "object"),
+    },
+    Inputs: {
+        validateInputs: (inputs) => {
+            return inputs.map((currentInput) => {
+                const isInputMissing = currentInput.input.value == "";
+                const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
+                    currentInput.input.value
+                );
+                const isCurrentInputEmail =
+                    currentInput.label.toLowerCase() == "email";
+
+                if (isInputMissing) {
+                    return {
+                        ...currentInput,
+                        errorMessage: `${currentInput.label} field is required.`,
+                    };
+                } else if (!isInputMissing &&
+                    isCurrentInputEmail &&
+                    !isEmailValid
+                ) {
+                    return {
+                        ...currentInput,
+                        errorMessage: "Email is not valid.",
+                    };
+                }
+                return currentInput;
+            });
+        },
+
+        getValueFromInput: ({ input }) => {
+            return VALIDATIONS.Array.isArray(input) ?
+                input.find((i) => i.checked == true) :
+                input;
+        },
+        getValidatedFormData: (validatedInputs) => {
+            return validatedInputs
+                .map((validatedInput) => {
+                    const input =
+                        VALIDATIONS.Inputs.getValueFromInput(validatedInput);
+                    if (validatedInput.label.toLowerCase() === "password")
+                        return;
+                    const validFormat = {};
+                    validFormat[validatedInput.label.toLowerCase()] =
+                        input.value;
+                    return validFormat;
+                })
+                .reduce(function(acc, x) {
+                    for (var key in x) acc[key] = x[key];
+                    return acc;
+                }, {});
+        },
+        areInputsValid: (inputs) =>
+            !VALIDATIONS.Inputs.validateInputs(inputs).some(
+                (input) =>
+                Object.keys(input).includes("errorMessage") &&
+                input.errorMessage
+            ),
+        isEmailValid: (email) => {
+            return /^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/.test(
+                email
+            );
+        },
+    },
+};
+
 class FormSteps {
     constructor(steps) {
         //Default starts from 0
@@ -6,20 +77,22 @@ class FormSteps {
         //Calculated properties
         this.getStepsLength();
         this.getCurrentStep();
-        this.getCurrentStatus();
+        this.getCurrentStepStatus();
     }
 
     getCurrentStep() {
         return (this.currentStep = this.steps[this.currentStepNumber - 1]);
     }
+    getCurrentStepTitle() {
+        return this.currentStep.stepTitle;
+    }
     getStepsLength() {
         return (this.stepsLength = this.steps.length - 1);
     }
-    getCurrentStatus() {
+    getCurrentStepStatus() {
         const currentStep = this.getCurrentStep();
-
-        return (this.status = currentStep.inputs.every(
-            ({ input }) => input.value !== ""
+        return (this.status = VALIDATIONS.Inputs.areInputsValid(
+            currentStep.inputs
         ));
     }
     incrementStepNumber() {
@@ -44,14 +117,6 @@ class FormSteps {
         return this.getCurrentStep();
     }
 }
-const VALIDATIONS = {
-    Array: {
-        isArray: (array) => Array.isArray(array),
-        isObjectsOfArray: (array) =>
-            VALIDATIONS.Array.isArray(array) &&
-            array.every((value) => typeof value == "object"),
-    },
-};
 
 class RegistrationFormUIEvent {
     static hideBtn(button) {
@@ -77,21 +142,81 @@ class RegistrationFormWithSteps {
     constructor(steps) {
         //FormSteps
         if (steps) this.subscribe(steps);
-        this.LocalRepository = new LocalRepository();
+
         this.nextBtn = document.querySelector("#next-btn");
         this.backBtn = document.querySelector("#back-btn");
     }
 
-    /* BASIC COMMANDS OF THE REGISTRATION FORM */
+    /* BASIC COMMANDS OF THE REGISTRATION F ORM */
 
     goNext() {
-        this.FormSteps.goNextStep();
-        this.switchStep();
+        const currentStepInputs = this.FormSteps.getCurrentStep().inputs;
+        const currentStepTitle = this.FormSteps.getCurrentStepTitle();
+
+        if (this.inputsAreValid()) {
+            //validate all the inputs
+            const inputsToValidate =
+                VALIDATIONS.Inputs.validateInputs(currentStepInputs);
+
+            //get validated inputs and make it array of key value pair objects
+            const validatedInputs =
+                VALIDATIONS.Inputs.getValidatedFormData(inputsToValidate);
+
+            //Save validated inputs to localstorage by their stepTitles
+            LocalRepository.createRepository(currentStepTitle, validatedInputs);
+            //Go next step
+            this.FormSteps.goNextStep();
+
+            //Switch to another step
+            this.switchStep();
+        } else {
+            const invalidInputs =
+                VALIDATIONS.Inputs.validateInputs(currentStepInputs);
+            this.toggleErrorMessages(invalidInputs);
+        }
     }
 
     goBack() {
         this.FormSteps.goPreviousStep();
         this.switchStep();
+    }
+
+    inputsAreValid() {
+        return this.FormSteps.getCurrentStepStatus();
+    }
+    printErrorMessage(parentElement, currentInput) {
+        const errorMessage = `<p id=${currentInput.label} class="error-message">${currentInput.errorMessage}</p>`;
+        parentElement.insertAdjacentHTML("beforeend", errorMessage);
+    }
+
+    removeErrorMessage(errorDiv) {
+        errorDiv.remove();
+    }
+    toggleErrorMessages(inputsToValidate) {
+        const self = this;
+
+        inputsToValidate.map((invalidInput) => {
+            const input = VALIDATIONS.Inputs.getValueFromInput(invalidInput);
+            const parentElement = input.parentElement;
+            const lastChild =
+                parentElement.children[parentElement.children.length - 1];
+            const isInputEmpty = input.value == "";
+            const isErrorDiv = lastChild.classList.contains("error-message");
+
+            if (!isErrorDiv && invalidInput.errorMessage && isInputEmpty)
+                self.printErrorMessage(parentElement, invalidInput);
+
+            if (isErrorDiv && !isInputEmpty) self.removeErrorMessage(lastChild);
+
+            if (
+                isErrorDiv &&
+                invalidInput.label == "Email" &&
+                !VALIDATIONS.Inputs.isEmailValid(invalidInput.input.value)
+            ) {
+                self.removeErrorMessage(lastChild);
+                self.printErrorMessage(parentElement, invalidInput);
+            }
+        });
     }
 
     switchStep() {
@@ -108,7 +233,6 @@ class RegistrationFormWithSteps {
     }
 
     toggleStepButtonViews(currentStepNumber, stepsLength) {
-        console.log(currentStepNumber, stepsLength);
         if (currentStepNumber > 1)
             RegistrationFormUIEvent.showBtn(this.backBtn);
         if (currentStepNumber <= stepsLength)
@@ -172,6 +296,7 @@ class RegistrationFormWithSteps {
 }
 
 const STEPS = [{
+        stepTitle: "personalInformation",
         selector: document.querySelector("#step-1"),
         isLastStep: false,
         inputs: [{
@@ -200,11 +325,14 @@ const STEPS = [{
             },
             {
                 label: "Gender",
-                input: document.querySelector("input[name='gender']:checked"),
+                input: Array.from(
+                    document.querySelectorAll("input[name='gender']")
+                ),
             },
         ],
     },
     {
+        stepTitle: "academicInformation",
         selector: document.querySelector("#step-2"),
         isLastStep: false,
         inputs: [{
@@ -235,6 +363,7 @@ const STEPS = [{
         ],
     },
     {
+        stepTitle: "confirmYourProfile",
         selector: document.querySelector("#step-3"),
         isLastStep: true,
     },

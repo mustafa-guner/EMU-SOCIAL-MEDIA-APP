@@ -35,39 +35,41 @@
                         <div class="step-row">
                             <div class="step-label">
                                 <label for="firstname">First Name</label>
-                                <input type="text" class="step-input" name="firstname" id="firstname">
-                                <p class="error-message">Firstname field is required*</p>
+                                <input type="text" value="Mustafa" class="step-input" name="firstname"
+                                    id="firstname">
+
                             </div>
                             <div class="step-label">
                                 <label for="lastname">Last Name</label>
-                                <input type="text" class="step-input" name="lastname" id="lastname">
-                                <p class="error-message">Lastname field is required*</p>
+                                <input value="Guner" type="text" class="step-input" name="lastname" id="lastname">
+
                             </div>
                         </div>
                         <div class="step-row">
                             <div class="step-label">
                                 <label for="email">Email</label>
-                                <input type="text" class="step-input" name="email" id="email">
-                                <p class="error-message">Email field is required*</p>
+                                <input type="email" value="legend123412@outlook.com" class="step-input" name="email"
+                                    id="email">
+
                             </div>
                             <div class="step-label">
                                 <label for="country">Country</label>
                                 <select data-selected="cyprus" name="country" id="country">
                                     <option value="cyprus">Cyprus (CY)</option>
                                 </select>
-                                <p class="error-message">Lastname field is required*</p>
+
                             </div>
                         </div>
                         <div class="step-row">
                             <div class="step-label">
                                 <label>Password</label>
                                 <input type="password" class="step-input" name="password" id="password">
-                                <p class="error-message">Password field is required*</p>
+
                             </div>
                             <div class="step-label">
                                 <label>Date of birth</label>
                                 <input type="date" class="step-input" id="dob" name="dob">
-                                <p class="error-message">DOB field is required*</p>
+
                             </div>
                         </div>
                         <div class="step-row">
@@ -76,7 +78,7 @@
                                 <label>
                                     <div class="radio-logo">
                                         <img src="">
-                                        <input type="radio" name="gender" value="female" id="female">
+                                        <input checked type="radio" name="gender" value="female" id="female">
                                         <p class="radio-label-text">Female</p>
                                     </div>
 
@@ -113,7 +115,7 @@
                                 <label for="student">
                                     <div class="radio-logo">
                                         <img src="">
-                                        <input type="radio" name="career" value="student" id="student">
+                                        <input checked type="radio" name="career" value="student" id="student">
                                         <p class="radio-label-text">I'm student</p>
                                     </div>
                                 </label>
@@ -143,14 +145,14 @@
                                     <option value="notGraduated">I am not graduated yet</option>
                                     <option value="graduated">I am already graduated</option>
                                 </select>
-                                <p class="error-message">Email field is required*</p>
+
                             </div>
 
 
                             <div class="step-label">
                                 <label>Estimated Graduation</label>
                                 <input type="date" name="graduate-date" id="graduate-date">
-                                <p class="error-message">Lastname field is required*</p>
+
                             </div>
 
 
@@ -159,14 +161,14 @@
                             <div class="step-label">
                                 <label for="student-number">Student Number</label>
                                 <input id="student-number" name="student-number" type="number" class="step-input">
-                                <p class="error-message">Password field is required*</p>
+
                             </div>
                             <div class="step-label">
                                 <label for="academic-degree">Academic Degree</label>
                                 <select id="academic-degree" name="academic-degree" data-selected="masters-degree">
                                     <option value="masters-degree">Master's degree</option>
                                 </select>
-                                <p class="error-message">DOB field is required*</p>
+
                             </div>
                         </div>
 
