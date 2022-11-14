@@ -8,12 +8,30 @@ const VALIDATIONS = {
     Inputs: {
         validateInputs: (inputs) => {
             return inputs.map((currentInput) => {
+                //Condition checks
+
                 const isInputMissing = currentInput.input.value == "";
                 const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
                     currentInput.input.value
                 );
                 const isCurrentInputEmail =
                     currentInput.label.toLowerCase() == "email";
+
+                const isCurrentInputRadioInput = VALIDATIONS.Array.isArray(
+                    currentInput.input
+                );
+
+                if (
+                    isCurrentInputRadioInput &&
+                    !VALIDATIONS.Inputs.areRadioInputsChecked(
+                        currentInput.input
+                    )
+                ) {
+                    return (currentInput = {
+                        ...currentInput,
+                        errorMessage: `${currentInput.label} field is required.`,
+                    });
+                }
 
                 if (isInputMissing) {
                     return {
@@ -33,7 +51,23 @@ const VALIDATIONS = {
             });
         },
 
+        findCheckedRadioInput: (radioInputs) => {
+            return radioInputs.find((radioInput) => radioInput.checked == true);
+        },
+
+        areRadioInputsChecked: (radioInputs) => {
+            return radioInputs.some((radioInput) => radioInput.checked == true);
+        },
+
         getValueFromInput: ({ input }) => {
+            // if (VALIDATIONS.Array.isArray(input)) {
+            //     const checkedRadioInput =
+            //         VALIDATIONS.Inputs.findCheckedRadioInput(input);
+            //     return checkedRadioInput == null || undefined ?
+            //         input[0] :
+            //         checkedRadioInput;
+            // }
+            // return input;
             return VALIDATIONS.Array.isArray(input) ?
                 input.find((i) => i.checked == true) :
                 input;
@@ -43,13 +77,14 @@ const VALIDATIONS = {
                 .map((validatedInput) => {
                     const input =
                         VALIDATIONS.Inputs.getValueFromInput(validatedInput);
+                    //Skip the password saving because of security issues
                     if (validatedInput.label.toLowerCase() === "password")
                         return;
                     const validFormat = {};
                     validFormat[validatedInput.label.toLowerCase()] =
                         input.value;
                     return validFormat;
-                })
+                }) //reduce is used for converting partial object [{firstname:"x"},{lastname:"x"}] to merged object [{firstname:"x",lastname:"x"}]
                 .reduce(function(acc, x) {
                     for (var key in x) acc[key] = x[key];
                     return acc;
@@ -77,7 +112,6 @@ class FormSteps {
         //Calculated properties
         this.getStepsLength();
         this.getCurrentStep();
-        this.getCurrentStepStatus();
     }
 
     getCurrentStep() {
@@ -89,12 +123,7 @@ class FormSteps {
     getStepsLength() {
         return (this.stepsLength = this.steps.length - 1);
     }
-    getCurrentStepStatus() {
-        const currentStep = this.getCurrentStep();
-        return (this.status = VALIDATIONS.Inputs.areInputsValid(
-            currentStep.inputs
-        ));
-    }
+
     incrementStepNumber() {
         return this.currentStepNumber <= this.stepsLength ?
             this.currentStepNumber++
@@ -183,11 +212,8 @@ class RegistrationFormWithSteps {
         this.switchStep();
     }
 
-    inputsAreValid() {
-        return this.FormSteps.getCurrentStepStatus();
-    }
     printErrorMessage(parentElement, currentInput) {
-        const errorMessage = `<p id=${currentInput.label} class="error-message">${currentInput.errorMessage}</p>`;
+        const errorMessage = `<p id='${currentInput.label}-error' class="error-message">${currentInput.errorMessage}</p>`;
         parentElement.insertAdjacentHTML("beforeend", errorMessage);
     }
 
@@ -195,37 +221,74 @@ class RegistrationFormWithSteps {
         errorDiv.remove();
     }
 
+    handleRadioInputErrors(radioInput) {
+        const input = radioInput.input[0];
+        const parentElement = input.parentElement.parentElement.parentElement;
+        const lastChild =
+            parentElement.children[parentElement.children.length - 1];
+        const isErrorDiv = lastChild.classList.contains("error-message");
+
+        if (!isErrorDiv) {
+            this.printErrorMessage(parentElement, radioInput);
+        }
+    }
+
+    //TODO: REFACTOR THIS FUNCTION LATER.
     toggleErrorMessages(inputsToValidate) {
         const self = this;
 
         inputsToValidate.map((invalidInput) => {
             const input = VALIDATIONS.Inputs.getValueFromInput(invalidInput);
-            const parentElement = input.parentElement;
-            const lastChild =
-                parentElement.children[parentElement.children.length - 1];
 
-            //Conditions
-            const isInputEmpty = input.value == "";
-            const isErrorDiv = lastChild.classList.contains("error-message");
-            const isInputEmail = invalidInput.label == "Email";
-            const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
-                invalidInput.input.value
-            );
-
-            if (!isErrorDiv && invalidInput.errorMessage && isInputEmpty)
-                self.printErrorMessage(parentElement, invalidInput);
-            else if (isErrorDiv && !isInputEmpty)
-                self.removeErrorMessage(lastChild);
-
-            if (isErrorDiv && isInputEmail && !isEmailValid) {
-                self.removeErrorMessage(lastChild);
-                self.printErrorMessage(parentElement, invalidInput);
-            } else if (!isErrorDiv &&
-                isInputEmail &&
-                !isEmailValid &&
-                !isInputEmpty
+            if (
+                VALIDATIONS.Array.isArray(invalidInput.input) &&
+                !VALIDATIONS.Inputs.areRadioInputsChecked(invalidInput.input)
             ) {
-                self.printErrorMessage(parentElement, invalidInput);
+                self.handleRadioInputErrors(invalidInput);
+            } else if (
+                VALIDATIONS.Array.isArray(invalidInput.input) &&
+                VALIDATIONS.Inputs.areRadioInputsChecked(invalidInput.input)
+            ) {
+                const parentElement =
+                    invalidInput.input[0].parentElement.parentElement
+                    .parentElement;
+
+                const lastChild =
+                    parentElement.children[parentElement.children.length - 1];
+                const isErrorDiv =
+                    lastChild.classList.contains("error-message");
+                if (isErrorDiv) self.removeErrorMessage(lastChild);
+            } else {
+                const parentElement = input.parentElement;
+
+                const lastChild =
+                    parentElement.children[parentElement.children.length - 1];
+
+                //Conditions
+                const isInputEmpty = input.value == "";
+                const isErrorDiv =
+                    lastChild.classList.contains("error-message");
+                const isInputEmail =
+                    invalidInput.label.toLowerCase() == "email";
+                const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
+                    invalidInput.input.value
+                );
+
+                if (!isErrorDiv && invalidInput.errorMessage && isInputEmpty)
+                    self.printErrorMessage(parentElement, invalidInput);
+                else if (isErrorDiv && !isInputEmpty)
+                    self.removeErrorMessage(lastChild);
+
+                if (isErrorDiv && isInputEmail && !isEmailValid) {
+                    self.removeErrorMessage(lastChild);
+                    self.printErrorMessage(parentElement, invalidInput);
+                } else if (!isErrorDiv &&
+                    isInputEmail &&
+                    !isEmailValid &&
+                    !isInputEmpty
+                ) {
+                    self.printErrorMessage(parentElement, invalidInput);
+                }
             }
         });
     }
@@ -363,28 +426,28 @@ const STEPS = [{
         selector: document.querySelector("#step-2"),
         isLastStep: false,
         inputs: [{
-                label: "Academic Career",
+                label: "AcademicCareer",
                 input: document.querySelector("input[name='career']"),
             },
             {
-                label: "Profile Image",
+                label: "ProfileImage",
                 input: document.querySelector("input[name='profile-image']"),
             },
             {
-                label: "Academic Status",
+                label: "AcademicStatus",
                 input: document.querySelector("select[name='academic-status']"),
             },
             {
-                label: "Graduation Date",
+                label: "GraduationDate",
                 input: document.querySelector("input[name='graduate-date']"),
             },
 
             {
-                label: "Student Number",
+                label: "StudentNumber",
                 input: document.querySelector("input[name='student-number']"),
             },
             {
-                label: "Academic Degree",
+                label: "AcademicDegree",
                 input: Array.from(
                     document.querySelectorAll("input[name='career']")
                 ),

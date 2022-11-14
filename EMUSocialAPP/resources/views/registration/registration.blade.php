@@ -63,7 +63,8 @@
                         <div class="step-row">
                             <div class="step-label">
                                 <label>Password</label>
-                                <input type="password" class="step-input" name="password" id="password">
+                                <input value="asdf1234" type="password" class="step-input" name="password"
+                                    id="password">
 
                             </div>
                             <div class="step-label">
@@ -78,7 +79,7 @@
                                 <label>
                                     <div class="radio-logo">
                                         <img src="">
-                                        <input checked type="radio" name="gender" value="female" id="female">
+                                        <input type="radio" name="gender" value="female" id="female">
                                         <p class="radio-label-text">Female</p>
                                     </div>
 
@@ -115,7 +116,7 @@
                                 <label for="student">
                                     <div class="radio-logo">
                                         <img src="">
-                                        <input checked type="radio" name="career" value="student" id="student">
+                                        <input type="radio" name="career" value="student" id="student">
                                         <p class="radio-label-text">I'm student</p>
                                     </div>
                                 </label>
