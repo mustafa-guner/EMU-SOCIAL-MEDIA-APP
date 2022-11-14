@@ -153,27 +153,29 @@ class RegistrationFormWithSteps {
         const currentStepInputs = this.FormSteps.getCurrentStep().inputs;
         const currentStepTitle = this.FormSteps.getCurrentStepTitle();
 
-        if (this.inputsAreValid()) {
-            //validate all the inputs
-            const inputsToValidate =
-                VALIDATIONS.Inputs.validateInputs(currentStepInputs);
+        //validate all the inputs
+        const inputsToValidate =
+            VALIDATIONS.Inputs.validateInputs(currentStepInputs);
 
-            //get validated inputs and make it array of key value pair objects
-            const validatedInputs =
-                VALIDATIONS.Inputs.getValidatedFormData(inputsToValidate);
+        const isThereAnyError = !VALIDATIONS.Inputs.areInputsValid(inputsToValidate);
 
-            //Save validated inputs to localstorage by their stepTitles
-            LocalRepository.createRepository(currentStepTitle, validatedInputs);
-            //Go next step
-            this.FormSteps.goNextStep();
+        //Toggles errorMessages because of errors
+        if (isThereAnyError) return this.toggleErrorMessages(inputsToValidate);
 
-            //Switch to another step
-            this.switchStep();
-        } else {
-            const invalidInputs =
-                VALIDATIONS.Inputs.validateInputs(currentStepInputs);
-            this.toggleErrorMessages(invalidInputs);
-        }
+        //Removes all the error messages from UI after successfull continue event
+        this.toggleErrorMessages(inputsToValidate);
+
+        //get validated inputs and make it array of key value pair objects
+        const validatedInputs =
+            VALIDATIONS.Inputs.getValidatedFormData(inputsToValidate);
+
+        //Save validated inputs to localstorage by their stepTitles
+        LocalRepository.createRepository(currentStepTitle, validatedInputs);
+        //Go next step
+        this.FormSteps.goNextStep();
+
+        //Switch to another step
+        this.switchStep();
     }
 
     goBack() {
@@ -192,6 +194,7 @@ class RegistrationFormWithSteps {
     removeErrorMessage(errorDiv) {
         errorDiv.remove();
     }
+
     toggleErrorMessages(inputsToValidate) {
         const self = this;
 
@@ -200,19 +203,21 @@ class RegistrationFormWithSteps {
             const parentElement = input.parentElement;
             const lastChild =
                 parentElement.children[parentElement.children.length - 1];
+
+            //Conditions
             const isInputEmpty = input.value == "";
             const isErrorDiv = lastChild.classList.contains("error-message");
+            const isInputEmail = invalidInput.label == "Email";
+            const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
+                invalidInput.input.value
+            );
 
             if (!isErrorDiv && invalidInput.errorMessage && isInputEmpty)
                 self.printErrorMessage(parentElement, invalidInput);
+            else if (isErrorDiv && !isInputEmpty)
+                self.removeErrorMessage(lastChild);
 
-            if (isErrorDiv && !isInputEmpty) self.removeErrorMessage(lastChild);
-
-            if (
-                isErrorDiv &&
-                invalidInput.label == "Email" &&
-                !VALIDATIONS.Inputs.isEmailValid(invalidInput.input.value)
-            ) {
+            if (isErrorDiv && isInputEmail && !isEmailValid) {
                 self.removeErrorMessage(lastChild);
                 self.printErrorMessage(parentElement, invalidInput);
             }
@@ -243,8 +248,24 @@ class RegistrationFormWithSteps {
             RegistrationFormUIEvent.hideBtn(this.backBtn);
     }
 
+    fetchFromLocalStorageOnLoad() {
+        const personalInformation = LocalRepository.getValueFromRepositoryByID(
+            "personalInformation"
+        );
+        const academicInformation = LocalRepository.getValueFromRepositoryByID(
+            "academicInformation"
+        );
+        return [personalInformation, academicInformation];
+    }
+
+    loadFormDataIntoInput(data) {}
+
     runOnLoad() {
-        console.log("Running On Load");
+        const [personalInformationFormData, ademicInformationFormData] =
+        this.fetchFromLocalStorageOnLoad();
+        if (personalInformationFormData) {
+            this.loadFormDataIntoInput(personalInformationFormData);
+        }
     }
 
     /* START COMMANDS OF THE REGISTRATION FORM */
@@ -358,7 +379,9 @@ const STEPS = [{
             },
             {
                 label: "Academic Degree",
-                input: document.querySelector("select[name='academic-degree']"),
+                input: Array.from(
+                    document.querySelectorAll("input[name='career']")
+                ),
             },
         ],
     },
