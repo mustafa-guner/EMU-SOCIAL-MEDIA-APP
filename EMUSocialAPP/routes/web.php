@@ -17,7 +17,6 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-
 Route::get('/login', function () {
     return view('auth/login');
 });
@@ -28,4 +27,8 @@ Route::get('/forgot-password', function () {
 
 Route::get('/create-new-password', function () {
     return view('auth/login-create-new-password');
+});
+
+Route::get('/home', function () {
+    return view('app/homepage');
 });
