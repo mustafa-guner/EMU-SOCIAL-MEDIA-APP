@@ -220,6 +220,12 @@ class RegistrationFormWithSteps {
             if (isErrorDiv && isInputEmail && !isEmailValid) {
                 self.removeErrorMessage(lastChild);
                 self.printErrorMessage(parentElement, invalidInput);
+            } else if (!isErrorDiv &&
+                isInputEmail &&
+                !isEmailValid &&
+                !isInputEmpty
+            ) {
+                self.printErrorMessage(parentElement, invalidInput);
             }
         });
     }
@@ -385,6 +391,7 @@ const STEPS = [{
             },
         ],
     },
+
     {
         stepTitle: "confirmYourProfile",
         selector: document.querySelector("#step-3"),
