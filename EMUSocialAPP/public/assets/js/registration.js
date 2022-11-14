@@ -21,6 +21,7 @@ const VALIDATIONS = {
                     currentInput.input
                 );
 
+                //VALIDATION CHECK FOR RADIO INPUTS
                 if (
                     isCurrentInputRadioInput &&
                     !VALIDATIONS.Inputs.areRadioInputsChecked(
@@ -33,11 +34,13 @@ const VALIDATIONS = {
                     });
                 }
 
+                //VALIDATION CHECK FOR MISSING INPUTS
                 if (isInputMissing) {
                     return {
                         ...currentInput,
                         errorMessage: `${currentInput.label} field is required.`,
                     };
+                    //VALIDATION CHECK FOR INVALID EMAIL ADDRESSSES
                 } else if (!isInputMissing &&
                     isCurrentInputEmail &&
                     !isEmailValid
@@ -51,23 +54,11 @@ const VALIDATIONS = {
             });
         },
 
-        findCheckedRadioInput: (radioInputs) => {
-            return radioInputs.find((radioInput) => radioInput.checked == true);
-        },
-
         areRadioInputsChecked: (radioInputs) => {
             return radioInputs.some((radioInput) => radioInput.checked == true);
         },
 
         getValueFromInput: ({ input }) => {
-            // if (VALIDATIONS.Array.isArray(input)) {
-            //     const checkedRadioInput =
-            //         VALIDATIONS.Inputs.findCheckedRadioInput(input);
-            //     return checkedRadioInput == null || undefined ?
-            //         input[0] :
-            //         checkedRadioInput;
-            // }
-            // return input;
             return VALIDATIONS.Array.isArray(input) ?
                 input.find((i) => i.checked == true) :
                 input;
@@ -223,6 +214,17 @@ class RegistrationFormWithSteps {
 
     handleRadioInputErrors(radioInput) {
         const input = radioInput.input[0];
+        /*
+        EXAMPLE:
+        <div class='step-label'> (PARENT)
+            <label> (PARENT)
+                <div class=radio-logo> (PARENT)
+                    <input type=radio> (INPUT)
+                </div>
+            </label>
+            {ERROR GOES HERE AFTER THIS FUNCTION}
+        </div>
+         */
         const parentElement = input.parentElement.parentElement.parentElement;
         const lastChild =
             parentElement.children[parentElement.children.length - 1];
