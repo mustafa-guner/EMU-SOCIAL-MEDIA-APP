@@ -35,27 +35,26 @@
                         <div class="step-row">
                             <div class="step-label">
                                 <label for="firstname">First Name</label>
-                                <input type="text" value="Mustafa" class="step-input" name="firstname"
-                                    id="firstname">
+                                <input type="text" class="step-input" name="firstname" id="firstname">
 
                             </div>
                             <div class="step-label">
                                 <label for="lastname">Last Name</label>
-                                <input value="Guner" type="text" class="step-input" name="lastname" id="lastname">
+                                <input type="text" class="step-input" name="lastname" id="lastname">
 
                             </div>
                         </div>
                         <div class="step-row">
                             <div class="step-label">
                                 <label for="email">Email</label>
-                                <input type="email" value="legend123412@outlook.com" class="step-input" name="email"
-                                    id="email">
+                                <input type="email" class="step-input" name="email" id="email">
 
                             </div>
                             <div class="step-label">
                                 <label for="country">Country</label>
                                 <select data-selected="cyprus" name="country" id="country">
                                     <option value="cyprus">Cyprus (CY)</option>
+                                    <option value="turkey">Turkey (TR)</option>
                                 </select>
 
                             </div>
@@ -63,8 +62,7 @@
                         <div class="step-row">
                             <div class="step-label">
                                 <label>Password</label>
-                                <input value="asdf1234" type="password" class="step-input" name="password"
-                                    id="password">
+                                <input type="password" class="step-input" name="password" id="password">
 
                             </div>
                             <div class="step-label">

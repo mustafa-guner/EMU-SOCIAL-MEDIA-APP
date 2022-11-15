@@ -119,8 +119,8 @@ class FormSteps {
         return (this.stepsLength = this.steps.length - 1);
     }
 
-    getInputsByStepTitle(stepTitle) {
-        return this.steps.find((step) => step.stepTitle == stepTitle);
+    getInputsByStepNumber(stepNumber) {
+        return this.steps[stepNumber - 1];
     }
 
     incrementStepNumber() {
@@ -334,59 +334,25 @@ class RegistrationFormWithSteps {
         const academicInformation = LocalRepository.getValueFromRepositoryByID(
             "academicInformation"
         );
-        return [{...personalInformation }, {...academicInformation }];
-    }
-
-    loadDataIntoInputs(associatedStep, data) {
-        return associatedStep.inputs.map((input) => {
-            const isCurrentInputFile = input.input.type == "file";
-            const isCurrentInputArray = VALIDATIONS.Array.isArray(input.input);
-            if (isCurrentInputFile) return;
-            if (isCurrentInputArray) {
-                return input.input.map((radioInput) => {
-                    if (radioInput.value == data[input.label.toLowerCase()]) {
-                        radioInput.checked = true;
-                    }
-                });
-            }
-
-            if (!data[input.label.toLowerCase()]) return;
-            return (input.input.value = data[input.label.toLowerCase()]);
-        });
+        return [
+            {...personalInformation, type: "personalInformation" },
+            {...academicInformation, type: "academicInformation" },
+        ];
     }
 
     loadFormDataIntoInput(data) {
-        switch (data.type) {
-            case "personalInformation":
-                const personalInformationStep =
-                    this.FormSteps.getInputsByStepTitle(data.type);
-                this.loadDataIntoInputs(personalInformationStep, data);
-                break;
-            case "academicInformation":
-                const academicInformationStep =
-                    this.FormSteps.getInputsByStepTitle(data.type);
-
-                this.loadDataIntoInputs(academicInformationStep, data);
-                break;
-        }
+        console.log(data);
     }
 
     runOnLoad() {
-        let [personalInformationFormData, ademicInformationFormData] =
+        const [personalInformationFormData, ademicInformationFormData] =
         this.fetchFromLocalStorageOnLoad();
 
         if (personalInformationFormData) {
-            personalInformationFormData = {
-                ...personalInformationFormData,
-                type: "personalInformation",
-            };
             this.loadFormDataIntoInput(personalInformationFormData);
         }
+
         if (ademicInformationFormData) {
-            ademicInformationFormData = {
-                ...ademicInformationFormData,
-                type: "academicInformation",
-            };
             this.loadFormDataIntoInput(ademicInformationFormData);
         }
     }
@@ -447,7 +413,6 @@ const STEPS = [{
                 label: "Firstname",
                 input: document.querySelector("input[name='firstname']"),
             },
-
             {
                 label: "Lastname",
                 input: document.querySelector("input[name='lastname']"),
