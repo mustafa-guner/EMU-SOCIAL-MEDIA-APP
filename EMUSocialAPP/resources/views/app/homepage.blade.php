@@ -22,14 +22,113 @@
                 </div>
             </div>
             <div class="nav-logo">
-                <h1 class="logo">EMU APP</h1>
+                <a href=""><h1 class="logo">EMU APP</h1></a>
             </div>
             <div class="nav-right">
-                <button  type="button"><ion-icon name="mail"></ion-icon></button>
-                <button  type="button"><ion-icon name="notifications"></ion-icon></button>
-                <button  type="button"><ion-icon name="person"></ion-icon></button>
+                <button type="button"><ion-icon name="mail"></ion-icon></button>
+                <button type="button"><ion-icon name="notifications"></ion-icon></button>
+                <button type="button"><ion-icon name="person"></ion-icon></button>
             </div>
         </div>
     </nav>
+    <section id="main-section">
+        <div class="header"><h2>My Feed</h2></div>
+        <div class="main-container">
+            <div class="grid-left">
+                <div class="profile-container">
+                    <div class="profile-bg-img">
+                        <img src="{{asset('assets/images/home-profile-bg.jpg')}}" alt="bg-image">
+                    </div>
+                    <div class="profile-img">
+                        <img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-img">
+                    </div>
+                    <div class="name-container">
+                        <h4 class="name">Jane Doe</h4>
+                        <p class="username">@jane.doe</p>
+                    </div>
+                    <div class="content-container">
+                        <div class="content">
+                            <div class="info"><p class="number">100</p><p>Connected</p></div>
+                            <div class="info info-middle"><p class="number">45</p><p>Blog</p></div>
+                            <div class="info"><p class="number">5</p><p>Club</p></div>
+                        </div>
+                    </div>
+                    <div class="profile-link">
+                        <a href="">Go to my Profile</a>
+                    </div>
+                </div>
+                <div class="connect-people-container">
+                    <div class="header-people"><h3>Who is to connect with?</h3></div>
+                    <div class="connect-person">
+                        <div class="profile-img">
+                            <img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-img">
+                        </div>
+                        <div class="name-container-people">
+                            <h4 class="name">John Doe</h4>
+                            <p class="username">@john.doe</p>
+                        </div>
+                        <button type="button" class="connet-btn">Connect</button>
+                    </div>
+                    <div class="connect-person">
+                        <div class="profile-img">
+                            <img src="{{asset('assets/images/profile-images/profile-img-3.png')}}" alt="profile-img">
+                        </div>
+                        <div class="name-container-people">
+                            <h4 class="name">Jane Doe</h4>
+                            <p class="username">@jane.doe</p>
+                        </div>
+                        <button type="button" class="connet-btn">Connect</button>
+                    </div>
+                    <div class="connect-person">
+                        <div class="profile-img">
+                            <img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile-img">
+                        </div>
+                        <div class="name-container-people">
+                            <h4 class="name">John Doe</h4>
+                            <p class="username">@john.doe</p>
+                        </div>
+                        <button type="button" class="connet-btn">Connect</button>
+                    </div>
+                    <div class="connect-person">
+                        <div class="profile-img">
+                            <img src="{{asset('assets/images/profile-images/profile-img-5.png')}}" alt="profile-img">
+                        </div>
+                        <div class="name-container-people">
+                            <h4 class="name">John Doe</h4>
+                            <p class="username">@john.doe</p>
+                        </div>
+                        <button type="button" class="connet-btn">Connect</button>
+                    </div>
+                    <div class="connect-person">
+                        <div class="profile-img">
+                            <img src="{{asset('assets/images/profile-images/profile-img-6.png')}}" alt="profile-img">
+                        </div>
+                        <div class="name-container-people">
+                            <h4 class="name">Jane Doe</h4>
+                            <p class="username">@jane.doe</p>
+                        </div>
+                        <button type="button" class="connet-btn">Connect</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-middle">
+                <div class="new-post-container">
+                    <div class="new-post-header"><h2>Welcome, Jane Doe!</h2></div>
+                    <div class="new-post-input-container">
+                        <div class="new-post-profile-img">
+                            <img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-img">
+                        </div>
+                        <div class="new-post-text">
+                            <input type="text" placeholder="What do you think Jane?">
+                        </div>
+                    </div>
+                    <div class="new-post-buttons">
+                        <button type="button" class="uploud-image-btn"><ion-icon name="image"></ion-icon></button>
+                        <button type="button" class="post-share-btn"><ion-icon name="send"></ion-icon></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
