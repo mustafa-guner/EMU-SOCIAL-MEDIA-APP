@@ -189,6 +189,7 @@
                     <div class="step-form">
 
                     </div>
+                    <button type="submit">Create your profile</button>
                 </div>
             </div>
         </form>
