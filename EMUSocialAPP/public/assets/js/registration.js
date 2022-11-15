@@ -15,11 +15,14 @@ const VALIDATIONS = {
                     currentInput.input.value
                 );
                 const isCurrentInputEmail =
-                    currentInput.label.toLowerCase() == "email";
+                    currentInput.label.toLowerCase() == "email" ||
+                    VALIDATIONS.Inputs.isInputType(currentInput, "email");
 
-                const isCurrentInputRadioInput = VALIDATIONS.Array.isArray(
-                    currentInput.input
-                );
+                const isCurrentInputRadioInput =
+                    VALIDATIONS.Array.isArray(currentInput.input) &&
+                    currentInput.input.every((input) =>
+                        VALIDATIONS.Inputs.isInputType(input, "radio")
+                    );
 
                 //VALIDATION CHECK FOR RADIO INPUTS
                 if (
@@ -53,9 +56,15 @@ const VALIDATIONS = {
                 return currentInput;
             });
         },
-
+        isInputType: (input, expectedInputType) => {
+            return input.type == expectedInputType;
+        },
         areRadioInputsChecked: (radioInputs) => {
-            return radioInputs.some((radioInput) => radioInput.checked == true);
+            return radioInputs.some(
+                (radioInput) =>
+                VALIDATIONS.Inputs.isInputType(radioInput, "radio") &&
+                radioInput.checked == true
+            );
         },
 
         getValueFromInput: ({ input }) => {
@@ -68,9 +77,16 @@ const VALIDATIONS = {
                 .map((validatedInput) => {
                     const input =
                         VALIDATIONS.Inputs.getValueFromInput(validatedInput);
+
+                    const isCurrentValidatedInputIsPassword =
+                        validatedInput.label.toLowerCase() === "password" ||
+                        VALIDATIONS.Inputs.isInputType(
+                            validatedInput,
+                            "password"
+                        );
                     //Skip the password saving because of security issues
-                    if (validatedInput.label.toLowerCase() === "password")
-                        return;
+                    if (isCurrentValidatedInputIsPassword) return;
+
                     const validFormat = {};
                     validFormat[validatedInput.label.toLowerCase()] =
                         input.value;
@@ -115,12 +131,24 @@ class FormSteps {
     getCurrentStepTitle() {
         return this.currentStep.stepTitle;
     }
+
+    setCurrentStepByTitle(stepTitle) {
+        const currentStep = this.getInputsByStepTitle(stepTitle);
+        const currentStepNumber = this.getStepNumberByTitle(stepTitle);
+
+        this.currentStepNumber = currentStepNumber + 1;
+
+        return currentStep;
+    }
     getStepsLength() {
         return (this.stepsLength = this.steps.length - 1);
     }
 
     getInputsByStepTitle(stepTitle) {
         return this.steps.find((step) => step.stepTitle == stepTitle);
+    }
+    getStepNumberByTitle(title) {
+        return this.steps.findIndex((step) => step.stepTitle == title);
     }
 
     incrementStepNumber() {
@@ -173,6 +201,8 @@ class RegistrationFormWithSteps {
 
         this.nextBtn = document.querySelector("#next-btn");
         this.backBtn = document.querySelector("#back-btn");
+        this.submitBtn = document.querySelector("#submit-btn");
+        this.registrationForm = document.querySelector("#registration-form");
     }
 
     /* BASIC COMMANDS OF THE REGISTRATION F ORM */
@@ -276,10 +306,14 @@ class RegistrationFormWithSteps {
 
                 //Conditions
                 const isInputEmpty = input.value == "";
+
                 const isErrorDiv =
                     lastChild.classList.contains("error-message");
+
                 const isInputEmail =
-                    invalidInput.label.toLowerCase() == "email";
+                    invalidInput.label.toLowerCase() == "email" ||
+                    VALIDATIONS.Inputs.isInputType(invalidInput, "email");
+
                 const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
                     invalidInput.input.value
                 );
@@ -317,14 +351,17 @@ class RegistrationFormWithSteps {
     }
 
     toggleStepButtonViews(currentStepNumber, stepsLength) {
-        if (currentStepNumber > 1)
-            RegistrationFormUIEvent.showBtn(this.backBtn);
-        if (currentStepNumber <= stepsLength)
-            RegistrationFormUIEvent.showBtn(this.nextBtn);
-        if (currentStepNumber == stepsLength + 1)
+        if (currentStepNumber == stepsLength + 1) {
             RegistrationFormUIEvent.hideBtn(this.nextBtn);
-        if (currentStepNumber == 1)
-            RegistrationFormUIEvent.hideBtn(this.backBtn);
+            RegistrationFormUIEvent.hideBtn(this.submitBtn);
+        } else {
+            if (currentStepNumber > 1)
+                RegistrationFormUIEvent.showBtn(this.backBtn);
+            if (currentStepNumber <= stepsLength)
+                RegistrationFormUIEvent.showBtn(this.nextBtn);
+            if (currentStepNumber == 1)
+                RegistrationFormUIEvent.hideBtn(this.backBtn);
+        }
     }
 
     fetchFromLocalStorageOnLoad() {
@@ -339,18 +376,29 @@ class RegistrationFormWithSteps {
 
     loadDataIntoInputs(associatedStep, data) {
         return associatedStep.inputs.map((input) => {
-            const isCurrentInputFile = input.input.type == "file";
+            const isCurrentInputFile = VALIDATIONS.Inputs.isInputType(
+                input.input,
+                "file"
+            );
             const isCurrentInputArray = VALIDATIONS.Array.isArray(input.input);
+            const isCurrentInputUndefined = !data[input.label.toLowerCase()];
+
+            if (isCurrentInputUndefined) return;
+
             if (isCurrentInputFile) return;
+
             if (isCurrentInputArray) {
+                const isCurrentInputRadioType = (input) =>
+                    VALIDATIONS.Inputs.isInputType(input, "radio");
                 return input.input.map((radioInput) => {
-                    if (radioInput.value == data[input.label.toLowerCase()]) {
+                    if (
+                        isCurrentInputRadioType(radioInput) &&
+                        radioInput.value == data[input.label.toLowerCase()]
+                    )
                         radioInput.checked = true;
-                    }
                 });
             }
 
-            if (!data[input.label.toLowerCase()]) return;
             return (input.input.value = data[input.label.toLowerCase()]);
         });
     }
@@ -365,9 +413,52 @@ class RegistrationFormWithSteps {
             case "academicInformation":
                 const academicInformationStep =
                     this.FormSteps.getInputsByStepTitle(data.type);
-
                 this.loadDataIntoInputs(academicInformationStep, data);
                 break;
+        }
+    }
+
+    findMissingSteps() {
+        return this.FormSteps.steps.filter((step) => {
+            return (!step.isLastStep &&
+                step.inputs.some((input) => {
+                    const { isInputType, areRadioInputsChecked } =
+                    VALIDATIONS.Inputs;
+                    const { isArray } = VALIDATIONS.Array;
+                    const checkInputFileEmpty =
+                        isInputType(input.input, "file") &&
+                        input.input.files[0] == undefined;
+                    const areRadiosNotChecked =
+                        isArray(input.input) &&
+                        input.input.some((i) => isInputType(i, "radio")) &&
+                        !areRadioInputsChecked(input.input);
+
+                    return (
+                        checkInputFileEmpty ||
+                        areRadiosNotChecked ||
+                        input.input.value == ""
+                    );
+                })
+            );
+        });
+    }
+
+    createYourProfile(e) {
+        e.preventDefault();
+        const { hideSteps, showStep } = RegistrationFormUIEvent;
+
+        const missingSteps = this.findMissingSteps();
+
+        if (missingSteps.length > 0) {
+            const currentStep = this.FormSteps.setCurrentStepByTitle(
+                missingSteps[0].stepTitle
+            );
+            hideSteps(this.FormSteps.steps);
+            showStep(currentStep.selector);
+            const inputsToValidate = VALIDATIONS.Inputs.validateInputs(
+                currentStep.inputs
+            );
+            this.toggleErrorMessages(inputsToValidate);
         }
     }
 
@@ -401,6 +492,10 @@ class RegistrationFormWithSteps {
         );
         this.nextBtn.addEventListener("click", this.goNext.bind(this));
         this.backBtn.addEventListener("click", this.goBack.bind(this));
+        this.registrationForm.addEventListener(
+            "submit",
+            this.createYourProfile.bind(this)
+        );
     }
 
     isSubscribedStepsAreValid(array) {
