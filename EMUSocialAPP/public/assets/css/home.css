@@ -357,7 +357,7 @@ body #main-section .main-container .connect-people-container .connect-person .na
 
 body #main-section .main-container .connect-people-container .connect-person .connet-btn {
   cursor: pointer;
-  height: 30px;
+  height: 35px;
   background: #2F55AC;
   color: #FFFFFF;
   padding: 0.3rem;
@@ -484,6 +484,97 @@ body #main-section .main-container .new-post-container .new-post-buttons button 
 }
 
 body #main-section .main-container .new-post-container .new-post-buttons button:hover {
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+body #main-section .main-container .clubs-for-you-container {
+  width: 100%;
+  height: 740px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+body #main-section .main-container .clubs-for-you-container .clubs-for-you-header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  width: 100%;
+}
+
+body #main-section .main-container .clubs-for-you-container .clubs-for-you-header h2 {
+  font-weight: bold;
+  color: #012246;
+}
+
+body #main-section .main-container .clubs-for-you-container .clubs-for-you-header p {
+  margin-top: 0.7rem;
+  text-transform: uppercase;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container hr, body #main-section .main-container .clubs-for-you-container .private-clubs-container hr {
+  margin: 1.5rem auto;
+  width: 90%;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .public-clubs-header, body #main-section .main-container .clubs-for-you-container .public-clubs-container .private-clubs-header, body #main-section .main-container .clubs-for-you-container .private-clubs-container .public-clubs-header, body #main-section .main-container .clubs-for-you-container .private-clubs-container .private-clubs-header {
+  color: #012246;
+  padding: 0 1.5rem;
+  margin: 0.5rem 0;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club {
+  padding: 0 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr 1.5fr 0.8fr;
+      grid-template-columns: 0.5fr 1.5fr 0.8fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .club-img, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .club-img {
+  margin: 0 0.4rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .club-img img, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .club-img img {
+  width: 100%;
+  height: 100%;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club {
+  padding: 0.5rem 0.3rem;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club .name, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club .name {
+  color: #012246;
+  font-size: large;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club .username, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club .username {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .join-now-btn, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .join-now-btn {
+  cursor: pointer;
+  height: 40px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 12px;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .join-now-btn:hover, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:hover {
   font-weight: bold;
   background: #FFFFFF;
   color: #2F55AC;

@@ -128,6 +128,82 @@
                     </div>
                 </div>
             </div>
+            <div class="grid-right">
+                <div class="clubs-for-you-container">
+                    <div class="clubs-for-you-header">
+                        <h2>Clubs For You</h2>
+                        <p>Suggested clubs around you</p>
+                    </div>
+                    <div class="public-clubs-container">
+                        <hr>
+                        <div class="public-clubs-header"><h2>Public Clubs</h2></div>
+                        <div class="join-club">
+                            <div class="club-img">
+                                <img src="{{asset('assets/images/club-img.png')}}" alt="profile-img">
+                            </div>
+                            <div class="name-container-club">
+                                <h4 class="name">Sports Club</h4>
+                                <p class="members">143 Members</p>
+                            </div>
+                            <button type="button" class="join-now-btn">Join Now</button>
+                        </div>
+                        <div class="join-club">
+                            <div class="club-img">
+                                <img src="{{asset('assets/images/club-img.png')}}" alt="profile-img">
+                            </div>
+                            <div class="name-container-club">
+                                <h4 class="name">Sports Club</h4>
+                                <p class="members">143 Members</p>
+                            </div>
+                            <button type="button" class="join-now-btn">Join Now</button>
+                        </div>
+                        <div class="join-club">
+                            <div class="club-img">
+                                <img src="{{asset('assets/images/club-img.png')}}" alt="profile-img">
+                            </div>
+                            <div class="name-container-club">
+                                <h4 class="name">Sports Club</h4>
+                                <p class="members">143 Members</p>
+                            </div>
+                            <button type="button" class="join-now-btn">Join Now</button>
+                        </div>
+                    </div>
+                    <div class="private-clubs-container">
+                        <hr>
+                        <div class="private-clubs-header"><h2>Private Clubs</h2></div>
+                        <div class="join-club">
+                            <div class="club-img">
+                                <img src="{{asset('assets/images/club-img.png')}}" alt="profile-img">
+                            </div>
+                            <div class="name-container-club">
+                                <h4 class="name">Sports Club</h4>
+                                <p class="members">143 Members</p>
+                            </div>
+                            <button type="button" class="join-now-btn">Join Now</button>
+                        </div>
+                        <div class="join-club">
+                            <div class="club-img">
+                                <img src="{{asset('assets/images/club-img.png')}}" alt="profile-img">
+                            </div>
+                            <div class="name-container-club">
+                                <h4 class="name">Sports Club</h4>
+                                <p class="members">143 Members</p>
+                            </div>
+                            <button type="button" class="join-now-btn">Join Now</button>
+                        </div>
+                        <div class="join-club">
+                            <div class="club-img">
+                                <img src="{{asset('assets/images/club-img.png')}}" alt="profile-img">
+                            </div>
+                            <div class="name-container-club">
+                                <h4 class="name">Sports Club</h4>
+                                <p class="members">143 Members</p>
+                            </div>
+                            <button type="button" class="join-now-btn">Join Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </body>

@@ -243,7 +243,7 @@ body{
                     }
                     .connet-btn{
                         cursor: pointer;
-                        height: 30px;
+                        height: 35px;
                         background: #2F55AC;
                         color: #FFFFFF;
                         padding: 0.3rem;
@@ -333,6 +333,81 @@ body{
                     }
                 }
             }
+            //GRID RIGHT
+            .clubs-for-you-container{
+                width: 100%;
+                height: 740px;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .clubs-for-you-header{
+                    padding: 1.5rem 1.5rem 0 1.5rem;
+                    width: 100%;
+                    h2{
+                        font-weight: bold;
+                        color: #012246;
+                    }
+                    p{
+                        margin-top: 0.7rem;
+                        text-transform: uppercase;
+                    }
+                }
+                .public-clubs-container, .private-clubs-container{
+                    hr{
+                        margin: 1.5rem auto;
+                        width: 90%;
+                    }
+                    .public-clubs-header, .private-clubs-header{
+                        color: #012246;
+                        padding: 0 1.5rem;
+                        margin: 0.5rem 0;
+                    }
+                    .join-club{
+                        padding: 0 1rem;
+                        display: grid;
+                        grid-template-columns: 0.5fr 1.5fr 0.8fr;
+                        align-items: center;
+                        .club-img{
+                            margin: 0 0.4rem;
+                            justify-self: center;
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 100%;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .name-container-club{
+                            padding: 0.5rem 0.3rem;
+                            .name{
+                                color: #012246;
+                                font-size: large;
+                            }
+                            .username{
+                                font-size: small;
+                                color: rgba(0, 0, 0, 0.6);
+                            }
+                        }
+                        .join-now-btn{
+                            cursor: pointer;
+                            height: 40px;
+                            background: #2F55AC;
+                            color: #FFFFFF;
+                            padding: 0.3rem;
+                            border: none;
+                            border-radius: 12px;
+                            &:hover{
+                                font-weight: bold;
+                                background: #FFFFFF;
+                                color: #2F55AC;
+                                border: 2px solid #2F55AC;
+                            }   
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
