@@ -3,35 +3,176 @@
   margin: 2rem auto;
 }
 
-.container .registration-form .step {
+.container .registration-header p.redirection {
+  font-size: 13px;
+}
+
+.container .registration-header p.redirection ion-icon {
+  color: var(--continue-btn-bg-blue) !important;
+}
+
+.container .registration-header p.redirection a {
+  font-weight: bold;
+  color: var(--continue-btn-bg-blue) !important;
+}
+
+.container .registration-header hr {
+  margin: .3rem 0;
+  border: 1px solid rgba(217, 217, 217, 0.485);
+}
+
+.container .registration-form {
+  margin-top: 2rem;
+  max-width: 1000px;
+}
+
+.container .registration-form .steps {
+  display: flex;
+  flex-direction: columns;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.container .registration-form .steps .step {
+  width: 100%;
   display: none;
 }
 
-.container .registration-form .step .step-content .step-count {
+.container .registration-form .steps .step .step-image {
+  margin-right: 1rem;
+  width: 130px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--steps-image-bg-gray);
+  height: 100px;
+}
+
+.container .registration-form .steps .step .step-image img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  align-self: flex-start;
+}
+
+.container .registration-form .steps .step .step-content {
+  width: 100%;
+}
+
+.container .registration-form .steps .step .step-content .step-count {
   color: var(--light-text-gray-color);
   font-size: 15px;
 }
 
-.container .registration-form .step .step-content .step-header p.step-description {
-  color: var(--light-text-gray-color);
-  font-size: 15px;
+.container .registration-form .steps .step .step-content .step-header h2.step-title {
+  color: var(----main-heading-black);
+  font-size: 2.2rem;
 }
 
-.container .registration-form .step.show {
+.container .registration-form .steps .step .step-content .step-header p.step-description {
+  color: var(--light-text-gray-color);
+  font-size: 15px;
+  margin: .2rem 0;
+}
+
+.container .registration-form .steps .step .step-content .step-form {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row {
+  margin: 1.5rem 0;
+  display: grid;
+  grid-gap: 30px;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label label,
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .label {
   display: block;
+  font-weight: bold;
+  font-size: 15px;
+  margin: .2rem 0;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label input,
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label select {
+  width: 100%;
+  border: none !important;
+  outline: none !important;
+  padding: .8rem .7rem;
+  background-color: var(--input-bg-gray);
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label p.error-message {
+  color: var(--error-message-red);
+  font-size: 12px;
+  margin: .2rem 0;
+}
+
+.container .registration-form .steps .step.show {
+  display: flex;
   animation: fadeIn 0.2s;
 }
 
-.container #back-btn,
-.container #next-btn,
-.container .steps-btns {
-  visibility: hidden;
+.container .registration-form .action-buttons {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.container #back-btn.show,
-.container #next-btn.show,
-.container .steps-btns.show {
-  visibility: visible;
+.container .registration-form .action-buttons #back-btn {
+  background: none !important;
+  text-align: center;
+  color: var(--continue-btn-bg-blue);
+  font-weight: bold;
+  font-size: 13px;
+  width: 100px;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.container .registration-form .action-buttons .right-buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+.container .registration-form .action-buttons .right-buttons #next-btn {
+  margin-right: .2rem;
+  background-color: var(--continue-btn-bg-blue);
+}
+
+.container .registration-form .action-buttons .right-buttons #submit-btn {
+  background: var(--confirm-account-bg-green);
+}
+
+.container .registration-form .action-buttons .right-buttons .steps-btns {
+  border-radius: 90px;
+  padding: .6rem 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: auto;
+  width: 200px;
+  border: none !important;
+}
+
+.container .registration-form .action-buttons #back-btn,
+.container .registration-form .action-buttons #next-btn,
+.container .registration-form .action-buttons .steps-btns {
+  display: none;
+}
+
+.container .registration-form .action-buttons #back-btn.show,
+.container .registration-form .action-buttons #next-btn.show,
+.container .registration-form .action-buttons .steps-btns.show {
+  display: block;
 }
 
 @keyframes fadeIn {

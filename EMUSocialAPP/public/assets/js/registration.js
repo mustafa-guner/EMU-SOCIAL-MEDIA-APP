@@ -353,8 +353,9 @@ class RegistrationFormWithSteps {
     toggleStepButtonViews(currentStepNumber, stepsLength) {
         if (currentStepNumber == stepsLength + 1) {
             RegistrationFormUIEvent.hideBtn(this.nextBtn);
-            RegistrationFormUIEvent.hideBtn(this.submitBtn);
+            RegistrationFormUIEvent.showBtn(this.submitBtn);
         } else {
+            RegistrationFormUIEvent.hideBtn(this.submitBtn);
             if (currentStepNumber > 1)
                 RegistrationFormUIEvent.showBtn(this.backBtn);
             if (currentStepNumber <= stepsLength)

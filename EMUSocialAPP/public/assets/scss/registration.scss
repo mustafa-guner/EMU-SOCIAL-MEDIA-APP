@@ -1,38 +1,156 @@
 .container {
     max-width: 1200px;
     margin: 2rem auto;
+    .registration-header {
+        p.redirection {
+            font-size: 13px;
+            ion-icon {
+                color: var(--continue-btn-bg-blue) !important;
+            }
+            a {
+                font-weight: bold;
+                color: var(--continue-btn-bg-blue) !important;
+            }
+        }
+        hr {
+            margin: .3rem 0;
+            border: 1px solid rgba(217, 217, 217, 0.485);
+        }
+    }
     .registration-form {
-        .step {
-            display: none;
-            .step-image {}
-            .step-content {
-                .step-count {
-                    color: var(--light-text-gray-color);
-                    font-size: 15px;
+        margin-top: 2rem;
+        max-width: 1000px;
+        .steps {
+            display: flex;
+            flex-direction: columns;
+            align-items: center;
+            justify-content: center;
+            max-width: 1000px;
+            .step {
+                width: 100%;
+                display: none;
+                .step-image {
+                    margin-right: 1rem;
+                    width: 130px;
+                    display: flex;
+                    border-radius: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var( --steps-image-bg-gray);
+                    height: 100px;
+                    img {
+                        width: 90%;
+                        height: 90%;
+                        object-fit: cover;
+                        align-self: flex-start;
+                    }
                 }
-                .step-header {
-                    h2.step-title {}
-                    p.step-description {
+                .step-content {
+                    width: 100%;
+                    .step-count {
                         color: var(--light-text-gray-color);
                         font-size: 15px;
                     }
+                    .step-header {
+                        h2.step-title {
+                            color: var(----main-heading-black);
+                            font-size: 2.2rem;
+                        }
+                        p.step-description {
+                            color: var(--light-text-gray-color);
+                            font-size: 15px;
+                            margin: .2rem 0;
+                        }
+                    }
+                    .step-form {
+                        width: 100%;
+                        margin: 2rem 0;
+                        .step-row {
+                            margin: 1.5rem 0;
+                            display: grid;
+                            grid-gap: 30px;
+                            width: 100%;
+                            grid-template-columns: repeat(2, 1fr);
+                            .step-label {
+                                label,
+                                .label {
+                                    display: block;
+                                    font-weight: bold;
+                                    font-size: 15px;
+                                    margin: .2rem 0;
+                                }
+                                input,
+                                select {
+                                    width: 100%;
+                                    border: none !important;
+                                    outline: none !important;
+                                    padding: .8rem .7rem;
+                                    background-color: var(--input-bg-gray);
+                                }
+                                p.error-message {
+                                    color: var( --error-message-red);
+                                    font-size: 12px;
+                                    margin: .2rem 0;
+                                }
+                            }
+                        }
+                    }
                 }
             }
+            .step.show {
+                display: flex;
+                animation: fadeIn 0.2s;
+            }
         }
-        .step.show {
-            display: block;
-            animation: fadeIn 0.2s;
+        .action-buttons {
+            margin-top: 1rem;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            #back-btn {
+                background: none !important;
+                text-align: center;
+                color: var(--continue-btn-bg-blue);
+                font-weight: bold;
+                font-size: 13px;
+                width: 100px;
+                align-items: center;
+                cursor: pointer;
+                border: none;
+            }
+            .right-buttons {
+                display: flex;
+                margin-left: auto;
+                #next-btn {
+                    margin-right: .2rem;
+                    background-color: var(--continue-btn-bg-blue);
+                }
+                #submit-btn {
+                    background: var(--confirm-account-bg-green);
+                }
+                .steps-btns {
+                    border-radius: 90px;
+                    padding: .6rem 1rem;
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 15px;
+                    margin-left: auto;
+                    width: 200px;
+                    border: none !important;
+                }
+            }
+            #back-btn,
+            #next-btn,
+            .steps-btns {
+                display: none;
+            }
+            #back-btn.show,
+            #next-btn.show,
+            .steps-btns.show {
+                display: block;
+            }
         }
-    }
-    #back-btn,
-    #next-btn,
-    .steps-btns {
-        visibility: hidden;
-    }
-    #back-btn.show,
-    #next-btn.show,
-    .steps-btns.show {
-        visibility: visible;
     }
 }
 

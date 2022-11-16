@@ -18,11 +18,17 @@
 <body>
 
     <div class="container">
+        <div class="registration-header">
+            <p class="redirection">
+                <ion-icon name="sparkles"></ion-icon> Do you have already account? <a href="/login">Login now</a>
+            </p>
+            <hr>
+        </diV>
         <form id="registration-form" class="registration-form">
             <div class="steps">
                 <div id="step-1" class="personal-information-step step show">
                     <div class="step-image">
-                        <img src="">
+                        <img src={{ asset('assets/images/personalnformation.png') }}>
                     </div>
                     <div class="step-content">
                         <div class="step-count">
@@ -98,7 +104,7 @@
                 </div>
                 <div id="step-2" class="academic-information-step step">
                     <div class="step-image">
-                        <img src="">
+                        <img src={{ asset('assets/images/academicInformation.png') }}>
                     </div>
                     <div class="step-content">
                         <div class="step-count">
@@ -179,7 +185,7 @@
                 </div>
                 <div id="step-3" class="confirm-information-step step">
                     <div class="step-image">
-                        <img src="">
+                        <img src={{ asset('assets/images/confirmAccount.png') }}>
                     </div>
                     <div class="step-content">
                         <div class="step-count">
@@ -195,7 +201,9 @@
                 </div>
             </div>
             <div class="action-buttons">
-                <button id="back-btn" type="button" class="back-btn steps-btns">Back</button>
+                <button id="back-btn" type="button" class="back-btn steps-btns">
+                    <ion-icon name="arrow-back"></ion-icon> Back
+                </button>
                 <div class="right-buttons">
                     <button id="next-btn" type="button" class="next-btn steps-btns show">Continue</button>
                     <button type="submit" id="submit-btn" class="next-btn steps-btns ">Create your profile</button>
@@ -211,6 +219,10 @@
 <script src={{ asset('assets/js/LocalRepository.js') }}></script>
 {{-- Registration page actions script --}}
 <script src={{ asset('assets/js/Registration.js') }}></script>
+
+{{-- Ion icon CDN for icons --}}
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
 
