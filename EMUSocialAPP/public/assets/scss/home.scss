@@ -261,6 +261,7 @@ body{
             }
             //GRID MIDDLE
             .new-post-container{
+                margin-bottom: 2rem;
                 height: 210px;
                 width: 100%;
                 background-color: #FFFFFF;
@@ -333,6 +334,325 @@ body{
                     }
                 }
             }
+            .post-container{
+                margin-bottom: 2rem;
+                height: 300px;
+                width: 100%;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .top-part{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    position: relative;
+                    .edit-btn{
+                        width: 25px;
+                        cursor: pointer;
+                        font-size: x-large;
+                        border: none;
+                        background-color: #FFFFFF;
+                        position: absolute;
+                        top: 25px;
+                        right: 35px;
+                    }
+                }
+                .main-content{
+                    display: grid;
+                    margin-top: 2.5rem;
+                    grid-template-columns: 0.3fr 2fr 0.3fr;
+                    width: 100%;
+                    height: 160px;
+                    .post-profile-img{
+                        justify-self: center;
+                        margin-left: 1rem;
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 100%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .post-content{
+                        justify-self: flex-end;
+                        padding-top: 1rem;
+                        .name{
+                            color: black;
+                            font-size: x-large;
+                            text-decoration: none;
+                        }
+                        .description{
+                            font-size: large;
+                            padding-right: 1rem;
+                            line-height: 1.8rem;
+                            width: 100%;
+                            margin-top: 0.5rem;
+                        }
+                    }
+                    .post-time{
+                        height: 50px;
+                        padding-top: 1.2rem;
+                        justify-self: flex-end;
+                        margin-right: 2.3rem;
+                        color: rgba(0, 0, 0, 0.801);
+                    }
+                }
+                .likes-and-comments{
+                    margin-right: 2.8rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .likes{
+                        margin-right: 1rem;
+                    }
+                    h4{
+                        display: flex;
+                        align-items: center;
+                        color: rgba(0, 0, 0, 0.61);
+                        ion-icon{
+                            align-self: center;
+                            margin-right: 0.3rem;
+                            color: #F25370;
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        ion-icon{
+                            color: #4495ff;
+                        }
+                    }
+                }
+                .post-btns{
+                    margin-top: 1rem;
+                    hr{
+                        margin: auto;
+                        width: 93%;
+                    }
+                    .btns{
+                        margin-top: 0.2rem;
+                        display: flex;
+                        justify-content: center;
+                        .like-btn{
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover{
+                                background: #F25370;
+                                color: white;
+                            }   
+                            ion-icon{
+                                margin-right: 0.2rem;
+                                align-self: center;
+
+                            }
+                        }
+                        .comment-btn{
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover{
+                                background: #4495ff;
+                                color: white;
+                            }   
+                            ion-icon{
+                                margin-right: 0.2rem;
+                                align-self: center;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .club-post-container{
+                margin-bottom: 2rem;
+                height: 380px;
+                width: 100%;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .top-part{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    position: relative;
+                    .edit-btn{
+                        width: 25px;
+                        cursor: pointer;
+                        font-size: x-large;
+                        border: none;
+                        background-color: #FFFFFF;
+                        position: absolute;
+                        top: 25px;
+                        right: 35px;
+                    }
+                }
+                .club-post-profile{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    margin: 1rem 0 0.7rem 1.3rem;
+                    .club-post-profile-img{
+                        margin-left: 1rem;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 100%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .club-header{
+                        width: 100%;
+                        span{
+                            font-weight: 400;
+                        }
+                    }
+                }
+                hr{
+                    margin: auto;
+                    width: 93%;
+                }
+                .main-content{
+                    display: grid;
+                    margin-top: 0.5rem;
+                    grid-template-columns: 0.3fr 2fr 0.3fr;
+                    width: 100%;
+                    height: 160px;
+                    .post-profile-img{
+                        justify-self: center;
+                        margin: 0.3rem 0 0 2.5rem;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 100%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .post-content{
+                        justify-self: flex-end;
+                        padding-top: 1rem;
+                        .name{
+                            color: black;
+                            font-size: large;
+                            text-decoration: none;
+                        }
+                        .description{
+                            font-size: medium;
+                            padding-right: 1rem;
+                            line-height: 1.8rem;
+                            width: 100%;
+                            margin-top: 0.5rem;
+                        }
+                    }
+                    .post-time{
+                        height: 50px;
+                        padding-top: 1.2rem;
+                        justify-self: flex-end;
+                        margin-right: 2.3rem;
+                        color: rgba(0, 0, 0, 0.801);
+                    }
+                }
+                .likes-and-comments{
+                    margin-right: 2.8rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .likes{
+                        margin-right: 1rem;
+                    }
+                    h4{
+                        display: flex;
+                        align-items: center;
+                        color: rgba(0, 0, 0, 0.61);
+                        ion-icon{
+                            align-self: center;
+                            margin-right: 0.3rem;
+                            color: #F25370;
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        ion-icon{
+                            color: #4495ff;
+                        }
+                    }
+                }
+                .post-btns{
+                    margin-top: 1rem;
+                    hr{
+                        margin: auto;
+                        width: 93%;
+                    }
+                    .btns{
+                        margin-top: 0.2rem;
+                        display: flex;
+                        justify-content: center;
+                        .like-btn{
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover{
+                                background: #F25370;
+                                color: white;
+                            }   
+                            ion-icon{
+                                margin-right: 0.2rem;
+                                align-self: center;
+
+                            }
+                        }
+                        .comment-btn{
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover{
+                                background: #4495ff;
+                                color: white;
+                            }   
+                            ion-icon{
+                                margin-right: 0.2rem;
+                                align-self: center;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
             //GRID RIGHT
             .clubs-for-you-container{
                 width: 100%;

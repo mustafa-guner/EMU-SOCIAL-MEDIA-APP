@@ -374,6 +374,7 @@ body #main-section .main-container .connect-people-container .connect-person .co
 }
 
 body #main-section .main-container .new-post-container {
+  margin-bottom: 2rem;
   height: 210px;
   width: 100%;
   background-color: #FFFFFF;
@@ -488,6 +489,460 @@ body #main-section .main-container .new-post-container .new-post-buttons button:
   background: #FFFFFF;
   color: #2F55AC;
   border: 2px solid #2F55AC;
+}
+
+body #main-section .main-container .post-container {
+  margin-bottom: 2rem;
+  height: 300px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+body #main-section .main-container .post-container .top-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+body #main-section .main-container .post-container .top-part .edit-btn {
+  width: 25px;
+  cursor: pointer;
+  font-size: x-large;
+  border: none;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+}
+
+body #main-section .main-container .post-container .main-content {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 2.5rem;
+  -ms-grid-columns: 0.3fr 2fr 0.3fr;
+      grid-template-columns: 0.3fr 2fr 0.3fr;
+  width: 100%;
+  height: 160px;
+}
+
+body #main-section .main-container .post-container .main-content .post-profile-img {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-left: 1rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+body #main-section .main-container .post-container .main-content .post-profile-img img {
+  width: 100%;
+  height: 100%;
+}
+
+body #main-section .main-container .post-container .main-content .post-content {
+  justify-self: flex-end;
+  padding-top: 1rem;
+}
+
+body #main-section .main-container .post-container .main-content .post-content .name {
+  color: black;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+body #main-section .main-container .post-container .main-content .post-content .description {
+  font-size: large;
+  padding-right: 1rem;
+  line-height: 1.8rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+body #main-section .main-container .post-container .main-content .post-time {
+  height: 50px;
+  padding-top: 1.2rem;
+  justify-self: flex-end;
+  margin-right: 2.3rem;
+  color: rgba(0, 0, 0, 0.801);
+}
+
+body #main-section .main-container .post-container .likes-and-comments {
+  margin-right: 2.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-section .main-container .post-container .likes-and-comments .likes {
+  margin-right: 1rem;
+}
+
+body #main-section .main-container .post-container .likes-and-comments h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+body #main-section .main-container .post-container .likes-and-comments h4 ion-icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 0.3rem;
+  color: #F25370;
+}
+
+body #main-section .main-container .post-container .likes-and-comments a {
+  text-decoration: none;
+}
+
+body #main-section .main-container .post-container .likes-and-comments a ion-icon {
+  color: #4495ff;
+}
+
+body #main-section .main-container .post-container .post-btns {
+  margin-top: 1rem;
+}
+
+body #main-section .main-container .post-container .post-btns hr {
+  margin: auto;
+  width: 93%;
+}
+
+body #main-section .main-container .post-container .post-btns .btns {
+  margin-top: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #main-section .main-container .post-container .post-btns .btns .like-btn {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+body #main-section .main-container .post-container .post-btns .btns .like-btn:hover {
+  background: #F25370;
+  color: white;
+}
+
+body #main-section .main-container .post-container .post-btns .btns .like-btn ion-icon {
+  margin-right: 0.2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body #main-section .main-container .post-container .post-btns .btns .comment-btn {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+body #main-section .main-container .post-container .post-btns .btns .comment-btn:hover {
+  background: #4495ff;
+  color: white;
+}
+
+body #main-section .main-container .post-container .post-btns .btns .comment-btn ion-icon {
+  margin-right: 0.2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body #main-section .main-container .club-post-container {
+  margin-bottom: 2rem;
+  height: 380px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+body #main-section .main-container .club-post-container .top-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+body #main-section .main-container .club-post-container .top-part .edit-btn {
+  width: 25px;
+  cursor: pointer;
+  font-size: x-large;
+  border: none;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+}
+
+body #main-section .main-container .club-post-container .club-post-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 1rem 0 0.7rem 1.3rem;
+}
+
+body #main-section .main-container .club-post-container .club-post-profile .club-post-profile-img {
+  margin-left: 1rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+body #main-section .main-container .club-post-container .club-post-profile .club-post-profile-img img {
+  width: 100%;
+  height: 100%;
+}
+
+body #main-section .main-container .club-post-container .club-post-profile .club-header {
+  width: 100%;
+}
+
+body #main-section .main-container .club-post-container .club-post-profile .club-header span {
+  font-weight: 400;
+}
+
+body #main-section .main-container .club-post-container hr {
+  margin: auto;
+  width: 93%;
+}
+
+body #main-section .main-container .club-post-container .main-content {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 0.5rem;
+  -ms-grid-columns: 0.3fr 2fr 0.3fr;
+      grid-template-columns: 0.3fr 2fr 0.3fr;
+  width: 100%;
+  height: 160px;
+}
+
+body #main-section .main-container .club-post-container .main-content .post-profile-img {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 0.3rem 0 0 2.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+body #main-section .main-container .club-post-container .main-content .post-profile-img img {
+  width: 100%;
+  height: 100%;
+}
+
+body #main-section .main-container .club-post-container .main-content .post-content {
+  justify-self: flex-end;
+  padding-top: 1rem;
+}
+
+body #main-section .main-container .club-post-container .main-content .post-content .name {
+  color: black;
+  font-size: large;
+  text-decoration: none;
+}
+
+body #main-section .main-container .club-post-container .main-content .post-content .description {
+  font-size: medium;
+  padding-right: 1rem;
+  line-height: 1.8rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+body #main-section .main-container .club-post-container .main-content .post-time {
+  height: 50px;
+  padding-top: 1.2rem;
+  justify-self: flex-end;
+  margin-right: 2.3rem;
+  color: rgba(0, 0, 0, 0.801);
+}
+
+body #main-section .main-container .club-post-container .likes-and-comments {
+  margin-right: 2.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-section .main-container .club-post-container .likes-and-comments .likes {
+  margin-right: 1rem;
+}
+
+body #main-section .main-container .club-post-container .likes-and-comments h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+body #main-section .main-container .club-post-container .likes-and-comments h4 ion-icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 0.3rem;
+  color: #F25370;
+}
+
+body #main-section .main-container .club-post-container .likes-and-comments a {
+  text-decoration: none;
+}
+
+body #main-section .main-container .club-post-container .likes-and-comments a ion-icon {
+  color: #4495ff;
+}
+
+body #main-section .main-container .club-post-container .post-btns {
+  margin-top: 1rem;
+}
+
+body #main-section .main-container .club-post-container .post-btns hr {
+  margin: auto;
+  width: 93%;
+}
+
+body #main-section .main-container .club-post-container .post-btns .btns {
+  margin-top: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #main-section .main-container .club-post-container .post-btns .btns .like-btn {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+body #main-section .main-container .club-post-container .post-btns .btns .like-btn:hover {
+  background: #F25370;
+  color: white;
+}
+
+body #main-section .main-container .club-post-container .post-btns .btns .like-btn ion-icon {
+  margin-right: 0.2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body #main-section .main-container .club-post-container .post-btns .btns .comment-btn {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+body #main-section .main-container .club-post-container .post-btns .btns .comment-btn:hover {
+  background: #4495ff;
+  color: white;
+}
+
+body #main-section .main-container .club-post-container .post-btns .btns .comment-btn ion-icon {
+  margin-right: 0.2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 body #main-section .main-container .clubs-for-you-container {
