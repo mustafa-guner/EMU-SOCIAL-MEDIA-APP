@@ -27,10 +27,7 @@
 }
 
 .container .registration-form .steps {
-  display: flex;
-  flex-direction: columns;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: .3rem;
   max-width: 1000px;
 }
 
@@ -96,6 +93,45 @@
   font-weight: bold;
   font-size: 15px;
   margin: .2rem 0;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .options {
+  display: flex;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .options label {
+  background-color: var(--input-bg-gray);
+  margin-right: .5rem;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .options label .radio-logo {
+  width: 100%;
+  border-radius: 7px;
+  position: relative;
+  text-align: center;
+  padding: .3rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .options label .radio-logo input[type="radio"] {
+  appearance: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .options label .radio-logo img {
+  width: 90px;
+  height: 60px;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .options label .radio-logo p.radio-label-text {
+  font-size: 12px;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row .step-label .options label .radio-logo.checked {
+  border: 1px solid #333;
 }
 
 .container .registration-form .steps .step .step-content .step-form .step-row .step-label input,
@@ -181,6 +217,44 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Mobile Devices */
+/* Low resolution Tablets and iPads */
+@media (min-width: 381px) and (max-width: 767px) {
+  .container {
+    display: flex;
+    padding: .3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container form.registration-form .steps .step {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .container form.registration-form .steps .step .step-image {
+    margin: 0 auto;
+  }
+  .container form.registration-form .steps .step .step-content .step-count {
+    text-align: center;
+    margin: .6rem 0;
+  }
+  .container form.registration-form .steps .step .step-content .step-header {
+    text-align: center;
+    margin: .6rem 0;
+  }
+  .container form.registration-form .steps .step .step-content .step-form {
+    margin: 2rem 0;
+  }
+  .container form.registration-form .steps .step .step-content .step-form .step-row {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .container form.registration-form .steps .step .step-content .step-form .step-row .step-label input,
+  .container form.registration-form .steps .step .step-content .step-form .step-row label input {
+    margin: 0 auto;
+  }
+  .container form.registration-form .steps .step.show {
+    display: grid;
   }
 }
 /*# sourceMappingURL=registration.css.map */

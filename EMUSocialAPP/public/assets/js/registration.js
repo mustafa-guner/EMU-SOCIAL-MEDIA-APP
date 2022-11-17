@@ -10,7 +10,7 @@ const VALIDATIONS = {
             return inputs.map((currentInput) => {
                 //Condition checks
 
-                const isInputMissing = currentInput.input.value == "";
+                const isInputMissing = !currentInput.input || currentInput.input.value == "";
                 const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
                     currentInput.input.value
                 );
@@ -33,7 +33,7 @@ const VALIDATIONS = {
                 ) {
                     return (currentInput = {
                         ...currentInput,
-                        errorMessage: `${currentInput.label} field is required.`,
+                        errorMessage: `${currentInput.label} field is required*`,
                     });
                 }
 
@@ -41,7 +41,7 @@ const VALIDATIONS = {
                 if (isInputMissing) {
                     return {
                         ...currentInput,
-                        errorMessage: `${currentInput.label} field is required.`,
+                        errorMessage: `${currentInput.label} field is required*`,
                     };
                     //VALIDATION CHECK FOR INVALID EMAIL ADDRESSSES
                 } else if (!isInputMissing &&
@@ -50,14 +50,14 @@ const VALIDATIONS = {
                 ) {
                     return {
                         ...currentInput,
-                        errorMessage: "Email is not valid.",
+                        errorMessage: "Email is not valid*",
                     };
                 }
                 return currentInput;
             });
         },
         isInputType: (input, expectedInputType) => {
-            return input.type == expectedInputType;
+            return input && input.type == expectedInputType;
         },
         areRadioInputsChecked: (radioInputs) => {
             return radioInputs.some(
@@ -185,12 +185,46 @@ class RegistrationFormUIEvent {
     }
 
     static hideSteps(steps) {
-        return steps.forEach(({ selector }) =>
-            selector.classList.remove("show")
+        return steps.forEach(({ selector }) => {
+            selector.classList.remove("show");
+        });
+    }
+    static showStep(step) {
+        return step.classList.add("show");
+    }
+
+    static addStepCountNumberToStep(step) {
+        const { id, size, currentStepNumber } = step;
+        const stepCounter = document.querySelector(`#${id} .step-count`);
+        return (stepCounter.innerHTML = `Step ${currentStepNumber} of ${size}`);
+    }
+
+    static disableCheckedClassFromRadioInputs(otherInputs) {
+        return otherInputs.forEach((radioInput) =>
+            radioInput.parentElement.classList.remove("checked")
         );
     }
-    static showStep(selector) {
-        return selector.classList.add("show");
+
+    static addCheckedClassToRadioInput(radioInput) {
+        radioInput.parentElement.classList.add("checked");
+    }
+
+    static addActiveClassToRadioInputOnClick() {
+        const self = this;
+        document
+            .querySelectorAll('input[type="radio"]')
+            .forEach(function(input, idx, otherInputs) {
+                input.addEventListener("click", function() {
+                    self.disableCheckedClassFromRadioInputs(otherInputs);
+                    self.addCheckedClassToRadioInput(input);
+                });
+            });
+    }
+
+    static removeAllErrorMessages(errorClass) {
+        return document
+            .querySelectorAll(`.${errorClass}`)
+            .forEach((error) => error.remove());
     }
 }
 
@@ -253,17 +287,18 @@ class RegistrationFormWithSteps {
     handleRadioInputErrors(radioInput) {
         const input = radioInput.input[0];
         /*
-        EXAMPLE:
-        <div class='step-label'> (PARENT)
-            <label> (PARENT)
-                <div class=radio-logo> (PARENT)
-                    <input type=radio> (INPUT)
-                </div>
-            </label>
-            {ERROR GOES HERE AFTER THIS FUNCTION}
-        </div>
-         */
-        const parentElement = input.parentElement.parentElement.parentElement;
+            EXAMPLE:
+            <div class='step-label'> (PARENT)
+                <label> (PARENT)
+                    <div class=radio-logo> (PARENT)
+                        <input type=radio> (INPUT)
+                    </div>
+                </label>
+                {ERROR GOES HERE AFTER THIS FUNCTION}
+            </div>
+             */
+        const parentElement =
+            input.parentElement.parentElement.parentElement.parentElement;
         const lastChild =
             parentElement.children[parentElement.children.length - 1];
         const isErrorDiv = lastChild.classList.contains("error-message");
@@ -291,7 +326,7 @@ class RegistrationFormWithSteps {
             ) {
                 const parentElement =
                     invalidInput.input[0].parentElement.parentElement
-                    .parentElement;
+                    .parentElement.parentElement;
 
                 const lastChild =
                     parentElement.children[parentElement.children.length - 1];
@@ -339,10 +374,19 @@ class RegistrationFormWithSteps {
 
     switchStep() {
         const currentStep = this.FormSteps.getCurrentStep();
-        const { hideSteps, showStep } = RegistrationFormUIEvent;
+        const currentStepNumber = this.FormSteps.currentStepNumber;
+        const stepsSize = this.FormSteps.steps.length;
+        const { hideSteps, showStep, addStepCountNumberToStep } =
+        RegistrationFormUIEvent;
 
         hideSteps(this.FormSteps.steps);
         showStep(currentStep.selector);
+
+        addStepCountNumberToStep({
+            id: currentStep.selector.id,
+            size: stepsSize,
+            currentStepNumber: currentStepNumber,
+        });
 
         this.toggleStepButtonViews(
             this.FormSteps.currentStepNumber,
@@ -395,8 +439,13 @@ class RegistrationFormWithSteps {
                     if (
                         isCurrentInputRadioType(radioInput) &&
                         radioInput.value == data[input.label.toLowerCase()]
-                    )
+                    ) {
                         radioInput.checked = true;
+
+                        RegistrationFormUIEvent.addCheckedClassToRadioInput(
+                            radioInput
+                        );
+                    }
                 });
             }
 
@@ -459,14 +508,34 @@ class RegistrationFormWithSteps {
             const inputsToValidate = VALIDATIONS.Inputs.validateInputs(
                 currentStep.inputs
             );
+            console.log(inputsToValidate);
             this.toggleErrorMessages(inputsToValidate);
+        } else {
+            console.log(
+                "PROFILE CREATION REQUEST HAS BEEN SEND TO ADMINSTRATIVE"
+            );
+            //Remove all the error messages from registration form
+            RegistrationFormUIEvent.removeAllErrorMessages("error-message");
+
+            //Clear local storage before send the data to server side
+            this.FormSteps.steps.map((step) =>
+                LocalRepository.removeRepositoryByID(step.stepTitle)
+            );
         }
     }
 
     runOnLoad() {
         let [personalInformationFormData, ademicInformationFormData] =
         this.fetchFromLocalStorageOnLoad();
+        const currentStep = this.FormSteps.getCurrentStep();
+        const currentStepNumber = this.FormSteps.currentStepNumber;
+        const stepsSize = this.FormSteps.steps.length;
 
+        RegistrationFormUIEvent.addStepCountNumberToStep({
+            size: stepsSize,
+            currentStepNumber: currentStepNumber,
+            id: currentStep.selector.id,
+        });
         if (personalInformationFormData) {
             personalInformationFormData = {
                 ...personalInformationFormData,
@@ -497,6 +566,8 @@ class RegistrationFormWithSteps {
             "submit",
             this.createYourProfile.bind(this)
         );
+
+        RegistrationFormUIEvent.addActiveClassToRadioInputOnClick();
     }
 
     isSubscribedStepsAreValid(array) {
@@ -578,7 +649,9 @@ const STEPS = [{
         isLastStep: false,
         inputs: [{
                 label: "AcademicCareer",
-                input: document.querySelector("input[name='career']"),
+                input: Array.from(
+                    document.querySelectorAll("input[name='career']")
+                ),
             },
             {
                 label: "ProfileImage",
@@ -599,16 +672,14 @@ const STEPS = [{
             },
             {
                 label: "AcademicDegree",
-                input: Array.from(
-                    document.querySelectorAll("input[name='career']")
-                ),
+                input: document.querySelector("select[name='academic-degree']"),
             },
         ],
     },
 
     {
-        stepTitle: "confirmYourProfile",
-        selector: document.querySelector("#step-3"),
+        stepTitle: "lastStep",
+        selector: document.querySelector("#lastStep"),
         isLastStep: true,
     },
 ];

@@ -31,9 +31,7 @@
                         <img src={{ asset('assets/images/personalnformation.png') }}>
                     </div>
                     <div class="step-content">
-                        <div class="step-count">
-                            Step 1 of 3
-                        </div>
+                        <div class="step-count"></div>
                         <div class="step-header">
                             <h2 class="step-title">Personal Information</h2>
                             <p class="step-description">Enter your personal details to show them of an your profile</p>
@@ -81,35 +79,39 @@
                             <div class="step-row">
                                 <div class="step-label">
                                     <div class="label">Gender</div>
-                                    <label>
-                                        <div class="radio-logo">
-                                            <img src="">
-                                            <input type="radio" name="gender" value="female" id="female">
-                                            <p class="radio-label-text">Female</p>
-                                        </div>
+                                    <div class="options">
+                                        <label for="female">
+                                            <div class="radio-logo">
 
-                                    </label>
-                                    <label>
-                                        <div class="radio-logo ">
-                                            <img src="">
-                                            <input type="radio" name="gender" value="male" id="male">
-                                            <p class="radio-label-text">Male</p>
-                                        </div>
-                                    </label>
+                                                <img src={{ asset('assets/images/female.png') }} />
+                                                <input type="radio" name="gender" value="female" id="female">
+                                                <p class="radio-label-text">Female</p>
+                                            </div>
+
+                                        </label>
+                                        <label for="male">
+                                            <div class="radio-logo ">
+
+                                                <img src={{ asset('assets/images/male.png') }} />
+                                                <input type="radio" name="gender" value="male" id="male">
+                                                <p class="radio-label-text">Male</p>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
 
                             </div>
                         </div>
+
                     </div>
+
                 </div>
                 <div id="step-2" class="academic-information-step step">
                     <div class="step-image">
                         <img src={{ asset('assets/images/academicInformation.png') }}>
                     </div>
                     <div class="step-content">
-                        <div class="step-count">
-                            Step 2 of 3
-                        </div>
+                        <div class="step-count"></div>
                         <div class="step-header">
                             <h2 class="step-title">Academic Information</h2>
                             <p class="step-description">Enter your academic details to show them of an your profile</p>
@@ -118,52 +120,42 @@
                             <div class="step-row">
                                 <div class="step-label">
                                     <div class="label">Academic Career</div>
-                                    <label for="student">
-                                        <div class="radio-logo">
-                                            <img src="">
-                                            <input type="radio" name="career" value="student" id="student">
-                                            <p class="radio-label-text">I'm student</p>
-                                        </div>
-                                    </label>
-                                    <label for="male">
-                                        <div class="radio-logo ">
-                                            <img src="">
-                                            <input type="radio" name="career" value="staff" id="staff">
-                                            <p class="radio-label-text">I'm staff</p>
-                                        </div>
-                                    </label>
+                                    <div class="options">
+                                        <label for="student">
+                                            <div class="radio-logo">
+
+                                                <img src={{ asset('assets/images/student.png') }} />
+                                                <input type="radio" name="career" value="student" id="student">
+                                                <p class="radio-label-text">I'm student</p>
+                                            </div>
+                                        </label>
+                                        <label for="staff">
+                                            <div class="radio-logo ">
+                                                <img src={{ asset('assets/images/staff.png') }} />
+                                                <input type="radio" name="career" value="staff" id="staff">
+                                                <p class="radio-label-text">I'm staff</p>
+                                            </div>
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="step-label">
                                     <div class="label">Profile Image</div>
                                     <div class="preview-image">
-                                        <label for="profile-image">
+                                        <div class="uploaded-image">
+
+                                        </div>
+                                        <div>
                                             <input type="file" id="profile-image" name="profile-image">
-                                        </label>
+                                        </div>
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-label">
-                                    <label>Academic Status</label>
-                                    <select id="academic-status" name="academic-status" data-selected="notGraduated"
-                                        class="step-input">
-                                        <option value="notGraduated">I am not graduated yet</option>
-                                        <option value="graduated">I am already graduated</option>
-                                    </select>
-
-                                </div>
-
-
-                                <div class="step-label">
-                                    <label>Estimated Graduation</label>
-                                    <input type="date" name="graduate-date" id="graduate-date">
-
-                                </div>
-
 
                             </div>
-                            <div class="step-row">
+
+
+                            <div id="student-status" class="step-row">
                                 <div class="step-label">
                                     <label for="student-number">Student Number</label>
                                     <input id="student-number" name="student-number" type="number"
@@ -178,19 +170,56 @@
                                     </select>
 
                                 </div>
+                                <div class="step-label">
+                                    <label>Academic Status</label>
+                                    <select id="academic-status" name="academic-status" data-selected="notGraduated"
+                                        class="step-input">
+                                        <option value="notGraduated">I am not graduated yet</option>
+                                        <option value="graduated">I am already graduated</option>
+                                    </select>
+
+                                </div>
+                                <div class="step-label">
+                                    <label>Graduation Date</label>
+                                    <input type="date" name="graduate-date" id="graduate-date">
+                                </div>
                             </div>
+
+
+                            <div id="academic-status" class="step-row">
+                                <div class="step-label">
+                                    <label>Staff Type</label>
+                                    <select id="staff-type" name="staff-type" data-selected="instructor"
+                                        class="step-input">
+                                        <option value="instructor">Instructor</option>
+                                        <option value="servant">Faculty Servant</option>
+                                    </select>
+                                </div>
+                                <div class="step-label">
+                                    <label>Academic Status</label>
+                                    <select id="academic-status" name="academic-status" data-selected="notGraduated"
+                                        class="step-input">
+                                        <option value="notRetired">I am not retired yet</option>
+                                        <option value="retired">I am already retired</option>
+                                    </select>
+                                </div>
+                                <div class="step-label">
+                                    <label>Retirement Date</label>
+                                    <input type="date" name="graduate-date" id="graduate-date">
+                                </div>
+                            </div>
+
+
 
                         </div>
                     </div>
                 </div>
-                <div id="step-3" class="confirm-information-step step">
+                <div id="lastStep" class="confirm-information-step step">
                     <div class="step-image">
                         <img src={{ asset('assets/images/confirmAccount.png') }}>
                     </div>
                     <div class="step-content">
-                        <div class="step-count">
-                            Step 3 of 3
-                        </div>
+                        <div class="step-count"></div>
                         <div class="step-header">
                             <h2 class="step-title">Create your profile</h2>
                             <p class="step-description">Enter your personal details to show them of an your profile</p>
