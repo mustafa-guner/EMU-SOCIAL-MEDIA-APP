@@ -209,6 +209,10 @@ body #main-section .main-container .profile-container .profile-img {
   left: 125px;
 }
 
+body #main-section .main-container .profile-container .profile-img a {
+  text-decoration: none;
+}
+
 body #main-section .main-container .profile-container .profile-img img {
   width: 100%;
   height: 100%;
@@ -220,8 +224,12 @@ body #main-section .main-container .profile-container .name-container {
   margin: 1.5rem auto 3rem auto;
 }
 
+body #main-section .main-container .profile-container .name-container a {
+  text-decoration: none;
+}
+
 body #main-section .main-container .profile-container .name-container .name {
-  color: #012246;
+  color: black;
   font-size: x-large;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -327,6 +335,10 @@ body #main-section .main-container .connect-people-container .connect-person {
           align-items: center;
 }
 
+body #main-section .main-container .connect-people-container .connect-person a {
+  text-decoration: none;
+}
+
 body #main-section .main-container .connect-people-container .connect-person .profile-img {
   margin: 0 0.4rem;
   -ms-grid-column-align: center;
@@ -346,8 +358,12 @@ body #main-section .main-container .connect-people-container .connect-person .na
 }
 
 body #main-section .main-container .connect-people-container .connect-person .name-container-people .name {
-  color: #012246;
   font-size: large;
+}
+
+body #main-section .main-container .connect-people-container .connect-person .name-container-people .name a {
+  text-decoration: none;
+  color: black;
 }
 
 body #main-section .main-container .connect-people-container .connect-person .name-container-people .username {
@@ -473,22 +489,19 @@ body #main-section .main-container .new-post-container .new-post-buttons button 
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: x-large;
-  width: 45px;
-  height: 45px;
-  background: #2F55AC;
-  color: #FFFFFF;
-  padding: 0.5rem;
+  font-size: xx-large;
+  width: 50px;
+  height: 50px;
+  background: #FFFFFF;
+  color: #2F55AC;
   border: none;
-  border-radius: 12px;
-  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 body #main-section .main-container .new-post-container .new-post-buttons button:hover {
   font-weight: bold;
   background: #FFFFFF;
-  color: #2F55AC;
-  border: 2px solid #2F55AC;
+  color: #4495ff;
 }
 
 body #main-section .main-container .post-container {
@@ -765,6 +778,11 @@ body #main-section .main-container .club-post-container .club-post-profile .club
   font-weight: 400;
 }
 
+body #main-section .main-container .club-post-container .club-post-profile .club-header a {
+  color: black;
+  text-decoration: none;
+}
+
 body #main-section .main-container .club-post-container hr {
   margin: auto;
   width: 93%;
@@ -1007,6 +1025,11 @@ body #main-section .main-container .clubs-for-you-container .public-clubs-contai
 
 body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club {
   padding: 0.5rem 0.3rem;
+}
+
+body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club a, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club a {
+  text-decoration: none;
+  color: black;
 }
 
 body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club .name, body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club .name {

@@ -39,12 +39,16 @@
                     <div class="profile-bg-img">
                         <img src="{{asset('assets/images/home-profile-bg.jpg')}}" alt="bg-image">
                     </div>
-                    <div class="profile-img">
-                        <img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-img">
-                    </div>
+                    <a href="">
+                        <div class="profile-img">
+                            <img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-img">
+                        </div>
+                    </a>
                     <div class="name-container">
-                        <h4 class="name">Jane Doe</h4>
-                        <p class="username">@jane.doe</p>
+                        <a href="">
+                            <h4 class="name">Jane Doe</h4>
+                            <p class="username">@jane.doe</p>
+                        </a>
                     </div>
                     <div class="content-container">
                         <div class="content">
@@ -60,51 +64,61 @@
                 <div class="connect-people-container">
                     <div class="header-people"><h3>Who is to connect with?</h3></div>
                     <div class="connect-person">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-img">
-                        </div>
+                        <a href="">
+                            <div class="profile-img">
+                                <img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-img">
+                            </div>
+                        </a>
                         <div class="name-container-people">
-                            <h4 class="name">John Doe</h4>
+                            <h4 class="name"><a href="">John Doe</a></h4>
                             <p class="username">@john.doe</p>
                         </div>
                         <button type="button" class="connet-btn">Connect</button>
                     </div>
                     <div class="connect-person">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-3.png')}}" alt="profile-img">
-                        </div>
+                        <a href="">
+                            <div class="profile-img">
+                                <img src="{{asset('assets/images/profile-images/profile-img-3.png')}}" alt="profile-img">
+                            </div>
+                        </a>
                         <div class="name-container-people">
-                            <h4 class="name">Jane Doe</h4>
+                            <h4 class="name"><a href="">Jane Doe</a></h4>
                             <p class="username">@jane.doe</p>
                         </div>
                         <button type="button" class="connet-btn">Connect</button>
                     </div>
                     <div class="connect-person">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile-img">
-                        </div>
+                        <a href="">
+                            <div class="profile-img">
+                                <img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile-img">
+                            </div>
+                        </a>
                         <div class="name-container-people">
-                            <h4 class="name">John Doe</h4>
+                            <h4 class="name"><a href="">John Doe</a></h4>
                             <p class="username">@john.doe</p>
                         </div>
                         <button type="button" class="connet-btn">Connect</button>
                     </div>
                     <div class="connect-person">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-5.png')}}" alt="profile-img">
-                        </div>
+                        <a href="">
+                            <div class="profile-img">
+                                <img src="{{asset('assets/images/profile-images/profile-img-5.png')}}" alt="profile-img">
+                            </div>
+                        </a>
                         <div class="name-container-people">
-                            <h4 class="name">John Doe</h4>
+                            <h4 class="name"><a href="">John Doe</a></h4>
                             <p class="username">@john.doe</p>
                         </div>
                         <button type="button" class="connet-btn">Connect</button>
                     </div>
                     <div class="connect-person">
-                        <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-6.png')}}" alt="profile-img">
-                        </div>
+                        <a href="">
+                            <div class="profile-img">
+                                <img src="{{asset('assets/images/profile-images/profile-img-6.png')}}" alt="profile-img">
+                            </div>
+                        </a>
                         <div class="name-container-people">
-                            <h4 class="name">Jane Doe</h4>
+                            <h4 class="name"><a href="">Jane Doe</a></h4>
                             <p class="username">@jane.doe</p>
                         </div>
                         <button type="button" class="connet-btn">Connect</button>
@@ -133,7 +147,9 @@
                     </div>
                     <div class="main-content">
                         <div class="post-profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-3.png')}}" alt="profile-img">
+                            <a href="">
+                                <img src="{{asset('assets/images/profile-images/profile-img-3.png')}}" alt="profile-img">
+                            </a>
                         </div>
                         <div class="post-content">
                             <a href="" class="name"><h4>Jane Doe</h4></a>
@@ -161,16 +177,22 @@
                     </div>
                     <div class="club-post-profile">
                         <div class="club-post-profile-img">
-                            <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                            <a href="">
+                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                            </a>
                         </div>
                         <div class="club-header">
-                            <h2><span>From</span> Sports Club</h2>
+                            <a href="">
+                                <h2><span>From</span> Sports Club</h2>
+                            </a>
                         </div>
                     </div>
                     <hr>
                     <div class="main-content">
                         <div class="post-profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-img">
+                            <a href="">
+                                <img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-img">
+                            </a>
                         </div>
                         <div class="post-content">
                             <a href="" class="name"><h4>John Doe</h4></a>
@@ -204,30 +226,36 @@
                         <div class="public-clubs-header"><h2>Public Clubs</h2></div>
                         <div class="join-club">
                             <div class="club-img">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <a href="">
+                                    <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                </a>
                             </div>
                             <div class="name-container-club">
-                                <h4 class="name">Sports Club</h4>
+                                <h4 class="name"><a href="">Sports Club</a></h4>
                                 <p class="members">143 Members</p>
                             </div>
                             <button type="button" class="join-now-btn">Join Now</button>
                         </div>
                         <div class="join-club">
                             <div class="club-img">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <a href="">
+                                    <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                </a>
                             </div>
                             <div class="name-container-club">
-                                <h4 class="name">Sports Club</h4>
+                                <h4 class="name"><a href="">Sports Club</a></h4>
                                 <p class="members">143 Members</p>
                             </div>
                             <button type="button" class="join-now-btn">Join Now</button>
                         </div>
                         <div class="join-club">
                             <div class="club-img">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <a href="">
+                                    <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                </a>
                             </div>
                             <div class="name-container-club">
-                                <h4 class="name">Sports Club</h4>
+                                <h4 class="name"><a href="">Sports Club</a></h4>
                                 <p class="members">143 Members</p>
                             </div>
                             <button type="button" class="join-now-btn">Join Now</button>
@@ -238,30 +266,36 @@
                         <div class="private-clubs-header"><h2>Private Clubs</h2></div>
                         <div class="join-club">
                             <div class="club-img">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <a href="">
+                                    <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                </a>
                             </div>
                             <div class="name-container-club">
-                                <h4 class="name">Sports Club</h4>
+                                <h4 class="name"><a href="">Sports Club</a></h4>
                                 <p class="members">143 Members</p>
                             </div>
                             <button type="button" class="join-now-btn">Join Now</button>
                         </div>
                         <div class="join-club">
                             <div class="club-img">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <a href="">
+                                    <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                </a>
                             </div>
                             <div class="name-container-club">
-                                <h4 class="name">Sports Club</h4>
+                                <h4 class="name"><a href="">Sports Club</a></h4>
                                 <p class="members">143 Members</p>
                             </div>
                             <button type="button" class="join-now-btn">Join Now</button>
                         </div>
                         <div class="join-club">
                             <div class="club-img">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <a href="">
+                                    <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                </a>
                             </div>
                             <div class="name-container-club">
-                                <h4 class="name">Sports Club</h4>
+                                <h4 class="name"><a href="">Sports Club</a></h4>
                                 <p class="members">143 Members</p>
                             </div>
                             <button type="button" class="join-now-btn">Join Now</button>
