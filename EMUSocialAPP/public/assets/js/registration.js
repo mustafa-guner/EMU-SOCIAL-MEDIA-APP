@@ -14,9 +14,10 @@ const VALIDATIONS = {
                 const isEmailValid = VALIDATIONS.Inputs.isEmailValid(
                     currentInput.input.value
                 );
+
                 const isCurrentInputEmail =
                     currentInput.label.toLowerCase() == "email" ||
-                    VALIDATIONS.Inputs.isInputType(currentInput, "email");
+                    VALIDATIONS.Inputs.isInputType(currentInput.input, "email");
 
                 const isCurrentInputRadioInput =
                     VALIDATIONS.Array.isArray(currentInput.input) &&
@@ -109,8 +110,17 @@ const VALIDATIONS = {
             );
         },
 
-        isSchoolEmail: () => {
-            return;
+        isFileValid: (currentInput) => {
+            if (currentInput.input.files[0]) {
+                const VALID_FILE_EXTENSIONS = ["png", "jpg", "jpeg", "jfif"];
+
+                const isFilenameValid =
+                    VALID_FILE_EXTENSIONS.indexOf(
+                        currentInput.input.files[0].name.split(".").pop()
+                    ) > -1;
+                return isFilenameValid;
+            }
+            return false;
         },
     },
 };
@@ -131,7 +141,9 @@ class FormSteps {
     getCurrentStepTitle() {
         return this.currentStep.stepTitle;
     }
-
+    setCurrentStep(updatedStep) {
+        return (this.currentStep = updatedStep);
+    }
     setCurrentStepByTitle(stepTitle) {
         const currentStep = this.getInputsByStepTitle(stepTitle);
         const currentStepNumber = this.getStepNumberByTitle(stepTitle);
@@ -212,7 +224,16 @@ class RegistrationFormUIEvent {
     static addActiveClassToRadioInputOnClick() {
         const self = this;
         document
-            .querySelectorAll('input[type="radio"]')
+            .querySelectorAll('input[name="gender"]')
+            .forEach(function(input, idx, otherInputs) {
+                input.addEventListener("click", function() {
+                    self.disableCheckedClassFromRadioInputs(otherInputs);
+                    self.addCheckedClassToRadioInput(input);
+                });
+            });
+
+        document
+            .querySelectorAll('input[name="career"]')
             .forEach(function(input, idx, otherInputs) {
                 input.addEventListener("click", function() {
                     self.disableCheckedClassFromRadioInputs(otherInputs);
@@ -242,12 +263,27 @@ class RegistrationFormWithSteps {
     /* BASIC COMMANDS OF THE REGISTRATION F ORM */
 
     goNext() {
-        const currentStepInputs = this.FormSteps.getCurrentStep().inputs;
+        const currentStep = this.FormSteps.getCurrentStep();
         const currentStepTitle = this.FormSteps.getCurrentStepTitle();
+
+        const { stepTitle, inputs } = currentStep;
+
+        let associatedInputs = inputs;
+
+        if (stepTitle === "academicInformation") {
+            const selectedUserType = currentStep.userType.find(
+                (type) => type.selected === true
+            );
+
+            associatedInputs = [
+                ...inputs,
+                ...selectedUserType.assoicatedInputs,
+            ];
+        }
 
         //validate all the inputs
         const inputsToValidate =
-            VALIDATIONS.Inputs.validateInputs(currentStepInputs);
+            VALIDATIONS.Inputs.validateInputs(associatedInputs);
 
         const isThereAnyError = !VALIDATIONS.Inputs.areInputsValid(inputsToValidate);
 
@@ -419,8 +455,8 @@ class RegistrationFormWithSteps {
         return [{...personalInformation }, {...academicInformation }];
     }
 
-    loadDataIntoInputs(associatedStep, data) {
-        return associatedStep.inputs.map((input) => {
+    loadData(inputs, data) {
+        return inputs.map((input) => {
             const isCurrentInputFile = VALIDATIONS.Inputs.isInputType(
                 input.input,
                 "file"
@@ -453,6 +489,44 @@ class RegistrationFormWithSteps {
         });
     }
 
+    loadDataIntoInputs(associatedStep, data) {
+        if (data.academiccareer === "staff") {
+            const staffInputs = document.querySelector("#staff-status");
+            const studentInputs = document.querySelector("#student-status");
+
+            const assoicatedUserType = associatedStep.userType.find((type) => {
+                return type.type === "staff";
+            });
+
+            if (!staffInputs.classList.contains("activated")) {
+                staffInputs.classList.add("activated");
+                studentInputs.classList.remove("activated");
+            }
+
+            return this.loadData(
+                [
+                    ...associatedStep.inputs,
+                    ...assoicatedUserType.assoicatedInputs,
+                ],
+                data
+            );
+        }
+        if (data.academiccareer === "student") {
+            const assoicatedUserType = associatedStep.userType.find(
+                (userType) => userType.type == data.academiccareer
+            );
+
+            return this.loadData(
+                [
+                    ...associatedStep.inputs,
+                    ...assoicatedUserType.assoicatedInputs,
+                ],
+                data
+            );
+        }
+        return this.loadData(associatedStep.inputs, data);
+    }
+
     loadFormDataIntoInput(data) {
         switch (data.type) {
             case "personalInformation":
@@ -463,6 +537,7 @@ class RegistrationFormWithSteps {
             case "academicInformation":
                 const academicInformationStep =
                     this.FormSteps.getInputsByStepTitle(data.type);
+
                 this.loadDataIntoInputs(academicInformationStep, data);
                 break;
         }
@@ -508,7 +583,7 @@ class RegistrationFormWithSteps {
             const inputsToValidate = VALIDATIONS.Inputs.validateInputs(
                 currentStep.inputs
             );
-            console.log(inputsToValidate);
+
             this.toggleErrorMessages(inputsToValidate);
         } else {
             console.log(
@@ -536,20 +611,80 @@ class RegistrationFormWithSteps {
             currentStepNumber: currentStepNumber,
             id: currentStep.selector.id,
         });
-        if (personalInformationFormData) {
+
+        const isThereAnyPersonalInformationFormData =
+            Object.keys(personalInformationFormData).length > 0;
+        const isThereAnyAcademicInformationFormData =
+            Object.keys(ademicInformationFormData).length > 0;
+
+        if (isThereAnyPersonalInformationFormData) {
             personalInformationFormData = {
                 ...personalInformationFormData,
                 type: "personalInformation",
             };
             this.loadFormDataIntoInput(personalInformationFormData);
         }
-        if (ademicInformationFormData) {
+
+        if (isThereAnyAcademicInformationFormData) {
             ademicInformationFormData = {
                 ...ademicInformationFormData,
                 type: "academicInformation",
             };
             this.loadFormDataIntoInput(ademicInformationFormData);
+        } else {
+            const studentInput = document.querySelector("#student");
+            RegistrationFormUIEvent.addCheckedClassToRadioInput(studentInput);
+            studentInput.checked = true;
         }
+    }
+
+    selectUserTypeOnClick(input) {
+        const self = this;
+        input.addEventListener("click", function(e) {
+            let currentStep = self.FormSteps.getCurrentStep();
+            const staffInputs = document.querySelector("#staff-status");
+            const studentInputs = document.querySelector("#student-status");
+            if (input.id == "staff") {
+                const updatedUserType = currentStep.userType.map((type) => {
+                    if (type.type == "staff")
+                        return (type = {...type, selected: true });
+                    if (type.type === "student")
+                        return (type = {...type, selected: false });
+                });
+
+                if (!staffInputs.classList.contains("activated")) {
+                    staffInputs.classList.add("activated");
+                    studentInputs.classList.remove("activated");
+                    document
+                        .querySelectorAll(".error-message")
+                        .forEach((error) => error.remove());
+                }
+                currentStep.userType = [...updatedUserType];
+                self.FormSteps.setCurrentStep(currentStep);
+            } else if (input.id === "student") {
+                const updatedUserType = currentStep.userType.map((type) => {
+                    if (type.type == "student")
+                        return (type = {...type, selected: true });
+                    if (type.type === "staff")
+                        return (type = {...type, selected: false });
+                });
+
+                if (!studentInputs.classList.contains("activated")) {
+                    studentInputs.classList.add("activated");
+                    staffInputs.classList.remove("activated");
+                    document
+                        .querySelectorAll(".error-message")
+                        .forEach((error) => error.remove());
+                }
+                currentStep.userType = [...updatedUserType];
+                self.FormSteps.setCurrentStep(currentStep);
+            }
+        });
+    }
+
+    toggleUserType() {
+        const userTypes = document.querySelectorAll("input[name='career']");
+        userTypes.forEach(this.selectUserTypeOnClick.bind(this));
     }
 
     /* START COMMANDS OF THE REGISTRATION FORM */
@@ -566,7 +701,7 @@ class RegistrationFormWithSteps {
             "submit",
             this.createYourProfile.bind(this)
         );
-
+        this.toggleUserType();
         RegistrationFormUIEvent.addActiveClassToRadioInputOnClick();
     }
 
@@ -647,6 +782,61 @@ const STEPS = [{
         stepTitle: "academicInformation",
         selector: document.querySelector("#step-2"),
         isLastStep: false,
+        userType: [{
+                selected: false,
+                type: "staff",
+                assoicatedInputs: [{
+                        label: "AcademicStatus",
+                        input: document.querySelector(
+                            "select[name='staff-status']"
+                        ),
+                    },
+                    {
+                        label: "RetirementDate",
+                        input: document.querySelector(
+                            "input[name='retirement-date']"
+                        ),
+                    },
+
+                    {
+                        label: "StaffType",
+                        input: document.querySelector(
+                            "select[name='staff-type']"
+                        ),
+                    },
+                ],
+            },
+            {
+                selected: true,
+                type: "student",
+                assoicatedInputs: [{
+                        label: "AcademicStatus",
+                        input: document.querySelector(
+                            "select[name='student-status']"
+                        ),
+                    },
+                    {
+                        label: "GraduationDate",
+                        input: document.querySelector(
+                            "input[name='graduate-date']"
+                        ),
+                    },
+
+                    {
+                        label: "StudentNumber",
+                        input: document.querySelector(
+                            "input[name='student-number']"
+                        ),
+                    },
+                    {
+                        label: "AcademicDegree",
+                        input: document.querySelector(
+                            "select[name='academic-degree']"
+                        ),
+                    },
+                ],
+            },
+        ],
         inputs: [{
                 label: "AcademicCareer",
                 input: Array.from(
@@ -656,23 +846,6 @@ const STEPS = [{
             {
                 label: "ProfileImage",
                 input: document.querySelector("input[name='profile-image']"),
-            },
-            {
-                label: "AcademicStatus",
-                input: document.querySelector("select[name='academic-status']"),
-            },
-            {
-                label: "GraduationDate",
-                input: document.querySelector("input[name='graduate-date']"),
-            },
-
-            {
-                label: "StudentNumber",
-                input: document.querySelector("input[name='student-number']"),
-            },
-            {
-                label: "AcademicDegree",
-                input: document.querySelector("select[name='academic-degree']"),
             },
         ],
     },

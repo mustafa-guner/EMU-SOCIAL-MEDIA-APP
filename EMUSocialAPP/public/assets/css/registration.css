@@ -149,6 +149,14 @@
   margin: .2rem 0;
 }
 
+.container .registration-form .steps .step .step-content .step-form .step-row.academic-information-status {
+  display: none;
+}
+
+.container .registration-form .steps .step .step-content .step-form .step-row.academic-information-status.activated {
+  display: grid !important;
+}
+
 .container .registration-form .steps .step.show {
   display: flex;
   animation: fadeIn 0.2s;

@@ -122,7 +122,7 @@
                                     <div class="label">Academic Career</div>
                                     <div class="options">
                                         <label for="student">
-                                            <div class="radio-logo">
+                                            <div class="radio-logo ">
 
                                                 <img src={{ asset('assets/images/student.png') }} />
                                                 <input type="radio" name="career" value="student" id="student">
@@ -155,7 +155,7 @@
                             </div>
 
 
-                            <div id="student-status" class="step-row">
+                            <div id="student-status" class="step-row academic-information-status activated">
                                 <div class="step-label">
                                     <label for="student-number">Student Number</label>
                                     <input id="student-number" name="student-number" type="number"
@@ -172,7 +172,7 @@
                                 </div>
                                 <div class="step-label">
                                     <label>Academic Status</label>
-                                    <select id="academic-status" name="academic-status" data-selected="notGraduated"
+                                    <select id="student-status" name="student-status" data-selected="notGraduated"
                                         class="step-input">
                                         <option value="notGraduated">I am not graduated yet</option>
                                         <option value="graduated">I am already graduated</option>
@@ -186,7 +186,7 @@
                             </div>
 
 
-                            <div id="academic-status" class="step-row">
+                            <div id="staff-status" class="step-row academic-information-status ">
                                 <div class="step-label">
                                     <label>Staff Type</label>
                                     <select id="staff-type" name="staff-type" data-selected="instructor"
@@ -197,7 +197,7 @@
                                 </div>
                                 <div class="step-label">
                                     <label>Academic Status</label>
-                                    <select id="academic-status" name="academic-status" data-selected="notGraduated"
+                                    <select id="staff-status" name="staff-status" data-selected="notRetired"
                                         class="step-input">
                                         <option value="notRetired">I am not retired yet</option>
                                         <option value="retired">I am already retired</option>
@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="step-label">
                                     <label>Retirement Date</label>
-                                    <input type="date" name="graduate-date" id="graduate-date">
+                                    <input type="date" name="retirement-date" id="retirement-date">
                                 </div>
                             </div>
 
