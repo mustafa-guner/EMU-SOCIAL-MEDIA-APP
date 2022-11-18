@@ -2,7 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -14,27 +15,39 @@ body .container {
   height: 100vh;
   max-width: 1200px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .container .form-container {
   background-color: white;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   border-radius: 20px;
   width: 400px;
   height: 650px;
 }
 
 body .container .form-container .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 body .container .form-container .top .logo {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   border-radius: 100%;
   position: absolute;
   top: -70px;
@@ -74,6 +87,18 @@ body .container .form-container .login-form form #stdno-input, body .container .
   outline: 0;
 }
 
+body .container .form-container .login-form form #stdno-input::-webkit-input-placeholder, body .container .form-container .login-form form #passwrd-input::-webkit-input-placeholder {
+  color: #B1B1B3;
+}
+
+body .container .form-container .login-form form #stdno-input:-ms-input-placeholder, body .container .form-container .login-form form #passwrd-input:-ms-input-placeholder {
+  color: #B1B1B3;
+}
+
+body .container .form-container .login-form form #stdno-input::-ms-input-placeholder, body .container .form-container .login-form form #passwrd-input::-ms-input-placeholder {
+  color: #B1B1B3;
+}
+
 body .container .form-container .login-form form #stdno-input::placeholder, body .container .form-container .login-form form #passwrd-input::placeholder {
   color: #B1B1B3;
 }
@@ -86,9 +111,15 @@ body .container .form-container .login-form form .error-message {
 
 body .container .form-container .login-form form .remember-me-check {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 0.3rem;
   margin-bottom: 0.5rem;
 }
@@ -116,9 +147,15 @@ body .container .form-container .login-form form .questions .register {
 
 body .container .form-container .login-form form .recaptcha {
   margin: 1.8rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 70px;
   border-radius: 8px;
