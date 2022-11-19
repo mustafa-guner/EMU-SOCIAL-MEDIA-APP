@@ -21,10 +21,6 @@ Route::get('/login', function () {
     return view('auth/login');
 });
 
-Route::get("/registration",function () {
-    return View("registration/registration");
-
-});
 Route::get('/forgot-password', function () {
     return view('auth/login-forgot-password');
 });
@@ -33,6 +29,15 @@ Route::get('/create-new-password', function () {
     return view('auth/login-create-new-password');
 });
 
+Route::get("/registration",function () {
+    return View("registration/registration");
+
+});
+
 Route::get('/home', function () {
     return view('app/homepage');
+});
+
+Route::get('/search', function () {
+    return view('app/search');
 });

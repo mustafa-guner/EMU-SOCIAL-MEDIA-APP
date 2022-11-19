@@ -101,7 +101,7 @@ body nav .container .nav-left input::placeholder {
 }
 
 body nav .container .nav-logo {
-  font-family: 'Caveat', cursive;
+  font-family: 'Caveat', cursive !important;
   -ms-grid-column-align: center;
       justify-self: center;
   font-size: 36px;
