@@ -31,7 +31,6 @@ Route::get('/create-new-password', function () {
 
 Route::get("/registration",function () {
     return View("registration/registration");
-
 });
 
 Route::get('/home', function () {
@@ -40,4 +39,8 @@ Route::get('/home', function () {
 
 Route::get('/search', function () {
     return view('app/search');
+});
+
+Route::get('/profile', function () {
+    return view('app/profilepage');
 });
