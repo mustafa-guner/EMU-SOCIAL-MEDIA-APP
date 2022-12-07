@@ -12,5 +12,7 @@ public class User
     public string profileImage { get; set; } = null!;
     public string password { get; set; } = null!;
     public string role { get; set; } = null!;
+    public string? resetPasswordToken { get; set; }
+    public string? resetPasswordExpiry { get; set; }
     public string isActive { get; set; } = "notActive";
 }
