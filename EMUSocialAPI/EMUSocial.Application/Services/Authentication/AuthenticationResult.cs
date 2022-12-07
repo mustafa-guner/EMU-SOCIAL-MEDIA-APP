@@ -1,10 +1,9 @@
+using EMUSocialAPI.EMUSocial.Domain;
+
 namespace EMUSocialAPI.EMUSocial.Application.Services.Authentication;
 
 public record AuthenticationResult(
-    Guid id,
-    string firstname,
-    string lastname,
-    string email,
+    User User,
     string token
-
 );
+

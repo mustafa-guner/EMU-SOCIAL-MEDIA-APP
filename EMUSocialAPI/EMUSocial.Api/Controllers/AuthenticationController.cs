@@ -17,9 +17,8 @@ public class AuthenticationController : ControllerBase
     [HttpPost("register")]
     public IActionResult Register(RegisterRequest request)
     {
-
-        var registerResult = _authenticationService.Register(request.firstname, request.lastname, request.email, request.password);
-        var registerResponse = new AuthenticationResponse(registerResult.id, registerResult.firstname, registerResult.lastname, registerResult.email, registerResult.token);
+        var registerResult = _authenticationService.Register(request.firstname, request.lastname, request.email, request.password, request.countryID, request.gender, request.dob, request.profileImage);
+        var registerResponse = new AuthenticationResponse(registerResult.User.id, registerResult.User.firstname, registerResult.User.lastname, registerResult.User.email, registerResult.token);
         return Ok(registerResponse);
     }
 
@@ -27,7 +26,7 @@ public class AuthenticationController : ControllerBase
     public IActionResult Login(LoginRequest request)
     {
         var loginResult = _authenticationService.Login(request.email, request.password);
-        var loginResponse = new AuthenticationResponse(loginResult.id, loginResult.firstname, loginResult.lastname, loginResult.email, loginResult.token);
+        var loginResponse = new AuthenticationResponse(loginResult.User.id, loginResult.User.firstname, loginResult.User.lastname, loginResult.User.email, loginResult.token);
         return Ok(loginResponse);
     }
 

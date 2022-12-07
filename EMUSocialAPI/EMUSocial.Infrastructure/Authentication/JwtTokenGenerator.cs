@@ -6,6 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using EMUSocialAPI.EMUSocial.Application.Common.Services;
 using Microsoft.Extensions.Options;
+using EMUSocialAPI.EMUSocial.Domain;
 
 namespace EMUSocialAPI.EMUSocial.Infrastructure.Authentication;
 
@@ -21,15 +22,15 @@ public class JwtTokenGenerator : IJwtTokenGenerator
         _jwtSettings = jwtOptions.Value;
     }
 
-    public string GenerateToken(Guid userId, string email)
+    public string GenerateToken(User user)
     {
 
         SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
         SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
         var claims = new[]{
-            new Claim(JwtRegisteredClaimNames.Sub,userId.ToString()),
-            new Claim(JwtRegisteredClaimNames.Email,email),
+            new Claim(JwtRegisteredClaimNames.Sub,user.id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Email,user.email.ToString()),
             new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
         };
 
