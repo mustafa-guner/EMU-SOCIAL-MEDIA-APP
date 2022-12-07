@@ -4,6 +4,13 @@
     <ProjectReference Include="..\EMUSocial.Domain\EMUSocial.Domain.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
