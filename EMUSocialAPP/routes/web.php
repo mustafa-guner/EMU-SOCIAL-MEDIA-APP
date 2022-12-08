@@ -36,3 +36,16 @@ Route::get('/create-new-password', function () {
 Route::get('/home', function () {
     return view('app/homepage');
 });
+
+
+Route::get('/overview', function () {
+    return view('admin/overview');
+});
+
+Route::get('/users', function () {
+    return view('admin/accounts');
+});
+
+Route::get('/clubs', function () {
+    return view('admin/clubs');
+});
