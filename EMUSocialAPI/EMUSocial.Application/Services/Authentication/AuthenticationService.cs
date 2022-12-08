@@ -68,8 +68,5 @@ public class AuthenticationService : IAuthenticationService
         return new AuthenticationResult(user, token);
     }
 
-    public AuthenticationResult Register(string firstname, string lastname, string email, string password, string countryID, string gender, string dob, string profileImage)
-    {
-        throw new NotImplementedException();
-    }
+
 }
