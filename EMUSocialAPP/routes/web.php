@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\_AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +32,9 @@ Route::get('/create-new-password', function () {
 Route::get("/registration",function () {
     return View("registration/registration");
 });
+
+
+Route::post("/register-new-user",[_AuthController::class,"register"]);
 
 Route::get('/home', function () {
     return view('app/homepage');

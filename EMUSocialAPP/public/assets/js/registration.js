@@ -445,7 +445,8 @@ class RegistrationFormWithSteps {
         }
     }
 
-    fetchFromLocalStorageOnLoad() {
+    fetchFromLocalStorageOnLoad(id) {
+        if (id) return LocalRepository.getValueFromRepositoryByID(id);
         const personalInformation = LocalRepository.getValueFromRepositoryByID(
             "personalInformation"
         );
@@ -589,13 +590,75 @@ class RegistrationFormWithSteps {
             console.log(
                 "PROFILE CREATION REQUEST HAS BEEN SEND TO ADMINSTRATIVE"
             );
-            //Remove all the error messages from registration form
-            RegistrationFormUIEvent.removeAllErrorMessages("error-message");
 
-            //Clear local storage before send the data to server side
-            this.FormSteps.steps.map((step) =>
-                LocalRepository.removeRepositoryByID(step.stepTitle)
+            const personalInformationInputs =
+                this.FormSteps.getInputsByStepTitle(
+                    "personalInformation"
+                ).inputs;
+
+            const validatePersonalInputs = VALIDATIONS.Inputs.validateInputs(
+                personalInformationInputs
             );
+
+            let validatedPersonalInformationInputs =
+                VALIDATIONS.Inputs.getValidatedFormData(validatePersonalInputs);
+            const passwordValue = document.querySelector(
+                "input[name='password']"
+            ).value;
+            validatedPersonalInformationInputs = {
+                ...validatedPersonalInformationInputs,
+                password: passwordValue,
+            };
+
+            const academicInformationInputs =
+                this.FormSteps.getInputsByStepTitle(
+                    "academicInformation"
+                ).userType.find(
+                    (userType) => userType.selected == true
+                ).assoicatedInputs;
+
+            const validateAcademicInformationInputs =
+                VALIDATIONS.Inputs.validateInputs(academicInformationInputs);
+
+            const validatedAcademicDetails =
+                VALIDATIONS.Inputs.getValidatedFormData(
+                    validateAcademicInformationInputs
+                );
+
+            let requestBody = {
+                ...validatedPersonalInformationInputs,
+                ...validatedAcademicDetails,
+            };
+
+            let token = document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content");
+
+            return fetch("http://127.0.0.1:8000/register-new-user", {
+                    method: "POST",
+                    credentials: "same-origin",
+                    headers: {
+                        "Content-type": "application/json",
+                        Accept: "application/json, text-plain, */*",
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRF-TOKEN": token,
+                    },
+                    body: JSON.stringify(requestBody),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    //Remove all the error messages from registration form
+                    RegistrationFormUIEvent.removeAllErrorMessages(
+                        "error-message"
+                    );
+
+                    //Clear local storage before send the data to server side
+                    // this.FormSteps.steps.map((step) =>
+                    //     LocalRepository.removeRepositoryByID(step.stepTitle)
+                    // );
+                })
+                .catch((err) => console.log(err));
         }
     }
 
