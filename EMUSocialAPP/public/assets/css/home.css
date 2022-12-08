@@ -2,7 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -10,7 +11,6 @@ body {
   background-color: #E5EAF7;
 }
 
-<<<<<<< HEAD
 body nav {
   background-color: #FFFFFF;
   max-width: 100%;
@@ -158,8 +158,6 @@ body nav .container .nav-right a:hover {
   background-color: #012246;
 }
 
-=======
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
 body #main-section {
   max-width: 1800px;
   max-height: 100%;
@@ -173,8 +171,10 @@ body #main-section .header {
 }
 
 body #main-section .main-container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 320px 1000px 420px;
+  -ms-grid-columns: 320px 1000px 420px;
+      grid-template-columns: 320px 1000px 420px;
   grid-row: auto;
   grid-gap: 32px;
   width: 100%;
@@ -189,14 +189,17 @@ body #main-section .main-container .profile-container {
   border-radius: 12px;
   overflow: hidden;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body #main-section .main-container .profile-container .profile-bg-img img {
   width: 320px;
   height: 115px;
-  object-fit: cover;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body #main-section .main-container .profile-container .profile-img {
@@ -230,15 +233,23 @@ body #main-section .main-container .profile-container .name-container a {
 body #main-section .main-container .profile-container .name-container .name {
   color: black;
   font-size: x-large;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
 body #main-section .main-container .profile-container .name-container .username {
   color: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
@@ -250,9 +261,13 @@ body #main-section .main-container .profile-container .content-container {
 body #main-section .main-container .profile-container .content-container .content {
   width: 100%;
   height: 100px;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body #main-section .main-container .profile-container .content-container .info {
@@ -276,9 +291,15 @@ body #main-section .main-container .profile-container .content-container .info-m
 }
 
 body #main-section .main-container .profile-container .profile-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 115px;
   width: 100%;
   font-size: larger;
@@ -289,92 +310,14 @@ body #main-section .main-container .profile-container .profile-link a {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 body .new-post-container {
-=======
-body #main-section .main-container .connect-people-container {
-  width: 320px;
-  height: 440px;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-}
-
-body #main-section .main-container .connect-people-container .header-people {
-  color: #012246;
-  padding: 1rem;
-  margin-top: 0.5rem;
-}
-
-body #main-section .main-container .connect-people-container .connect-person {
-  padding: 0.5rem;
-  display: grid;
-  grid-template-columns: 0.5fr 1.5fr 1fr;
-  align-items: center;
-}
-
-body #main-section .main-container .connect-people-container .connect-person a {
-  text-decoration: none;
-}
-
-body #main-section .main-container .connect-people-container .connect-person .profile-img {
-  margin: 0 0.4rem;
-  justify-self: center;
-  height: 55px;
-  width: 55px;
-  border-radius: 100%;
-}
-
-body #main-section .main-container .connect-people-container .connect-person .profile-img img {
-  width: 100%;
-  height: 100%;
-}
-
-body #main-section .main-container .connect-people-container .connect-person .name-container-people {
-  padding: 0.5rem 0.3rem;
-}
-
-body #main-section .main-container .connect-people-container .connect-person .name-container-people .name {
-  font-size: large;
-}
-
-body #main-section .main-container .connect-people-container .connect-person .name-container-people .name a {
-  text-decoration: none;
-  color: black;
-}
-
-body #main-section .main-container .connect-people-container .connect-person .name-container-people .username {
-  font-size: small;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-body #main-section .main-container .connect-people-container .connect-person .connet-btn {
-  cursor: pointer;
-  height: 35px;
-  background: #2F55AC;
-  color: #FFFFFF;
-  padding: 0.3rem;
-  border: none;
-  border-radius: 12px;
-  margin-right: 0.5rem;
-}
-
-body #main-section .main-container .connect-people-container .connect-person .connet-btn:hover {
-  font-weight: bold;
-  background: #FFFFFF;
-  color: #2F55AC;
-  border: 2px solid #2F55AC;
-}
-
-body #main-section .main-container .new-post-container {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   margin-bottom: 2rem;
   height: 210px;
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body .new-post-container .new-post-header {
@@ -383,14 +326,11 @@ body .new-post-container .new-post-header {
   font-size: larger;
 }
 
-<<<<<<< HEAD
 body .new-post-container .new-post-input-container {
   display: -ms-grid;
-=======
-body #main-section .main-container .new-post-container .new-post-input-container {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: grid;
-  grid-template-columns: 115px 850px;
+  -ms-grid-columns: 115px 850px;
+      grid-template-columns: 115px 850px;
 }
 
 body .new-post-container .new-post-input-container .new-post-profile-img {
@@ -405,16 +345,15 @@ body .new-post-container .new-post-input-container .new-post-profile-img img {
   height: 100%;
 }
 
-<<<<<<< HEAD
 body .new-post-container .new-post-input-container .new-post-text {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-body #main-section .main-container .new-post-container .new-post-input-container .new-post-text {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: flex;
-  align-self: center;
-  justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 40px;
 }
@@ -427,7 +366,6 @@ body .new-post-container .new-post-input-container .new-post-text input {
   border: none;
   outline: 0;
   background-color: #F0F2F5;
-<<<<<<< HEAD
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
 }
@@ -442,33 +380,36 @@ body .new-post-container .new-post-input-container .new-post-text input:-ms-inpu
 
 body .new-post-container .new-post-input-container .new-post-text input::-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.363);
-=======
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
 }
 
 body .new-post-container .new-post-input-container .new-post-text input::placeholder {
   color: rgba(0, 0, 0, 0.363);
 }
 
-<<<<<<< HEAD
 body .new-post-container .new-post-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-body #main-section .main-container .new-post-container .new-post-buttons {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 2.2rem;
 }
 
 body .new-post-container .new-post-buttons button {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: xx-large;
   width: 50px;
   height: 50px;
@@ -490,19 +431,20 @@ body .post-container {
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-<<<<<<< HEAD
 body .post-container .top-part {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-body #main-section .main-container .post-container .top-part {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
@@ -517,27 +459,19 @@ body .post-container .top-part .edit-btn {
   right: 35px;
 }
 
-<<<<<<< HEAD
 body .post-container .main-content {
   display: -ms-grid;
-=======
-body #main-section .main-container .post-container .main-content {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: grid;
   margin-top: 2.5rem;
-  grid-template-columns: 0.3fr 2fr 0.3fr;
+  -ms-grid-columns: 0.3fr 2fr 0.3fr;
+      grid-template-columns: 0.3fr 2fr 0.3fr;
   width: 100%;
   height: 160px;
 }
 
-<<<<<<< HEAD
 body .post-container .main-content .post-profile-img {
   -ms-grid-column-align: center;
       justify-self: center;
-=======
-body #main-section .main-container .post-container .main-content .post-profile-img {
-  justify-self: center;
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   margin-left: 1rem;
   width: 70px;
   height: 70px;
@@ -578,36 +512,35 @@ body .post-container .main-content .post-time {
 
 body .post-container .likes-and-comments {
   margin-right: 2.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .post-container .likes-and-comments .likes {
   margin-right: 1rem;
 }
 
-<<<<<<< HEAD
 body .post-container .likes-and-comments h4 {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-body #main-section .main-container .post-container .likes-and-comments h4 {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: rgba(0, 0, 0, 0.61);
 }
 
-<<<<<<< HEAD
 body .post-container .likes-and-comments h4 ion-icon {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-=======
-body #main-section .main-container .post-container .likes-and-comments h4 ion-icon {
-  align-self: center;
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   margin-right: 0.3rem;
   color: #F25370;
 }
@@ -631,15 +564,25 @@ body .post-container .post-btns hr {
 
 body .post-container .post-btns .btns {
   margin-top: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .post-container .post-btns .btns .like-btn {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -655,14 +598,22 @@ body .post-container .post-btns .btns .like-btn:hover {
 
 body .post-container .post-btns .btns .like-btn ion-icon {
   margin-right: 0.2rem;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 body .post-container .post-btns .btns .comment-btn {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -678,7 +629,9 @@ body .post-container .post-btns .btns .comment-btn:hover {
 
 body .post-container .post-btns .btns .comment-btn ion-icon {
   margin-right: 0.2rem;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 body .club-post-container {
@@ -687,19 +640,20 @@ body .club-post-container {
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-<<<<<<< HEAD
 body .club-post-container .top-part {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-body #main-section .main-container .club-post-container .top-part {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
@@ -714,15 +668,13 @@ body .club-post-container .top-part .edit-btn {
   right: 35px;
 }
 
-<<<<<<< HEAD
 body .club-post-container .club-post-profile {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-body #main-section .main-container .club-post-container .club-post-profile {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   margin: 1rem 0 0.7rem 1.3rem;
 }
@@ -757,27 +709,19 @@ body .club-post-container hr {
   width: 93%;
 }
 
-<<<<<<< HEAD
 body .club-post-container .main-content {
   display: -ms-grid;
-=======
-body #main-section .main-container .club-post-container .main-content {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: grid;
   margin-top: 0.5rem;
-  grid-template-columns: 0.3fr 2fr 0.3fr;
+  -ms-grid-columns: 0.3fr 2fr 0.3fr;
+      grid-template-columns: 0.3fr 2fr 0.3fr;
   width: 100%;
   height: 160px;
 }
 
-<<<<<<< HEAD
 body .club-post-container .main-content .post-profile-img {
   -ms-grid-column-align: center;
       justify-self: center;
-=======
-body #main-section .main-container .club-post-container .main-content .post-profile-img {
-  justify-self: center;
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   margin: 0.3rem 0 0 2.5rem;
   width: 50px;
   height: 50px;
@@ -818,36 +762,35 @@ body .club-post-container .main-content .post-time {
 
 body .club-post-container .likes-and-comments {
   margin-right: 2.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .club-post-container .likes-and-comments .likes {
   margin-right: 1rem;
 }
 
-<<<<<<< HEAD
 body .club-post-container .likes-and-comments h4 {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-body #main-section .main-container .club-post-container .likes-and-comments h4 {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: rgba(0, 0, 0, 0.61);
 }
 
-<<<<<<< HEAD
 body .club-post-container .likes-and-comments h4 ion-icon {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-=======
-body #main-section .main-container .club-post-container .likes-and-comments h4 ion-icon {
-  align-self: center;
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   margin-right: 0.3rem;
   color: #F25370;
 }
@@ -871,15 +814,25 @@ body .club-post-container .post-btns hr {
 
 body .club-post-container .post-btns .btns {
   margin-top: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .club-post-container .post-btns .btns .like-btn {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -895,14 +848,22 @@ body .club-post-container .post-btns .btns .like-btn:hover {
 
 body .club-post-container .post-btns .btns .like-btn ion-icon {
   margin-right: 0.2rem;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 body .club-post-container .post-btns .btns .comment-btn {
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -918,7 +879,9 @@ body .club-post-container .post-btns .btns .comment-btn:hover {
 
 body .club-post-container .post-btns .btns .comment-btn ion-icon {
   margin-right: 0.2rem;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 body .connect-people-container {
@@ -1007,7 +970,8 @@ body .clubs-for-you-container {
   height: 740px;
   background-color: #FFFFFF;
   border-radius: 12px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body .clubs-for-you-container .clubs-for-you-header {
@@ -1025,109 +989,62 @@ body .clubs-for-you-container .clubs-for-you-header p {
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container hr, body .clubs-for-you-container .private-clubs-container hr {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container hr,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container hr {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   margin: 1.5rem auto;
   width: 90%;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .public-clubs-header, body .clubs-for-you-container .public-clubs-container .private-clubs-header, body .clubs-for-you-container .private-clubs-container .public-clubs-header, body .clubs-for-you-container .private-clubs-container .private-clubs-header {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .public-clubs-header,
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .private-clubs-header,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .public-clubs-header,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .private-clubs-header {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   color: #012246;
   padding: 0 1.5rem;
   margin: 0.5rem 0;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club, body .clubs-for-you-container .private-clubs-container .join-club {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   padding: 0 1rem;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr 0.8fr;
-  align-items: center;
+  -ms-grid-columns: 0.5fr 1.5fr 0.8fr;
+      grid-template-columns: 0.5fr 1.5fr 0.8fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .club-img, body .clubs-for-you-container .private-clubs-container .join-club .club-img {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .club-img,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .club-img {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   margin: 0 0.4rem;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   height: 70px;
   width: 70px;
   border-radius: 100%;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .club-img img, body .clubs-for-you-container .private-clubs-container .join-club .club-img img {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .club-img img,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .club-img img {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   width: 100%;
   height: 100%;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club {
   padding: 0.5rem 0.3rem;
 }
 
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club a, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club a {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club {
-  padding: 0.5rem 0.3rem;
-}
-
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club a,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club a {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   text-decoration: none;
   color: black;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .name, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .name {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club .name,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club .name {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   color: #012246;
   font-size: large;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .username, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .username {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .name-container-club .username,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .name-container-club .username {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   font-size: small;
   color: rgba(0, 0, 0, 0.6);
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .join-now-btn, body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .join-now-btn,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .join-now-btn {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   cursor: pointer;
   height: 40px;
   background: #2F55AC;
@@ -1137,12 +1054,7 @@ body #main-section .main-container .clubs-for-you-container .private-clubs-conta
   border-radius: 12px;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .join-now-btn:hover, body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:hover {
-=======
-body #main-section .main-container .clubs-for-you-container .public-clubs-container .join-club .join-now-btn:hover,
-body #main-section .main-container .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:hover {
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
   font-weight: bold;
   background: #FFFFFF;
   color: #2F55AC;

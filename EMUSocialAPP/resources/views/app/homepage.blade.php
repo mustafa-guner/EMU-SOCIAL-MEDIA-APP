@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
     <title>Home</title>
 </head>
@@ -19,13 +18,7 @@
     <nav>
         <div class="container">
             <div class="nav-left">
-<<<<<<< HEAD
                 <a href="/home" class="home-btn" type="button"><ion-icon name="home"></ion-icon></a>
-=======
-                <button class="home-btn" type="button">
-                    <ion-icon name="home"></ion-icon>
-                </button>
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
                 <div class="search-bar">
                     <input type="search" placeholder="Search...">
                 </div>
@@ -36,21 +29,9 @@
                 </a>
             </div>
             <div class="nav-right">
-<<<<<<< HEAD
                 <a type="button"><ion-icon name="mail"></ion-icon></a>
                 <a type="button"><ion-icon name="notifications"></ion-icon></a>
                 <a href="/profile" type="button"><ion-icon name="person"></ion-icon></a>
-=======
-                <button type="button">
-                    <ion-icon name="mail"></ion-icon>
-                </button>
-                <button type="button">
-                    <ion-icon name="notifications"></ion-icon>
-                </button>
-                <button type="button">
-                    <ion-icon name="person"></ion-icon>
-                </button>
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
             </div>
         </div>
     </nav>
