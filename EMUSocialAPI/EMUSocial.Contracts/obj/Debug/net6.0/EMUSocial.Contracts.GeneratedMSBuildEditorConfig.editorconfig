@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EMUSocial.Contracts
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\borte\Desktop\EMU-SOCIAL-MEDIA-APP\EMUSocialAPI\EMUSocial.Contracts\
+=======
+build_property.ProjectDir = C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Contracts\
+>>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442

@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Open Sans', sans-serif;
     background-color: #E5EAF7;
+<<<<<<< HEAD
     nav{
         background-color: #FFFFFF;
         max-width: 100%;
@@ -101,15 +102,18 @@ body{
         }
     }
     #main-section{
+=======
+    #main-section {
+>>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
         max-width: 1800px;
         max-height: 100%;
         margin: auto;
-        .header{
+        .header {
             font-size: larger;
             color: #012246;
             margin: 1.3rem 0;
         }
-        .main-container{
+        .main-container {
             display: grid;
             grid-template-columns: 320px 1000px 420px;
             grid-row: auto;
@@ -117,7 +121,7 @@ body{
             width: 100%;
             height: 100%;
             //GRID LEFT
-            .profile-container{
+            .profile-container {
                 margin-bottom: 2rem;
                 position: relative;
                 width: 320px;
@@ -126,91 +130,623 @@ body{
                 overflow: hidden;
                 background-color: #FFFFFF;
                 box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-                .profile-bg-img{
-                    img{
+                .profile-bg-img {
+                    img {
                         width: 320px;
                         height: 115px;
                         object-fit: cover;
                         box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
                     }
                 }
-                .profile-img{
+                .profile-img {
                     height: 70px;
                     width: 70px;
                     border-radius: 100%;
                     position: absolute;
                     top: 80px;
                     left: 125px;
-                    a{
+                    a {
                         text-decoration: none;
                     }
-                    img{
+                    img {
                         width: 100%;
                         height: 100%;
                     }
                 }
-                .name-container{
+                .name-container {
                     width: 100%;
                     height: 70px;
                     margin: 1.5rem auto 3rem auto;
-                    a{
+                    a {
                         text-decoration: none;
                     }
-                    .name{
+                    .name {
                         color: black;
                         font-size: x-large;
                         display: flex;
                         justify-content: center;
                         padding: 0.5rem 0.5rem 0 0.5rem;
                     }
-                    .username{
+                    .username {
                         color: rgba(0, 0, 0, 0.6);
                         display: flex;
                         justify-content: center;
                         padding: 0 0.5rem 0.5rem 0.5rem;
                     }
                 }
-                .content-container{
+                .content-container {
                     border-top: 1px solid rgba(0, 0, 0, 0.5);
                     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-                    .content{
+                    .content {
                         width: 100%;
                         height: 100px;
                         display: grid;
                         grid-template-columns: 1fr 1fr 1fr;
                         align-items: center;
                     }
-                    .info{
+                    .info {
                         text-align: center;
                         padding: 0.3rem;
-                        p{
+                        p {
                             color: rgba(0, 0, 0, 0.6);
                         }
-                        .number{
+                        .number {
                             font-size: x-large;
                             font-weight: bold;
                             color: #012246;
                         }
                     }
-                    .info-middle{
+                    .info-middle {
                         border-left: 1px solid rgba(0, 0, 0, 0.5);
                         border-right: 1px solid rgba(0, 0, 0, 0.5);
                     }
                 }
-                .profile-link{
+                .profile-link {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     height: 115px;
                     width: 100%;
                     font-size: larger;
-                    a{
+                    a {
                         color: #012246;
                         cursor: pointer;
                     }
                 }
             }
+<<<<<<< HEAD
 
+=======
+            .connect-people-container {
+                width: 320px;
+                height: 440px;
+                border-radius: 12px;
+                overflow: hidden;
+                background-color: #FFFFFF;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .header-people {
+                    color: #012246;
+                    padding: 1rem;
+                    margin-top: 0.5rem;
+                }
+                .connect-person {
+                    padding: 0.5rem;
+                    display: grid;
+                    grid-template-columns: 0.5fr 1.5fr 1fr;
+                    align-items: center;
+                    a {
+                        text-decoration: none;
+                    }
+                    .profile-img {
+                        margin: 0 0.4rem;
+                        justify-self: center;
+                        height: 55px;
+                        width: 55px;
+                        border-radius: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .name-container-people {
+                        padding: 0.5rem 0.3rem;
+                        .name {
+                            font-size: large;
+                            a {
+                                text-decoration: none;
+                                color: black;
+                            }
+                        }
+                        .username {
+                            font-size: small;
+                            color: rgba(0, 0, 0, 0.6);
+                        }
+                    }
+                    .connet-btn {
+                        cursor: pointer;
+                        height: 35px;
+                        background: #2F55AC;
+                        color: #FFFFFF;
+                        padding: 0.3rem;
+                        border: none;
+                        border-radius: 12px;
+                        margin-right: 0.5rem;
+                        &:hover {
+                            font-weight: bold;
+                            background: #FFFFFF;
+                            color: #2F55AC;
+                            border: 2px solid #2F55AC;
+                        }
+                    }
+                }
+            }
+            //GRID MIDDLE
+            .new-post-container {
+                margin-bottom: 2rem;
+                height: 210px;
+                width: 100%;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .new-post-header {
+                    padding: 1rem;
+                    margin-left: 1rem;
+                    font-size: larger;
+                }
+                .new-post-input-container {
+                    display: grid;
+                    grid-template-columns: 115px 850px;
+                    .new-post-profile-img {
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 100%;
+                        margin: 0 1rem 0 2rem;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .new-post-text {
+                        display: flex;
+                        align-self: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 40px;
+                        input {
+                            padding: 0.8rem;
+                            width: 100%;
+                            font-size: large;
+                            border-radius: 8px;
+                            border: none;
+                            outline: 0;
+                            background-color: #F0F2F5;
+                            box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
+                            &::placeholder {
+                                color: rgba(0, 0, 0, 0.363);
+                            }
+                        }
+                    }
+                }
+                .new-post-buttons {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin-right: 2.2rem;
+                    button {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: xx-large;
+                        width: 50px;
+                        height: 50px;
+                        background: #FFFFFF;
+                        color: #2F55AC;
+                        border: none;
+                        margin-left: 0.5rem;
+                        &:hover {
+                            font-weight: bold;
+                            background: #FFFFFF;
+                            color: #4495ff;
+                        }
+                    }
+                }
+            }
+            .post-container {
+                margin-bottom: 2rem;
+                height: 300px;
+                width: 100%;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .top-part {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    position: relative;
+                    .edit-btn {
+                        width: 25px;
+                        cursor: pointer;
+                        font-size: x-large;
+                        border: none;
+                        background-color: #FFFFFF;
+                        position: absolute;
+                        top: 25px;
+                        right: 35px;
+                    }
+                }
+                .main-content {
+                    display: grid;
+                    margin-top: 2.5rem;
+                    grid-template-columns: 0.3fr 2fr 0.3fr;
+                    width: 100%;
+                    height: 160px;
+                    .post-profile-img {
+                        justify-self: center;
+                        margin-left: 1rem;
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .post-content {
+                        justify-self: flex-end;
+                        padding-top: 1rem;
+                        .name {
+                            color: black;
+                            font-size: x-large;
+                            text-decoration: none;
+                        }
+                        .description {
+                            font-size: large;
+                            padding-right: 1rem;
+                            line-height: 1.8rem;
+                            width: 100%;
+                            margin-top: 0.5rem;
+                        }
+                    }
+                    .post-time {
+                        height: 50px;
+                        padding-top: 1.2rem;
+                        justify-self: flex-end;
+                        margin-right: 2.3rem;
+                        color: rgba(0, 0, 0, 0.801);
+                    }
+                }
+                .likes-and-comments {
+                    margin-right: 2.8rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .likes {
+                        margin-right: 1rem;
+                    }
+                    h4 {
+                        display: flex;
+                        align-items: center;
+                        color: rgba(0, 0, 0, 0.61);
+                        ion-icon {
+                            align-self: center;
+                            margin-right: 0.3rem;
+                            color: #F25370;
+                        }
+                    }
+                    a {
+                        text-decoration: none;
+                        ion-icon {
+                            color: #4495ff;
+                        }
+                    }
+                }
+                .post-btns {
+                    margin-top: 1rem;
+                    hr {
+                        margin: auto;
+                        width: 93%;
+                    }
+                    .btns {
+                        margin-top: 0.2rem;
+                        display: flex;
+                        justify-content: center;
+                        .like-btn {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover {
+                                background: #F25370;
+                                color: white;
+                            }
+                            ion-icon {
+                                margin-right: 0.2rem;
+                                align-self: center;
+                            }
+                        }
+                        .comment-btn {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover {
+                                background: #4495ff;
+                                color: white;
+                            }
+                            ion-icon {
+                                margin-right: 0.2rem;
+                                align-self: center;
+                            }
+                        }
+                    }
+                }
+            }
+            .club-post-container {
+                margin-bottom: 2rem;
+                height: 380px;
+                width: 100%;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .top-part {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    position: relative;
+                    .edit-btn {
+                        width: 25px;
+                        cursor: pointer;
+                        font-size: x-large;
+                        border: none;
+                        background-color: #FFFFFF;
+                        position: absolute;
+                        top: 25px;
+                        right: 35px;
+                    }
+                }
+                .club-post-profile {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    margin: 1rem 0 0.7rem 1.3rem;
+                    .club-post-profile-img {
+                        margin-left: 1rem;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .club-header {
+                        width: 100%;
+                        span {
+                            font-weight: 400;
+                        }
+                        a {
+                            color: black;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                hr {
+                    margin: auto;
+                    width: 93%;
+                }
+                .main-content {
+                    display: grid;
+                    margin-top: 0.5rem;
+                    grid-template-columns: 0.3fr 2fr 0.3fr;
+                    width: 100%;
+                    height: 160px;
+                    .post-profile-img {
+                        justify-self: center;
+                        margin: 0.3rem 0 0 2.5rem;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .post-content {
+                        justify-self: flex-end;
+                        padding-top: 1rem;
+                        .name {
+                            color: black;
+                            font-size: large;
+                            text-decoration: none;
+                        }
+                        .description {
+                            font-size: medium;
+                            padding-right: 1rem;
+                            line-height: 1.8rem;
+                            width: 100%;
+                            margin-top: 0.5rem;
+                        }
+                    }
+                    .post-time {
+                        height: 50px;
+                        padding-top: 1.2rem;
+                        justify-self: flex-end;
+                        margin-right: 2.3rem;
+                        color: rgba(0, 0, 0, 0.801);
+                    }
+                }
+                .likes-and-comments {
+                    margin-right: 2.8rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .likes {
+                        margin-right: 1rem;
+                    }
+                    h4 {
+                        display: flex;
+                        align-items: center;
+                        color: rgba(0, 0, 0, 0.61);
+                        ion-icon {
+                            align-self: center;
+                            margin-right: 0.3rem;
+                            color: #F25370;
+                        }
+                    }
+                    a {
+                        text-decoration: none;
+                        ion-icon {
+                            color: #4495ff;
+                        }
+                    }
+                }
+                .post-btns {
+                    margin-top: 1rem;
+                    hr {
+                        margin: auto;
+                        width: 93%;
+                    }
+                    .btns {
+                        margin-top: 0.2rem;
+                        display: flex;
+                        justify-content: center;
+                        .like-btn {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover {
+                                background: #F25370;
+                                color: white;
+                            }
+                            ion-icon {
+                                margin-right: 0.2rem;
+                                align-self: center;
+                            }
+                        }
+                        .comment-btn {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 42%;
+                            padding: 0.5rem;
+                            margin: 0.5rem;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #FFFFFF;
+                            &:hover {
+                                background: #4495ff;
+                                color: white;
+                            }
+                            ion-icon {
+                                margin-right: 0.2rem;
+                                align-self: center;
+                            }
+                        }
+                    }
+                }
+            }
+            //GRID RIGHT
+            .clubs-for-you-container {
+                width: 100%;
+                height: 740px;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                .clubs-for-you-header {
+                    padding: 1.5rem 1.5rem 0 1.5rem;
+                    width: 100%;
+                    h2 {
+                        font-weight: bold;
+                        color: #012246;
+                    }
+                    p {
+                        margin-top: 0.7rem;
+                        text-transform: uppercase;
+                    }
+                }
+                .public-clubs-container,
+                .private-clubs-container {
+                    hr {
+                        margin: 1.5rem auto;
+                        width: 90%;
+                    }
+                    .public-clubs-header,
+                    .private-clubs-header {
+                        color: #012246;
+                        padding: 0 1.5rem;
+                        margin: 0.5rem 0;
+                    }
+                    .join-club {
+                        padding: 0 1rem;
+                        display: grid;
+                        grid-template-columns: 0.5fr 1.5fr 0.8fr;
+                        align-items: center;
+                        .club-img {
+                            margin: 0 0.4rem;
+                            justify-self: center;
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 100%;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .name-container-club {
+                            padding: 0.5rem 0.3rem;
+                            a {
+                                text-decoration: none;
+                                color: black;
+                            }
+                            .name {
+                                color: #012246;
+                                font-size: large;
+                            }
+                            .username {
+                                font-size: small;
+                                color: rgba(0, 0, 0, 0.6);
+                            }
+                        }
+                        .join-now-btn {
+                            cursor: pointer;
+                            height: 40px;
+                            background: #2F55AC;
+                            color: #FFFFFF;
+                            padding: 0.3rem;
+                            border: none;
+                            border-radius: 12px;
+                            &:hover {
+                                font-weight: bold;
+                                background: #FFFFFF;
+                                color: #2F55AC;
+                                border: 2px solid #2F55AC;
+                            }
+                        }
+                    }
+                }
+            }
+>>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
         }
     }
 

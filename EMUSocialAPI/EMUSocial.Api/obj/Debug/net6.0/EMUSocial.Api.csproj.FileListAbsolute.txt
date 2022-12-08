@@ -64,3 +64,17 @@ C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\obj\Debug\net6.0\ref\EMUSocial.Api.dll
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\obj\Debug\net6.0\EMUSocial.Api.pdb
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\obj\Debug\net6.0\EMUSocial.Api.genruntimeconfig.cache
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\EMUSocial.Infrastructure.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\EMUSocial.Infrastructure.pdb
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\EMUSocial.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
