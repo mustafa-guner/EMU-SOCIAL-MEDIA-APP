@@ -15,6 +15,5 @@
   "password": "asdf1234",
   "role":"student",
   "isActive": "active"
-
 }
 ```

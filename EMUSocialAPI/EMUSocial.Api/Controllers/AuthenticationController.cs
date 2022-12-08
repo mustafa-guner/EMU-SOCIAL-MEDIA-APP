@@ -17,7 +17,8 @@ public class AuthenticationController : ControllerBase
     [HttpPost("register")]
     public IActionResult Register(RegisterRequest request)
     {
-        var registerResult = _authenticationService.Register(request.firstname, request.lastname, request.email, request.password, request.countryID, request.gender, request.dob, request.profileImage);
+        //gerekli olanlar alani
+        var registerResult = _authenticationService.Register(request.firstname, request.lastname, request.email, request.password, request.countryID, request.gender, request.dob, request.profileImage, request.role);
         var registerResponse = new AuthenticationResponse(registerResult.User.id, registerResult.User.firstname, registerResult.User.lastname, registerResult.User.email, registerResult.token);
         return Ok(registerResponse);
     }
