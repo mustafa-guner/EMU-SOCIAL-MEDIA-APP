@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +10,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
     <title>Profile</title>
 </head>
+
 <body>
     <nav>
         <div class="container">
             <div class="nav-left">
-                <a href="/home" class="home-btn" type="button"><ion-icon name="home"></ion-icon></a>
+                <a href="/home" class="home-btn" type="button">
+                    <ion-icon name="home"></ion-icon>
+                </a>
                 <div class="search-bar">
                     <input type="search" placeholder="Search...">
                 </div>
             </div>
             <div class="nav-logo">
-                <a href=""><h1 class="logo">EMU APP</h1></a>
+                <a href="">
+                    <h1 class="logo">EMU APP</h1>
+                </a>
             </div>
             <div class="nav-right">
-                <a type="button"><ion-icon name="mail"></ion-icon></a>
-                <a type="button"><ion-icon name="notifications"></ion-icon></a>
-                <a href="/profile" type="button"><ion-icon name="person"></ion-icon></a>
+                <a type="button">
+                    <ion-icon name="mail"></ion-icon>
+                </a>
+                <a type="button">
+                    <ion-icon name="notifications"></ion-icon>
+                </a>
+                <a href="/profile" type="button">
+                    <ion-icon name="person"></ion-icon>
+                </a>
             </div>
         </div>
     </nav>
@@ -36,39 +48,57 @@
         <div class="left-section">
             <div class="profile-container">
                 <div class="profile-bg-img">
-                    <img src="{{asset('assets/images/profile-bg-img.jpg')}}" alt="bg-image">
+                    <img src="{{ asset('assets/images/profile-bg-img.jpg') }}" alt="bg-image">
                 </div>
                 <div class="profile-informations">
                     <div class="profile-img">
-                        <img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-img">
+                        <img src="{{ asset('assets/images/profile-images/profile-img-1.png') }}" alt="profile-img">
                     </div>
                     <div class="infos">
                         <h1>Jane Doe</h1>
                         <div class="icons">
-                            <div class="contact-number"><ion-icon name="people"></ion-icon>500</div>
-                            <div class="status"><ion-icon name="school"></ion-icon>Student</div>
+                            <div class="contact-number">
+                                <ion-icon name="people"></ion-icon>500
+                            </div>
+                            <div class="status">
+                                <ion-icon name="school"></ion-icon>Student
+                            </div>
                         </div>
                         <div class="desc">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iusto 
-                                culpa nesciunt ratione minima ea aspernatur quae. Est eum magni, pariatur laborum itaque 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iusto
+                                culpa nesciunt ratione minima ea aspernatur quae. Est eum magni, pariatur laborum itaque
                                 neque nesciunt obcaecati iusto voluptatibus blanditiis quibusdam!
                             </p>
                         </div>
                     </div>
                     <div class="buttons">
-                        <button class="edit-btn"><ion-icon name="settings"></ion-icon></button>
+                        <button class="edit-btn">
+                            <ion-icon name="settings"></ion-icon>
+                        </button>
                         <div class="common-connect">
                             <div class="common-images">
-                                <div class="img-1"><img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile-img"></div>
-                                <div class="img-2"><img src="{{asset('assets/images/profile-images/profile-img-5.png')}}" alt="profile-img"></div>    
-                                <div class="img-3"><img src="{{asset('assets/images/profile-images/profile-img-6.png')}}" alt="profile-img"></div>
+                                <div class="img-1"><img
+                                        src="{{ asset('assets/images/profile-images/profile-img-4.png') }}"
+                                        alt="profile-img"></div>
+                                <div class="img-2"><img
+                                        src="{{ asset('assets/images/profile-images/profile-img-5.png') }}"
+                                        alt="profile-img"></div>
+                                <div class="img-3"><img
+                                        src="{{ asset('assets/images/profile-images/profile-img-6.png') }}"
+                                        alt="profile-img"></div>
                             </div>
                             <a href="">3 common connect</a>
                         </div>
                         <div class="main-btns">
-                            <button><ion-icon name="mail-outline"></ion-icon><p>Chat</p></button>
-                            <button><ion-icon name="link"></ion-icon><p>Connect</p></button>
+                            <button>
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <p>Chat</p>
+                            </button>
+                            <button>
+                                <ion-icon name="link"></ion-icon>
+                                <p>Connect</p>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -84,60 +114,86 @@
                 <div class="profile-section-container"></div>
                 <div class="bottom-right-section">
                     <div class="new-post-container">
-                        <div class="new-post-header"><h2>Welcome, Jane Doe!</h2></div>
+                        <div class="new-post-header">
+                            <h2>Welcome, Jane Doe!</h2>
+                        </div>
                         <div class="new-post-input-container">
                             <div class="new-post-profile-img">
-                                <img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-img">
+                                <img src="{{ asset('assets/images/profile-images/profile-img-1.png') }}"
+                                    alt="profile-img">
                             </div>
                             <div class="new-post-text">
                                 <input type="text" placeholder="What do you think Jane?">
                             </div>
                         </div>
                         <div class="new-post-buttons">
-                            <button type="button" class="uploud-image-btn"><ion-icon name="image"></ion-icon></button>
-                            <button type="button" class="post-share-btn"><ion-icon name="send"></ion-icon></button>
+                            <button type="button" class="uploud-image-btn">
+                                <ion-icon name="image"></ion-icon>
+                            </button>
+                            <button type="button" class="post-share-btn">
+                                <ion-icon name="send"></ion-icon>
+                            </button>
                         </div>
                     </div>
                     <div class="post-container">
                         <div class="top-part">
-                            <button type="button" class="edit-btn"><ion-icon name="ellipsis-horizontal"></ion-icon></button>
+                            <button type="button" class="edit-btn">
+                                <ion-icon name="ellipsis-horizontal"></ion-icon>
+                            </button>
                         </div>
                         <div class="main-content">
                             <div class="post-profile-img">
                                 <a href="">
-                                    <img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-img">
+                                    <img src="{{ asset('assets/images/profile-images/profile-img-1.png') }}"
+                                        alt="profile-img">
                                 </a>
                             </div>
                             <div class="post-content">
-                                <a href="" class="name"><h4>Jane Doe</h4></a>
-                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                <a href="" class="name">
+                                    <h4>Jane Doe</h4>
+                                </a>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
                             </div>
                             <p class="post-time">22:45 PM</p>
                         </div>
                         <div class="likes-and-comments">
-                            <h4 class="likes"><ion-icon name="heart-circle"></ion-icon> 32 Likes</h4>
-                            <a href="" class="comments"><h4><ion-icon name="chatbubble"></ion-icon>45 Comments</h4></a>
+                            <h4 class="likes">
+                                <ion-icon name="heart-circle"></ion-icon> 32 Likes
+                            </h4>
+                            <a href="" class="comments">
+                                <h4>
+                                    <ion-icon name="chatbubble"></ion-icon>45 Comments
+                                </h4>
+                            </a>
                         </div>
                         <div class="post-btns">
                             <hr>
                             <div class="btns">
-                                <button type="button" class="post-btn like-btn"><ion-icon name="heart-outline"></ion-icon> Like</button>
-                                <button type="button" class="post-btn comment-btn"><ion-icon name="chatbubble-outline"></ion-icon> Comment</button>
+                                <button type="button" class="post-btn like-btn">
+                                    <ion-icon name="heart-outline"></ion-icon> Like
+                                </button>
+                                <button type="button" class="post-btn comment-btn">
+                                    <ion-icon name="chatbubble-outline"></ion-icon> Comment
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="right-section">
             <div class="connect-people-container">
-                <div class="header-people"><h3>Who is to connect with?</h3></div>
+                <div class="header-people">
+                    <h3>Who is to connect with?</h3>
+                </div>
                 <div class="connect-person">
                     <a href="">
                         <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-img">
+                            <img src="{{ asset('assets/images/profile-images/profile-img-2.png') }}"
+                                alt="profile-img">
                         </div>
                     </a>
                     <div class="name-container-people">
@@ -149,7 +205,8 @@
                 <div class="connect-person">
                     <a href="">
                         <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-3.png')}}" alt="profile-img">
+                            <img src="{{ asset('assets/images/profile-images/profile-img-3.png') }}"
+                                alt="profile-img">
                         </div>
                     </a>
                     <div class="name-container-people">
@@ -161,7 +218,8 @@
                 <div class="connect-person">
                     <a href="">
                         <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile-img">
+                            <img src="{{ asset('assets/images/profile-images/profile-img-4.png') }}"
+                                alt="profile-img">
                         </div>
                     </a>
                     <div class="name-container-people">
@@ -173,7 +231,8 @@
                 <div class="connect-person">
                     <a href="">
                         <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-5.png')}}" alt="profile-img">
+                            <img src="{{ asset('assets/images/profile-images/profile-img-5.png') }}"
+                                alt="profile-img">
                         </div>
                     </a>
                     <div class="name-container-people">
@@ -185,7 +244,8 @@
                 <div class="connect-person">
                     <a href="">
                         <div class="profile-img">
-                            <img src="{{asset('assets/images/profile-images/profile-img-6.png')}}" alt="profile-img">
+                            <img src="{{ asset('assets/images/profile-images/profile-img-6.png') }}"
+                                alt="profile-img">
                         </div>
                     </a>
                     <div class="name-container-people">
@@ -202,11 +262,13 @@
                 </div>
                 <div class="public-clubs-container">
                     <hr>
-                    <div class="public-clubs-header"><h2>Public Clubs</h2></div>
+                    <div class="public-clubs-header">
+                        <h2>Public Clubs</h2>
+                    </div>
                     <div class="join-club">
                         <div class="club-img">
                             <a href="">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                             </a>
                         </div>
                         <div class="name-container-club">
@@ -218,7 +280,7 @@
                     <div class="join-club">
                         <div class="club-img">
                             <a href="">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                             </a>
                         </div>
                         <div class="name-container-club">
@@ -230,7 +292,7 @@
                     <div class="join-club">
                         <div class="club-img">
                             <a href="">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                             </a>
                         </div>
                         <div class="name-container-club">
@@ -242,11 +304,13 @@
                 </div>
                 <div class="private-clubs-container">
                     <hr>
-                    <div class="private-clubs-header"><h2>Private Clubs</h2></div>
+                    <div class="private-clubs-header">
+                        <h2>Private Clubs</h2>
+                    </div>
                     <div class="join-club">
                         <div class="club-img">
                             <a href="">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                             </a>
                         </div>
                         <div class="name-container-club">
@@ -258,7 +322,7 @@
                     <div class="join-club">
                         <div class="club-img">
                             <a href="">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                             </a>
                         </div>
                         <div class="name-container-club">
@@ -270,7 +334,7 @@
                     <div class="join-club">
                         <div class="club-img">
                             <a href="">
-                                <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                             </a>
                         </div>
                         <div class="name-container-club">
@@ -287,8 +351,8 @@
         const navBtns = document.querySelectorAll(".navigation-btn");
         const profileShowCase = document.querySelector(".profile-section-container");
 
-        const views = {               
-            overview:  `<div class="profile-section-header"><h2>Overview</h2></div>
+        const views = {
+            overview: `<div class="profile-section-header"><h2>Overview</h2></div>
                         <div class="profile-section-overview-content">
                             <div class="content-1">
                                 <ion-icon name="people"></ion-icon>
@@ -347,12 +411,12 @@
                                 <p>Master</p>
                             </div>
                         </div>`,
-            clubs:  `   <div class="profile-section-header"><h2>Clubs</h2></div>
+            clubs: `   <div class="profile-section-header"><h2>Clubs</h2></div>
                         <div class="profile-section-clubs-content">
                             <div class="join-club">
                                 <div class="club-img">
                                     <a href="">
-                                        <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                                     </a>
                                 </div>
                                 <div class="name-container-club">
@@ -364,7 +428,7 @@
                             <div class="join-club">
                                 <div class="club-img">
                                     <a href="">
-                                        <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                                     </a>
                                 </div>
                                 <div class="name-container-club">
@@ -376,7 +440,7 @@
                             <div class="join-club">
                                 <div class="club-img">
                                     <a href="">
-                                        <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                                     </a>
                                 </div>
                                 <div class="name-container-club">
@@ -388,7 +452,7 @@
                             <div class="join-club">
                                 <div class="club-img">
                                     <a href="">
-                                        <img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
                                     </a>
                                 </div>
                                 <div class="name-container-club">
@@ -401,12 +465,12 @@
                         <div class="show-more">
                             <a href="">Show More</a>
                         </div>`,
-            friends:   `<div class="profile-section-header"><h2>Friends</h2></div>
+            friends: `<div class="profile-section-header"><h2>Friends</h2></div>
                         <div class="profile-section-friends-content">
                             <div class="connect-person">
                                 <a href="">
                                     <div class="profile-img">
-                                        <img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/profile-images/profile-img-2.png') }}" alt="profile-img">
                                     </div>
                                 </a>
                                 <div class="name-container-people">
@@ -425,7 +489,7 @@
                             <div class="connect-person">
                                 <a href="">
                                     <div class="profile-img">
-                                        <img src="{{asset('assets/images/profile-images/profile-img-3.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/profile-images/profile-img-3.png') }}" alt="profile-img">
                                     </div>
                                 </a>
                                 <div class="name-container-people">
@@ -444,7 +508,7 @@
                             <div class="connect-person">
                                 <a href="">
                                     <div class="profile-img">
-                                        <img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/profile-images/profile-img-4.png') }}" alt="profile-img">
                                     </div>
                                 </a>
                                 <div class="name-container-people">
@@ -463,7 +527,7 @@
                             <div class="connect-person">
                                 <a href="">
                                     <div class="profile-img">
-                                        <img src="{{asset('assets/images/profile-images/profile-img-5.png')}}" alt="profile-img">
+                                        <img src="{{ asset('assets/images/profile-images/profile-img-5.png') }}" alt="profile-img">
                                     </div>
                                 </a>
                                 <div class="name-container-people">
@@ -507,4 +571,5 @@
         })
     </script>
 </body>
+
 </html>;
