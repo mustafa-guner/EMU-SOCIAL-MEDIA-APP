@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/modal.css')}}">
     <title>Profile</title>
 </head>
 <body>
@@ -283,6 +282,16 @@
             </div>
         </div>
     </section>
+    <!-- Edit Profile Modal
+    <button type="button" class="" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            ...
+            </div>
+        </div>
+    </div> -->
     <script>
         const navBtns = document.querySelectorAll(".navigation-btn");
         const profileShowCase = document.querySelector(".profile-section-container");
@@ -506,5 +515,9 @@
             selectSectionByID(DEFAULT_SECTION)
         })
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="{{asset('assets/js/bootstrap-js/bootstrap.min.js')}}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-</html>;
+</html>
