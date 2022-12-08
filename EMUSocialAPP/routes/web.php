@@ -37,14 +37,13 @@ Route::get('/home', function () {
     return view('app/homepage');
 });
 
-<<<<<<< HEAD
 Route::get('/search', function () {
     return view('app/search');
 });
 
 Route::get('/profile', function () {
     return view('app/profilepage');
-=======
+});
 
 Route::get('/overview', function () {
     return view('admin/overview');
@@ -56,5 +55,4 @@ Route::get('/users', function () {
 
 Route::get('/clubs', function () {
     return view('admin/clubs');
->>>>>>> a9677b8c18e204e31645bca59f11875fa5aa2442
 });
