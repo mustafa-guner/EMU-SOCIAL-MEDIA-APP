@@ -19,9 +19,9 @@
     <nav>
         <div class="container">
             <div class="nav-left">
-                <button class="home-btn" type="button">
+                <a href="/home" class="home-btn" type="button">
                     <ion-icon name="home"></ion-icon>
-                </button>
+                </a>
                 <div class="search-bar">
                     <input type="search" placeholder="Search...">
                 </div>
@@ -32,15 +32,15 @@
                 </a>
             </div>
             <div class="nav-right">
-                <button type="button">
+                <a type="button">
                     <ion-icon name="mail"></ion-icon>
-                </button>
-                <button type="button">
+                </a>
+                <a type="button">
                     <ion-icon name="notifications"></ion-icon>
-                </button>
-                <button type="button">
+                </a>
+                <a href="/profile" type="button">
                     <ion-icon name="person"></ion-icon>
-                </button>
+                </a>
             </div>
         </div>
     </nav>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <div class="profile-link">
-                        <a href="">Go to my Profile</a>
+                        <a href="/profile">Go to my Profile</a>
                     </div>
                 </div>
                 <div class="connect-people-container">

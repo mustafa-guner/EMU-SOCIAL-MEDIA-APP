@@ -21,10 +21,6 @@ Route::get('/login', function () {
     return view('auth/login');
 });
 
-Route::get("/registration",function () {
-    return View("registration/registration");
-
-});
 Route::get('/forgot-password', function () {
     return view('auth/login-forgot-password');
 });
@@ -33,19 +29,18 @@ Route::get('/create-new-password', function () {
     return view('auth/login-create-new-password');
 });
 
+Route::get("/registration",function () {
+    return View("registration/registration");
+});
+
 Route::get('/home', function () {
     return view('app/homepage');
 });
 
-
-Route::get('/overview', function () {
-    return view('admin/overview');
+Route::get('/search', function () {
+    return view('app/search');
 });
 
-Route::get('/users', function () {
-    return view('admin/accounts');
-});
-
-Route::get('/clubs', function () {
-    return view('admin/clubs');
+Route::get('/profile', function () {
+    return view('app/profilepage');
 });
