@@ -36,6 +36,8 @@ body {
 #main-section .profile-container .profile-bg-img {
   width: 100%;
   height: 400px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-bg-img img {
@@ -55,9 +57,13 @@ body {
 }
 
 #main-section .profile-container .profile-informations .profile-img img {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 100%;
-  height: 240px;
-  width: 240px;
+  height: 220px;
+  width: 220px;
   position: absolute;
   top: -40px;
   left: 25px;
@@ -74,11 +80,11 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
 }
 
 #main-section .profile-container .profile-informations .infos h1 {
-  font-size: 60px;
+  font-size: 45px;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -219,16 +225,22 @@ body {
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-1 {
   z-index: 10;
   right: 24px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-2 {
   z-index: 9;
   right: 12px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-3 {
   z-index: 8;
   right: 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-informations .buttons .main-btns {
@@ -457,12 +469,13 @@ body {
   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
           box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   width: 90%;
+  height: 80%;
   margin: auto;
   padding: 0 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.5fr 1.5fr 0.8fr;
-      grid-template-columns: 0.5fr 1.5fr 0.8fr;
+  -ms-grid-columns: 0.3fr 1.8fr 0.8fr;
+      grid-template-columns: 0.3fr 1.8fr 0.8fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -472,12 +485,17 @@ body {
   margin: 0 0.4rem;
   -ms-grid-column-align: center;
       justify-self: center;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .club-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -493,10 +511,9 @@ body {
 
 #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .name {
   color: #012246;
-  font-size: large;
 }
 
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .username {
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .members {
   font-size: small;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -558,14 +575,19 @@ body {
   margin: 0 0.4rem;
   -ms-grid-column-align: center;
       justify-self: center;
-  height: 55px;
-  width: 55px;
+  height: 60px;
+  width: 60px;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .profile-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people {

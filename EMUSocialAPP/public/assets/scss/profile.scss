@@ -28,6 +28,7 @@ body{
         .profile-bg-img{
             width: 100%;
             height: 400px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
             img{
                 width: 100%;
                 height: 100%;
@@ -41,9 +42,12 @@ body{
             position: relative;
             .profile-img{
                 img{
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+                    object-fit: cover;
                     border-radius: 100%;
-                    height: 240px;
-                    width: 240px;
+                    height: 220px;
+                    width: 220px;
                     position: absolute;
                     top: -40px;
                     left: 25px;
@@ -53,9 +57,9 @@ body{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                margin-left: 1.5rem;
+                margin-left: 1rem;
                 h1{
-                    font-size: 60px;
+                    font-size: 45px;
                     font-weight: bold;
                     margin-bottom: 1rem;
                 }
@@ -145,14 +149,17 @@ body{
                         .img-1{
                             z-index: 10;
                             right: 24px;
+                            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
                         }
                         .img-2{
                             z-index: 9;
                             right: 12px;
+                            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
                         }
                         .img-3{
                             z-index: 8;
                             right: 0px;
+                            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
                         }
                     }
                 }
@@ -305,18 +312,22 @@ body{
                     background-color: #FFFFFF;
                     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
                     width: 90%;
+                    height: 80%;
                     margin: auto;
                     padding: 0 1rem;
                     display: grid;
-                    grid-template-columns: 0.5fr 1.5fr 0.8fr;
+                    grid-template-columns: 0.3fr 1.8fr 0.8fr;
                     align-items: center;
                     .club-img{
                         margin: 0 0.4rem;
                         justify-self: center;
-                        height: 70px;
-                        width: 70px;
+                        height: 60px;
+                        width: 60px;
                         border-radius: 100%;
+                        overflow: hidden;
+                        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
                         img{
+                            object-fit: cover;
                             width: 100%;
                             height: 100%;
                         }
@@ -329,9 +340,8 @@ body{
                         }
                         .name{
                             color: #012246;
-                            font-size: large;
                         }
-                        .username{
+                        .members{
                             font-size: small;
                             color: rgba(0, 0, 0, 0.6);
                         }
@@ -376,12 +386,15 @@ body{
                     .profile-img{
                         margin: 0 0.4rem;
                         justify-self: center;
-                        height: 55px;
-                        width: 55px;
+                        height: 60px;
+                        width: 60px;
                         border-radius: 100%;
+                        overflow: hidden;
+                        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
                         img{
                             width: 100%;
                             height: 100%;
+                            object-fit: cover;
                         }
                     }
                     .name-container-people{

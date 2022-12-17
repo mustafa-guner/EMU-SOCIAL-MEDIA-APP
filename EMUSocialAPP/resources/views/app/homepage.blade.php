@@ -59,15 +59,15 @@
                     <div class="content-container">
                         <div class="content">
                             <div class="info">
-                                <p class="number">531</p>
+                                <p class="number">21</p>
                                 <p>Connected</p>
                             </div>
                             <div class="info info-middle">
-                                <p class="number">45</p>
+                                <p class="number">5</p>
                                 <p>Blog</p>
                             </div>
                             <div class="info">
-                                <p class="number">5</p>
+                                <p class="number">7</p>
                                 <p>Club</p>
                             </div>
                         </div>

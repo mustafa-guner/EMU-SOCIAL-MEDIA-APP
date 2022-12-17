@@ -11,24 +11,28 @@
     <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/search.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
+
     <title>Search</title>
 </head>
 <body>
     <nav>
         <div class="container">
             <div class="nav-left">
-                <button class="home-btn" type="button"><ion-icon name="home"></ion-icon></button>
+                <a href="/home" class="home-btn" type="button"><ion-icon name="home"></ion-icon></a>
                 <div class="search-bar">
                     <input type="search" placeholder="Search...">
                 </div>
             </div>
             <div class="nav-logo">
-                <a href=""><h1 class="logo">EMU APP</h1></a>
+                <a href="">
+                    <h1 class="logo">EMU APP</h1>
+                </a>
             </div>
             <div class="nav-right">
-                <button type="button"><ion-icon name="mail"></ion-icon></button>
-                <button type="button"><ion-icon name="notifications"></ion-icon></button>
-                <button type="button"><ion-icon name="person"></ion-icon></button>
+                <a type="button"><ion-icon name="mail"></ion-icon></a>
+                <a type="button"><ion-icon name="notifications"></ion-icon></a>
+                <a href="/profile" type="button"><ion-icon name="person"></ion-icon></a>
             </div>
         </div>
     </nav>

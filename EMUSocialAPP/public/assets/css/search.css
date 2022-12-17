@@ -69,11 +69,14 @@ body #search-section .main-container .search-person .sub-container-person .perso
   height: 100px;
   width: 100px;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 body #search-section .main-container .search-person .sub-container-person .person-card .profile-image-person img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body #search-section .main-container .search-person .sub-container-person .person-card .name-container-person {
@@ -231,11 +234,14 @@ body #search-section .main-container .search-club .sub-container-club .club-card
   height: 100px;
   width: 100px;
   border-radius: 100%;
+  overflow: hidden;
 }
 
 body #search-section .main-container .search-club .sub-container-club .club-card .profile-image-club img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body #search-section .main-container .search-club .sub-container-club .club-card .name-container-club {

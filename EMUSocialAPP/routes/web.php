@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,8 @@ Route::get("/registration",function () {
     return View("registration/registration");
 });
 
+Route::post('/registration', 'auth@register');
+
 Route::get('/home', function () {
     return view('app/homepage');
 });
@@ -41,9 +44,7 @@ Route::get('/search', function () {
     return view('app/search');
 });
 
-Route::get('/profile', function () {
-    return view('app/profilepage');
-});
+Route::get('/profile', [ProfileController::class, 'getprofileDetails']);
 
 Route::get('/overview', function () {
     return view('admin/overview');

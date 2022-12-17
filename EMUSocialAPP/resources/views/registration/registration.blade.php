@@ -24,7 +24,8 @@
             </p>
             <hr>
         </diV>
-        <form id="registration-form" class="registration-form">
+        <form id="registration-form" class="registration-form" action="/registration" method="post">
+            {{csrf_field()}}
             <div class="steps">
                 <div id="step-1" class="personal-information-step step show">
                     <div class="step-image">

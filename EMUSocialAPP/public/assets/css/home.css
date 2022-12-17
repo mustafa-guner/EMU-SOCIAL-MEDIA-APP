@@ -209,6 +209,9 @@ body #main-section .main-container .profile-container .profile-img {
   position: absolute;
   top: 80px;
   left: 125px;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body #main-section .main-container .profile-container .profile-img a {
@@ -218,6 +221,8 @@ body #main-section .main-container .profile-container .profile-img a {
 body #main-section .main-container .profile-container .profile-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body #main-section .main-container .profile-container .name-container {
@@ -334,15 +339,20 @@ body .new-post-container .new-post-input-container {
 }
 
 body .new-post-container .new-post-input-container .new-post-profile-img {
+  margin: 0 1rem 0 2rem;
   width: 70px;
   height: 70px;
   border-radius: 100%;
-  margin: 0 1rem 0 2rem;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .new-post-container .new-post-input-container .new-post-profile-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body .new-post-container .new-post-input-container .new-post-text {
@@ -427,7 +437,6 @@ body .new-post-container .new-post-buttons button:hover {
 
 body .post-container {
   margin-bottom: 2rem;
-  height: 300px;
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
@@ -466,7 +475,6 @@ body .post-container .main-content {
   -ms-grid-columns: 0.3fr 2fr 0.3fr;
       grid-template-columns: 0.3fr 2fr 0.3fr;
   width: 100%;
-  height: 160px;
 }
 
 body .post-container .main-content .post-profile-img {
@@ -476,16 +484,21 @@ body .post-container .main-content .post-profile-img {
   width: 70px;
   height: 70px;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .post-container .main-content .post-profile-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body .post-container .main-content .post-content {
-  justify-self: flex-end;
   padding-top: 1rem;
+  margin-left: 0.3rem;
 }
 
 body .post-container .main-content .post-content .name {
@@ -563,7 +576,6 @@ body .post-container .post-btns hr {
 }
 
 body .post-container .post-btns .btns {
-  margin-top: 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -681,14 +693,19 @@ body .club-post-container .club-post-profile {
 
 body .club-post-container .club-post-profile .club-post-profile-img {
   margin-left: 1rem;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .club-post-container .club-post-profile .club-post-profile-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body .club-post-container .club-post-profile .club-header {
@@ -726,11 +743,16 @@ body .club-post-container .main-content .post-profile-img {
   width: 50px;
   height: 50px;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .club-post-container .main-content .post-profile-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body .club-post-container .main-content .post-content {
@@ -922,19 +944,20 @@ body .connect-people-container .connect-person .profile-img {
   height: 55px;
   width: 55px;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .connect-people-container .connect-person .profile-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
 body .connect-people-container .connect-person .name-container-people {
   padding: 0.5rem 0.3rem;
-}
-
-body .connect-people-container .connect-person .name-container-people .name {
-  font-size: large;
 }
 
 body .connect-people-container .connect-person .name-container-people .name a {
@@ -967,7 +990,7 @@ body .connect-people-container .connect-person .connet-btn:hover {
 
 body .clubs-for-you-container {
   width: 100%;
-  height: 740px;
+  height: 780px;
   background-color: #FFFFFF;
   border-radius: 12px;
   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -1001,7 +1024,7 @@ body .clubs-for-you-container .public-clubs-container .public-clubs-header, body
 }
 
 body .clubs-for-you-container .public-clubs-container .join-club, body .clubs-for-you-container .private-clubs-container .join-club {
-  padding: 0 1rem;
+  padding: 0.2rem 1rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 0.5fr 1.5fr 0.8fr;
@@ -1015,14 +1038,19 @@ body .clubs-for-you-container .public-clubs-container .join-club .club-img, body
   margin: 0 0.4rem;
   -ms-grid-column-align: center;
       justify-self: center;
-  height: 70px;
-  width: 70px;
+  height: 55px;
+  width: 55px;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .clubs-for-you-container .public-clubs-container .join-club .club-img img, body .clubs-for-you-container .private-clubs-container .join-club .club-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club {
@@ -1036,10 +1064,9 @@ body .clubs-for-you-container .public-clubs-container .join-club .name-container
 
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .name, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .name {
   color: #012246;
-  font-size: large;
 }
 
-body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .username, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .username {
+body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .members, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .members {
   font-size: small;
   color: rgba(0, 0, 0, 0.6);
 }
