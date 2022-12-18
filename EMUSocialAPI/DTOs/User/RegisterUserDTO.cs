@@ -13,11 +13,9 @@ namespace EMUSocialAPI.DTOs.User
         public GenderType Gender { get; set; }
         public UserRole Role { get; set; } = UserRole.User;
         public string Country { get; set; } = null!;
-        public DateTime ResetPasswordTokenExpiry { get; set; }
-        public string ResetPasswordToken { get; set; } = string.Empty;
         public UserType UserType { get; set; }
         public bool IsActive { get; set; } = false;
         public DateTime RegisteredAt { get; set; } = DateTime.Now;
-        public DateTime ActivatedAt { get; set; }
+
     }
 }

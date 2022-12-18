@@ -36,3 +36,5 @@ C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\MySqlConnector.dll
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\BCrypt.Net-Next.dll

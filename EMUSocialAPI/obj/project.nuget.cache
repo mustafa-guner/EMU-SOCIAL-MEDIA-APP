@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "uSq/w461EjHF0QBLfnm9Rv9F/6Cio0yfdYkD0qrbuVjsQVzMUqDj9FtQUY8vpB9h36kn17J8UVFG5i+fRUnATA==",
+  "dgSpecHash": "1GmMLAGA4bOGCatTCWzK0Q1C9i9OuMIMd5ZR65xT43GZJbBIVvEtWXqM8r4oS0YyGQuWnt58Dx9youlGt3M5rA==",
   "success": true,
   "projectFilePath": "C:\\Users\\legen\\OneDrive\\Desktop\\Desktop\\Projects\\Graduation Project\\EMUSocialAPI\\EMUSocialAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\legen\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\legen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\legen\\.nuget\\packages\\bcrypt\\1.0.0\\bcrypt.1.0.0.nupkg.sha512",
+    "C:\\Users\\legen\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\legen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\legen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\legen\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.12\\microsoft.entityframeworkcore.6.0.12.nupkg.sha512",
@@ -35,5 +37,16 @@
     "C:\\Users\\legen\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\legen\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BCrypt 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BCrypt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
