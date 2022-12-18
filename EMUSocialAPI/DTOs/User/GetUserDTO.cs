@@ -3,7 +3,7 @@ namespace EMUSocialAPI.DTOs.User
 {
     public class GetUserDTO
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
         public string Firstname { get; set; } = null!;
         public string Lastname { get; set; } = null!;
         public string Email { get; set; } = null!;

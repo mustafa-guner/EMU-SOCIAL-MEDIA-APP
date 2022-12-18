@@ -2,8 +2,9 @@ using EMUSocialAPI.Models.Enums.User;
 
 namespace EMUSocialAPI.DTOs.User
 {
-    public class CreateUserDTO
+    public class RegisterUserDTO
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string Firstname { get; set; } = null!;
         public string Lastname { get; set; } = null!;
         public string Email { get; set; } = null!;
