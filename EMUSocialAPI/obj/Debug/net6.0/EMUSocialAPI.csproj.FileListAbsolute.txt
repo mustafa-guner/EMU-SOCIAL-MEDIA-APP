@@ -27,3 +27,12 @@ C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\obj\Debug\net6.0\EMUSocialAPI.genruntimeconfig.cache
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

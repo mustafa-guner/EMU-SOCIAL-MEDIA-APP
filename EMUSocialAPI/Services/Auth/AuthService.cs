@@ -1,17 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
+using EMUSocialAPI.Data;
 using EMUSocialAPI.DTOs.User;
 using EMUSocialAPI.Models;
 using EMUSocialAPI.Models.Enums.User;
+using Microsoft.EntityFrameworkCore;
 
 namespace EMUSocialAPI.Services.Auth
 {
     public class AuthService : IAuthService
     {
-        private readonly List<UserModel> users = new List<UserModel>(){
+        private readonly List<UserModel> users = new List<UserModel>{
 
            new UserModel{
             Firstname =  "Mustafa",
@@ -27,28 +25,60 @@ namespace EMUSocialAPI.Services.Auth
             }
         };
         private readonly IMapper _mapper;
-
-        public AuthService(IMapper mapper)
+        private readonly DataContext _dbContext;
+        public AuthService(IMapper mapper, DataContext dbContext)
         {
             _mapper = mapper;
+            _dbContext = dbContext;
         }
 
-        public async Task<ServiceResponse<GetUserDTO>> Register(CreateUserDTO newUser)
+        public async Task<ServiceResponse<GetUserDTO>> Register(RegisterUserDTO registerCredentials)
         {
             var serviceResponse = new ServiceResponse<GetUserDTO>();
-            var mappedUser = _mapper.Map<UserModel>(newUser);
-            users.Add(mappedUser);
-            serviceResponse.Data = _mapper.Map<GetUserDTO>(mappedUser);
-            return serviceResponse;
+            try
+            {
+                var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == registerCredentials.Email);
+                if (user is not null) throw new Exception("User already exists with the given email.");
+                var mappedUser = _mapper.Map<UserModel>(registerCredentials);
+                await _dbContext.Users.AddAsync(mappedUser);
+                await _dbContext.SaveChangesAsync();
+                serviceResponse.Data = _mapper.Map<GetUserDTO>(mappedUser);
+                return serviceResponse;
+            }
+            catch (Exception e)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = e.Message;
+                return serviceResponse;
+            }
         }
 
 
-        public async Task<ServiceResponse<GetUserDTO>> Login(LoginUserDTO user)
+        public async Task<List<UserModel>> Users()
+        {
+            var dbUsers = await _dbContext.Users.ToListAsync();
+            return dbUsers;
+        }
+
+
+        public async Task<ServiceResponse<GetUserDTO>> Login(LoginUserDTO loginCredentials)
         {
             var serviceResponse = new ServiceResponse<GetUserDTO>();
-            var doesUserExist = users.FirstOrDefault(u => u.Email == user.Email);
-            serviceResponse.Data = _mapper.Map<GetUserDTO>(doesUserExist);
-            return serviceResponse;
+            try
+            {
+                var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == loginCredentials.Email);
+                if (user is null) throw new Exception("User account with the email is not found.");
+                if (user.IsActive is not true) throw new Exception("Your account has not activated yet. Please get in touch with admin.");
+                serviceResponse.Data = _mapper.Map<GetUserDTO>(loginCredentials);
+                return serviceResponse;
+            }
+            catch (Exception e)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = e.Message;
+                return serviceResponse;
+            }
+
         }
     }
 }

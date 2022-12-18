@@ -9,7 +9,7 @@ namespace EMUSocialAPI
         public AutoMapperProfile()
         {
             CreateMap<UserModel, GetUserDTO>();
-            CreateMap<CreateUserDTO, UserModel>();
+            CreateMap<RegisterUserDTO, UserModel>();
         }
     }
 }

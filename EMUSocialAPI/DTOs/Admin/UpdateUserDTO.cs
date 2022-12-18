@@ -1,11 +1,10 @@
-using System.ComponentModel.DataAnnotations;
 using EMUSocialAPI.Models.Enums.User;
-namespace EMUSocialAPI.Models
+
+namespace EMUSocialAPI.DTOs.Admin
 {
-    public class UserModel
+    public class UpdateUserDTO
     {
-        [Key]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
         public string Firstname { get; set; } = null!;
         public string Lastname { get; set; } = null!;
         public string Email { get; set; } = null!;
@@ -21,8 +20,5 @@ namespace EMUSocialAPI.Models
         public bool IsActive { get; set; } = false;
         public DateTime RegisteredAt { get; set; } = DateTime.Now;
         public DateTime ActivatedAt { get; set; }
-
-
-
     }
 }
