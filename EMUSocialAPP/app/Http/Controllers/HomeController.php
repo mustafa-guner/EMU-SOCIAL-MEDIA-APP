@@ -18,7 +18,7 @@ class HomeController extends Controller{
         $profileimg = "https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg";
 
         # Profile Details
-        $contactnumber = "42";
+        $connectnumber = "42";
         $department = "IT";
         $postnumber = "4";
         $clubnumber = "9";
@@ -76,7 +76,7 @@ class HomeController extends Controller{
             )
         );
 
-        $profile = ["contactnumber"=>$contactnumber,"department"=>$department,"postnumber"=>$postnumber,"clubnumber"=>$clubnumber,"coverimage"=>$coverimage,"clubs"=>$clubs,"friends"=>$friends];
+        $profile = ["connectnumber"=>$connectnumber,"department"=>$department,"postnumber"=>$postnumber,"clubnumber"=>$clubnumber,"coverimage"=>$coverimage,"clubs"=>$clubs,"friends"=>$friends];
         $user = ["fullname"=>$fullname,"firstname"=>$firstname,"lastname"=>$lastname,"profileimg"=>$profileimg,"username"=>$username];
        
         # Post Details

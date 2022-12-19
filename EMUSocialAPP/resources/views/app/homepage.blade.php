@@ -59,8 +59,8 @@
                     <div class="content-container">
                         <div class="content">
                             <div class="info">
-                                <p class="number">{{count($profile["friends"])}}</p>
-                                <p>Connected</p>
+                                <p class="number">{{$profile["connectnumber"]}}</p>
+                                <p>Connects</p>
                             </div>
                             <div class="info info-middle">
                                 <p class="number">{{$profile["postnumber"]}}</p>

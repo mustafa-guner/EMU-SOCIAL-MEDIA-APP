@@ -44,7 +44,7 @@
                     <div class="infos">
                         <h1>{{$user["fullname"]}}</h1>
                         <div class="icons">
-                            <div class="contact-number"><ion-icon name="people"></ion-icon>{{$profile["contactnumber"]}}</div>
+                            <div class="contact-number"><ion-icon name="people"></ion-icon>{{$profile["connectnumber"]}}</div>
                             <div class="status"><ion-icon name="school"></ion-icon>{{$user["academiccareer"]}}</div>
                         </div>
                         <div class="desc">
@@ -215,7 +215,7 @@
                             <div class="content-1">
                                 <ion-icon name="people"></ion-icon>
                                 <h3>Connects</h3>
-                                <p>{{$profile["contactnumber"]}}</p>
+                                <p>{{$profile["connectnumber"]}}</p>
                             </div>
                             <div class="content-2">
                                 <ion-icon name="ribbon"></ion-icon>

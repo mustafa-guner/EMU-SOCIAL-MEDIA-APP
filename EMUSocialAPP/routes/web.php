@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,17 +38,11 @@ Route::get("/registration",function () {
 
 Route::post('/registration', 'auth@register');
 
-// Route::get('/home', function () {
-//     return view('app/homepage');
-// });
-
-Route::get('/search', function () {
-    return view('app/search');
-});
-
 Route::get('/home', [HomeController::class, 'gethomeDetails']);
 
 Route::get('/profile', [ProfileController::class, 'getprofileDetails']);
+
+Route::get('/search', [SearchController::class, 'getsearchDetails']);
 
 Route::get('/overview', function () {
     return view('admin/overview');

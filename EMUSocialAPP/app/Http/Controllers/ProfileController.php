@@ -28,7 +28,7 @@ class ProfileController extends Controller{
                 Exercitationem iusto culpa nesciunt ratione minima ea aspernatur 
                 quae. Est eum magni, pariatur laborum itaque neque nesciunt 
                 obcaecati iusto voluptatibus blanditiis quibusdam!";
-        $contactnumber = "42";
+        $connectnumber = "42";
         $department = "IT";
         $postnumber = "4";
         $clubnumber = "9";
@@ -100,7 +100,7 @@ class ProfileController extends Controller{
             )
         );
 
-        $profile = ["contactnumber"=>$contactnumber,"desc"=>$desc,"department"=>$department,"postnumber"=>$postnumber,"clubnumber"=>$clubnumber,"coverimage"=>$coverimage,"clubs"=>$clubs,"friends"=>$friends,"commonconnects"=>$commonconnects];
+        $profile = ["connectnumber"=>$connectnumber,"desc"=>$desc,"department"=>$department,"postnumber"=>$postnumber,"clubnumber"=>$clubnumber,"coverimage"=>$coverimage,"clubs"=>$clubs,"friends"=>$friends,"commonconnects"=>$commonconnects];
         $user = ["fullname"=>$fullname, "firstname"=>$firstname,"dob"=>$dob,"gender"=>$gender,"country"=>$country,"graduation"=>$graduation,"academiccareer"=>$academiccareer,"degree"=>$degree,"profileimg"=>$profileimg];
        
         # Post Details

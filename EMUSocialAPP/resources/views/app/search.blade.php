@@ -40,21 +40,22 @@
         <div class="main-container">
             <div class="search-person">
                 <div class="search-header-person">
-                    About 132 results related with "John" in users.
+                    About 132 results related with "Ahmet" in users.
                 </div>
                 <div class="sub-container-person">
+                    @foreach($searchusercard as $user)
                     <div class="person-card">
                         <div class="profile-image-person">
-                            <a href=""><img src="{{asset('assets/images/profile-images/profile-img-2.png')}}" alt="profile-image"></a>
+                            <a href=""><img src="{{$user["profileimage"]}}" alt="profile-image"></a>
                         </div>
                         <div class="name-container-person">
-                                <h4 class="name"><a href="">John Doe</a></h4>
-                                <p class="username">@john.doe</p>
+                                <h4 class="name"><a href="">{{$user["fullname"]}}</a></h4>
+                                <p class="username">{{$user["username"]}}</p>
                         </div>
                         <hr>
                         <div class="status-items">
-                            <p class="connects">573 Connects</p>
-                            <p class="status"><ion-icon name="ellipse"></ion-icon>Student</p>
+                            <p class="connects">{{$user["connects"]}} Connects</p>
+                            <p class="status"><ion-icon name="ellipse"></ion-icon>{{$user["usertype"]}}</p>
                         </div>
                         <hr>
                         <div class="btns">
@@ -62,82 +63,7 @@
                             <button type="button" class="chat-btn"><ion-icon name="mail"></ion-icon></button>
                         </div>
                     </div>
-                    <div class="person-card">
-                        <div class="profile-image-person">
-                            <a href=""><img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile-image"></a>
-                        </div>
-                        <div class="name-container-person">
-                                <h4 class="name"><a href="">John Doe</a></h4>
-                                <p class="username">@john.doe</p>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">2543 Connects</p>
-                            <p class="status"><ion-icon name="ellipse"></ion-icon>Staff</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="connect-btn">Connect</button>
-                            <button type="button" class="chat-btn"><ion-icon name="mail"></ion-icon></button>
-                        </div>
-                    </div>
-                    <div class="person-card">
-                        <div class="profile-image-person">
-                            <a href=""><img src="{{asset('assets/images/profile-images/profile-img-5.png')}}" alt="profile-image"></a>
-                        </div>
-                        <div class="name-container-person">
-                                <h4 class="name"><a href="">John Doe</a></h4>
-                                <p class="username">@john.doe</p>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">765 Connects</p>
-                            <p class="status"><ion-icon name="ellipse"></ion-icon>Admin</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="connect-btn">Connect</button>
-                            <button type="button" class="chat-btn"><ion-icon name="mail"></ion-icon></button>
-                        </div>
-                    </div>
-                    <div class="person-card">
-                        <div class="profile-image-person">
-                            <a href=""><img src="{{asset('assets/images/profile-images/profile-img-6.png')}}" alt="profile-image"></a>
-                        </div>
-                        <div class="name-container-person">
-                                <h4 class="name"><a href="">John Doe</a></h4>
-                                <p class="username">@john.doe</p>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">234 Connects</p>
-                            <p class="status"><ion-icon name="ellipse"></ion-icon>Student</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="connect-btn">Connect</button>
-                            <button type="button" class="chat-btn"><ion-icon name="mail"></ion-icon></button>
-                        </div>
-                    </div>
-                    <div class="person-card">
-                        <div class="profile-image-person">
-                            <a href=""><img src="{{asset('assets/images/profile-images/profile-img-1.png')}}" alt="profile-image"></a>
-                        </div>
-                        <div class="name-container-person">
-                                <h4 class="name"><a href="">John Doe</a></h4>
-                                <p class="username">@john.doe</p>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">876 Connects</p>
-                            <p class="status"><ion-icon name="ellipse"></ion-icon>Student</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="connect-btn">Connect</button>
-                            <button type="button" class="chat-btn"><ion-icon name="mail"></ion-icon></button>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="search-club">
@@ -145,96 +71,27 @@
                     About 132 results related with "photography" in clubs.
                 </div>
                 <div class="sub-container-club">
+                    @foreach($searchclubcard as $club)
                     <div class="club-card">
                         <div class="img-and-username-section">
                             <div class="profile-image-club">
-                                <a href=""><img src="{{asset('assets/images/club-img-2.png')}}" alt="profile-image"></a>
+                                <a href=""><img src="{{$club["profileimage"]}}" alt="profile-image"></a>
                             </div>
                             <div class="name-container-club">
-                                <h4 class="name"><a href="">Photography Club</a></h4>
+                                <h4 class="name"><a href="">{{$club["clubname"]}}</a></h4>
                             </div>
                         </div>
                         <hr>
                         <div class="status-items">
-                            <p class="connects">2573 Connects</p>
+                            <p class="connects">{{$club["members"]}} Members</p>
+                            <p class="status"><ion-icon name="ellipse"></ion-icon>{{$club["status"]}}</p>
                         </div>
                         <hr>
                         <div class="btns">
                             <button type="button" class="join-btn">Join Now</button>
                         </div>
                     </div>
-                    <div class="club-card">
-                        <div class="img-and-username-section">
-                            <div class="profile-image-club">
-                                <a href=""><img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-image"></a>
-                            </div>
-                            <div class="name-container-club">
-                                <h4 class="name"><a href="">Sports Club</a></h4>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">6344 Connects</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="join-btn">Join Now</button>
-                        </div>
-                    </div>
-                    <div class="club-card">
-                        <div class="img-and-username-section">
-                            <div class="profile-image-club">
-                                <a href=""><img src="{{asset('assets/images/club-img-2.png')}}" alt="profile-image"></a>
-                            </div>
-                            <div class="name-container-club">
-                                <h4 class="name"><a href="">Photography Club</a></h4>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">2573 Connects</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="join-btn">Join Now</button>
-                        </div>
-                    </div>
-                    <div class="club-card">
-                        <div class="img-and-username-section">
-                            <div class="profile-image-club">
-                                <a href=""><img src="{{asset('assets/images/club-img-1.png')}}" alt="profile-image"></a>
-                            </div>
-                            <div class="name-container-club">
-                                <h4 class="name"><a href="">Sports Club</a></h4>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">6344 Connects</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="join-btn">Join Now</button>
-                        </div>
-                    </div>
-                    <div class="club-card">
-                        <div class="img-and-username-section">
-                            <div class="profile-image-club">
-                                <a href=""><img src="{{asset('assets/images/club-img-2.png')}}" alt="profile-image"></a>
-                            </div>
-                            <div class="name-container-club">
-                                <h4 class="name"><a href="">Photography Club</a></h4>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="status-items">
-                            <p class="connects">2573 Connects</p>
-                        </div>
-                        <hr>
-                        <div class="btns">
-                            <button type="button" class="join-btn">Join Now</button>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="pagination">
