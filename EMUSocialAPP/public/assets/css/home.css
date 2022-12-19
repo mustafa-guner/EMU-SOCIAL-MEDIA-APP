@@ -576,6 +576,7 @@ body .post-container .post-btns hr {
 }
 
 body .post-container .post-btns .btns {
+  margin-top: 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,7 +649,6 @@ body .post-container .post-btns .btns .comment-btn ion-icon {
 
 body .club-post-container {
   margin-bottom: 2rem;
-  height: 380px;
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
@@ -709,6 +709,7 @@ body .club-post-container .club-post-profile .club-post-profile-img img {
 }
 
 body .club-post-container .club-post-profile .club-header {
+  margin-left: 0.5rem;
   width: 100%;
 }
 
@@ -733,7 +734,6 @@ body .club-post-container .main-content {
   -ms-grid-columns: 0.3fr 2fr 0.3fr;
       grid-template-columns: 0.3fr 2fr 0.3fr;
   width: 100%;
-  height: 160px;
 }
 
 body .club-post-container .main-content .post-profile-img {
