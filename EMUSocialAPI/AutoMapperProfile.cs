@@ -1,4 +1,5 @@
 using AutoMapper;
+using EMUSocialAPI.DTOs.Admin;
 using EMUSocialAPI.DTOs.User;
 using EMUSocialAPI.Models;
 
@@ -10,6 +11,7 @@ namespace EMUSocialAPI
         {
             CreateMap<UserModel, GetUserDTO>();
             CreateMap<RegisterUserDTO, UserModel>();
+            CreateMap<UpdateUserDTO, UserModel>();
         }
     }
 }

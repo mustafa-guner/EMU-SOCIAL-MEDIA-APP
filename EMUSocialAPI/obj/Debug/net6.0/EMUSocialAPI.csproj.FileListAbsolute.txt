@@ -38,3 +38,8 @@ C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\DevOne.Security.Cryptography.BCrypt.dll
 C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\legen\OneDrive\Desktop\Desktop\Projects\Graduation Project\EMUSocialAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

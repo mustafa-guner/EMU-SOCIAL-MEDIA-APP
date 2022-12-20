@@ -5,7 +5,10 @@ namespace EMUSocialAPI.Services.User
 {
     public interface IUserService
     {
-        Task<ServiceResponse<GetUserDTO>> GetUserByID(Guid Id);
+        Task<ServiceResponse<GetUserDTO>> GetUserByID(int Id);
+        Task<ServiceResponse<List<GetUserDTO>>> GetAllUsers();
+
+
 
     }
 }

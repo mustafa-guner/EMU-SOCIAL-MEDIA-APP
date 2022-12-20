@@ -1,14 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+using EMUSocialAPI.Models.Enums.User;
 namespace EMUSocialAPI.Models
 {
+
+
     public class StudentModel : UserModel
     {
+        public int StudentNumber { get; set; }
         public bool IsGraduated { get; set; } = false;
         public bool IsAssistant { get; set; } = false;
-        public DateTime GradationDate { get; set; }
+        public DegreeType DegreeType { get; set; }
+        public DateTime GraduationDate { get; set; }
     }
 }

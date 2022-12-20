@@ -1,8 +1,14 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using AutoMapper;
 using EMUSocialAPI.Data;
 using EMUSocialAPI.DTOs.User;
+using EMUSocialAPI.Helpers;
 using EMUSocialAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Bcrypt = BCrypt.Net.BCrypt;
 
 namespace EMUSocialAPI.Services.Auth
@@ -12,10 +18,12 @@ namespace EMUSocialAPI.Services.Auth
 
         private readonly IMapper _mapper;
         private readonly DataContext _dbContext;
-        public AuthService(IMapper mapper, DataContext dbContext)
+        private readonly AppSettings _appSettings;
+        public AuthService(IMapper mapper, DataContext dbContext, IOptions<AppSettings> appSettings)
         {
             _mapper = mapper;
             _dbContext = dbContext;
+            _appSettings = appSettings.Value;
         }
 
         public async Task<ServiceResponse<GetUserDTO>> Register(RegisterUserDTO registerCredentials)
@@ -47,17 +55,9 @@ namespace EMUSocialAPI.Services.Auth
             }
         }
 
-
-        public async Task<List<UserModel>> Users()
+        public async Task<LoginResponse> Login(LoginUserDTO loginCredentials)
         {
-            var dbUsers = await _dbContext.Users.ToListAsync();
-            return dbUsers;
-        }
-
-
-        public async Task<ServiceResponse<GetUserDTO>> Login(LoginUserDTO loginCredentials)
-        {
-            var serviceResponse = new ServiceResponse<GetUserDTO>();
+            var loginResponse = new LoginResponse();
             try
             {
                 var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == loginCredentials.Email);
@@ -70,16 +70,32 @@ namespace EMUSocialAPI.Services.Auth
                 //Check user's account if it is active or not.
                 if (user.IsActive is not true) throw new Exception("Your account has not activated yet. Please get in touch with admin.");
 
-                serviceResponse.Data = _mapper.Map<GetUserDTO>(_mapper.Map<UserModel>(user));
-                return serviceResponse;
+                loginResponse.Token = generateJwtToken(user);
+
+                return loginResponse;
             }
             catch (Exception e)
             {
-                serviceResponse.Success = false;
-                serviceResponse.Message = e.Message;
-                return serviceResponse;
+                loginResponse.Success = false;
+                loginResponse.Message = e.Message;
+                return loginResponse;
             }
 
+        }
+
+        private string generateJwtToken(UserModel user)
+        {
+            // generate token that is valid for 7 days
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }

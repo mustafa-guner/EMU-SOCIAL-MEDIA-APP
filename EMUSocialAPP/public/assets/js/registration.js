@@ -610,26 +610,28 @@ class RegistrationFormWithSteps {
                 password: passwordValue,
             };
 
+            const academicInformation = this.FormSteps.getInputsByStepTitle(
+                "academicInformation"
+            ).userType.find((userType) => userType.selected == true);
             const academicInformationInputs =
-                this.FormSteps.getInputsByStepTitle(
-                    "academicInformation"
-                ).userType.find(
-                    (userType) => userType.selected == true
-                ).assoicatedInputs;
-
+                academicInformation.assoicatedInputs;
             const validateAcademicInformationInputs =
                 VALIDATIONS.Inputs.validateInputs(academicInformationInputs);
 
-            const validatedAcademicDetails =
+            let validatedAcademicDetails =
                 VALIDATIONS.Inputs.getValidatedFormData(
                     validateAcademicInformationInputs
                 );
-
+            validatedAcademicDetails = {
+                ...validatedAcademicDetails,
+                academiccareer: academicInformation.type,
+            };
             let requestBody = {
                 ...validatedPersonalInformationInputs,
                 ...validatedAcademicDetails,
             };
 
+            console.log(requestBody);
             let token = document
                 .querySelector('meta[name="csrf-token"]')
                 .getAttribute("content");

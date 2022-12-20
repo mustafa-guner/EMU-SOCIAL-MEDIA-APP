@@ -8,6 +8,6 @@ namespace EMUSocialAPI.Models.Enums.User
         Instructor = 11,
         Servant = 12,
         Student = 22,
-        Assistant = 23
+
     }
 }

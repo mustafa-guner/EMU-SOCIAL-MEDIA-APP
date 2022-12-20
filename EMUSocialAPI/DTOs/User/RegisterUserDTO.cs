@@ -14,7 +14,6 @@ namespace EMUSocialAPI.DTOs.User
         public UserRole Role { get; set; } = UserRole.User;
         public string Country { get; set; } = null!;
         public UserType UserType { get; set; }
-        public bool IsActive { get; set; } = false;
         public DateTime RegisteredAt { get; set; } = DateTime.Now;
 
     }

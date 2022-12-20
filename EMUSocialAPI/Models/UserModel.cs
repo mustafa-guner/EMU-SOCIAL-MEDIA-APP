@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using EMUSocialAPI.Models.Enums.User;
+
 namespace EMUSocialAPI.Models
 {
     public class UserModel
     {
         [Key]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int Id { get; set; }
         public string Firstname { get; set; } = null!;
         public string Lastname { get; set; } = null!;
         public string Email { get; set; } = null!;

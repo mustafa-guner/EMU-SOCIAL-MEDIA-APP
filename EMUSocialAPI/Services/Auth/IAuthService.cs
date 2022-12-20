@@ -6,8 +6,7 @@ namespace EMUSocialAPI.Services.Auth
     public interface IAuthService
     {
         Task<ServiceResponse<GetUserDTO>> Register(RegisterUserDTO newUser);
-        Task<ServiceResponse<GetUserDTO>> Login(LoginUserDTO user);
+        Task<LoginResponse> Login(LoginUserDTO user);
 
-        Task<List<UserModel>> Users();
     }
 }

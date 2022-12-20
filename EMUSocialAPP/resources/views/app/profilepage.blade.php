@@ -412,56 +412,6 @@
                             </div>
                         </div>`,
             clubs: `   <div class="profile-section-header"><h2>Clubs</h2></div>
-                        <div class="profile-section-clubs-content">
-                            <div class="join-club">
-                                <div class="club-img">
-                                    <a href="">
-                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
-                                    </a>
-                                </div>
-                                <div class="name-container-club">
-                                    <h4 class="name"><a href="">Sports Club</a></h4>
-                                    <p class="members">143 Members</p>
-                                </div>
-                                <button type="button" class="join-now-btn">Join Now</button>
-                            </div>
-                            <div class="join-club">
-                                <div class="club-img">
-                                    <a href="">
-                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
-                                    </a>
-                                </div>
-                                <div class="name-container-club">
-                                    <h4 class="name"><a href="">Sports Club</a></h4>
-                                    <p class="members">143 Members</p>
-                                </div>
-                                <button type="button" class="join-now-btn">Join Now</button>
-                            </div>
-                            <div class="join-club">
-                                <div class="club-img">
-                                    <a href="">
-                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
-                                    </a>
-                                </div>
-                                <div class="name-container-club">
-                                    <h4 class="name"><a href="">Sports Club</a></h4>
-                                    <p class="members">143 Members</p>
-                                </div>
-                                <button type="button" class="join-now-btn">Join Now</button>
-                            </div>
-                            <div class="join-club">
-                                <div class="club-img">
-                                    <a href="">
-                                        <img src="{{ asset('assets/images/club-img-1.png') }}" alt="profile-img">
-                                    </a>
-                                </div>
-                                <div class="name-container-club">
-                                    <h4 class="name"><a href="">Sports Club</a></h4>
-                                    <p class="members">143 Members</p>
-                                </div>
-                                <button type="button" class="join-now-btn">Join Now</button>
-                            </div>
-                        </div>
                         <div class="show-more">
                             <a href="">Show More</a>
                         </div>`,

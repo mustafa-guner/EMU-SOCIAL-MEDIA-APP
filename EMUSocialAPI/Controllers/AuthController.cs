@@ -22,11 +22,6 @@ namespace EMUSocialAPI.Controllers
             return Ok(registerResult);
         }
 
-        [HttpGet("/users")]
-        public async Task<ActionResult<List<UserModel>>> Users()
-        {
-            return Ok(await _authService.Users());
-        }
 
         [HttpPost("/login")]
         public async Task<ActionResult<ServiceResponse<GetUserDTO>>> Login(LoginUserDTO loginRequest)
