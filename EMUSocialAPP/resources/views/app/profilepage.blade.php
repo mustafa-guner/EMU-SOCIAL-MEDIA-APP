@@ -27,10 +27,47 @@
             <div class="nav-right">
                 <a type="button"><ion-icon name="mail"></ion-icon></a>
                 <a type="button"><ion-icon name="notifications"></ion-icon></a>
-                <a href="/profile" type="button"><ion-icon name="person"></ion-icon></a>
+                <a href="/profile" type="button" data-toggle="modal" data-target="#changePassword" data-whatever="@mdo"><ion-icon name="person"></ion-icon></a>
             </div>
         </div>
     </nav>
+    
+    <!-- Change Password Modal -->
+    <div id="changePassword" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-change-pwd">
+                <div class="modal-header">
+                    <h1>Change Password</h1>
+                </div>
+                <div class="close-btn">
+                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="main-content">
+                    <form action="">
+                        <div class="modal-body">
+                            <div class="form-elements">
+                                <div class="old-pwd">
+                                    <label for="old-pwd" class="col-form-label old-pwd-lbl">Old Password:</label>
+                                    <input type="password" class="form-control old-pwd-input" id="old-pwd" placeholder="Please enter your old password...">
+                                </div>
+                                <div class="new-pwd">
+                                    <label for="new-pwd" class="col-form-label new-pwd-lbl">New Password:</label>
+                                    <input type="password" class="form-control new-pwd-input" id="new-pwd" placeholder="Please enter your new password...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-change-pwd">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="main-section">
         <div class="left-section">
             <div class="profile-container">
@@ -52,7 +89,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <button class="edit-btn"><ion-icon name="settings"></ion-icon></button>
+                        <button class="edit-btn" type="button" data-toggle="modal" data-target="#edit-profile-modal"><ion-icon name="settings"></ion-icon></button>
                         <div class="common-connect">
                             <div class="common-images">
 
@@ -195,16 +232,77 @@
             </div>
         </div>
     </section>
-    <!-- Edit Profile Modal
-    <button type="button" class="" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
 
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-            ...
+            <div class="modal-content modal-edit-profile">
+                <div class="modal-header">
+                    <h1>Profile Edit</h1>
+                </div>
+                <div class="close-btn">
+                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="main-content">
+                    <form action="">
+                        <div class="profile-image-section">
+                            <div class="top-section">
+                                <div class="header">
+                                    <h2>Profile Image</h2>
+                                </div>
+                                <div class="edit-btn">
+                                    <input id="profile-image" type="file" style="visibility: hidden;">
+                                    <label for="profile-image">Edit</label>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <label for="profile-image" class="profile-img">
+                                    <img src="{{asset('assets/images/profile-images/profile-img-4.png')}}" alt="profile image">
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="cover-image-section">
+                            <div class="top-section">
+                                <div class="header">
+                                    <h2>Cover Image</h2>
+                                </div>
+                                <div class="edit-btn">
+                                    <input id="profile-image" type="file" style="visibility: hidden;">
+                                    <label for="profile-image">Edit</label>
+                                </div>
+                            </div>
+                            <label for="profile-image" class="content">
+                                <div class="cover-img">
+                                    <img src="{{asset('assets/images/profile-bg-img.jpg')}}" alt="profile image">
+                                </div>
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="desc-section">
+                            <div class="top-section">
+                                <div class="header">
+                                    <h2>Description</h2>
+                                </div>
+                            </div>
+                            <label for="profile-image" class="content">
+                                <div class="desc-textarea">
+                                    <textarea name="profile-desc" id=""></textarea>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-save-changes">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div> -->
+    </div>
+
     <script>
         const navBtns = document.querySelectorAll(".navigation-btn");
         const profileShowCase = document.querySelector(".profile-section-container");
