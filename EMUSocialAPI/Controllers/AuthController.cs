@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using EMUSocialAPI.Services.Auth;
-using EMUSocialAPI.DTOs.User;
-using EMUSocialAPI.Models;
+using EMUSocialAPI.Authorization;
+using EMUSocialAPI.Models.DTOs.Auth;
 
 namespace EMUSocialAPI.Controllers
 {
+
+    [Authorize]
     [ApiController]
-    [Route("auth")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -15,16 +16,18 @@ namespace EMUSocialAPI.Controllers
             _authService = authService;
         }
 
-        [HttpPost("/register")]
-        public async Task<ActionResult<ServiceResponse<GetUserDTO>>> Register(RegisterUserDTO registerRequest)
+
+        [AllowAnonymous]
+        [HttpPost("/auth/register")]
+        public async Task<ActionResult<RegisterResponse>> Register(RegisterRequestDTO registerRequest)
         {
             var registerResult = await _authService.Register(registerRequest);
             return Ok(registerResult);
         }
 
-
-        [HttpPost("/login")]
-        public async Task<ActionResult<ServiceResponse<GetUserDTO>>> Login(LoginUserDTO loginRequest)
+        [AllowAnonymous]
+        [HttpPost("/auth/login")]
+        public async Task<ActionResult<LoginResponse>> Authenticate(LoginRequestDTO loginRequest)
         {
             var loginResponse = await _authService.Login(loginRequest);
             return Ok(loginResponse);

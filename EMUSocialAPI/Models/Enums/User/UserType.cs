@@ -5,9 +5,9 @@ namespace EMUSocialAPI.Models.Enums.User
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum UserType
     {
-        Instructor = 11,
-        Servant = 12,
-        Student = 22,
+        Instructor,
+        Servant,
+        Student,
 
     }
 }

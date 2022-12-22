@@ -1,11 +1,12 @@
-using EMUSocialAPI.DTOs.Admin;
-using EMUSocialAPI.DTOs.User;
 using EMUSocialAPI.Models;
+using EMUSocialAPI.Models.DTOs.Admin;
+using EMUSocialAPI.Models.DTOs.Users;
 using EMUSocialAPI.Services.Admin;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EMUSocialAPI.Controllers
 {
+
     [ApiController]
     [Route("admin")]
     public class AdminController : ControllerBase
@@ -16,18 +17,22 @@ namespace EMUSocialAPI.Controllers
             _adminService = adminService;
         }
 
+
         [Route("/toggle-active-account/{id}")]
         [HttpPut]
         public async Task<ActionResult<ServiceResponse<GetUserDTO>>> ToggleActiveAccount(int id)
         {
             return Ok(await _adminService.ToggleActiveUserAccount(id));
         }
+
+
         [Route("/remove-user/{id}")]
         [HttpDelete]
         public async Task<ActionResult<ServiceResponse<GetUserDTO>>> RemoveUserByID(int id)
         {
             return Ok(await _adminService.RemoveUserAccount(id));
         }
+
 
         [Route("/update-user/{id}")]
         [HttpPut]

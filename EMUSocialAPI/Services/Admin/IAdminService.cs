@@ -1,6 +1,6 @@
-using EMUSocialAPI.DTOs.Admin;
-using EMUSocialAPI.DTOs.User;
 using EMUSocialAPI.Models;
+using EMUSocialAPI.Models.DTOs.Admin;
+using EMUSocialAPI.Models.DTOs.Users;
 
 namespace EMUSocialAPI.Services.Admin
 {

@@ -1,8 +1,8 @@
 using AutoMapper;
 using EMUSocialAPI.Data;
-using EMUSocialAPI.DTOs.Admin;
-using EMUSocialAPI.DTOs.User;
 using EMUSocialAPI.Models;
+using EMUSocialAPI.Models.DTOs.Admin;
+using EMUSocialAPI.Models.DTOs.Users;
 using Bcrypt = BCrypt.Net.BCrypt;
 
 namespace EMUSocialAPI.Services.Admin
@@ -21,7 +21,6 @@ namespace EMUSocialAPI.Services.Admin
             var serviceResponse = new ServiceResponse<GetUserDTO>();
             try
             {
-
                 var user = await _dbContext.Users.FindAsync(id);
                 if (user is null) throw new Exception("User is not found to update active status.");
                 user.IsActive = !user.IsActive;
@@ -43,7 +42,6 @@ namespace EMUSocialAPI.Services.Admin
             var serviceResponse = new ServiceResponse<GetUserDTO>();
             try
             {
-
                 var user = await _dbContext.Users.FindAsync(id);
                 if (user is null) throw new Exception("User is not found to remove.");
                 serviceResponse.Data = _mapper.Map<GetUserDTO>(user);
@@ -70,17 +68,32 @@ namespace EMUSocialAPI.Services.Admin
 
                 _mapper.Map<UserModel>(updateUser);
 
+
                 //Update possible fields.
-                user.Firstname = updateUser.Firstname;
-                user.Lastname = updateUser.Lastname;
-                user.Email = updateUser.Email;
-                user.Password = Bcrypt.HashPassword(updateUser.Password);
+                if (!string.IsNullOrEmpty(updateUser.Firstname))
+                    user.Firstname = updateUser.Firstname;
+
+                if (!string.IsNullOrEmpty(updateUser.Lastname))
+                    user.Lastname = updateUser.Lastname;
+
+                if (!string.IsNullOrEmpty(updateUser.Country))
+                    user.Country = updateUser.Country;
+
+                if (!string.IsNullOrEmpty(updateUser.Email))
+                {
+                    var existedEmail = _dbContext.Users.Any(x => x.Email == updateUser.Email);
+                    if (existedEmail && user.Email == updateUser.Email) throw new Exception("Email should be different from the previous one.");
+                    else if (existedEmail) throw new Exception("Email is already taken.");
+                    else user.Email = updateUser.Email;
+                }
+
+                // hash password if it was entered
+                if (!string.IsNullOrEmpty(updateUser.Password))
+                    user.Password = Bcrypt.HashPassword(updateUser.Password);
+
                 user.Dob = updateUser.Dob;
                 user.Gender = updateUser.Gender;
-                user.Role = updateUser.Role;
-                user.Country = updateUser.Country;
                 user.UserType = updateUser.UserType;
-
 
 
                 var updatedUser = _dbContext.Users.Update(user);

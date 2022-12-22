@@ -1,7 +1,7 @@
 using AutoMapper;
 using EMUSocialAPI.Data;
-using EMUSocialAPI.DTOs.User;
 using EMUSocialAPI.Models;
+using EMUSocialAPI.Models.DTOs.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace EMUSocialAPI.Services.User
@@ -19,23 +19,12 @@ namespace EMUSocialAPI.Services.User
 
         }
 
-        public async Task<ServiceResponse<GetUserDTO>> GetUserByID(int Id)
+        public async Task<GetUserDTO> GetUserByID(int Id)
         {
-            var serviceResponse = new ServiceResponse<GetUserDTO>();
-            try
-            {
-                var user = await _dbContext.Users.FindAsync(Id);
-                if (user is null) throw new Exception("User is not found with the given ID.");
-
-                serviceResponse.Data = _mapper.Map<GetUserDTO>(user);
-                return serviceResponse;
-            }
-            catch (Exception e)
-            {
-                serviceResponse.Success = false;
-                serviceResponse.Message = e.Message;
-                return serviceResponse;
-            }
+            var user = await _dbContext.Users.FindAsync(Id);
+            if (user is null) throw new KeyNotFoundException("User not found");
+            var mappedUser = _mapper.Map<GetUserDTO>(user);
+            return mappedUser;
         }
         public async Task<ServiceResponse<List<GetUserDTO>>> GetAllUsers()
         {
@@ -44,8 +33,6 @@ namespace EMUSocialAPI.Services.User
             serviceResponse.Data = users.Select(u => _mapper.Map<GetUserDTO>(u)).ToList();
             return serviceResponse;
         }
-
-
 
     }
 }

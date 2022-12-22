@@ -1,5 +1,5 @@
 using EMUSocialAPI.Models.Enums.User;
-namespace EMUSocialAPI.Models
+namespace EMUSocialAPI.Models.Users
 {
 
 

@@ -1,12 +1,11 @@
-using EMUSocialAPI.DTOs.User;
-using EMUSocialAPI.Models;
+using EMUSocialAPI.Models.DTOs.Auth;
 
 namespace EMUSocialAPI.Services.Auth
 {
     public interface IAuthService
     {
-        Task<ServiceResponse<GetUserDTO>> Register(RegisterUserDTO newUser);
-        Task<LoginResponse> Login(LoginUserDTO user);
+        Task<RegisterResponse> Register(RegisterRequestDTO newUser);
+        Task<LoginResponse> Login(LoginRequestDTO user);
 
     }
 }

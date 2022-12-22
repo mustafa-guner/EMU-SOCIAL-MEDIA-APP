@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace EMUSocialAPI.Models
+namespace EMUSocialAPI.Models.Users
 {
     public class StaffModel : UserModel
     {

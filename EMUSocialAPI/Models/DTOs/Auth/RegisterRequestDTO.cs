@@ -1,25 +1,32 @@
+using System.ComponentModel.DataAnnotations;
 using EMUSocialAPI.Models.Enums.User;
-using System.Text.Json.Serialization;
-namespace EMUSocialAPI.DTOs.User
+
+namespace EMUSocialAPI.Models.DTOs.Auth
 {
-    public class GetUserDTO
+    public class RegisterRequestDTO
     {
-        public int Id { get; set; }
+        [Required]
         public string Firstname { get; set; } = null!;
+        [Required]
         public string Lastname { get; set; } = null!;
+        [Required]
         public string Email { get; set; } = null!;
+        // public byte[] ProfileImage { get; set; } = null!;
+        [Required]
         public string ProfileImage { get; set; } = null!;
-        [JsonIgnore] //select:false in mongoose which means it is hidden
+        [Required]
         public string Password { get; set; } = null!;
+        [Required]
         public DateTime Dob { get; set; }
+        [Required]
         public GenderType Gender { get; set; }
-        public UserRole Role { get; set; } = UserRole.User;
+        [Required]
+        public UserRole Role { get; set; }
+        [Required]
         public string Country { get; set; } = null!;
-        public DateTime ResetPasswordTokenExpiry { get; set; }
-        public string ResetPasswordToken { get; set; } = string.Empty;
+        [Required]
         public UserType UserType { get; set; }
-        public bool IsActive { get; set; } = false;
+        [Required]
         public DateTime RegisteredAt { get; set; } = DateTime.Now;
-        public DateTime ActivatedAt { get; set; }
     }
 }
