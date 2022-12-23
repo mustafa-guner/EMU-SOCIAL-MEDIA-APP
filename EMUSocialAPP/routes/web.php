@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ClubController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,8 @@ Route::post('/registration', 'auth@register');
 Route::get('/home', [HomeController::class, 'gethomeDetails']);
 
 Route::get('/profile', [ProfileController::class, 'getprofileDetails']);
+
+Route::get('/club', [ClubController::class, 'getclubDetails']);
 
 Route::get('/search', [SearchController::class, 'getsearchDetails']);
 
