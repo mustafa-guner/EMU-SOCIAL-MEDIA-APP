@@ -1,12 +1,14 @@
+using EMUSocialAPI.Authorization;
 using EMUSocialAPI.Models;
 using EMUSocialAPI.Models.DTOs.Admin;
 using EMUSocialAPI.Models.DTOs.Users;
+using EMUSocialAPI.Models.Enums.User;
 using EMUSocialAPI.Services.Admin;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EMUSocialAPI.Controllers
 {
-
+    [Authorize(UserRole.Admin)]
     [ApiController]
     [Route("admin")]
     public class AdminController : ControllerBase

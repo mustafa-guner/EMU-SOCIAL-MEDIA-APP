@@ -93,7 +93,7 @@ namespace EMUSocialAPI.Services.Admin
 
                 user.Dob = updateUser.Dob;
                 user.Gender = updateUser.Gender;
-                user.UserType = updateUser.UserType;
+                user.UserTypeID = updateUser.UserTypeID;
 
 
                 var updatedUser = _dbContext.Users.Update(user);

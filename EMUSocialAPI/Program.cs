@@ -71,4 +71,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
+//Seeding Datbase in first place (mocking data up)
+AppDBInitializer.Seed(app);
+
 app.Run();

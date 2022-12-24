@@ -18,6 +18,7 @@ namespace EMUSocialAPI.Controllers
 
 
         [AllowAnonymous]
+
         [HttpPost("/auth/register")]
         public async Task<ActionResult<RegisterResponse>> Register(RegisterRequestDTO registerRequest)
         {
@@ -26,6 +27,7 @@ namespace EMUSocialAPI.Controllers
         }
 
         [AllowAnonymous]
+
         [HttpPost("/auth/login")]
         public async Task<ActionResult<LoginResponse>> Authenticate(LoginRequestDTO loginRequest)
         {

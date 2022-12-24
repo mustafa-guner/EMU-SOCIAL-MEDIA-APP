@@ -21,7 +21,7 @@ namespace EMUSocialAPI.Controllers
         }
 
 
-        [Authorize(UserRole.Admin)]
+        [Authorize(UserRole.Admin, UserRole.SuperAdmin)]
         [HttpGet("/users")]
         public async Task<ActionResult<ServiceResponse<List<GetUserDTO>>>> GetAllUsers()
         {
