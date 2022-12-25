@@ -65,7 +65,7 @@ namespace EMUSocialAPI.Authorization
             catch
             {
                 // return null if validation fails
-                return null;
+                throw new ApplicationException("Your authentication token is not valid. Please log in.");
             }
         }
     }
