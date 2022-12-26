@@ -11,10 +11,12 @@ namespace EMUSocialAPI.Services.Admin
     {
         private IMapper _mapper;
         private readonly DataContext _dbContext;
-        public AdminService(IMapper mapper, DataContext dbContext)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public AdminService(IMapper mapper, DataContext dbContext, IHttpContextAccessor httpContextAccessor)
         {
             _mapper = mapper;
             _dbContext = dbContext;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<ServiceResponse<GetUserDTO>> ToggleActiveUserAccount(int id)
         {
@@ -42,7 +44,12 @@ namespace EMUSocialAPI.Services.Admin
             var serviceResponse = new ServiceResponse<GetUserDTO>();
             try
             {
+
                 var user = await _dbContext.Users.FindAsync(id);
+
+                var currentUser = (GetUserDTO)_httpContextAccessor.HttpContext.Items["User"]!;
+                if (currentUser.Id == id) throw new ApplicationException("You are not allowed to remove yourself!");
+
                 if (user is null) throw new Exception("User is not found to remove.");
                 serviceResponse.Data = _mapper.Map<GetUserDTO>(user);
                 _dbContext.Users.Remove(user);
@@ -64,7 +71,7 @@ namespace EMUSocialAPI.Services.Admin
             try
             {
                 var user = await _dbContext.Users.FindAsync(id);
-                if (user is null) throw new Exception("User is not found to update.");
+                if (user is null) throw new ApplicationException("User is not found to update.");
 
                 _mapper.Map<UserModel>(updateUser);
 
@@ -82,8 +89,8 @@ namespace EMUSocialAPI.Services.Admin
                 if (!string.IsNullOrEmpty(updateUser.Email))
                 {
                     var existedEmail = _dbContext.Users.Any(x => x.Email == updateUser.Email);
-                    if (existedEmail && user.Email == updateUser.Email) throw new Exception("Email should be different from the previous one.");
-                    else if (existedEmail) throw new Exception("Email is already taken.");
+                    if (existedEmail && user.Email == updateUser.Email) throw new ApplicationException("Email should be different from the previous one.");
+                    else if (existedEmail) throw new ApplicationException("Email is already taken.");
                     else user.Email = updateUser.Email;
                 }
 

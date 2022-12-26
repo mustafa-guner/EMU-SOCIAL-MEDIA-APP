@@ -34,7 +34,7 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
-
+builder.Services.AddHttpContextAccessor();
 
 //Dependency Injection
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -61,9 +61,9 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 // custom jwt auth middleware
 app.UseMiddleware<JwtMiddleware>();
 
-// app.UseAuthentication();
+app.UseAuthentication();
 
-// app.UseAuthorization();
+app.UseAuthorization();
 
 app.UseHttpsRedirection();
 

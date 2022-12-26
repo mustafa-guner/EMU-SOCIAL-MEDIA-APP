@@ -10,12 +10,14 @@ namespace EMUSocialAPI.Services.User
     {
         private readonly DataContext _dbContext;
         private readonly IMapper _mapper;
+        // private readonly AuthorizationFilterContext _contxt;
 
 
         public UserService(IMapper mapper, DataContext dbContext)
         {
             _mapper = mapper;
             _dbContext = dbContext;
+            // _contxt = contxt;
 
         }
 
@@ -28,6 +30,7 @@ namespace EMUSocialAPI.Services.User
         }
         public async Task<ServiceResponse<List<GetUserDTO>>> GetAllUsers()
         {
+            // var currentUser = (GetUserDTO)_contxt.HttpContext.Items["User"]!;
             var serviceResponse = new ServiceResponse<List<GetUserDTO>>();
             var users = await _dbContext.Users.ToListAsync();
             serviceResponse.Data = users.Select(u => _mapper.Map<GetUserDTO>(u)).ToList();

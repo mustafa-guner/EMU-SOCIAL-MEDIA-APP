@@ -5,7 +5,6 @@ using EMUSocialAPI.Models.Enums.User;
 using EMUSocialAPI.Services.User;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace EMUSocialAPI.Controllers
 {
 
@@ -15,6 +14,7 @@ namespace EMUSocialAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+
         public UserController(IUserService userService)
         {
             _userService = userService;
@@ -25,7 +25,7 @@ namespace EMUSocialAPI.Controllers
         [HttpGet("/users")]
         public async Task<ActionResult<ServiceResponse<List<GetUserDTO>>>> GetAllUsers()
         {
-            return Ok(await _userService.GetAllUsers());
+            return Ok(new { users = await _userService.GetAllUsers() });
         }
         // [Authorize(UserRole.User)]
         // [HttpGet("/{id}")]

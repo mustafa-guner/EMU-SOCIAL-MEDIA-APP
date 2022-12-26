@@ -1,5 +1,7 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using EMUSocialAPI.Models.Enums.User;
+using EMUSocialAPI.Models.Users;
 
 namespace EMUSocialAPI.Models.DTOs.Users
 {
@@ -12,6 +14,7 @@ namespace EMUSocialAPI.Models.DTOs.Users
         // public byte[] ProfileImage { get; set; } = null!;
         public string ProfileImage { get; set; } = null!;
         public string Password { get; set; } = null!;
+        [DataType(DataType.Date)]
         public DateTime Dob { get; set; }
         [Column(TypeName = "nvarchar(20)")]
         public GenderType Gender { get; set; }
@@ -25,5 +28,10 @@ namespace EMUSocialAPI.Models.DTOs.Users
         public bool IsActive { get; set; } = false;
         public DateTime RegisteredAt { get; set; } = DateTime.Now;
         public DateTime ActivatedAt { get; set; }
+
+        //Programming Logic for relationship
+
+        public int UserTypeID { get; set; }
+        public UserType? UserType { get; set; }
     }
 }

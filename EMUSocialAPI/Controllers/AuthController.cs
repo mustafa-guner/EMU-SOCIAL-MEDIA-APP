@@ -20,7 +20,7 @@ namespace EMUSocialAPI.Controllers
         [AllowAnonymous]
 
         [HttpPost("/auth/register")]
-        public async Task<ActionResult<RegisterResponse>> Register(RegisterRequestDTO registerRequest)
+        public async Task<ActionResult<RegisterResponse>> Register([FromBody] RegisterRequestDTO registerRequest)
         {
             var registerResult = await _authService.Register(registerRequest);
             return Ok(registerResult);
@@ -29,7 +29,7 @@ namespace EMUSocialAPI.Controllers
         [AllowAnonymous]
 
         [HttpPost("/auth/login")]
-        public async Task<ActionResult<LoginResponse>> Authenticate(LoginRequestDTO loginRequest)
+        public async Task<ActionResult<LoginResponse>> Authenticate([FromBody] LoginRequestDTO loginRequest)
         {
             var loginResponse = await _authService.Login(loginRequest);
             return Ok(loginResponse);

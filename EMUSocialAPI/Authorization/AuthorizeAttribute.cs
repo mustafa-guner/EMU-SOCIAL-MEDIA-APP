@@ -1,5 +1,3 @@
-
-using EMUSocialAPI.Models;
 using EMUSocialAPI.Models.DTOs.Users;
 using EMUSocialAPI.Models.Enums.User;
 using Microsoft.AspNetCore.Mvc;
@@ -27,8 +25,9 @@ namespace EMUSocialAPI.Authorization
                 return;
 
             // authorization
-            var user = (GetUserDTO)context.HttpContext.Items["User"];
+            var user = (GetUserDTO)context.HttpContext.Items["User"]!;
             if (user is null || (_roles.Any() && !_roles.Contains(user.Role)))
+
             {
                 // not logged in or role not authorized
                 context.Result = new JsonResult(new { message = "You are not authorized. Please log in." }) { StatusCode = StatusCodes.Status401Unauthorized };
