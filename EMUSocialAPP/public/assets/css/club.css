@@ -2,7 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -11,8 +12,10 @@ body {
 }
 
 #main-section {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1400px 368px;
+  -ms-grid-columns: 1800px;
+      grid-template-columns: 1800px;
   grid-row: auto;
   grid-gap: 32px;
   width: 100%;
@@ -21,12 +24,13 @@ body {
 }
 
 #main-section .profile-container {
-  width: 1400px;
-  height: 730px;
+  width: 1800px;
+  height: 630px;
   border-radius: 12px;
   overflow: hidden;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 #main-section .profile-container .profile-bg-img {
@@ -39,13 +43,16 @@ body {
 #main-section .profile-container .profile-bg-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #main-section .profile-container .profile-informations {
   height: 220px;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 3fr 1.3fr;
+  -ms-grid-columns: 0.7fr 3.2fr 1.3fr;
+      grid-template-columns: 0.7fr 3.2fr 1.3fr;
   position: relative;
 }
 
@@ -63,12 +70,9 @@ body {
 }
 
 #main-section .profile-container .profile-informations .infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-<<<<<<< HEAD
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 1.5rem;
-=======
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -77,7 +81,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 1rem;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
 }
 
 #main-section .profile-container .profile-informations .infos h1 {
@@ -87,26 +90,38 @@ body {
 }
 
 #main-section .profile-container .profile-informations .infos .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 1rem;
 }
 
 #main-section .profile-container .profile-informations .infos .icons .contact-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 0.8rem;
   font-size: larger;
 }
 
 #main-section .profile-container .profile-informations .infos .icons .contact-number ion-icon {
-  font-size: xx-large;
+  font-size: 30px;
   margin-right: 0.3rem;
 }
 
 #main-section .profile-container .profile-informations .infos .icons .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 1rem;
   font-size: larger;
   padding-left: 0.8rem;
@@ -114,7 +129,7 @@ body {
 }
 
 #main-section .profile-container .profile-informations .infos .icons .status ion-icon {
-  font-size: xx-large;
+  font-size: 27px;
   margin-right: 0.3rem;
 }
 
@@ -124,9 +139,16 @@ body {
 }
 
 #main-section .profile-container .profile-informations .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
   margin-right: 1rem;
 }
@@ -150,10 +172,19 @@ body {
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 100%;
   margin: 4rem 1rem 1rem 0;
 }
@@ -165,8 +196,12 @@ body {
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images {
   border-radius: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 50px;
   width: 143px;
 }
@@ -183,7 +218,8 @@ body {
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images div img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-1 {
@@ -208,18 +244,28 @@ body {
 }
 
 #main-section .profile-container .profile-informations .buttons .main-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 1rem;
 }
 
 #main-section .profile-container .profile-informations .buttons .main-btns button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
-  height: 35px;
-  width: 100px;
+  height: 40px;
+  width: 120px;
   background: #2F55AC;
   color: #FFFFFF;
   padding: 0.3rem;
@@ -239,67 +285,20 @@ body {
   font-size: large;
 }
 
-#main-section .profile-container hr {
-  width: 95%;
-  margin: 1rem auto;
-}
-
-#main-section .profile-container .profile-sections-navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 100%;
-}
-
-#main-section .profile-container .profile-sections-navbar button {
-  cursor: pointer;
-  margin: 0.5rem 1.5rem;
-  padding: 1.1rem 1.5rem;
-  font-size: x-large;
-  font-weight: bold;
-  background-color: #FFFFFF;
-  color: #012246;
-  border: none;
-}
-
-#main-section .profile-container .profile-sections-navbar button:hover {
-  color: #2F55AC;
-}
-
-#main-section .profile-container .profile-sections-navbar button.active {
-  color: #2F55AC;
-  border-bottom: 6px solid #2F55AC;
-}
-
-#main-section .connect-people-container {
-  width: 368px;
-}
-
-#main-section .connect-people-container .header-people {
-  padding-bottom: 0.5rem;
-}
-
-#main-section .connect-people-container .connect-person {
-  padding: 0.5rem 1rem;
-}
-
-#main-section .clubs-for-you-container {
-  width: 368px;
-  margin-top: 2rem;
-}
-
 #main-section .bottom-section {
   margin-top: 2rem;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 500px 878px;
+  -ms-grid-columns: 500px 800px 436px;
+      grid-template-columns: 500px 800px 436px;
   grid-gap: 32px;
 }
 
 #main-section .bottom-section .profile-section-container {
   border-radius: 12px;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   width: 500px;
   height: 500px;
 }
@@ -310,158 +309,17 @@ body {
   font-size: larger;
 }
 
-#main-section .bottom-section .profile-section-container .profile-section-overview-content {
+#main-section .bottom-section .profile-section-container .profile-section-friends-content {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  height: 80%;
-  width: 100%;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-overview-content div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-overview-content div ion-icon {
-  font-size: xxx-large;
-  color: #2F55AC;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-overview-content div p {
-  font-size: large;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-about-desc {
-  width: 100%;
-  height: 30%;
-  padding: 0 2rem;
-  text-align: justify;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  height: 55%;
-  width: 100%;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-about-content div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-about-content div ion-icon {
-  font-size: xxx-large;
-  color: #2F55AC;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-about-content div p {
-  font-size: large;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  align-items: center;
-  height: 75%;
-  width: 100%;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club {
-  border-radius: 12px;
-  background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  width: 90%;
-  height: 80%;
-  margin: auto;
-  padding: 0 1rem;
-  display: grid;
-<<<<<<< HEAD
-  grid-template-columns: 0.5fr 1.5fr 0.8fr;
-  align-items: center;
-=======
-  -ms-grid-columns: 0.3fr 1.8fr 0.8fr;
-      grid-template-columns: 0.3fr 1.8fr 0.8fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .club-img {
-  margin: 0 0.4rem;
-<<<<<<< HEAD
-  justify-self: center;
-  height: 70px;
-  width: 70px;
-=======
-  -ms-grid-column-align: center;
-      justify-self: center;
-  height: 60px;
-  width: 60px;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
-  border-radius: 100%;
-  overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .club-img img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club {
-  padding: 0.5rem 0.3rem;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club a {
-  text-decoration: none;
-  color: black;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .name {
-  color: #012246;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .members {
-  font-size: small;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .join-now-btn {
-  cursor: pointer;
-  height: 40px;
-  background: #2F55AC;
-  color: #FFFFFF;
-  padding: 0.3rem;
-  border: none;
-  border-radius: 12px;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .join-now-btn:hover {
-  font-weight: bold;
-  background: #FFFFFF;
-  color: #2F55AC;
-  border: 2px solid #2F55AC;
-}
-
-#main-section .bottom-section .profile-section-container .profile-section-friends-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  align-items: center;
   height: 75%;
   width: 100%;
 }
@@ -469,13 +327,18 @@ body {
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person {
   border-radius: 12px;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   width: 90%;
   margin: auto;
   padding: 0.5rem;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 0.5fr 1fr 0.4fr 0.7fr;
-  align-items: center;
+  -ms-grid-columns: 0.5fr 1fr 0.4fr 0.7fr;
+      grid-template-columns: 0.5fr 1fr 0.4fr 0.7fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person a {
@@ -484,16 +347,10 @@ body {
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .profile-img {
   margin: 0 0.4rem;
-<<<<<<< HEAD
-  justify-self: center;
-  height: 55px;
-  width: 55px;
-=======
   -ms-grid-column-align: center;
       justify-self: center;
   height: 60px;
   width: 60px;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   border-radius: 100%;
   overflow: hidden;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
@@ -526,9 +383,15 @@ body {
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .person-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-right: 1rem;
 }
 
@@ -544,15 +407,27 @@ body {
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .chat-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   height: 35px;
   width: 35px;
@@ -600,21 +475,77 @@ body {
   color: black;
 }
 
+#main-section .bottom-section .club-about-section {
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 436px;
+  height: 480px;
+  padding: 1.5rem;
+}
+
+#main-section .bottom-section .club-about-section h1 {
+  font-size: 35px;
+}
+
+#main-section .bottom-section .club-about-section .club-desc {
+  margin-top: 0.3rem;
+}
+
+#main-section .bottom-section .club-about-section .club-desc p {
+  font-size: 22px;
+}
+
+#main-section .bottom-section .club-about-section hr {
+  margin: 1.5rem 0;
+}
+
+#main-section .bottom-section .club-about-section .club-status-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-section .bottom-section .club-about-section .club-status-container ion-icon {
+  font-size: 90px;
+  color: #2F55AC;
+  margin-right: 0.3rem;
+}
+
+#main-section .bottom-section .club-about-section .club-status-container .club-status {
+  width: 70%;
+}
+
+#main-section .bottom-section .club-about-section .club-status-container .club-status p {
+  text-align: justify;
+  font-size: 20px;
+}
+
 #main-section .new-post-container {
-  width: 868px;
+  width: 800;
 }
 
 #main-section .new-post-container .new-post-input-container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 115px 720px;
+  -ms-grid-columns: 115px 650px;
+      grid-template-columns: 115px 650px;
 }
 
 #main-section .post-container {
-  width: 868px;
+  width: 800px;
 }
 
 #main-section .post-container .main-content {
-  grid-template-columns: 0.3fr 2fr 0.4fr;
+  -ms-grid-columns: 0.3fr 2fr 0.4fr;
+      grid-template-columns: 0.3fr 2fr 0.4fr;
 }
 
 .modal-change-pwd {
@@ -1014,4 +945,4 @@ body {
   color: #2F55AC;
   border: 2px solid #2F55AC;
 }
-/*# sourceMappingURL=profile.css.map */
+/*# sourceMappingURL=club.css.map */

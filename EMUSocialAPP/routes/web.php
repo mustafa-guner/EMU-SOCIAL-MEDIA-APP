@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ClubController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\_AuthController;
 /*
@@ -33,17 +37,24 @@ Route::get("/registration",function () {
     return View("registration/registration");
 });
 
+Route::post('/registration', 'auth@register');
 
-Route::post("/register-new-user",[_AuthController::class,"register"]);
+Route::get('/home', [HomeController::class, 'gethomeDetails']);
 
-Route::get('/home', function () {
-    return view('app/homepage');
+Route::get('/profile', [ProfileController::class, 'getprofileDetails']);
+
+Route::get('/club', [ClubController::class, 'getclubDetails']);
+
+Route::get('/search', [SearchController::class, 'getsearchDetails']);
+
+Route::get('/overview', function () {
+    return view('admin/overview');
 });
 
-Route::get('/search', function () {
-    return view('app/search');
+Route::get('/users', function () {
+    return view('admin/accounts');
 });
 
-Route::get('/profile', function () {
-    return view('app/profilepage');
+Route::get('/clubs', function () {
+    return view('admin/clubs');
 });

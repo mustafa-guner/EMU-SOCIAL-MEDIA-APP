@@ -44,7 +44,7 @@
                     </div>
                     <div class="recaptcha"><p>Google ReCaptcha</p></div>
                     <div class="login-btn">
-                        <button type="submit">Login</button>
+                        <a href="/home"><button type="button">Login</button></a>
                     </div>
                 </form>
             </div>
