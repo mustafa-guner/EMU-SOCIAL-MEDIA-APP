@@ -2,8 +2,7 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -128,10 +127,8 @@ body #main-section .header {
 }
 
 body #main-section .main-container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 320px 1000px 420px;
-      grid-template-columns: 320px 1000px 420px;
+  grid-template-columns: 320px 1000px 420px;
   grid-row: auto;
   grid-gap: 32px;
   width: 100%;
@@ -146,17 +143,14 @@ body #main-section .main-container .profile-container {
   border-radius: 12px;
   overflow: hidden;
   background-color: #FFFFFF;
-  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body #main-section .main-container .profile-container .profile-bg-img img {
   width: 320px;
   height: 115px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  object-fit: cover;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body #main-section .main-container .profile-container .profile-img {
@@ -167,8 +161,7 @@ body #main-section .main-container .profile-container .profile-img {
   top: 80px;
   left: 125px;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body #main-section .main-container .profile-container .profile-img a {
@@ -178,8 +171,7 @@ body #main-section .main-container .profile-container .profile-img a {
 body #main-section .main-container .profile-container .profile-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 body #main-section .main-container .profile-container .name-container {
@@ -195,23 +187,15 @@ body #main-section .main-container .profile-container .name-container a {
 body #main-section .main-container .profile-container .name-container .name {
   color: black;
   font-size: x-large;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
 body #main-section .main-container .profile-container .name-container .username {
   color: rgba(0, 0, 0, 0.6);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
@@ -223,13 +207,9 @@ body #main-section .main-container .profile-container .content-container {
 body #main-section .main-container .profile-container .content-container .content {
   width: 100%;
   height: 100px;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
 }
 
 body #main-section .main-container .profile-container .content-container .info {
@@ -253,15 +233,9 @@ body #main-section .main-container .profile-container .content-container .info-m
 }
 
 body #main-section .main-container .profile-container .profile-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 115px;
   width: 100%;
   font-size: larger;
@@ -278,8 +252,7 @@ body .new-post-container {
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
-  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body .new-post-container .new-post-header {
@@ -289,13 +262,8 @@ body .new-post-container .new-post-header {
 }
 
 body .new-post-container .new-post-input-container {
-<<<<<<< HEAD
-=======
-  display: -ms-grid;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: grid;
-  -ms-grid-columns: 115px 850px;
-      grid-template-columns: 115px 850px;
+  grid-template-columns: 115px 850px;
 }
 
 body .new-post-container .new-post-input-container .new-post-profile-img {
@@ -304,29 +272,19 @@ body .new-post-container .new-post-input-container .new-post-profile-img {
   height: 70px;
   border-radius: 100%;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .new-post-container .new-post-input-container .new-post-profile-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 body .new-post-container .new-post-input-container .new-post-text {
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-self: center;
+  justify-content: center;
   width: 100%;
   height: 40px;
 }
@@ -339,24 +297,7 @@ body .new-post-container .new-post-input-container .new-post-text input {
   border: none;
   outline: 0;
   background-color: #F0F2F5;
-<<<<<<< HEAD
   box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
-=======
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 10px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
-}
-
-body .new-post-container .new-post-input-container .new-post-text input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.363);
-}
-
-body .new-post-container .new-post-input-container .new-post-text input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.363);
-}
-
-body .new-post-container .new-post-input-container .new-post-text input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.363);
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
 }
 
 body .new-post-container .new-post-input-container .new-post-text input::placeholder {
@@ -364,32 +305,17 @@ body .new-post-container .new-post-input-container .new-post-text input::placeho
 }
 
 body .new-post-container .new-post-buttons {
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   margin-right: 2.2rem;
 }
 
 body .new-post-container .new-post-buttons button {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   font-size: xx-large;
   width: 50px;
   height: 50px;
@@ -410,23 +336,13 @@ body .post-container {
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
-  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body .post-container .top-part {
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   position: relative;
 }
 
@@ -442,38 +358,26 @@ body .post-container .top-part .edit-btn {
 }
 
 body .post-container .main-content {
-<<<<<<< HEAD
-=======
-  display: -ms-grid;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: grid;
   margin-top: 2.5rem;
-  -ms-grid-columns: 0.3fr 2fr 0.3fr;
-      grid-template-columns: 0.3fr 2fr 0.3fr;
+  grid-template-columns: 0.3fr 2fr 0.3fr;
   width: 100%;
 }
 
 body .post-container .main-content .post-profile-img {
-<<<<<<< HEAD
   justify-self: center;
-=======
-  -ms-grid-column-align: center;
-      justify-self: center;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   margin-left: 1rem;
   width: 70px;
   height: 70px;
   border-radius: 100%;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .post-container .main-content .post-profile-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 body .post-container .main-content .post-content {
@@ -505,15 +409,9 @@ body .post-container .main-content .post-time {
 
 body .post-container .likes-and-comments {
   margin-right: 2.8rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 body .post-container .likes-and-comments .likes {
@@ -521,26 +419,13 @@ body .post-container .likes-and-comments .likes {
 }
 
 body .post-container .likes-and-comments h4 {
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: rgba(0, 0, 0, 0.61);
 }
 
 body .post-container .likes-and-comments h4 ion-icon {
-<<<<<<< HEAD
   align-self: center;
-=======
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   margin-right: 0.3rem;
   color: #F25370;
 }
@@ -564,25 +449,15 @@ body .post-container .post-btns hr {
 
 body .post-container .post-btns .btns {
   margin-top: 0.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 body .post-container .post-btns .btns .like-btn {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -598,22 +473,14 @@ body .post-container .post-btns .btns .like-btn:hover {
 
 body .post-container .post-btns .btns .like-btn ion-icon {
   margin-right: 0.2rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 body .post-container .post-btns .btns .comment-btn {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -629,9 +496,7 @@ body .post-container .post-btns .btns .comment-btn:hover {
 
 body .post-container .post-btns .btns .comment-btn ion-icon {
   margin-right: 0.2rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 body .club-post-container {
@@ -639,23 +504,13 @@ body .club-post-container {
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 12px;
-  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body .club-post-container .top-part {
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   position: relative;
 }
 
@@ -671,15 +526,8 @@ body .club-post-container .top-part .edit-btn {
 }
 
 body .club-post-container .club-post-profile {
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   width: 100%;
   margin: 1rem 0 0.7rem 1.3rem;
 }
@@ -690,15 +538,13 @@ body .club-post-container .club-post-profile .club-post-profile-img {
   height: 70px;
   border-radius: 100%;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .club-post-container .club-post-profile .club-post-profile-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 body .club-post-container .club-post-profile .club-header {
@@ -721,38 +567,26 @@ body .club-post-container hr {
 }
 
 body .club-post-container .main-content {
-<<<<<<< HEAD
-=======
-  display: -ms-grid;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: grid;
   margin-top: 0.5rem;
-  -ms-grid-columns: 0.3fr 2fr 0.3fr;
-      grid-template-columns: 0.3fr 2fr 0.3fr;
+  grid-template-columns: 0.3fr 2fr 0.3fr;
   width: 100%;
 }
 
 body .club-post-container .main-content .post-profile-img {
-<<<<<<< HEAD
   justify-self: center;
-=======
-  -ms-grid-column-align: center;
-      justify-self: center;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   margin: 0.3rem 0 0 2.5rem;
   width: 50px;
   height: 50px;
   border-radius: 100%;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .club-post-container .main-content .post-profile-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 body .club-post-container .main-content .post-content {
@@ -784,15 +618,9 @@ body .club-post-container .main-content .post-time {
 
 body .club-post-container .likes-and-comments {
   margin-right: 2.8rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 body .club-post-container .likes-and-comments .likes {
@@ -800,26 +628,13 @@ body .club-post-container .likes-and-comments .likes {
 }
 
 body .club-post-container .likes-and-comments h4 {
-<<<<<<< HEAD
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: rgba(0, 0, 0, 0.61);
 }
 
 body .club-post-container .likes-and-comments h4 ion-icon {
-<<<<<<< HEAD
   align-self: center;
-=======
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   margin-right: 0.3rem;
   color: #F25370;
 }
@@ -843,25 +658,15 @@ body .club-post-container .post-btns hr {
 
 body .club-post-container .post-btns .btns {
   margin-top: 0.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 body .club-post-container .post-btns .btns .like-btn {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -877,22 +682,14 @@ body .club-post-container .post-btns .btns .like-btn:hover {
 
 body .club-post-container .post-btns .btns .like-btn ion-icon {
   margin-right: 0.2rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 body .club-post-container .post-btns .btns .comment-btn {
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 42%;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -908,9 +705,7 @@ body .club-post-container .post-btns .btns .comment-btn:hover {
 
 body .club-post-container .post-btns .btns .comment-btn ion-icon {
   margin-right: 0.2rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 body .connect-people-container {
@@ -946,13 +741,11 @@ body .connect-people-container .connect-person .profile-img {
   width: 55px;
   border-radius: 100%;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 body .connect-people-container .connect-person .profile-img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -994,8 +787,7 @@ body .clubs-for-you-container {
   height: 780px;
   background-color: #FFFFFF;
   border-radius: 12px;
-  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 body .clubs-for-you-container .clubs-for-you-header {
@@ -1013,76 +805,47 @@ body .clubs-for-you-container .clubs-for-you-header p {
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container hr,
 body .clubs-for-you-container .private-clubs-container hr {
-=======
-body .clubs-for-you-container .public-clubs-container hr, body .clubs-for-you-container .private-clubs-container hr {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   margin: 1.5rem auto;
   width: 90%;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .public-clubs-header,
 body .clubs-for-you-container .public-clubs-container .private-clubs-header,
 body .clubs-for-you-container .private-clubs-container .public-clubs-header,
 body .clubs-for-you-container .private-clubs-container .private-clubs-header {
-=======
-body .clubs-for-you-container .public-clubs-container .public-clubs-header, body .clubs-for-you-container .public-clubs-container .private-clubs-header, body .clubs-for-you-container .private-clubs-container .public-clubs-header, body .clubs-for-you-container .private-clubs-container .private-clubs-header {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   color: #012246;
   padding: 0 1.5rem;
   margin: 0.5rem 0;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club,
 body .clubs-for-you-container .private-clubs-container .join-club {
-  padding: 0 1rem;
-=======
-body .clubs-for-you-container .public-clubs-container .join-club, body .clubs-for-you-container .private-clubs-container .join-club {
   padding: 0.2rem 1rem;
-  display: -ms-grid;
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   display: grid;
-  -ms-grid-columns: 0.5fr 1.5fr 0.8fr;
-      grid-template-columns: 0.5fr 1.5fr 0.8fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: 0.5fr 1.5fr 0.8fr;
+  align-items: center;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .club-img,
 body .clubs-for-you-container .private-clubs-container .join-club .club-img {
-=======
-body .clubs-for-you-container .public-clubs-container .join-club .club-img, body .clubs-for-you-container .private-clubs-container .join-club .club-img {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   margin: 0 0.4rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
   height: 55px;
   width: 55px;
   border-radius: 100%;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .club-img img,
 body .clubs-for-you-container .private-clubs-container .join-club .club-img img {
-=======
-body .clubs-for-you-container .public-clubs-container .join-club .club-img img, body .clubs-for-you-container .private-clubs-container .join-club .club-img img {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club,
 body .clubs-for-you-container .private-clubs-container .join-club .name-container-club {
   padding: 0.5rem 0.3rem;
@@ -1090,42 +853,23 @@ body .clubs-for-you-container .private-clubs-container .join-club .name-containe
 
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club a,
 body .clubs-for-you-container .private-clubs-container .join-club .name-container-club a {
-=======
-body .clubs-for-you-container .public-clubs-container .join-club .name-container-club, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club {
-  padding: 0.5rem 0.3rem;
-}
-
-body .clubs-for-you-container .public-clubs-container .join-club .name-container-club a, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club a {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   text-decoration: none;
   color: black;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .name,
 body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .name {
-=======
-body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .name, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .name {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   color: #012246;
 }
 
-<<<<<<< HEAD
-body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .username,
-body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .username {
-=======
-body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .members, body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .members {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
+body .clubs-for-you-container .public-clubs-container .join-club .name-container-club .members,
+body .clubs-for-you-container .private-clubs-container .join-club .name-container-club .members {
   font-size: small;
   color: rgba(0, 0, 0, 0.6);
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .join-now-btn,
 body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn {
-=======
-body .clubs-for-you-container .public-clubs-container .join-club .join-now-btn, body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   cursor: pointer;
   height: 40px;
   background: #2F55AC;
@@ -1135,12 +879,8 @@ body .clubs-for-you-container .public-clubs-container .join-club .join-now-btn, 
   border-radius: 12px;
 }
 
-<<<<<<< HEAD
 body .clubs-for-you-container .public-clubs-container .join-club .join-now-btn:hover,
 body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:hover {
-=======
-body .clubs-for-you-container .public-clubs-container .join-club .join-now-btn:hover, body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:hover {
->>>>>>> 448fcd996c4d964e14f7d6d3fbbeaa33f6d8171d
   font-weight: bold;
   background: #FFFFFF;
   color: #2F55AC;
