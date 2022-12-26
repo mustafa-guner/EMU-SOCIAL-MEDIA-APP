@@ -21,6 +21,7 @@
         <div class="registration-header">
             <p class="redirection">
                 <ion-icon name="sparkles"></ion-icon> Do you have already account? <a href="/login">Login now</a>
+
             </p>
             <hr>
         </diV>

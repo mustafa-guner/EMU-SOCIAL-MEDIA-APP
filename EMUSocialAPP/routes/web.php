@@ -29,7 +29,7 @@ Route::get('/create-new-password', function () {
     return view('auth/login-create-new-password');
 });
 
-Route::get("/registration",function () {
+Route::get("/registration",function () {   
     return View("registration/registration");
 });
 
