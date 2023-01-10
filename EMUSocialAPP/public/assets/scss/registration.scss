@@ -1,0 +1,247 @@
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    .registration-header {
+        p.redirection {
+            font-size: 13px;
+            ion-icon {
+                color: var(--continue-btn-bg-blue) !important;
+            }
+            a {
+                font-weight: bold;
+                color: var(--continue-btn-bg-blue) !important;
+            }
+        }
+        hr {
+            margin: .3rem 0;
+            border: 1px solid rgba(217, 217, 217, 0.485);
+        }
+    }
+    .registration-form {
+        margin-top: 2rem;
+        max-width: 1000px;
+        .steps {
+            margin-bottom: .3rem;
+            max-width: 1000px;
+            .step {
+                width: 100%;
+                display: none;
+                .step-image {
+                    margin-right: 1rem;
+                    width: 130px;
+                    display: flex;
+                    border-radius: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var( --steps-image-bg-gray);
+                    height: 100px;
+                    img {
+                        width: 90%;
+                        height: 90%;
+                        object-fit: cover;
+                        align-self: flex-start;
+                    }
+                }
+                .step-content {
+                    width: 100%;
+                    .step-count {
+                        color: var(--light-text-gray-color);
+                        font-size: 15px;
+                    }
+                    .step-header {
+                        h2.step-title {
+                            color: var(----main-heading-black);
+                            font-size: 2.2rem;
+                        }
+                        p.step-description {
+                            color: var(--light-text-gray-color);
+                            font-size: 15px;
+                            margin: .2rem 0;
+                        }
+                    }
+                    .step-form {
+                        width: 100%;
+                        margin: 2rem 0;
+                        .step-row {
+                            margin: 1.5rem 0;
+                            display: grid;
+                            grid-gap: 30px;
+                            width: 100%;
+                            grid-template-columns: repeat(2, 1fr);
+                            .step-label {
+                                label,
+                                .label {
+                                    display: block;
+                                    font-weight: bold;
+                                    font-size: 15px;
+                                    margin: .2rem 0;
+                                }
+                                .options {
+                                    display: flex;
+                                    label {
+                                        background-color: var(--input-bg-gray);
+                                        margin-right: .5rem;
+                                        .radio-logo {
+                                            width: 100%;
+                                            border-radius: 7px;
+                                            position: relative;
+                                            text-align: center;
+                                            padding: .3rem;
+                                            overflow: hidden;
+                                            cursor: pointer;
+                                            input[type="radio"] {
+                                                -webkit-appearance: none;
+                                                -moz-appearance: none;
+                                                appearance: none;
+                                                cursor: pointer;
+                                                position: absolute;
+                                                top: 0;
+                                            }
+                                            img {
+                                                width: 90px;
+                                                height: 60px;
+                                            }
+                                            p.radio-label-text {
+                                                font-size: 12px;
+                                            }
+                                            &.checked {
+                                                border: 1px solid #333;
+                                            }
+                                        }
+                                    }
+                                }
+                                input,
+                                select {
+                                    width: 100%;
+                                    border: none !important;
+                                    outline: none !important;
+                                    padding: .8rem .7rem;
+                                    background-color: var(--input-bg-gray);
+                                }
+                                p.error-message {
+                                    color: var( --error-message-red);
+                                    font-size: 12px;
+                                    margin: .2rem 0;
+                                }
+                            }
+                            &.academic-information-status {
+                                display: none;
+                                &.activated {
+                                    display: grid !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .step.show {
+                display: flex;
+                animation: fadeIn 0.2s;
+            }
+        }
+        .action-buttons {
+            margin-top: 1rem;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            #back-btn {
+                background: none !important;
+                text-align: center;
+                color: var(--continue-btn-bg-blue);
+                font-weight: bold;
+                font-size: 13px;
+                width: 100px;
+                align-items: center;
+                cursor: pointer;
+                border: none;
+            }
+            .right-buttons {
+                display: flex;
+                margin-left: auto;
+                #next-btn {
+                    margin-right: .2rem;
+                    background-color: var(--continue-btn-bg-blue);
+                }
+                #submit-btn {
+                    background: var(--confirm-account-bg-green);
+                }
+                .steps-btns {
+                    border-radius: 90px;
+                    padding: .6rem 1rem;
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 15px;
+                    margin-left: auto;
+                    width: 200px;
+                    border: none !important;
+                }
+            }
+            #back-btn,
+            #next-btn,
+            .steps-btns {
+                display: none;
+            }
+            #back-btn.show,
+            #next-btn.show,
+            .steps-btns.show {
+                display: block;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Mobile Devices */
+/* Low resolution Tablets and iPads */
+
+@media (min-width: 381px) and (max-width: 767px) {
+    .container {
+        display: flex;
+        padding: .3rem;
+        flex-direction: column;
+        align-items: center;
+        form.registration-form {
+            .steps {
+                .step {
+                    grid-template-columns: repeat(1, 1fr);
+                    .step-image {
+                        margin: 0 auto;
+                    }
+                    .step-content {
+                        .step-count {
+                            text-align: center;
+                            margin: .6rem 0;
+                        }
+                        .step-header {
+                            text-align: center;
+                            margin: .6rem 0;
+                        }
+                        .step-form {
+                            margin: 2rem 0;
+                            .step-row {
+                                grid-template-columns: repeat(1, 1fr) !important;
+                                .step-label,
+                                label {
+                                    input {
+                                        margin: 0 auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.show {
+                        display: grid;
+                    }
+                }
+            }
+        }
+    }
+}

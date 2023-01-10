@@ -1,0 +1,298 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body #search-section {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1250px;
+  height: 900px;
+}
+
+body #search-section .main-container {
+  margin-top: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+body #search-section .main-container .search-person .search-header-person {
+  padding: 1rem;
+  font-size: larger;
+}
+
+body #search-section .main-container .search-person .sub-container-person {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+}
+
+body #search-section .main-container .search-person .sub-container-person a {
+  text-decoration: none;
+  color: black;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .profile-image-person {
+  margin: 1rem auto;
+  justify-self: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .profile-image-person img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .name-container-person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0.3 auto 0.5rem auto;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .name-container-person .name {
+  font-size: larger;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .name-container-person .username {
+  font-size: medium;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .status-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .status-items .connects {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .status-items .status {
+  display: flex;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .status-items .status ion-icon {
+  align-self: center;
+  color: #36C857;
+  margin-right: 0.2rem;
+  font-size: small;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card hr {
+  margin: 1rem auto;
+  width: 96%;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .btns button {
+  cursor: pointer;
+  height: 45px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.3rem;
+  border-radius: 7px;
+  border: 2px solid #2F55AC;
+  font-weight: bold;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .btns button:hover {
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .btns .connect-btn {
+  width: 130px;
+  font-size: large;
+  margin-right: 0.5rem;
+}
+
+body #search-section .main-container .search-person .sub-container-person .person-card .btns .chat-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  font-size: x-large;
+}
+
+body #search-section .main-container .search-club {
+  margin-top: 1.5rem;
+}
+
+body #search-section .main-container .search-club .search-header-club {
+  padding: 1rem;
+  font-size: larger;
+}
+
+body #search-section .main-container .search-club .sub-container-club {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+}
+
+body #search-section .main-container .search-club .sub-container-club a {
+  text-decoration: none;
+  color: black;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .profile-image-club {
+  margin: 1rem auto;
+  justify-self: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .profile-image-club img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .name-container-club {
+  align-self: center;
+  margin: 0.3 auto 0.5rem auto;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .name-container-club .name {
+  font-size: larger;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .status-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .status-items .connects {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .status-items .status {
+  display: flex;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .status-items .status ion-icon {
+  align-self: center;
+  color: #2F55AC;
+  margin-right: 0.2rem;
+  font-size: small;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card hr {
+  margin: 1rem auto;
+  width: 96%;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .btns button {
+  cursor: pointer;
+  height: 45px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.3rem;
+  border-radius: 7px;
+  border: 2px solid #2F55AC;
+  font-weight: bold;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .btns button:hover {
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+body #search-section .main-container .search-club .sub-container-club .club-card .btns .join-btn {
+  width: 130px;
+  font-size: large;
+}
+
+body #search-section .main-container .pagination {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 500px;
+  margin: 1.5rem auto;
+}
+
+body #search-section .main-container .pagination .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body #search-section .main-container .pagination .buttons button {
+  cursor: pointer;
+  margin-right: 1rem;
+  height: 40px;
+  width: 40px;
+  background: #FFFFFF;
+  color: #2F55AC;
+  padding: 0.3rem;
+  border-radius: 7px;
+  border: 2px solid #2F55AC;
+  font-weight: bold;
+}
+
+body #search-section .main-container .pagination .buttons button:hover {
+  background: #2F55AC;
+  color: #FFFFFF;
+  border: 2px solid #2F55AC;
+}
+
+body #search-section .main-container .pagination .buttons .active {
+  background: #2F55AC;
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=search.css.map */

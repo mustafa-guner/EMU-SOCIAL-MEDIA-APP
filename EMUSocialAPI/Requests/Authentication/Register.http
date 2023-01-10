@@ -1,0 +1,15 @@
+
+@host=https://localhost:7205
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{ "firstname":"Mustafa",
+  "lastname":"Guner",
+  "email": "legend123412@outlook.com",
+  "dob":"28-09-1999",
+  "gender":"male",
+  "profileImage":"avatar.png",
+  "countryID":"3",
+  "password": "asdf1234",
+  "role":"student"
+}

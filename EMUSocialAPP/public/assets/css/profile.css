@@ -1,0 +1,891 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #E5EAF7;
+}
+
+#main-section {
+  display: grid;
+  grid-template-columns: 1400px 368px;
+  grid-row: auto;
+  grid-gap: 32px;
+  width: 100%;
+  height: 100%;
+  padding-top: 2rem;
+}
+
+#main-section .profile-container {
+  width: 1400px;
+  height: 730px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+#main-section .profile-container .profile-bg-img {
+  width: 100%;
+  height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#main-section .profile-container .profile-bg-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main-section .profile-container .profile-informations {
+  height: 220px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1.3fr;
+  position: relative;
+}
+
+#main-section .profile-container .profile-informations .profile-img img {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  object-fit: cover;
+  border-radius: 100%;
+  height: 220px;
+  width: 220px;
+  position: absolute;
+  top: -40px;
+  left: 25px;
+}
+
+#main-section .profile-container .profile-informations .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+#main-section .profile-container .profile-informations .infos h1 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#main-section .profile-container .profile-informations .infos .icons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#main-section .profile-container .profile-informations .infos .icons .contact-number {
+  display: flex;
+  align-items: center;
+  margin-right: 0.8rem;
+  font-size: larger;
+}
+
+#main-section .profile-container .profile-informations .infos .icons .contact-number ion-icon {
+  font-size: xx-large;
+  margin-right: 0.3rem;
+}
+
+#main-section .profile-container .profile-informations .infos .icons .status {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: larger;
+  padding-left: 0.8rem;
+  border-left: 1px solid black;
+}
+
+#main-section .profile-container .profile-informations .infos .icons .status ion-icon {
+  font-size: xx-large;
+  margin-right: 0.3rem;
+}
+
+#main-section .profile-container .profile-informations .infos .desc {
+  width: 100%;
+  height: 100%;
+}
+
+#main-section .profile-container .profile-informations .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  margin-right: 1rem;
+}
+
+#main-section .profile-container .profile-informations .buttons .edit-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #012246;
+  background-color: #FFFFFF;
+  border: none;
+}
+
+#main-section .profile-container .profile-informations .buttons .edit-btn:hover {
+  color: #012246cb;
+}
+
+#main-section .profile-container .profile-informations .buttons .edit-btn ion-icon {
+  font-size: x-large;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  margin: 4rem 1rem 1rem 0;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect a {
+  color: black;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect .common-images {
+  border-radius: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 143px;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect .common-images div {
+  position: absolute;
+  right: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect .common-images div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-1 {
+  z-index: 10;
+  right: 24px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-2 {
+  z-index: 9;
+  right: 12px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-3 {
+  z-index: 8;
+  right: 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#main-section .profile-container .profile-informations .buttons .main-btns {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+#main-section .profile-container .profile-informations .buttons .main-btns button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 35px;
+  width: 100px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+#main-section .profile-container .profile-informations .buttons .main-btns button:hover {
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+#main-section .profile-container .profile-informations .buttons .main-btns button ion-icon {
+  margin-right: 0.2rem;
+  font-size: large;
+}
+
+#main-section .profile-container hr {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+#main-section .profile-container .profile-sections-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+}
+
+#main-section .profile-container .profile-sections-navbar button {
+  cursor: pointer;
+  margin: 0.5rem 1.5rem;
+  padding: 1.1rem 1.5rem;
+  font-size: x-large;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  color: #012246;
+  border: none;
+}
+
+#main-section .profile-container .profile-sections-navbar button:hover {
+  color: #2F55AC;
+}
+
+#main-section .profile-container .profile-sections-navbar button.active {
+  color: #2F55AC;
+  border-bottom: 6px solid #2F55AC;
+}
+
+#main-section .connect-people-container {
+  width: 368px;
+}
+
+#main-section .connect-people-container .header-people {
+  padding-bottom: 0.5rem;
+}
+
+#main-section .connect-people-container .connect-person {
+  padding: 0.5rem 1rem;
+}
+
+#main-section .clubs-for-you-container {
+  width: 368px;
+  margin-top: 2rem;
+}
+
+#main-section .bottom-section {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 500px 878px;
+  grid-gap: 32px;
+}
+
+#main-section .bottom-section .profile-section-container {
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 500px;
+  height: 500px;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-header {
+  padding: 1rem;
+  margin-left: 1rem;
+  font-size: larger;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-overview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-overview-content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-overview-content div ion-icon {
+  font-size: xxx-large;
+  color: #2F55AC;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-overview-content div p {
+  font-size: large;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-about-desc {
+  width: 100%;
+  height: 30%;
+  padding: 0 2rem;
+  text-align: justify;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 55%;
+  width: 100%;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-about-content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-about-content div ion-icon {
+  font-size: xxx-large;
+  color: #2F55AC;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-about-content div p {
+  font-size: large;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  width: 100%;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club {
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 0.3fr 1.8fr 0.8fr;
+  align-items: center;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .club-img {
+  margin: 0 0.4rem;
+  justify-self: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .club-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club {
+  padding: 0.5rem 0.3rem;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club a {
+  text-decoration: none;
+  color: black;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .name {
+  color: #012246;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .members {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .join-now-btn {
+  cursor: pointer;
+  height: 40px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 12px;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .join-now-btn:hover {
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  width: 100%;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person {
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  width: 90%;
+  margin: auto;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.4fr 0.7fr;
+  align-items: center;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person a {
+  text-decoration: none;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .profile-img {
+  margin: 0 0.4rem;
+  justify-self: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people {
+  padding: 0.5rem 0.3rem;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people .name {
+  font-size: large;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people .name a {
+  text-decoration: none;
+  color: black;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people .username {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .person-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .person-status ion-icon {
+  font-size: x-small;
+  color: #04CC72;
+  margin-right: 0.1rem;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .person-status p {
+  font-size: small;
+  font-weight: lighter;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  font-size: large;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 12px;
+  margin-right: 0.3rem;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .chat-btn:hover {
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .connet-btn {
+  cursor: pointer;
+  height: 35px;
+  width: 75px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.3rem;
+  border: none;
+  border-radius: 12px;
+}
+
+#main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .connet-btn:hover {
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+#main-section .bottom-section .profile-section-container .show-more {
+  padding: 1rem;
+  margin-left: 1rem;
+  font-size: small;
+}
+
+#main-section .bottom-section .profile-section-container .show-more a {
+  color: black;
+}
+
+#main-section .new-post-container {
+  width: 868px;
+}
+
+#main-section .new-post-container .new-post-input-container {
+  display: grid;
+  grid-template-columns: 115px 720px;
+}
+
+#main-section .post-container {
+  width: 868px;
+}
+
+#main-section .post-container .main-content {
+  grid-template-columns: 0.3fr 2fr 0.4fr;
+}
+
+.modal-change-pwd {
+  width: 100%;
+  position: relative;
+}
+
+.modal-change-pwd .modal-header h1 {
+  font-size: 40px;
+}
+
+.modal-change-pwd .close-btn {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+}
+
+.modal-change-pwd .close-btn button span {
+  font-size: 40px;
+  cursor: pointer;
+  color: black !important;
+}
+
+.modal-change-pwd .main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-change-pwd .main-content .form-elements .old-pwd {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-change-pwd .main-content .form-elements .old-pwd label {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-change-pwd .main-content .form-elements .old-pwd input {
+  font-size: 25px;
+  padding: 0rem 0.5rem;
+  width: 50%;
+  height: 40px;
+  background-color: #EBECF0;
+  border: none;
+  outline: 0;
+  border-radius: 5px;
+}
+
+.modal-change-pwd .main-content .form-elements .old-pwd input::placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
+}
+
+.modal-change-pwd .main-content .form-elements .new-pwd {
+  margin: 3rem auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-change-pwd .main-content .form-elements .new-pwd label {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-change-pwd .main-content .form-elements .new-pwd input {
+  font-size: 25px;
+  padding: 0rem 0.5rem;
+  width: 50%;
+  height: 40px;
+  background-color: #EBECF0;
+  border: none;
+  outline: 0;
+  border-radius: 5px;
+}
+
+.modal-change-pwd .main-content .form-elements .new-pwd input::placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
+}
+
+.modal-change-pwd .modal-footer .btn-close {
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  background: #6C757D;
+  color: #FFFFFF;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.modal-change-pwd .modal-footer .btn-close:hover {
+  background: #FFFFFF;
+  color: #6C757D;
+  border: 2px solid #6C757D;
+}
+
+.modal-change-pwd .modal-footer .btn-change-pwd {
+  cursor: pointer;
+  height: 50px;
+  width: 170px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.modal-change-pwd .modal-footer .btn-change-pwd:hover {
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+
+.modal-edit-profile {
+  width: 100%;
+  position: relative;
+}
+
+.modal-edit-profile .modal-header h1 {
+  font-size: 40px;
+}
+
+.modal-edit-profile .close-btn {
+  position: absolute;
+  top: 13px;
+  right: 16px;
+}
+
+.modal-edit-profile .close-btn button span {
+  font-size: 40px;
+  cursor: pointer;
+  color: black !important;
+}
+
+.modal-edit-profile .main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-edit-profile .main-content hr {
+  width: 92%;
+  margin: 0 auto;
+}
+
+.modal-edit-profile .main-content .profile-image-section {
+  padding: 2rem;
+}
+
+.modal-edit-profile .main-content .profile-image-section .top-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-edit-profile .main-content .profile-image-section .top-section .edit-btn {
+  font-size: large;
+}
+
+.modal-edit-profile .main-content .profile-image-section .top-section .edit-btn label {
+  cursor: pointer;
+  border: none;
+  background-color: #FFFFFF;
+  color: black;
+  font-size: larger;
+}
+
+.modal-edit-profile .main-content .profile-image-section .top-section .edit-btn label:hover {
+  color: rgba(0, 0, 0, 0.626);
+}
+
+.modal-edit-profile .main-content .profile-image-section .content {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-edit-profile .main-content .profile-image-section .content .profile-img {
+  cursor: pointer;
+  margin: 1rem;
+  height: 220px;
+  width: 220px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.modal-edit-profile .main-content .profile-image-section .content .profile-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-edit-profile .main-content .cover-image-section {
+  padding: 2rem;
+}
+
+.modal-edit-profile .main-content .cover-image-section .top-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-edit-profile .main-content .cover-image-section .top-section .edit-btn {
+  font-size: large;
+}
+
+.modal-edit-profile .main-content .cover-image-section .top-section .edit-btn label {
+  cursor: pointer;
+  border: none;
+  background-color: #FFFFFF;
+  color: black;
+  font-size: larger;
+}
+
+.modal-edit-profile .main-content .cover-image-section .top-section .edit-btn label:hover {
+  color: rgba(0, 0, 0, 0.626);
+}
+
+.modal-edit-profile .main-content .cover-image-section .content {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-edit-profile .main-content .cover-image-section .content .cover-img {
+  cursor: pointer;
+  margin: 2rem 1rem 1rem 1rem;
+  height: 200px;
+  width: 460px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.modal-edit-profile .main-content .cover-image-section .content .cover-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-edit-profile .main-content .desc-section {
+  padding: 2rem;
+}
+
+.modal-edit-profile .main-content .desc-section .top-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-edit-profile .main-content .desc-section .content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-edit-profile .main-content .desc-section .content .desc-textarea {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.modal-edit-profile .main-content .desc-section .content .desc-textarea textarea {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  padding: 0.5rem;
+  width: 700px;
+  height: 120px;
+  font-size: 15px;
+}
+
+.modal-edit-profile .main-content .desc-section .content .desc-textarea textarea:focus {
+  outline: none;
+}
+
+.modal-edit-profile .main-content .modal-footer .btn-close {
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  background: #6C757D;
+  color: #FFFFFF;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.modal-edit-profile .main-content .modal-footer .btn-close:hover {
+  background: #FFFFFF;
+  color: #6C757D;
+  border: 2px solid #6C757D;
+}
+
+.modal-edit-profile .main-content .modal-footer .btn-save-changes {
+  cursor: pointer;
+  height: 50px;
+  width: 170px;
+  background: #2F55AC;
+  color: #FFFFFF;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.modal-edit-profile .main-content .modal-footer .btn-save-changes:hover {
+  background: #FFFFFF;
+  color: #2F55AC;
+  border: 2px solid #2F55AC;
+}
+/*# sourceMappingURL=profile.css.map */
