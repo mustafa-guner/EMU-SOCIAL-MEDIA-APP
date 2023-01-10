@@ -9,8 +9,9 @@ const cookieParser = require("cookie-parser");
 dotenv.config({ path: path.join(__dirname, "./Config/dotenv/.env") });
 
 const app = express();
-const { NODE_ENV } = process.env;
-
+const { NODE_ENV, CLIENT_DEV_URL, CLIENT_PRODUCT_URL } = process.env;
+const mappedClientURL = () =>
+    NODE_ENV !== "production" ? CLIENT_DEV_URL : CLIENT_PRODUCT_URL;
 //Index Route
 const appRouter = require("./Routes/index.js");
 //Custom Error Handler
@@ -19,9 +20,11 @@ const { customErrorHandler } = require("./Middlewares/CustomErrorHandler");
 //Connect to MY SQL Database (sequelize + mysql)
 // const connectToMySQL = require("./Helpers/Database/MySQL");
 // connectToMySQL();
+
 const connectToMongoDB = require("./Helpers/Database/MongoDB");
 connectToMongoDB();
 
+app.use(cors({ origin: mappedClientURL() }));
 app.use(cookieParser());
 // app.use(cors());
 app.use(logger(NODE_ENV == "production" ? "combined" : "dev"));
