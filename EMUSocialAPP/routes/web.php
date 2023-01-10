@@ -37,6 +37,17 @@ Route::get("/registration",function () {
     return View("registration/registration");
 });
 
+Route::get("/admin/overview",function () {   
+    return View("admin/overview");
+});
+
+Route::get("/admin/accounts",function () {   
+    return View("admin/accounts");
+});
+Route::get("/admin/clubs",function () {   
+    return View("admin/clubs");
+});
+
 Route::post('/registration', 'auth@register');
 
 Route::get('/home', [HomeController::class, 'gethomeDetails']);
