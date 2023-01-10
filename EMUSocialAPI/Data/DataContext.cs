@@ -20,7 +20,8 @@ namespace EMUSocialAPI.Data
                 Relationship -> One To Many
              */
             // modelbuilder.Entity<RecordsModel>().HasOne(record => record.User).WithMany(user => user.RecordsModel);
-
+            modelbuilder.Entity<UserModel>().HasOne(u => u.StudentModel).WithOne(s => s.User).HasForeignKey<StudentModel>(s => s.UserId);
+            modelbuilder.Entity<UserModel>().HasOne(u => u.StaffModel).WithOne(s => s.User).HasForeignKey<StaffModel>(s => s.UserId);
             base.OnModelCreating(modelbuilder);
         }
         public DbSet<UserType> UserTypes => Set<UserType>();

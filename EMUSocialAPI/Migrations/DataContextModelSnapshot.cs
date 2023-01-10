@@ -25,14 +25,14 @@ namespace EMUSocialAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ActivatedAt")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("Country")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("Dob")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("EditedAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
@@ -81,8 +81,6 @@ namespace EMUSocialAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserTypeID");
-
                     b.ToTable("Users");
                 });
 
@@ -105,6 +103,9 @@ namespace EMUSocialAPI.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("StaffId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Staffs");
                 });
@@ -151,6 +152,9 @@ namespace EMUSocialAPI.Migrations
 
                     b.HasKey("StudentId");
 
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
                     b.ToTable("Students");
                 });
 
@@ -169,15 +173,33 @@ namespace EMUSocialAPI.Migrations
                     b.ToTable("UserTypes");
                 });
 
-            modelBuilder.Entity("EMUSocialAPI.Models.UserModel", b =>
+            modelBuilder.Entity("EMUSocialAPI.Models.Users.StaffModel", b =>
                 {
-                    b.HasOne("EMUSocialAPI.Models.Users.UserType", "UserType")
-                        .WithMany()
-                        .HasForeignKey("UserTypeID")
+                    b.HasOne("EMUSocialAPI.Models.UserModel", "User")
+                        .WithOne("StaffModel")
+                        .HasForeignKey("EMUSocialAPI.Models.Users.StaffModel", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("UserType");
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EMUSocialAPI.Models.Users.StudentModel", b =>
+                {
+                    b.HasOne("EMUSocialAPI.Models.UserModel", "User")
+                        .WithOne("StudentModel")
+                        .HasForeignKey("EMUSocialAPI.Models.Users.StudentModel", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EMUSocialAPI.Models.UserModel", b =>
+                {
+                    b.Navigation("StaffModel");
+
+                    b.Navigation("StudentModel");
                 });
 #pragma warning restore 612, 618
         }

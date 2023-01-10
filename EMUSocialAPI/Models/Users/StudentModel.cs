@@ -9,16 +9,26 @@ namespace EMUSocialAPI.Models.Users
     {
         [Key]
         public int StudentId { get; set; }
-        public int UserId { get; set; }
+
+        [Required]
         public int StudentNumber { get; set; }
+        [Required]
         public bool IsGraduated { get; set; } = false;
+        [Required]
         public bool IsAssistant { get; set; } = false;
+        [Required]
 
         [Column(TypeName = "nvarchar(20)")]
         public DegreeType DegreeType { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
 
         public DateTime GraduationDate { get; set; }
+
+
+        [Required]
+        public int UserId { get; set; }
+        public UserModel User { get; set; } = null!;
     }
 }

@@ -21,18 +21,19 @@ namespace EMUSocialAPI.Controllers
         }
 
 
-        [Authorize(UserRole.Admin, UserRole.SuperAdmin)]
+        [Authorize(UserRole.Admin)]
         [HttpGet("/users")]
         public async Task<ActionResult<ServiceResponse<List<GetUserDTO>>>> GetAllUsers()
         {
             return Ok(new { users = await _userService.GetAllUsers() });
         }
-        // [Authorize(UserRole.User)]
-        // [HttpGet("/{id}")]
-        // public async Task<ActionResult<List<GetUserDTO>>> GetUserByID(int id)
-        // {
-        //     return Ok(await _userService.GetUserByID(id));
-        // }
+
+        [Authorize(UserRole.Admin)]
+        [HttpGet("/{id}")]
+        public async Task<ActionResult<List<GetUserDTO>>> GetUserByID(int id)
+        {
+            return Ok(await _userService.GetUserByID(id));
+        }
 
     }
 }

@@ -26,8 +26,8 @@ namespace EMUSocialAPI.Models.DTOs.Users
         [Column(TypeName = "nvarchar(20)")]
         // public UserType UserType { get; set; }
         public bool IsActive { get; set; } = false;
-        public DateTime RegisteredAt { get; set; } = DateTime.Now;
-        public DateTime ActivatedAt { get; set; }
+        public DateTime RegisteredAt { get; set; }
+        public DateTime EditedAt { get; set; }
 
         //Programming Logic for relationship
 

@@ -43,13 +43,15 @@ namespace EMUSocialAPI.Services.Auth
 
 
             //Add To Database
-            await _dbContext.Users.AddAsync(user);
-
-            //Creating user type model
-            await CreateUserByType(user.Id, registerCredentials);
+            var createdUser = await _dbContext.Users.AddAsync(user);
 
             //Save Database
             await _dbContext.SaveChangesAsync();
+
+            var userID = user.Id;
+            //Creating user type model
+            await CreateUserByType(user, registerCredentials);
+
 
             registerResponse.Message = "Congrulations! Your account has been added to queue for confirmation process.";
             return registerResponse;
@@ -74,19 +76,19 @@ namespace EMUSocialAPI.Services.Auth
 
         //Helpers for creating models
 
-        public async Task CreateUserByType(int userId, RegisterRequestDTO registerCredentials)
+        public async Task CreateUserByType(UserModel user, RegisterRequestDTO registerCredentials)
         {
             int typeID = registerCredentials.UserTypeID;
 
             switch (typeID)
             {
                 case (int)_UserType.Student:
-                    await CreateStudentModel(userId, registerCredentials);
+                    await CreateStudentModel(user, registerCredentials);
                     break;
 
 
                 case (int)_UserType.Staff:
-                    await CreateStaffModel(userId, registerCredentials);
+                    await CreateStaffModel(user, registerCredentials);
                     break;
 
                 default:
@@ -95,11 +97,12 @@ namespace EMUSocialAPI.Services.Auth
 
         }
 
-        public async Task CreateStudentModel(int userId, RegisterRequestDTO registerCredentials)
+        public async Task CreateStudentModel(UserModel user, RegisterRequestDTO registerCredentials)
         {
             StudentModel newStudent = new StudentModel()
             {
-                UserId = userId,
+                User = user,
+                UserId = user.Id,
                 StudentNumber = registerCredentials.StudentNumber,
                 GraduationDate = registerCredentials.GraduationDate,
                 IsAssistant = registerCredentials.IsAssistant,
@@ -111,11 +114,12 @@ namespace EMUSocialAPI.Services.Auth
 
         }
 
-        public async Task CreateStaffModel(int userId, RegisterRequestDTO registerCredentials)
+        public async Task CreateStaffModel(UserModel user, RegisterRequestDTO registerCredentials)
         {
             StaffModel newStaff = new StaffModel()
             {
-                UserId = userId,
+                User = user,
+                UserId = user.Id,
                 RetirementDate = registerCredentials.RetirementDate,
                 IsRetired = registerCredentials.IsRetired,
                 StaffTypeID = registerCredentials.StaffTypeID
