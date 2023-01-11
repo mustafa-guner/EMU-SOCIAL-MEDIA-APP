@@ -56,7 +56,7 @@ class _AuthController extends Controller{
             ]);
     
            
-            $url = "http://localhost:5219/auth/register";
+            $url = "http://localhost:4200/auth/register";
 
             // $fakeRequestBody = array(
             //     "firstname"=> "Test12332211",
