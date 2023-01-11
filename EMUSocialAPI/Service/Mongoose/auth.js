@@ -80,12 +80,19 @@ module.exports = {
     },
     authenticate: async(req) => {
         const { email, password } = req.body;
-        const user = await User.findOne({ email: email }).select("password");
+
+        if (!email) throw new CustomError("Email is required*", 400);
+        if (!password) throw new CustomError("Password is required*", 400);
+
+        const user = await User.findOne({ email: email }).select(
+            "password isActive"
+        );
         if (!user)
             throw new CustomError(
                 `Account with ${req.body.email} is not exists.`,
                 400
             );
+
         if (user.isActive === false)
             throw new CustomError(
                 "Your account is not activated yet. Please contact with the administrator.",
