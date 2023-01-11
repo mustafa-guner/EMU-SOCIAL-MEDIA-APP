@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\_AuthController;
 /*
@@ -37,13 +38,9 @@ Route::get("/registration",function () {
     return View("registration/registration");
 });
 
-Route::get("/admin/overview",function () {   
-    return View("admin/overview");
-});
+Route::get("/admin/overview",[AdminController::class, 'getOverviewDetails']);
+Route::get("/admin/accounts",[AdminController::class, 'getAllUserAccounts']);
 
-Route::get("/admin/accounts",function () {   
-    return View("admin/accounts");
-});
 Route::get("/admin/clubs",function () {   
     return View("admin/clubs");
 });
