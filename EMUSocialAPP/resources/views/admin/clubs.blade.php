@@ -34,13 +34,13 @@
                 </div>
                 <ul class="navbar-links">
                     <li class="navbar-item ">
-                        <a href="/overview" class="navbar-link">Overview</a>
+                        <a href="/admin/overview" class="navbar-link">Overview</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="/users" class="navbar-link">Users</a>
+                        <a href="/admin/accounts" class="navbar-link">Users</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="/clubs" class="navbar-link">Clubs</a>
+                        <a href="/admin/clubs" class="navbar-link">Clubs</a>
                     </li>
                 </ul>
 
