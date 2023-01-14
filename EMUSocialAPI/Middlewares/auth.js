@@ -7,8 +7,7 @@ module.exports = {
         if (
             req.cookies == undefined ||
             (req.cookies == null &&
-                ((req.cookies && !req.cookies.accessToken) ||
-                    (req.cookies && !req.cookies.sessionToken)))
+                (!req.cookies.accessToken || !req.cookies.sessionToken))
         )
             return next(new CustomError("You are not authorized.", 401));
 
