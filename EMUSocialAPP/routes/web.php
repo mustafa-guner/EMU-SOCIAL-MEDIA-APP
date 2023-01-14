@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
 Route::get('/login', function () {
     return view('auth/login');
 });
@@ -46,6 +42,10 @@ Route::get('/profile', [ProfileController::class, 'getprofileDetails']);
 Route::get('/club', [ClubController::class, 'getclubDetails']);
 
 Route::get('/search', [SearchController::class, 'getsearchDetails']);
+
+Route::get("/create-new-blog",function () {
+    return View("app/blogpage");
+});
 
 Route::get('/overview', function () {
     return view('admin/overview');
