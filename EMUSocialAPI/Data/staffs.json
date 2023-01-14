@@ -1,0 +1,21 @@
+[{
+        "userId": 2,
+        "isRetired": false,
+        "staffType": "faculty servant"
+    },
+    {
+        "userId": 3,
+        "isRetired": false,
+        "staffType": "instructor"
+    },
+    {
+        "userId": 4,
+        "isRetired": false,
+        "staffType": "instructor"
+    },
+    {
+        "userId": 5,
+        "isRetired": false,
+        "staffType": "instructor"
+    }
+]

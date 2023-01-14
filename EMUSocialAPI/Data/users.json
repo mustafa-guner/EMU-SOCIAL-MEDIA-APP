@@ -1,0 +1,59 @@
+[{
+        "firstname": "John",
+        "lastname": "Doe",
+        "email": "doe@outlook.com",
+        "password": "asdf1234",
+        "gender": "male",
+        "country": "Cypurs",
+        "profileImage": "avatar.png",
+        "dob": "2022-09-28",
+        "userType": "student"
+    },
+    {
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "email": "jane@outlook.com",
+        "password": "asdf1234",
+        "gender": "female",
+        "country": "England",
+        "profileImage": "avatar.png",
+        "dob": "2022-09-22",
+        "userType": "staff"
+    },
+
+    {
+        "firstname": "James",
+        "lastname": "Doe",
+        "email": "james@outlook.com",
+        "password": "asdf1234",
+        "gender": "male",
+        "country": "England",
+        "profileImage": "avatar.png",
+        "dob": "2022-09-22",
+        "userType": "staff"
+    },
+
+    {
+        "firstname": "Jamal",
+        "lastname": "Doe",
+        "email": "jamal@outlook.com",
+        "password": "asdf1234",
+        "gender": "male",
+        "country": "Africa",
+        "profileImage": "avatar.png",
+        "dob": "2022-09-22",
+        "userType": "staff"
+    },
+    {
+        "firstname": "Test",
+        "lastname": "test",
+        "email": "test@outlook.com",
+        "password": "asdf1234",
+        "gender": "male",
+        "country": "Cypurs",
+        "profileImage": "avatar.png",
+        "dob": "2022-09-28",
+        "userType": "staff",
+        "role": "admin"
+    }
+]

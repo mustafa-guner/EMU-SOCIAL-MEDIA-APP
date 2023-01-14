@@ -445,7 +445,8 @@ class RegistrationFormWithSteps {
         }
     }
 
-    fetchFromLocalStorageOnLoad() {
+    fetchFromLocalStorageOnLoad(id) {
+        if (id) return LocalRepository.getValueFromRepositoryByID(id);
         const personalInformation = LocalRepository.getValueFromRepositoryByID(
             "personalInformation"
         );
@@ -589,13 +590,77 @@ class RegistrationFormWithSteps {
             console.log(
                 "PROFILE CREATION REQUEST HAS BEEN SEND TO ADMINSTRATIVE"
             );
-            //Remove all the error messages from registration form
-            RegistrationFormUIEvent.removeAllErrorMessages("error-message");
 
-            //Clear local storage before send the data to server side
-            this.FormSteps.steps.map((step) =>
-                LocalRepository.removeRepositoryByID(step.stepTitle)
+            const personalInformationInputs =
+                this.FormSteps.getInputsByStepTitle(
+                    "personalInformation"
+                ).inputs;
+
+            const validatePersonalInputs = VALIDATIONS.Inputs.validateInputs(
+                personalInformationInputs
             );
+
+            let validatedPersonalInformationInputs =
+                VALIDATIONS.Inputs.getValidatedFormData(validatePersonalInputs);
+            const passwordValue = document.querySelector(
+                "input[name='password']"
+            ).value;
+            validatedPersonalInformationInputs = {
+                ...validatedPersonalInformationInputs,
+                password: passwordValue,
+            };
+
+            const academicInformation = this.FormSteps.getInputsByStepTitle(
+                "academicInformation"
+            ).userType.find((userType) => userType.selected == true);
+            const academicInformationInputs =
+                academicInformation.assoicatedInputs;
+            const validateAcademicInformationInputs =
+                VALIDATIONS.Inputs.validateInputs(academicInformationInputs);
+
+            let validatedAcademicDetails =
+                VALIDATIONS.Inputs.getValidatedFormData(
+                    validateAcademicInformationInputs
+                );
+            validatedAcademicDetails = {
+                ...validatedAcademicDetails,
+                userTypeID: academicInformation.type,
+            };
+            let requestBody = {
+                ...validatedPersonalInformationInputs,
+                ...validatedAcademicDetails,
+            };
+
+            console.log(requestBody);
+            let token = document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content");
+
+            return fetch("http://127.0.0.1:8000/register-new-user", {
+                    method: "POST",
+                    credentials: "same-origin",
+                    headers: {
+                        "Content-type": "application/json",
+                        Accept: "application/json, text-plain, */*",
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRF-TOKEN": token,
+                    },
+                    body: JSON.stringify(requestBody),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                    //Remove all the error messages from registration form
+                    RegistrationFormUIEvent.removeAllErrorMessages(
+                        "error-message"
+                    );
+
+                    //Clear local storage before send the data to server side
+                    // this.FormSteps.steps.map((step) =>
+                    //     LocalRepository.removeRepositoryByID(step.stepTitle)
+                    // );
+                })
+                .catch((err) => console.log(err));
         }
     }
 
@@ -746,32 +811,32 @@ const STEPS = [{
         selector: document.querySelector("#step-1"),
         isLastStep: false,
         inputs: [{
-                label: "Firstname",
+                label: "firstname",
                 input: document.querySelector("input[name='firstname']"),
             },
 
             {
-                label: "Lastname",
+                label: "lastname",
                 input: document.querySelector("input[name='lastname']"),
             },
             {
-                label: "Email",
+                label: "email",
                 input: document.querySelector("input[name='email']"),
             },
             {
-                label: "Country",
+                label: "country",
                 input: document.querySelector("select[name='country']"),
             },
             {
-                label: "Password",
+                label: "password",
                 input: document.querySelector("input[name='password']"),
             },
             {
-                label: "Dob",
+                label: "dob",
                 input: document.querySelector("input[name='dob']"),
             },
             {
-                label: "Gender",
+                label: "gender",
                 input: Array.from(
                     document.querySelectorAll("input[name='gender']")
                 ),
@@ -786,20 +851,20 @@ const STEPS = [{
                 selected: false,
                 type: "staff",
                 assoicatedInputs: [{
-                        label: "AcademicStatus",
+                        label: "isRetired",
                         input: document.querySelector(
                             "select[name='staff-status']"
                         ),
                     },
                     {
-                        label: "RetirementDate",
+                        label: "retirementDate",
                         input: document.querySelector(
                             "input[name='retirement-date']"
                         ),
                     },
 
                     {
-                        label: "StaffType",
+                        label: "staffType",
                         input: document.querySelector(
                             "select[name='staff-type']"
                         ),
@@ -810,26 +875,26 @@ const STEPS = [{
                 selected: true,
                 type: "student",
                 assoicatedInputs: [{
-                        label: "AcademicStatus",
+                        label: "isGraduated",
                         input: document.querySelector(
                             "select[name='student-status']"
                         ),
                     },
                     {
-                        label: "GraduationDate",
+                        label: "graduationDate",
                         input: document.querySelector(
                             "input[name='graduate-date']"
                         ),
                     },
 
                     {
-                        label: "StudentNumber",
+                        label: "studentNumber",
                         input: document.querySelector(
                             "input[name='student-number']"
                         ),
                     },
                     {
-                        label: "AcademicDegree",
+                        label: "degreeType",
                         input: document.querySelector(
                             "select[name='academic-degree']"
                         ),
@@ -838,13 +903,13 @@ const STEPS = [{
             },
         ],
         inputs: [{
-                label: "AcademicCareer",
+                label: "userTypeID",
                 input: Array.from(
                     document.querySelectorAll("input[name='career']")
                 ),
             },
             {
-                label: "ProfileImage",
+                label: "profileImage",
                 input: document.querySelector("input[name='profile-image']"),
             },
         ],

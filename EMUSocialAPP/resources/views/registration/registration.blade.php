@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Registration</title>
-
-
     {{-- Default Styles for app --}}
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
@@ -21,11 +21,12 @@
         <div class="registration-header">
             <p class="redirection">
                 <ion-icon name="sparkles"></ion-icon> Do you have already account? <a href="/login">Login now</a>
+
             </p>
             <hr>
         </diV>
         <form id="registration-form" class="registration-form" action="/registration" method="post">
-            {{csrf_field()}}
+            {{ csrf_field() }}
             <div class="steps">
                 <div id="step-1" class="personal-information-step step show">
                     <div class="step-image">

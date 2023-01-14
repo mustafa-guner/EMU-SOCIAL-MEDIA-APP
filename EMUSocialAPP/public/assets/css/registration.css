@@ -39,16 +39,10 @@
 .container .registration-form .steps .step .step-image {
   margin-right: 1rem;
   width: 130px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 10px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: var(--steps-image-bg-gray);
   height: 100px;
 }
@@ -56,10 +50,8 @@
 .container .registration-form .steps .step .step-image img {
   width: 90%;
   height: 90%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  object-fit: cover;
+  align-self: flex-start;
 }
 
 .container .registration-form .steps .step .step-content {
@@ -89,12 +81,10 @@
 
 .container .registration-form .steps .step .step-content .step-form .step-row {
   margin: 1.5rem 0;
-  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
   width: 100%;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .container .registration-form .steps .step .step-content .step-form .step-row .step-label label,
@@ -106,8 +96,6 @@
 }
 
 .container .registration-form .steps .step .step-content .step-form .step-row .step-label .options {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -127,8 +115,6 @@
 }
 
 .container .registration-form .steps .step .step-content .step-form .step-row .step-label .options label .radio-logo input[type="radio"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   cursor: pointer;
   position: absolute;
@@ -168,30 +154,20 @@
 }
 
 .container .registration-form .steps .step .step-content .step-form .step-row.academic-information-status.activated {
-  display: -ms-grid !important;
   display: grid !important;
 }
 
 .container .registration-form .steps .step.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-animation: fadeIn 0.2s;
-          animation: fadeIn 0.2s;
+  animation: fadeIn 0.2s;
 }
 
 .container .registration-form .action-buttons {
   margin-top: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .container .registration-form .action-buttons #back-btn {
@@ -201,16 +177,12 @@
   font-weight: bold;
   font-size: 13px;
   width: 100px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   cursor: pointer;
   border: none;
 }
 
 .container .registration-form .action-buttons .right-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-left: auto;
 }
@@ -247,15 +219,6 @@
   display: block;
 }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -269,21 +232,13 @@
 /* Low resolution Tablets and iPads */
 @media (min-width: 381px) and (max-width: 767px) {
   .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding: .3rem;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   .container form.registration-form .steps .step {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .container form.registration-form .steps .step .step-image {
     margin: 0 auto;
@@ -300,15 +255,13 @@
     margin: 2rem 0;
   }
   .container form.registration-form .steps .step .step-content .step-form .step-row {
-    -ms-grid-columns: (1fr)[1] !important;
-        grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: repeat(1, 1fr) !important;
   }
   .container form.registration-form .steps .step .step-content .step-form .step-row .step-label input,
   .container form.registration-form .steps .step .step-content .step-form .step-row label input {
     margin: 0 auto;
   }
   .container form.registration-form .steps .step.show {
-    display: -ms-grid;
     display: grid;
   }
 }

@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/dt/dt-1.13.1/b-2.3.3/fh-3.3.1/r-2.4.0/sb-1.4.0/sl-1.5.0/sr-1.2.0/datatables.min.css" />
     <title>Admin | Overview</title>
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css"
+        integrity="sha512-72McA95q/YhjwmWFMGe8RI3aZIMCTJWPBbV8iQY3jy1z9+bi6+jHnERuNrDPo/WGYEzzNs4WdHNyyEr/yXJ9pA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Logo font -->
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -28,21 +29,23 @@
         <div class="container dflex">
             <div class="nav-left">
                 <div class="nav-logo">
-                    <a href="">
+                    <a href="/admin/overview">
                         <h1 class="logo">EMU APP</h1>
                     </a>
                 </div>
                 <ul class="navbar-links">
                     <li class="navbar-item ">
-                        <a href="/overview" class="navbar-link">Overview</a>
+                        <a href="/admin/overview" class="navbar-link">Overview</a>
                     </li>
                     <li class="navbar-item active">
-                        <a href="/users" class="navbar-link">Users</a>
+                        <a href="/admin/accounts" class="navbar-link">Users</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="/clubs" class="navbar-link">Clubs</a>
+                        <a href="/admin/clubs" class="navbar-link">Clubs</a>
                     </li>
                 </ul>
+
+
             </div>
 
             <div class="nav-right end">
@@ -58,50 +61,64 @@
 
     <div class="container">
         <div class="admin-panel-header">
-            <h2>Users</h2>
-            <p class="section-description">You can review all the data in social app under the overview section.</p>
+            <h2>Accounts</h2>
+
         </div>
 
 
+        <div class="table-container">
+            <div class="table-container-header">
+                <h3>All Users </h3>
+                <div class="section-count">
+                    {{ count($users) }} users
+                </div>
+            </div>
+            <table id="example" class="display " style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Email Address</th>
+                        <th>Academic Career</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td class="user-image">
+                                <div class="profile-image">
+                                    <img src={{ $user->profileImage }} />
+                                </div>
+                                <div class="fullname">
+                                    <span> {{ $user->firstname }} </span>
+                                    <span> {{ $user->lastname }} </span>
+                                </div>
+                            </td>
+                            @if ($user->isActive == 1)
+                                <td class="status active"><span><i class="fa fa-circle" aria-hidden="true"></i>
+                                        Active</span></td>
+                            @else
+                                <td class="status pending"><span><i class="fa fa-circle" aria-hidden="true"></i>
+                                        Pending</span></td>
+                            @endif
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->userType }}</td>
 
-        <table id="example" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011-04-25</td>
-                    <td>$320,800</td>
-                </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011-07-25</td>
-                    <td>$170,750</td>
-                </tr>
-                <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009-01-12</td>
-                    <td>$86,000</td>
-                </tr>
-            </tbody>
-        </table>
+                            <!--Actions-->
+                            <td class="action-btns">
+                                <a class="remove-btn btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a class="edit-btn btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+                            </td>
+                        </tr>
+                    @endforeach
+
+
+                </tbody>
+            </table>
+        </div>
+
 
 
 
@@ -121,7 +138,8 @@
             $(document).ready(function() {
                 $('#example').DataTable({
                     stateSave: true,
-                    "lengthChange": false
+                    "lengthChange": false,
+                    "info": false
                 });
             });
         </script>

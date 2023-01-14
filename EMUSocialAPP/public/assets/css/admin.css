@@ -13,10 +13,8 @@
 }
 
 .container .overview-cards {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
   margin: 2rem 0;
 }
@@ -24,21 +22,13 @@
 .container .overview-cards .overview-card {
   padding: 1rem;
   border-radius: 7px;
-  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .container .overview-cards .overview-card .overview-card-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container .overview-cards .overview-card .overview-card-body .overview-card-icon ion-icon {
@@ -66,24 +56,16 @@
 }
 
 .container .overview-cards .overview-card .overview-card-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding-top: 1rem;
   margin-top: .3rem;
   border-top: 1px solid rgba(212, 212, 212, 0.587);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .container .overview-cards .overview-card .overview-card-footer .status {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .container .overview-cards .overview-card .overview-card-footer .status .status-subtitle {
@@ -103,5 +85,182 @@
 
 .container .overview-cards .overview-card .overview-card-footer .status .status-amount.inactive {
   color: var(--error-message-red) !important;
+}
+
+.container .table-container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.container .table-container .table-container-header {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.container .table-container .table-container-header h3 {
+  color: #222C38;
+}
+
+.container .table-container .table-container-header .section-count {
+  background-color: #EBEBEB;
+  color: #82868E;
+  font-weight: bold;
+  border-radius: 15px;
+  font-size: 10px;
+  margin-left: .3rem;
+  padding: .2rem .5rem;
+}
+
+.container .table-container table {
+  border-bottom: none !important;
+}
+
+.container .table-container table thead {
+  border: none !important;
+}
+
+.container .table-container table tr.odd {
+  background-color: #EDF1FD !important;
+}
+
+.container .table-container table tr.even {
+  background-color: #fff !important;
+}
+
+.container .table-container table td {
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.container .table-container table td.action-btns .edit-btn {
+  color: #1A5CFF;
+}
+
+.container .table-container table td.action-btns .remove-btn {
+  color: #FF2B2B;
+  margin-left: 1rem;
+}
+
+.container .table-container table td.status span {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .2rem .3rem;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 9px !important;
+  font-weight: bold !important;
+}
+
+.container .table-container table td.status span i {
+  font-size: 7px;
+  margin-right: .2rem;
+}
+
+.container .table-container table td.active span {
+  background-color: #96F7C3;
+  color: #15B36A;
+}
+
+.container .table-container table td.pending span {
+  background-color: #F8D7DA;
+  color: #FF2B2B;
+}
+
+.container .table-container table.dataTable.display > tbody > tr.odd > .sorting_1,
+.container .table-container table.dataTable.order-column.stripe > tbody > tr.odd > .sorting_1 {
+  box-shadow: none !important;
+}
+
+.container .table-container table.dataTable.display tbody tr:hover > .sorting_1,
+.container .table-container table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
+  box-shadow: none !important;
+}
+
+.container .table-container table.dataTable.display > tbody > tr.even > .sorting_1,
+.container .table-container table.dataTable.order-column.stripe > tbody > tr.even > .sorting_1 {
+  box-shadow: none !important;
+}
+
+.container .table-container table.dataTable.display tbody tr:hover > .sorting_1,
+.container .table-container table.dataTable.order-column.hover tbody tr.even:hover > .sorting_1 {
+  box-shadow: none !important;
+}
+
+.container .table-container table.dataTable.stripe > tbody > tr.odd > *,
+.container .table-container table.dataTable.display > tbody > tr.odd > * {
+  box-shadow: none !important;
+}
+
+.container .table-container table.dataTable.hover > tbody > tr:hover > *,
+.container .table-container table.dataTable.display > tbody > tr:hover > * {
+  box-shadow: none !important;
+}
+
+.container .table-container table.dataTable.row-border tbody th,
+.container .table-container table.dataTable.row-border tbody td,
+.container .table-container table.dataTable.display tbody th,
+.container .table-container table.dataTable.display tbody td {
+  border-top: none !important;
+}
+
+.container .table-container table.dataTable thead th,
+.container .table-container table table.dataTable thead td {
+  padding: 10px;
+  border-bottom: none !important;
+}
+
+.container .table-container table td.user-image {
+  display: flex;
+  align-items: center;
+}
+
+.container .table-container table td.user-image .profile-image {
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  margin-right: .3rem;
+  border-radius: 100%;
+}
+
+.container .table-container table td.user-image .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .table-container table td.user-image .fullname {
+  color: #4F5562;
+  font-weight: bold;
+}
+
+.container .table-container table.dataTable thead th {
+  color: #6E7B8A !important;
+}
+
+.container .table-container .dataTables_wrapper .dataTables_paginate .paginate_button,
+.container .table-container .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #F0F2F4;
+  color: #717F8C !important;
+  border: none !important;
+}
+
+.container .table-container .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.container .table-container .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background-color: #1A5CFF;
+  color: #fff !important;
+}
+
+.container .table-container .dataTables_filter label input {
+  background-color: #EDF1FD !important;
+  border: none !important;
+  padding: .5rem .7rem !important;
+}
+
+.container .table-container .dataTables_filter label input:focus {
+  outline: none !important;
 }
 /*# sourceMappingURL=admin.css.map */
