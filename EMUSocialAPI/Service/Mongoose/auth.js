@@ -104,11 +104,9 @@ module.exports = {
         //generat token based on the user email + id
         const token = generateJWT(user);
 
-        const enableSecureFlag = NODE_ENV === "development" ? false : true;
-
         const [header, payload, signature] = token.split(".");
         const accessToken = header + "." + payload + ".";
         const sessionToken = signature;
-        return { accessToken, sessionToken, enableSecureFlag };
+        return { accessToken, sessionToken };
     },
 };

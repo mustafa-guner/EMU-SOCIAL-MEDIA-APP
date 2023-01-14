@@ -13,18 +13,24 @@ module.exports = {
     login: async(req, res, next) => {
         try {
             const loginResponse = await mongooseAuthService.authenticate(req);
-            const { accessToken, sessionToken, enableSecureFlag } = loginResponse;
+            const { accessToken, sessionToken } = loginResponse;
+            const isEnvironmentProduction = () =>
+                process.env.NODE_ENV == "production";
+
             return res
                 .cookie("accessToken", accessToken, {
-                    sameSite: "strict",
-                    secure: enableSecureFlag,
+                    sameSite: true,
+                    secure: isEnvironmentProduction(),
                     maxAge: 30 * 30 * 1000, //30 mins
                 })
                 .cookie("sessionToken", sessionToken, {
-                    secure: enableSecureFlag,
+                    secure: isEnvironmentProduction(),
+                    sameSite: true,
                     httpOnly: true,
                 })
-                .json({ success: true });
+                .json({
+                    success: true,
+                });
         } catch (error) {
             return next(error);
         }
