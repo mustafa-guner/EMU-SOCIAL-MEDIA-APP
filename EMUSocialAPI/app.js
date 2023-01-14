@@ -9,9 +9,11 @@ const cookieParser = require("cookie-parser");
 dotenv.config({ path: path.join(__dirname, "./Config/dotenv/.env") });
 
 const app = express();
+
 const { NODE_ENV, CLIENT_DEV_URL, CLIENT_PRODUCT_URL } = process.env;
 const mappedClientURL = () =>
     NODE_ENV !== "production" ? CLIENT_DEV_URL : CLIENT_PRODUCT_URL;
+
 //Index Route
 const appRouter = require("./Routes/index.js");
 //Custom Error Handler
@@ -22,14 +24,14 @@ const { customErrorHandler } = require("./Middlewares/CustomErrorHandler");
 // connectToMySQL();
 
 const connectToMongoDB = require("./Helpers/Database/MongoDB");
-connectToMongoDB();
 
-app.use(cors({ origin: mappedClientURL() }));
+app.use(cors({ origin: mappedClientURL(), credentials: true }));
 app.use(cookieParser());
-// app.use(cors());
 app.use(logger(NODE_ENV == "production" ? "combined" : "dev"));
 app.use(bp.urlencoded({ extended: true })); //form data
 app.use(bp.json());
+
+connectToMongoDB();
 
 app.use("/api/v1/", appRouter);
 app.use(customErrorHandler);
