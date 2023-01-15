@@ -41,10 +41,62 @@ body .main-container .left-section #standalone-container {
   background-color: #FFFFFF;
   -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
           box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 0 1rem;
+}
+
+body .main-container .left-section #standalone-container .title-input {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 0.1rem;
+}
+
+body .main-container .left-section #standalone-container .title-input input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 3px;
+  border: none;
+  font-size: 23px;
+  outline: 0;
+  background-color: #F0F2F5;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+body .main-container .left-section #standalone-container .title-input input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.363);
+  font-size: 18px;
+}
+
+body .main-container .left-section #standalone-container .title-input input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.363);
+  font-size: 18px;
+}
+
+body .main-container .left-section #standalone-container .title-input input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.363);
+  font-size: 18px;
+}
+
+body .main-container .left-section #standalone-container .title-input input::placeholder {
+  color: rgba(0, 0, 0, 0.363);
+  font-size: 18px;
+}
+
+body .main-container .left-section #standalone-container #toolbar-container {
+  font-size: 10px;
 }
 
 body .main-container .left-section #standalone-container #editor-container {
-  height: 410px;
+  height: 315px;
+  font-size: 15px;
 }
 
 body .main-container .left-section #standalone-container .bottom-section {
@@ -54,7 +106,7 @@ body .main-container .left-section #standalone-container .bottom-section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
 }
 
 body .main-container .left-section #standalone-container .bottom-section .category-selection {
@@ -244,6 +296,32 @@ body .main-container .right-section .recent-posts-container .recent-post .recent
   font-size: 15px;
 }
 
+body .main-container .right-section .recent-posts-container .recent-post .recent-post-content .buttons button {
+  cursor: pointer;
+  margin-left: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0.3rem;
+  width: 40px;
+  height: 30px;
+}
+
+body .main-container .right-section .recent-posts-container .recent-post .recent-post-content .buttons button ion-icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 15px;
+}
+
 body .main-container .right-section .recent-posts-container .recent-post .recent-post-content .buttons .recent-post-update-btn {
   border: 1px solid #4495ff;
   color: white;
@@ -266,5 +344,22 @@ body .main-container .right-section .recent-posts-container .recent-post .recent
   font-weight: bold;
   background: #FFFFFF;
   color: #F25370;
+}
+
+.my-btn-confirm {
+  margin-left: 1rem;
+  background-color: #36C857 !important;
+}
+
+.my-btn-confirm:hover {
+  background-color: #31b450 !important;
+}
+
+.my-btn-cancel {
+  background-color: #F25370 !important;
+}
+
+.my-btn-cancel:hover {
+  background-color: #c5445c !important;
 }
 /*# sourceMappingURL=blogpage.css.map */

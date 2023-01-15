@@ -2,7 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -11,8 +12,10 @@ body {
 }
 
 #main-section {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1800px;
+  -ms-grid-columns: 1800px;
+      grid-template-columns: 1800px;
   grid-row: auto;
   grid-gap: 32px;
   width: 100%;
@@ -26,31 +29,38 @@ body {
   border-radius: 12px;
   overflow: hidden;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 #main-section .profile-container .profile-bg-img {
   width: 100%;
   height: 400px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-bg-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #main-section .profile-container .profile-informations {
   height: 220px;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 0.7fr 3.2fr 1.3fr;
+  -ms-grid-columns: 0.7fr 3.2fr 1.3fr;
+      grid-template-columns: 0.7fr 3.2fr 1.3fr;
   position: relative;
 }
 
 #main-section .profile-container .profile-informations .profile-img img {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  object-fit: cover;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 100%;
   height: 220px;
   width: 220px;
@@ -60,9 +70,16 @@ body {
 }
 
 #main-section .profile-container .profile-informations .infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-left: 1rem;
 }
 
@@ -73,14 +90,22 @@ body {
 }
 
 #main-section .profile-container .profile-informations .infos .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 1rem;
 }
 
 #main-section .profile-container .profile-informations .infos .icons .contact-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 0.8rem;
   font-size: larger;
 }
@@ -91,8 +116,12 @@ body {
 }
 
 #main-section .profile-container .profile-informations .infos .icons .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 1rem;
   font-size: larger;
   padding-left: 0.8rem;
@@ -110,9 +139,16 @@ body {
 }
 
 #main-section .profile-container .profile-informations .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
   margin-right: 1rem;
 }
@@ -136,10 +172,19 @@ body {
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   width: 100%;
   margin: 4rem 1rem 1rem 0;
 }
@@ -151,8 +196,12 @@ body {
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images {
   border-radius: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 50px;
   width: 143px;
 }
@@ -169,37 +218,51 @@ body {
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images div img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-1 {
   z-index: 10;
   right: 24px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-2 {
   z-index: 9;
   right: 12px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-informations .buttons .common-connect .common-images .img-3 {
   z-index: 8;
   right: 0px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .profile-container .profile-informations .buttons .main-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 1rem;
 }
 
 #main-section .profile-container .profile-informations .buttons .main-btns button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   height: 40px;
   width: 120px;
@@ -224,15 +287,18 @@ body {
 
 #main-section .bottom-section {
   margin-top: 2rem;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 500px 800px 436px;
+  -ms-grid-columns: 500px 800px 436px;
+      grid-template-columns: 500px 800px 436px;
   grid-gap: 32px;
 }
 
 #main-section .bottom-section .profile-section-container {
   border-radius: 12px;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   width: 500px;
   height: 500px;
 }
@@ -244,10 +310,16 @@ body {
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  align-items: center;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 75%;
   width: 100%;
 }
@@ -255,13 +327,18 @@ body {
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person {
   border-radius: 12px;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   width: 90%;
   margin: auto;
   padding: 0.5rem;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 0.5fr 1fr 0.4fr 0.7fr;
-  align-items: center;
+  -ms-grid-columns: 0.5fr 1fr 0.4fr 0.7fr;
+      grid-template-columns: 0.5fr 1fr 0.4fr 0.7fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person a {
@@ -270,18 +347,21 @@ body {
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .profile-img {
   margin: 0 0.4rem;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   height: 60px;
   width: 60px;
   border-radius: 100%;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .profile-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people {
@@ -303,9 +383,15 @@ body {
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .person-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-right: 1rem;
 }
 
@@ -321,15 +407,27 @@ body {
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .chat-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   height: 35px;
   width: 35px;
@@ -380,7 +478,8 @@ body {
 #main-section .bottom-section .club-about-section {
   border-radius: 12px;
   background-color: #FFFFFF;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   width: 436px;
   height: 480px;
   padding: 1.5rem;
@@ -403,9 +502,15 @@ body {
 }
 
 #main-section .bottom-section .club-about-section .club-status-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #main-section .bottom-section .club-about-section .club-status-container ion-icon {
@@ -428,8 +533,10 @@ body {
 }
 
 #main-section .new-post-container .new-post-input-container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 115px 650px;
+  -ms-grid-columns: 115px 650px;
+      grid-template-columns: 115px 650px;
 }
 
 #main-section .post-container {
@@ -437,7 +544,8 @@ body {
 }
 
 #main-section .post-container .main-content {
-  grid-template-columns: 0.3fr 2fr 0.4fr;
+  -ms-grid-columns: 0.3fr 2fr 0.4fr;
+      grid-template-columns: 0.3fr 2fr 0.4fr;
 }
 
 .modal-change-pwd {
@@ -462,15 +570,27 @@ body {
 }
 
 .modal-change-pwd .main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .modal-change-pwd .main-content .form-elements .old-pwd {
   margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .modal-change-pwd .main-content .form-elements .old-pwd label {
@@ -492,6 +612,21 @@ body {
   border-radius: 5px;
 }
 
+.modal-change-pwd .main-content .form-elements .old-pwd input::-webkit-input-placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
+}
+
+.modal-change-pwd .main-content .form-elements .old-pwd input:-ms-input-placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
+}
+
+.modal-change-pwd .main-content .form-elements .old-pwd input::-ms-input-placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
+}
+
 .modal-change-pwd .main-content .form-elements .old-pwd input::placeholder {
   color: #B1B1B3;
   font-size: 17px;
@@ -499,8 +634,13 @@ body {
 
 .modal-change-pwd .main-content .form-elements .new-pwd {
   margin: 3rem auto 2rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .modal-change-pwd .main-content .form-elements .new-pwd label {
@@ -520,6 +660,21 @@ body {
   border: none;
   outline: 0;
   border-radius: 5px;
+}
+
+.modal-change-pwd .main-content .form-elements .new-pwd input::-webkit-input-placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
+}
+
+.modal-change-pwd .main-content .form-elements .new-pwd input:-ms-input-placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
+}
+
+.modal-change-pwd .main-content .form-elements .new-pwd input::-ms-input-placeholder {
+  color: #B1B1B3;
+  font-size: 17px;
 }
 
 .modal-change-pwd .main-content .form-elements .new-pwd input::placeholder {
@@ -585,9 +740,16 @@ body {
 }
 
 .modal-edit-profile .main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .modal-edit-profile .main-content hr {
@@ -600,8 +762,12 @@ body {
 }
 
 .modal-edit-profile .main-content .profile-image-section .top-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .modal-edit-profile .main-content .profile-image-section .top-section .edit-btn {
@@ -621,8 +787,12 @@ body {
 }
 
 .modal-edit-profile .main-content .profile-image-section .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .modal-edit-profile .main-content .profile-image-section .content .profile-img {
@@ -632,11 +802,13 @@ body {
   width: 220px;
   border-radius: 100%;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .modal-edit-profile .main-content .profile-image-section .content .profile-img img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -646,8 +818,12 @@ body {
 }
 
 .modal-edit-profile .main-content .cover-image-section .top-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .modal-edit-profile .main-content .cover-image-section .top-section .edit-btn {
@@ -667,8 +843,12 @@ body {
 }
 
 .modal-edit-profile .main-content .cover-image-section .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .modal-edit-profile .main-content .cover-image-section .content .cover-img {
@@ -678,11 +858,13 @@ body {
   width: 460px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .modal-edit-profile .main-content .cover-image-section .content .cover-img img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -692,13 +874,21 @@ body {
 }
 
 .modal-edit-profile .main-content .desc-section .top-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .modal-edit-profile .main-content .desc-section .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
@@ -708,7 +898,8 @@ body {
 
 .modal-edit-profile .main-content .desc-section .content .desc-textarea textarea {
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   padding: 0.5rem;
   width: 700px;
   height: 120px;

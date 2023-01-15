@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/blogpage.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.0/sweetalert2.min.css" integrity="sha512-NvuRGlPf6cHpxQqBGnPe7fPoACpyrjhlSNeXVUY7BZAj1nNhuNpRBq3osC4yr2vswUEuHq2HtCsY2vfLNCndYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Create New Blog</title>
 </head>
 
@@ -44,6 +46,9 @@
             </div>
             <form action="">
                 <div id="standalone-container">
+                    <div class="title-input">
+                        <input id="title" type="text" placeholder="Enter your blog title...">
+                    </div>
                     <div id="toolbar-container">
                         <span class="ql-formats">
                         <select class="ql-font"></select>
@@ -103,7 +108,7 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <button id="publish-btn" type="submit">Publish</button>
+                            <button id="publish-btn" type="button">Publish</button>
                         </div>
                     </div>
                 </div>
@@ -126,71 +131,7 @@
                         <p class="desc">The Agile methodology is a way to manage a project by breaking it up into several phases. It involves constant collaboration with stakeholders and continuous improvement at every stage. Once the work begins, teams cycle through a process of planning...</p>
                         <div class="buttons">
                             <a href="" class="recent-post-update-btn"><ion-icon name="create-outline"></ion-icon></a>
-                            <a href="" class="recent-post-delete-btn"><ion-icon name="trash-outline"></ion-icon></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="recent-post">
-                    <h4 class="recent-post-title"><a href="">What is Agile Methodology?</a></h4>
-                    <div class="recent-post-date">
-                        <p><span>Published:</span> 14.01.23 - 10:08 AM</p>
-                    </div>
-                    <div class="recent-post-content">
-                        <div class="recent-post-image">
-                            <img class="" src="https://www.devteam.space/wp-content/uploads/2022/06/Agile-Methodology.jpg" alt="post-image">
-                        </div>
-                        <p class="desc">The Agile methodology is a way to manage a project by breaking it up into several phases. It involves constant collaboration with stakeholders and continuous improvement at every stage. Once the work begins, teams cycle through a process of planning...</p>
-                        <div class="buttons">
-                            <a href="" class="recent-post-update-btn"><ion-icon name="create-outline"></ion-icon></a>
-                            <a href="" class="recent-post-delete-btn"><ion-icon name="trash-outline"></ion-icon></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="recent-post">
-                    <h4 class="recent-post-title"><a href="">What is Agile Methodology?</a></h4>
-                    <div class="recent-post-date">
-                        <p><span>Published:</span> 14.01.23 - 10:08 AM</p>
-                    </div>
-                    <div class="recent-post-content">
-                        <div class="recent-post-image">
-                            <img class="" src="https://www.devteam.space/wp-content/uploads/2022/06/Agile-Methodology.jpg" alt="post-image">
-                        </div>
-                        <p class="desc">The Agile methodology is a way to manage a project by breaking it up into several phases. It involves constant collaboration with stakeholders and continuous improvement at every stage. Once the work begins, teams cycle through a process of planning...</p>
-                        <div class="buttons">
-                            <a href="" class="recent-post-update-btn"><ion-icon name="create-outline"></ion-icon></a>
-                            <a href="" class="recent-post-delete-btn"><ion-icon name="trash-outline"></ion-icon></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="recent-post">
-                    <h4 class="recent-post-title"><a href="">What is Agile Methodology?</a></h4>
-                    <div class="recent-post-date">
-                        <p><span>Published:</span> 14.01.23 - 10:08 AM</p>
-                    </div>
-                    <div class="recent-post-content">
-                        <div class="recent-post-image">
-                            <img class="" src="https://www.devteam.space/wp-content/uploads/2022/06/Agile-Methodology.jpg" alt="post-image">
-                        </div>
-                        <p class="desc">The Agile methodology is a way to manage a project by breaking it up into several phases. It involves constant collaboration with stakeholders and continuous improvement at every stage. Once the work begins, teams cycle through a process of planning...</p>
-                        <div class="buttons">
-                            <a href="" class="recent-post-update-btn"><ion-icon name="create-outline"></ion-icon></a>
-                            <a href="" class="recent-post-delete-btn"><ion-icon name="trash-outline"></ion-icon></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="recent-post">
-                    <h4 class="recent-post-title"><a href="">What is Agile Methodology?</a></h4>
-                    <div class="recent-post-date">
-                        <p><span>Published:</span> 14.01.23 - 10:08 AM</p>
-                    </div>
-                    <div class="recent-post-content">
-                        <div class="recent-post-image">
-                            <img class="" src="https://www.devteam.space/wp-content/uploads/2022/06/Agile-Methodology.jpg" alt="post-image">
-                        </div>
-                        <p class="desc">The Agile methodology is a way to manage a project by breaking it up into several phases. It involves constant collaboration with stakeholders and continuous improvement at every stage. Once the work begins, teams cycle through a process of planning...</p>
-                        <div class="buttons">
-                            <a href="" class="recent-post-update-btn"><ion-icon name="create-outline"></ion-icon></a>
-                            <a href="" class="recent-post-delete-btn"><ion-icon name="trash-outline"></ion-icon></a>
+                            <button id="delete-btn" class="recent-post-delete-btn"><ion-icon name="trash-outline"></ion-icon></button>
                         </div>
                     </div>
                 </div>
@@ -199,7 +140,7 @@
     </div>
   
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.0/sweetalert2.min.js" integrity="sha512-IYzd4A07K9kxY3b8YIXi8L0BmUPVvPlI+YpLOzKrIKA3sQ4gt43dYp+y6ip7C7LRLXYfMHikpxeprZh7dYQn+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="{{asset('assets/js/bootstrap-js/bootstrap.min.js')}}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -216,6 +157,69 @@
         placeholder: 'Write your blog...',
         theme: 'snow'
     });
+    </script>
+
+    <!-- SWALS -->
+    <script>
+        const removePostBtns = document.querySelectorAll(".recent-post-delete-btn")
+        removePostBtns.forEach(function(removePostBtn){
+                removePostBtn.addEventListener("click",function(){
+                const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success my-btn-confirm',
+                    cancelButton: 'btn btn-danger my-btn-cancel'
+                },
+                buttonsStyling: false
+                })
+
+                swalWithBootstrapButtons.fire({
+                title: 'Are you sure to delete it?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    swalWithBootstrapButtons.fire(
+                    'Deleted!',
+                    'Your post has been deleted.',
+                    'success'
+                    )
+                } 
+                })
+            })
+        })
+
+        const publishPostBtn = document.getElementById("publish-btn")                
+        publishPostBtn.addEventListener("click",function(){
+                const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success my-btn-confirm',
+                    cancelButton: 'btn btn-danger my-btn-cancel'
+                },
+                buttonsStyling: false
+                })
+
+                swalWithBootstrapButtons.fire({
+                title: 'Are you sure to publish it?',
+                text: "",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, publish it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    swalWithBootstrapButtons.fire(
+                    'Published!',
+                    'Your post has been published.',
+                    'success'
+                    )
+                } 
+                })
+            })
     </script>
 </body>
 </html>

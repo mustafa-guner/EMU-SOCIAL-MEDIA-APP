@@ -13,8 +13,10 @@
 }
 
 .container .overview-cards {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
   margin: 2rem 0;
 }
@@ -22,13 +24,21 @@
 .container .overview-cards .overview-card {
   padding: 1rem;
   border-radius: 7px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .container .overview-cards .overview-card .overview-card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container .overview-cards .overview-card .overview-card-body .overview-card-icon ion-icon {
@@ -56,16 +66,24 @@
 }
 
 .container .overview-cards .overview-card .overview-card-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 1rem;
   margin-top: .3rem;
   border-top: 1px solid rgba(212, 212, 212, 0.587);
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container .overview-cards .overview-card .overview-card-footer .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container .overview-cards .overview-card .overview-card-footer .status .status-subtitle {
@@ -88,14 +106,19 @@
 }
 
 .container .table-container {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 1rem;
   border-radius: 10px;
 }
 
 .container .table-container .table-container-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 300px;
 }
 
@@ -145,9 +168,15 @@
 
 .container .table-container table td.status span {
   width: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: .2rem .3rem;
   text-align: center;
   border-radius: 20px;
@@ -172,32 +201,38 @@
 
 .container .table-container table.dataTable.display > tbody > tr.odd > .sorting_1,
 .container .table-container table.dataTable.order-column.stripe > tbody > tr.odd > .sorting_1 {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .container .table-container table.dataTable.display tbody tr:hover > .sorting_1,
 .container .table-container table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .container .table-container table.dataTable.display > tbody > tr.even > .sorting_1,
 .container .table-container table.dataTable.order-column.stripe > tbody > tr.even > .sorting_1 {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .container .table-container table.dataTable.display tbody tr:hover > .sorting_1,
 .container .table-container table.dataTable.order-column.hover tbody tr.even:hover > .sorting_1 {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .container .table-container table.dataTable.stripe > tbody > tr.odd > *,
 .container .table-container table.dataTable.display > tbody > tr.odd > * {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .container .table-container table.dataTable.hover > tbody > tr:hover > *,
 .container .table-container table.dataTable.display > tbody > tr:hover > * {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .container .table-container table.dataTable.row-border tbody th,
@@ -214,8 +249,12 @@
 }
 
 .container .table-container table td.user-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container .table-container table td.user-image .profile-image {
@@ -229,7 +268,8 @@
 .container .table-container table td.user-image .profile-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container .table-container table td.user-image .fullname {
