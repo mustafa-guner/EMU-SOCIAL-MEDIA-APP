@@ -18,28 +18,18 @@
     <nav>
         <div class="container">
             <div class="nav-left">
-                <a href="/home" class="home-btn" type="button">
-                    <ion-icon name="home"></ion-icon>
-                </a>
+                <a href="/home" class="home-btn" type="button"><ion-icon name="home"></ion-icon></a>
                 <div class="search-bar">
                     <input type="search" placeholder="Search...">
                 </div>
             </div>
             <div class="nav-logo">
-                <a href="">
-                    <h1 class="logo">EMU APP</h1>
-                </a>
+                <a href=""><h1 class="logo">EMU APP</h1></a>
             </div>
             <div class="nav-right">
-                <a type="button">
-                    <ion-icon name="mail"></ion-icon>
-                </a>
-                <a type="button">
-                    <ion-icon name="notifications"></ion-icon>
-                </a>
-                <a href="/profile" type="button">
-                    <ion-icon name="person"></ion-icon>
-                </a>
+                <a href="/chat" type="button"><ion-icon name="mail"></ion-icon></a>
+                <a type="button"><ion-icon name="notifications"></ion-icon></a>
+                <a href="/profile" type="button" data-toggle="modal" data-target="#changePassword" data-whatever="@mdo"><ion-icon name="person"></ion-icon></a>
             </div>
         </div>
     </nav>

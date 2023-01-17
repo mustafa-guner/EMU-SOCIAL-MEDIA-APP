@@ -32,7 +32,7 @@
                 </a>
             </div>
             <div class="nav-right">
-                <a type="button"><ion-icon name="mail"></ion-icon></a>
+                <a href="/chat" type="button"><ion-icon name="mail"></ion-icon></a>
                 <a type="button"><ion-icon name="notifications"></ion-icon></a>
                 <a href="/profile" type="button"><ion-icon name="person"></ion-icon></a>
             </div>

@@ -55,6 +55,10 @@ Route::get("/create-new-blog",function () {
     return View("app/blogpage");
 });
 
+Route::get("/chat",function () {
+    return View("app/chat");
+});
+
 Route::get('/overview', function () {
     return view('admin/overview');
 });
