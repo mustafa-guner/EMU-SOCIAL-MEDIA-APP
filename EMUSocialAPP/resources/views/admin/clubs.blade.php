@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/v/dt/dt-1.13.1/b-2.3.3/fh-3.3.1/r-2.4.0/sb-1.4.0/sl-1.5.0/sr-1.2.0/datatables.min.css" />
-    <title>Admin | Overview</title>
+    <title>Admin | Clubs</title>
 
 
     <!--Logo font -->
@@ -17,46 +17,15 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!--Navbar styles -->
-    <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/adminnavbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
 
     <!--Admin styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 </head>
 
 <body>
-    <nav>
-        <div class="container dflex">
-            <div class="nav-left">
-                <div class="nav-logo">
-                    <a href="">
-                        <h1 class="logo">EMU APP</h1>
-                    </a>
-                </div>
-                <ul class="navbar-links">
-                    <li class="navbar-item ">
-                        <a href="/admin/overview" class="navbar-link">Overview</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="/admin/accounts" class="navbar-link">Users</a>
-                    </li>
-                    <li class="navbar-item active">
-                        <a href="/admin/clubs" class="navbar-link">Clubs</a>
-                    </li>
-                </ul>
-
-
-            </div>
-
-            <div class="nav-right end">
-                <button type="button">
-                    <ion-icon name="notifications"></ion-icon>
-                </button>
-                <button type="button">
-                    <ion-icon name="person"></ion-icon>
-                </button>
-            </div>
-        </div>
-    </nav>
+    @include('partials.adminnavbar')
 
     <div class="container">
         <div class="admin-panel-header">
@@ -106,19 +75,15 @@
         </table>
 
 
-
+        <script src="{{ asset('assets/js/navbar.js') }}"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
-
         <script type="text/javascript"
             src="https://cdn.datatables.net/v/dt/dt-1.13.1/b-2.3.3/fh-3.3.1/r-2.4.0/sb-1.4.0/sl-1.5.0/sr-1.2.0/datatables.min.js">
         </script>
-
+        <script src="{{ asset('assets/js/bootstrap-js/bootstrap.min.js') }}"></script>
         <script>
             $(document).ready(function() {
                 $('#example').DataTable({

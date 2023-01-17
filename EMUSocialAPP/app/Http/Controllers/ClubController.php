@@ -24,7 +24,7 @@ class ClubController extends Controller{
         $eventnumber = "169";
         $postnumber = "978";
         $department = "IT";
-        $coverimage = "https://www.pngitem.com/pimgs/m/261-2616243_film-photography-club-illustration-hd-png-download.png";
+        $coverimage = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Wikipedia_space_ibiza%2803%29.jpg/800px-Wikipedia_space_ibiza%2803%29.jpg";
         $clubmembers = array(
             array(
                 'profileimage' => "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg",

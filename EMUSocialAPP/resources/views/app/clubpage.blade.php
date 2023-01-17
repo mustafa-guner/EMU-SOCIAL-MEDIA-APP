@@ -6,68 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/club.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/modal.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <title>Profile</title>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-left">
-                <a href="/home" class="home-btn" type="button"><ion-icon name="home"></ion-icon></a>
-                <div class="search-bar">
-                    <input type="search" placeholder="Search...">
-                </div>
-            </div>
-            <div class="nav-logo">
-                <a href=""><h1 class="logo">EMU APP</h1></a>
-            </div>
-            <div class="nav-right">
-                <a href="/chat" type="button"><ion-icon name="mail"></ion-icon></a>
-                <a type="button"><ion-icon name="notifications"></ion-icon></a>
-                <a href="/profile" type="button" data-toggle="modal" data-target="#changePassword" data-whatever="@mdo"><ion-icon name="person"></ion-icon></a>
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
     
-    <!-- Change Password Modal -->
-    <div id="changePassword" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content modal-change-pwd">
-                <div class="modal-header">
-                    <h1>Change Password</h1>
-                </div>
-                <div class="close-btn">
-                    <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="main-content">
-                    <form action="">
-                        <div class="modal-body">
-                            <div class="form-elements">
-                                <div class="old-pwd">
-                                    <label for="old-pwd" class="col-form-label old-pwd-lbl">Old Password:</label>
-                                    <input type="password" class="form-control old-pwd-input" id="old-pwd" placeholder="Please enter your old password...">
-                                </div>
-                                <div class="new-pwd">
-                                    <label for="new-pwd" class="col-form-label new-pwd-lbl">New Password:</label>
-                                    <input type="password" class="form-control new-pwd-input" id="new-pwd" placeholder="Please enter your new password...">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-change-pwd">Change Password</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <section id="main-section">
         <div class="left-section">
             <div class="profile-container">
@@ -271,8 +219,9 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('assets/js/navbar.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="{{asset('assets/js/bootstrap-js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/js/bootstrap-js/bootstrap.min.js') }}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

@@ -5,34 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <title>Home</title>
 </head>
 
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-left">
-                <a href="/home" class="home-btn" type="button"><ion-icon name="home"></ion-icon></a>
-                <div class="search-bar">
-                    <input type="search" placeholder="Search...">
-                </div>
-            </div>
-            <div class="nav-logo">
-                <a href=""><h1 class="logo">EMU APP</h1></a>
-            </div>
-            <div class="nav-right">
-                <a href="/chat" type="button"><ion-icon name="mail"></ion-icon></a>
-                <a type="button"><ion-icon name="notifications"></ion-icon></a>
-                <a href="/profile" type="button" data-toggle="modal" data-target="#changePassword" data-whatever="@mdo"><ion-icon name="person"></ion-icon></a>
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
+
     <section id="main-section">
         <div class="header">
             <h2>My Feed</h2>
@@ -273,6 +257,11 @@
             </div>
         </div>
     </section>
+    <script src="{{ asset('assets/js/navbar.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/bootstrap-js/bootstrap.min.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

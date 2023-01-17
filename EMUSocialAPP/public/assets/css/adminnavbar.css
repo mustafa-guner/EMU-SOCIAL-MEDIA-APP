@@ -29,8 +29,7 @@ nav .container .nav-left {
   justify-self: flex-start;
 }
 
-nav .container .nav-left a {
-  text-decoration: none;
+nav .container .nav-left button {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,7 +52,7 @@ nav .container .nav-left a {
           box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-nav .container .nav-left a:hover {
+nav .container .nav-left button:hover {
   color: #FFFFFF;
   background-color: #012246;
 }
@@ -88,6 +87,30 @@ nav .container .nav-left input::placeholder {
   color: rgba(0, 0, 0, 0.363);
 }
 
+nav .container ul.navbar-links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2rem;
+}
+
+nav .container ul.navbar-links li.navbar-item {
+  margin-right: 1rem;
+}
+
+nav .container ul.navbar-links li.navbar-item a.navbar-link {
+  color: var(--light-text-gray-color);
+}
+
+nav .container ul.navbar-links li.navbar-item.active a.navbar-link {
+  color: var(--main-heading-black);
+  font-weight: bold;
+}
+
 nav .container .nav-logo {
   font-family: 'Caveat', cursive !important;
   -ms-grid-column-align: center;
@@ -114,6 +137,34 @@ nav .container .nav-right {
           justify-content: space-between;
   height: 100%;
   width: 200px;
+}
+
+nav .container .nav-right button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #012246;
+  font-size: x-large;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  border: 0.1px solid #012246;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+nav .container .nav-right button:hover {
+  color: #FFFFFF;
+  background-color: #012246;
 }
 
 nav .container .nav-right .chat-btn {
@@ -240,4 +291,19 @@ nav .container .nav-right .dropdown .dropdown-content a:hover {
 nav .container .nav-right .dropdown .dropdown-content.show {
   display: block;
 }
-/*# sourceMappingURL=navbar.css.map */
+
+nav .container .nav-right.end {
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+}
+
+nav .container.dflex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=adminnavbar.css.map */
