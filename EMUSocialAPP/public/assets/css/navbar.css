@@ -145,42 +145,13 @@ nav .container .nav-right .chat-btn:hover {
   background-color: #012246;
 }
 
-nav .container .nav-right .notification-btn {
-  text-decoration: none;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #012246;
-  font-size: x-large;
-  margin: 0.5rem;
-  padding: 0.2rem;
-  border-radius: 100%;
-  width: 50px;
-  height: 50px;
-  border: 0.1px solid #012246;
-  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-}
-
-nav .container .nav-right .notification-btn:hover {
-  color: #FFFFFF;
-  background-color: #012246;
-}
-
-nav .container .nav-right .dropdown {
+nav .container .nav-right .dropdown-notifications {
   float: right;
   position: relative;
   display: inline-block;
 }
 
-nav .container .nav-right .dropdown .dropbtn {
+nav .container .nav-right .dropdown-notifications .dropbtn-notifications {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -203,28 +174,419 @@ nav .container .nav-right .dropdown .dropbtn {
           box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-nav .container .nav-right .dropdown .dropbtn:hover {
+nav .container .nav-right .dropdown-notifications .dropbtn-notifications:hover {
   color: #FFFFFF;
   background-color: #012246;
 }
 
-nav .container .nav-right .dropdown .dropbtn ion-icon {
+nav .container .nav-right .dropdown-notifications .dropbtn-notifications ion-icon {
   pointer-events: none;
 }
 
-nav .container .nav-right .dropdown .dropdown-content {
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  min-width: 420px;
+  overflow: auto;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  right: 0;
+  z-index: 1;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications.show-notifications {
+  display: block;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header {
+  padding: 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header p {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header a {
+  color: black;
+  font-size: large;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification {
+  background-color: #d4dced;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0fr 3fr 0.2fr;
+      grid-template-columns: 0fr 3fr 0.2fr;
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+  position: relative;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification .profile-img {
+  margin: 0 0.5rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification .profile-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification .name-container-people {
+  padding: 0.5rem 0rem 0.5rem 0.3rem;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification .name-container-people .name a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification .name-container-people .notification-content {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification .notification-date {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: small;
+  color: rgba(0, 0, 0, 0.748);
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .new-notification ion-icon {
+  margin-top: 1rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #2E7CE8;
+  font-size: 13px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .old-notification {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0fr 3fr;
+      grid-template-columns: 0fr 3fr;
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+  position: relative;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .old-notification .profile-img {
+  margin: 0 0.5rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .old-notification .profile-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .old-notification .name-container-people {
+  padding: 0.5rem 0rem 0.5rem 0.3rem;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .old-notification .name-container-people .name a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .old-notification .name-container-people .notification-content {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .old-notification .notification-date {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: small;
+  color: rgba(0, 0, 0, 0.748);
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification {
+  background-color: #d4dced;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0fr 3fr 1fr;
+      grid-template-columns: 0fr 3fr 1fr;
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+  position: relative;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .profile-img {
+  margin: 0 0.5rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .profile-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people {
+  padding: 0.5rem 0rem 0.5rem 0.3rem;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people .name a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people .notification-content {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .notification-date {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: small;
+  color: rgba(0, 0, 0, 0.748);
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons {
+  margin-top: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #FFFFFF;
+  padding: 0.4rem;
+  background-color: #FF2B2B;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel:hover {
+  background-color: #ff4f4f;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel ion-icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: x-large;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #FFFFFF;
+  padding: 0.4rem;
+  background-color: #36C857;
+  margin-left: 0.3rem;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm:hover {
+  background-color: #5bc974;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm ion-icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: x-large;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .announcement-notification {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0fr 3fr;
+      grid-template-columns: 0fr 3fr;
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+  position: relative;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .announcement-notification .profile-img {
+  margin: 0 0.5rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .announcement-notification .profile-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .announcement-notification .name-container-people {
+  padding: 0.5rem 0rem 0.5rem 0.3rem;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .announcement-notification .name-container-people .name a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .announcement-notification .name-container-people .notification-content {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+}
+
+nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .announcement-notification .notification-date {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: small;
+  color: rgba(0, 0, 0, 0.748);
+}
+
+nav .container .nav-right .dropdown-person {
+  float: right;
+  position: relative;
+  display: inline-block;
+}
+
+nav .container .nav-right .dropdown-person .dropbtn-person {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #012246;
+  font-size: x-large;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  border: 0.1px solid #012246;
+  -webkit-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+nav .container .nav-right .dropdown-person .dropbtn-person:hover {
+  color: #FFFFFF;
+  background-color: #012246;
+}
+
+nav .container .nav-right .dropdown-person .dropbtn-person ion-icon {
+  pointer-events: none;
+}
+
+nav .container .nav-right .dropdown-person .dropdown-content-person {
   display: none;
   position: absolute;
   background-color: #FFFFFF;
   min-width: 170px;
   overflow: auto;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
   right: 0;
   z-index: 1;
 }
 
-nav .container .nav-right .dropdown .dropdown-content a {
+nav .container .nav-right .dropdown-person .dropdown-content-person a {
   text-align: center;
   color: black;
   padding: 12px 16px;
@@ -233,11 +595,11 @@ nav .container .nav-right .dropdown .dropdown-content a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.137);
 }
 
-nav .container .nav-right .dropdown .dropdown-content a:hover {
+nav .container .nav-right .dropdown-person .dropdown-content-person a:hover {
   background-color: #ddd;
 }
 
-nav .container .nav-right .dropdown .dropdown-content.show {
+nav .container .nav-right .dropdown-person .dropdown-content-person.show-person {
   display: block;
 }
 /*# sourceMappingURL=navbar.css.map */
