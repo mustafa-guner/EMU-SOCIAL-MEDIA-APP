@@ -3,14 +3,16 @@
 const notificationsIcon = document.getElementById("notifications-icon")
 const dropdownBtnNotifications = document.getElementById("dropdown-btn-notifications")
 
-notificationsIcon.addEventListener("click", openDropdownonclickNotifications)
-dropdownBtnNotifications.addEventListener("click", openDropdownonclickNotifications)
-
-function openDropdownonclickNotifications(e) {
-    if(e.composedPath()[0]==this){
-        document.getElementById("myDropdown-notifications").classList.toggle("show-notifications");
-    }
-} 
+if(notificationsIcon){
+    notificationsIcon.addEventListener("click", openDropdownonclickNotifications)
+    dropdownBtnNotifications.addEventListener("click", openDropdownonclickNotifications)
+    
+    function openDropdownonclickNotifications(e) {
+        if(e.composedPath()[0]==this){
+            document.getElementById("myDropdown-notifications").classList.toggle("show-notifications");
+        }
+    } 
+}
 
 // Profile icon Dropdown
 

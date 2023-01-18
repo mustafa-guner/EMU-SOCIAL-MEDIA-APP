@@ -19,12 +19,9 @@
             </ul>
         </div>
         <div class="nav-right end">
-            <button type="button">
-                <ion-icon name="notifications"></ion-icon>
-            </button>
-            <div class="dropdown">
-                <button id="dropdown-btn" class="dropbtn"><ion-icon class="person-icon" name="person" id="person-icon"></ion-icon></button>
-                <div id="myDropdown" class="dropdown-content">
+            <div class="dropdown-person">
+                <button id="dropdown-btn-person" class="dropbtn-person"><ion-icon class="person-icon" name="person" id="person-icon"></ion-icon></button>
+                <div id="myDropdown-person" class="dropdown-content-person">
                     <a href="" type="button" data-toggle="modal" data-target="#changePassword" data-whatever="@mdo">Change Password</a>
                     <a href="">Logout</a>
                 </div>
@@ -33,7 +30,7 @@
     </div>
 </nav>
 
-    <!-- Change Password Modal -->
+<!-- Change Password Modal -->
 <div id="changePassword" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

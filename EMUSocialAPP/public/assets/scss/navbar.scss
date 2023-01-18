@@ -90,7 +90,6 @@ nav {
             .dropdown-notifications {
                 float: right;
                 position: relative;
-                display: inline-block;
                 .dropbtn-notifications {
                     cursor: pointer;
                     display: flex;
@@ -129,6 +128,7 @@ nav {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.137);
                         p{
                             font-weight: bold;
                             font-size: 30px;
@@ -142,63 +142,11 @@ nav {
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
-                        .new-notification{
-                            background-color: #d4dced;
-                            display: grid;
-                            grid-template-columns: 0fr 3fr 0.2fr;
-                            padding: 0.6rem;
-                            border-bottom: 1px solid rgba(0, 0, 0, 0.137);
-                            position: relative;
-                            .profile-img {
-                                margin: 0 0.5rem;
-                                justify-self: center;
-                                height: 60px;
-                                width: 60px;
-                                border-radius: 100%;
-                                overflow: hidden;
-                                box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-                                img {
-                                    object-fit: cover;
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                            .name-container-people {
-                                padding: 0.5rem 0rem 0.5rem 0.3rem;
-                                .name {
-                                    a {
-                                        text-decoration: none;
-                                        color: black;
-                                        font-size: 18px;
-                                    }
-                                }
-                                .notification-content {
-                                    font-size: small;
-                                    color: rgba(0, 0, 0, 0.6);
-                                    font-size: 15px;
-                                }
-                            }
-                            .notification-date{
-                                position: absolute;
-                                top: 8px;
-                                right: 16px;
-                                justify-self: center;
-                                align-self: center;
-                                font-size: small;
-                                color: rgba(0, 0, 0, 0.748);
-                            }
-                            ion-icon{
-                                margin-top: 1rem;
-                                justify-self: center;
-                                align-self: center;
-                                color: #2E7CE8;
-                                font-size: 13px;
-                            }
-                        }
-                        .old-notification{
+                        .standart-notification{
+                            background-color: #F0F2F5;
                             display: grid;
                             grid-template-columns: 0fr 3fr;
-                            padding: 0.6rem;
+                            padding: 1rem 0.6rem;
                             border-bottom: 1px solid rgba(0, 0, 0, 0.137);
                             position: relative;
                             .profile-img {
@@ -232,7 +180,7 @@ nav {
                             }
                             .notification-date{
                                 position: absolute;
-                                top: 8px;
+                                top: 15px;
                                 right: 16px;
                                 justify-self: center;
                                 align-self: center;
@@ -241,10 +189,10 @@ nav {
                             }
                         }
                         .friend-request-notification{
-                            background-color: #d4dced;
+                            background-color: #F0F2F5;
                             display: grid;
                             grid-template-columns: 0fr 3fr 1fr;
-                            padding: 0.6rem;
+                            padding: 1rem 0.6rem;
                             border-bottom: 1px solid rgba(0, 0, 0, 0.137);
                             position: relative;
                             .profile-img {
@@ -319,58 +267,12 @@ nav {
                                 }
                             }
                         }
-                        .announcement-notification{
-                            display: grid;
-                            grid-template-columns: 0fr 3fr;
-                            padding: 0.6rem;
-                            border-bottom: 1px solid rgba(0, 0, 0, 0.137);
-                            position: relative;
-                            .profile-img {
-                                margin: 0 0.5rem;
-                                justify-self: center;
-                                height: 60px;
-                                width: 60px;
-                                border-radius: 100%;
-                                overflow: hidden;
-                                box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-                                img {
-                                    object-fit: cover;
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                            .name-container-people {
-                                padding: 0.5rem 0rem 0.5rem 0.3rem;
-                                .name {
-                                    a {
-                                        text-decoration: none;
-                                        color: black;
-                                        font-size: 18px;
-                                    }
-                                }
-                                .notification-content {
-                                    font-size: small;
-                                    color: rgba(0, 0, 0, 0.6);
-                                    font-size: 15px;
-                                }
-                            }
-                            .notification-date{
-                                position: absolute;
-                                top: 8px;
-                                right: 16px;
-                                justify-self: center;
-                                align-self: center;
-                                font-size: small;
-                                color: rgba(0, 0, 0, 0.748);
-                            }
-                        }
                     }
                 }
             }
             .dropdown-person {
                 float: right;
                 position: relative;
-                display: inline-block;
                 .dropbtn-person {
                     cursor: pointer;
                     display: flex;
@@ -415,6 +317,190 @@ nav {
                         }
                     }
                     &.show-person {display: block;}
+                }
+            }
+        }
+    }
+}
+
+
+// Notifications Modal
+.modal-notification{
+    width: 100%;
+    position: relative;
+    .modal-header{
+        h1{
+            font-size: 40px;
+        }
+    }
+    .close-btn{
+        position: absolute;
+        top: 13px;
+        right: 16px;
+        button{
+            span{
+                font-size: 40px;
+                cursor: pointer;
+                color: black !important;
+            }
+        }
+    }
+    .modal-selection-section{
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+        .select-all-checkbox{
+            input{
+                cursor: pointer;
+            }
+            label{
+                cursor: pointer;
+            }
+        }
+        .remove-notifications-btn{
+            cursor: pointer;
+            padding: 0.5rem;
+            width: 100px;
+            border: 0.5px solid #fd6e6e65;
+            border-radius: 8px;
+            background-color: #f8d7da;
+            color: #fd6e6f;
+            &:hover{
+                border: 0.5px solid #fd6e6e65;
+                background-color: #fcbfc4;
+                color: #fa5555;
+            }
+        }
+    }
+    .modal-main-content{
+        height: 665px;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .all-notifications{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .standart-notification{
+                background-color: #F0F2F5;
+                display: grid;
+                grid-template-columns: 0fr 0.7fr 4fr 0.9fr;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+                position: relative;
+                .profile-img {
+                    margin: 0 0.5rem;
+                    justify-self: center;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .name-container-people {
+                    padding: 0.5rem 0rem 0.5rem 0.3rem;
+                    .name {
+                        a {
+                            text-decoration: none;
+                            color: black;
+                            font-size: 25px;
+                        }
+                    }
+                    .notification-content {
+                        color: rgba(0, 0, 0, 0.6);
+                        font-size: 20px;
+                    }
+                }
+                .notification-date{
+                    position: absolute;
+                    top: 15px;
+                    right: 16px;
+                    align-self: center;
+                    color: rgba(0, 0, 0, 0.748);
+                }
+            }
+            .friend-request-notification{
+                background-color: #F0F2F5;
+                display: grid;
+                grid-template-columns: 0fr 0.7fr 4fr 0.9fr;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.137);
+                position: relative;
+                .profile-img {
+                    margin: 0 0.5rem;
+                    justify-self: center;
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .name-container-people {
+                    padding: 0.5rem 0rem 0.5rem 0.3rem;
+                    .name {
+                        a {
+                            text-decoration: none;
+                            color: black;
+                            font-size: 25px;
+                        }
+                    }
+                    .notification-content {
+                        color: rgba(0, 0, 0, 0.6);
+                        font-size: 20px;
+                    }
+                }
+                .notification-date{
+                    position: absolute;
+                    top: 8px;
+                    right: 16px;
+                    justify-self: center;
+                    align-self: center;
+                    color: rgba(0, 0, 0, 0.748);
+                }
+                .buttons{
+                    margin-top: 1.2rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    .cancel{
+                        display: flex;
+                        color: #FFFFFF;
+                        padding: 0.4rem;
+                        background-color: #FF2B2B;
+                        &:hover{
+                            background-color: #ff4f4f;
+                        }
+                        ion-icon{
+                            align-self: center;
+                            font-size: x-large;
+                        }
+                    }
+                    .confirm{
+                        display: flex;
+                        color: #FFFFFF;
+                        padding: 0.4rem;
+                        background-color: #36C857;
+                        margin-left: 0.3rem;
+                        &:hover{
+                            background-color: #5bc974;
+                        }
+                        ion-icon{
+                            align-self: center;
+                            font-size: x-large;
+                        }
+                    }
                 }
             }
         }
