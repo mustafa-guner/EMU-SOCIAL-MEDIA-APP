@@ -18,15 +18,15 @@ use App\Http\Controllers\_AuthController;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/',[ProfileController::class, 'getprofileDetails']);
 
 Route::get('/login', function () {
-    return view('auth/login');
-});
+    return view('auth/login',["errors"=>[]]);
+})->name('login');
 
-Route::get('/forgot-password', function () {
+Route::post("/login",[_AuthController::class,"login"]);
+
+Route::get('/forgot-password', function () {    
     return view('auth/login-forgot-password');
 });
 
@@ -35,21 +35,21 @@ Route::get('/create-new-password', function () {
 });
 
 Route::get("/registration",function () {   
-    return View("registration/registration");
+    return view("registration/registration");
 });
 
 Route::get("/admin/overview",[AdminController::class, 'getOverviewDetails']);
 Route::get("/admin/accounts",[AdminController::class, 'getAllUserAccounts']);
 
 Route::get("/admin/clubs",function () {   
-    return View("admin/clubs");
+    return view("admin/clubs");
 });
 
-Route::post('/registration', 'auth@register');
+Route::post('/registration', [_AuthController::class,"register"]);
 
 Route::get('/home', [HomeController::class, 'gethomeDetails']);
 
-Route::get('/profile', [ProfileController::class, 'getprofileDetails']);
+Route::get('/profile', [ProfileController::class, 'getprofileDetails'])->name("profile");
 
 Route::get('/club', [ClubController::class, 'getclubDetails']);
 
