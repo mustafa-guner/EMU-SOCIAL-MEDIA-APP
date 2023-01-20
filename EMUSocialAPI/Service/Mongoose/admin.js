@@ -90,15 +90,17 @@ module.exports = {
         if (req.file) userField["profileImage"] = req.file.path;
 
         userField.editedById = req.user.id;
+        let updatedProfileImage;
 
-        const updatedProfileImage = await cloudinary.uploader.upload(
-            req.file.path, {...options, folder: "GraduationProject/ProfileImages" }
-        );
-        const profileImage =
-            process.env.NODE_ENV == "development" ?
-            updatedProfileImage.url :
-            updatedProfileImage.secure_url;
-        userField.profileImage = profileImage;
+        if (req.file) {
+            updatedProfileImage = await cloudinary.uploader.upload(req.file.path, {
+                ...options,
+                folder: "GraduationProject/ProfileImages",
+            });
+            if (process.env.NODE_ENV == "production")
+                userField.profileImage = updatedProfileImage.secure_url;
+            else userField.profileImage = updatedProfileImage.url;
+        }
 
         const updatedUser = await User.findByIdAndUpdate(
             req.params.id, {
