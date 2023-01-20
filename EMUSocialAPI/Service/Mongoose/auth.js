@@ -18,12 +18,14 @@ const createAssociatedModel = async(userId, requestBody) => {
             const existedStudent = await Student.findOne({
                 studentNumber: requestBody.studentNumber,
             });
+            // requestBody.isGraduated = requestBody.isGraduated == "1" ? true : false;
             if (existedStudent)
                 throw new CustomError("Student number should be unique.", 400);
             const student = new Student({ userId: userId, ...requestBody });
             await student.save();
             break;
         case TYPES.STAFF_TYPE:
+            // requestBody.isRetired = requestBody.isRetired == "1" ? true : false;
             const staff = new Staff({ userId: userId, ...requestBody });
             await staff.save();
             break;
@@ -39,7 +41,7 @@ module.exports = {
         if (user) throw new CustomError(`${req.body.email} is already taken.`, 400);
 
         const newUserID = mongoose.Types.ObjectId();
-        console.log(req.profileImage);
+
         const newUser = new User({
             _id: newUserID,
             ...req.body,
@@ -51,11 +53,11 @@ module.exports = {
             coverImage: "https://res.cloudinary.com/dnxgeilts/image/upload/v1672618772/GraduationProject/CoverImages/pexels-photo-268941.jpeg_z1ltgh_xqfsnd.jpg",
         });
 
-        // Hash the password
-        newUser.password = bcrypt.hashSync(req.body.password, 10);
         try {
             //Validate first then check the other models if any error is thrown catch in catch block
             await newUser.validate();
+            // Hash the password
+            newUser.password = bcrypt.hashSync(req.body.password, 10);
             await createAssociatedModel(newUserID, req.body);
             const uploadedProfileImage = await cloudinary.uploader.upload(
                 req.file.path, {...options, folder: "GraduationProject/ProfileImages" }
