@@ -13,7 +13,7 @@ const studentSchema = mongoose.Schema({
     },
     degreeType: {
         type: String,
-        enum: ["associate", "bachelor", "graduate", "doctorate"],
+        enum: ["associate", "bachelor", "masters", "doctorate"],
         required: [true, "Degree type is required."],
     },
     isGraduated: {
