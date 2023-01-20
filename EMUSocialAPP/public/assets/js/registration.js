@@ -587,10 +587,6 @@ class RegistrationFormWithSteps {
 
             this.toggleErrorMessages(inputsToValidate);
         } else {
-            console.log(
-                "PROFILE CREATION REQUEST HAS BEEN SEND TO ADMINSTRATIVE"
-            );
-
             const personalInformationInputs =
                 this.FormSteps.getInputsByStepTitle(
                     "personalInformation"
@@ -626,41 +622,97 @@ class RegistrationFormWithSteps {
                 ...validatedAcademicDetails,
                 userTypeID: academicInformation.type,
             };
+
             let requestBody = {
                 ...validatedPersonalInformationInputs,
                 ...validatedAcademicDetails,
             };
 
-            console.log(requestBody);
-            let token = document
-                .querySelector('meta[name="csrf-token"]')
-                .getAttribute("content");
+            const {
+                firstname,
+                lastname,
+                email,
+                password,
+                country,
+                dob,
+                gender,
+                userTypeID,
+            } = requestBody;
 
-            return fetch("http://127.0.0.1:8000/register-new-user", {
-                    method: "POST",
-                    credentials: "same-origin",
-                    headers: {
-                        "Content-type": "application/json",
-                        Accept: "application/json, text-plain, */*",
-                        "X-Requested-With": "XMLHttpRequest",
-                        "X-CSRF-TOKEN": token,
-                    },
-                    body: JSON.stringify(requestBody),
-                })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                    //Remove all the error messages from registration form
-                    RegistrationFormUIEvent.removeAllErrorMessages(
-                        "error-message"
-                    );
+            const URL = "http://127.0.0.1:8000/registration";
+            let form_data = new FormData(); //this.registrationForm
+            var file = $("#profile-image")[0].files[0];
+            var imageType = /image. */;
+            if (!file.type.match(imageType)) return;
 
-                    //Clear local storage before send the data to server side
+            //Personal Information
+            form_data.append("firstname", firstname);
+            form_data.append("lastname", lastname);
+            form_data.append("email", email);
+            form_data.append("password", password);
+            form_data.append("country", country);
+            form_data.append("dob", dob);
+            form_data.append("gender", gender);
+            form_data.append("userType", userTypeID);
+            form_data.append("profileImage", file);
+
+            if (userTypeID == "student") {
+                form_data.append("studentNumber", requestBody.studentnumber);
+                form_data.append("degreeType", requestBody.degreetype);
+                form_data.append(
+                    "isGraduated",
+                    requestBody.isgraduated == "notGraduated" ? false : true
+                );
+                form_data.append("graduationDate", requestBody.graduationdate);
+            } else if (userTypeID == "staff") {
+                form_data.append(
+                    "isRetired",
+                    requestBody.isretired == "notRetired" ? false : true
+                );
+                form_data.append("retirementDate", requestBody.retirementdate);
+                form_data.append("staffType", requestBody.stafftype);
+            }
+
+            return $.ajax({
+                url: URL,
+                cache: false,
+                contentType: false,
+                crossDomain: true,
+                processData: false,
+                data: form_data,
+                type: "POST",
+                success: function(response) {
+                    console.log(response);
+
+                    //Clear local storage after sending data to server side and receiving success response.
                     // this.FormSteps.steps.map((step) =>
                     //     LocalRepository.removeRepositoryByID(step.stepTitle)
                     // );
-                })
-                .catch((err) => console.log(err));
+                    return Swal.fire({
+                        icon: "success",
+                        title: "Congratulations!",
+                        text: response.message,
+                    });
+                },
+                error: function(error) {
+                    if (
+                        error.responseJSON &&
+                        error.responseJSON.errors &&
+                        error.responseJSON.errors.error
+                    ) {
+                        return Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            html: error.responseJSON.errors.error.map(
+                                (errorMessage) =>
+                                `<p style="font-weight:bold;">${errorMessage}</p>`
+                            ),
+                        });
+                    }
+
+                    console.log(error);
+                },
+            });
         }
     }
 
