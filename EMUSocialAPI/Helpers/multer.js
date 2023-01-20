@@ -24,7 +24,7 @@ const upload = multer({
         //Declaring the extension of the file
         //path.extname => Returns the file extension no matter how long the file root is. (e.g C:/deneme/users/uploads/deneme.js) => .js
         const extension = path.extname(file.originalname);
-        const validExtensions = [".png", ".jpeg", ".jpg", ".gif"];
+        const validExtensions = [".png", ".jpeg", ".jpg", ".gif", ".jfif"];
         if (!validExtensions.includes(extension)) {
             return cb(
                 new CustomError("Please provide valid image extension.", 400),
