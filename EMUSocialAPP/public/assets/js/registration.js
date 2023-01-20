@@ -572,7 +572,7 @@ class RegistrationFormWithSteps {
     createYourProfile(e) {
         e.preventDefault();
         const { hideSteps, showStep } = RegistrationFormUIEvent;
-
+        const self = this;
         const missingSteps = this.findMissingSteps();
 
         if (missingSteps.length > 0) {
@@ -682,16 +682,20 @@ class RegistrationFormWithSteps {
                 data: form_data,
                 type: "POST",
                 success: function(response) {
-                    console.log(response);
-
                     //Clear local storage after sending data to server side and receiving success response.
-                    // this.FormSteps.steps.map((step) =>
-                    //     LocalRepository.removeRepositoryByID(step.stepTitle)
-                    // );
+                    self.FormSteps.steps.map((step) =>
+                        LocalRepository.removeRepositoryByID(step.stepTitle)
+                    );
+
+                    startConfetti();
+                    setTimeout(() => {
+                        stopConfetti();
+                    }, 3000);
+
                     return Swal.fire({
                         icon: "success",
                         title: "Congratulations!",
-                        text: response.message,
+                        text: response.response.message,
                     });
                 },
                 error: function(error) {
