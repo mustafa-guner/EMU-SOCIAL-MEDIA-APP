@@ -231,11 +231,12 @@
                     <div class="step-content">
                         <div class="step-count"></div>
                         <div class="step-header">
-                            <h2 class="step-title">Create your profile</h2>
-                            <p class="step-description">Enter your personal details to show them of an your profile</p>
+                            <h2 class="step-title">Create your account</h2>
+                            <p class="step-description">Almost there! Preview your previous steps before the
+                                submission.
+                            </p>
+                            <div id="final-preview"></div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
