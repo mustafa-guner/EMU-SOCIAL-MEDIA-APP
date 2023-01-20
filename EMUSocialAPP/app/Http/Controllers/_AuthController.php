@@ -14,80 +14,115 @@ use DateInterval;
 class _AuthController extends Controller{
 
     function register(Request $request){
-        if ($request->isMethod('post')) {
-
-            //Overall information
-            $firstname = $request->get("firstname");
-            $lastname = $request->get("lastname");
-            $email = $request->get("email");
-            $country = $request->get("country");
-            $dob = $request->get("dob");
-            $gender = $request->get("gender");
-            $password = $request->get("password");
-            $profileimg = $request->file('profileimage');
-            $userType = $request->get("academiccareer");
-            $academicstatus = $request->get("academicstatus");
-            
-          
-            $errors = (array) null; 
-            
-            if(!$request.filled("firstname"))   
-            if(!$request.filled("lastname")) array_push($errors,array("message"=>"Lastname field is required."));
-            if(!$request.filled("email")) array_push($errors,array("message"=>"Email field is required."));
-            if(!$request.filled("country")) array_push($errors,array("message"=>"Country field is required."));
-            if(!$request.filled("dob")) array_push($errors,array("message"=>"Dob field is required."));
-            if(!$request.filled("gender")) array_push($errors,array("message"=>"Gender field is required."));
-            if(!$request.filled("password")) array_push($errors,array("message"=>"Password field is required."));
-            if(!$request.filled("userType")) array_push($errors,array("message"=>"UserType field is required."));
-            if(!$request.filled("academicstatus")) array_push($errors,array("message"=>"Academicstatus field is required."));
-
-            // $Hash::make($password);
-            //GET ALL THE REQUIRED FIELDS WITH REQUEST->ALL
-    
-            //If is there any erorr send error response the client
-            if(count($errors) > 0) response()->json([
-                'success' => false,
-                "errors"=>$errors,
-              
-            ]);
-
-            $client = new \GuzzleHttp\Client([
-                'verify' => false,
-            ]);
-    
-           
-            $url = "http://localhost:4200/auth/register";
-
-            // $fakeRequestBody = array(
-            //     "firstname"=> "Test12332211",
-            //     "lastname"=> "Test1422213",
-            //     "email"=> "teas11s@outlook.com",
-            //     "profileImage"=> "profile.jpeg",
-            //     "password"=> "asdf1234",
-            //     "dob"=> "1999-12-22",
-            //     "gender"=> "Female",
-            //     "country"=> "Russia",
-            //     "userTypeID"=> 2,
-            //     "graduationDate"=>"1999-12-22",
-            //     "isGraduated"=>false,
-            //     "isAssistant"=>false,
-            //     "studentNumber"=>6330167,
-            //     "degreeType"=>"Graduate"
-            // );
+        $client = new \GuzzleHttp\Client([
+            'verify' => false,
+        ]);
+        $url = "http://localhost:4200/api/v1/auth/register";
+        try{ 
      
-        try{
-            $response = $client->request("POST",$url,["json"=>$request->all()]);
-            $result = json_decode($response->getBody());
-            dd($result);
-        }catch(Exception $e){
-            $error = json_decode($e->getResponse()->getBody()->getContents());
-            $errorMessage = $error->message;
+            $image_path = $request->file('profileImage')->getPathname();
+            $image_mime = $request->file('profileImage')->getmimeType();
+            $image_org  = $request->file('profileImage')->getClientOriginalName();
+          
+             $response = $client->request('POST', $url, [
+                'multipart'=>[
+                    [ "name"=>"profileImage",
+                            "filename"=>$image_org,
+                            'Mime-Type'=> $image_mime,
+                            'contents' => fopen( $image_path, 'r' ),
+                    ],
+                    [
+                    'name'=>'firstname',
+                    'contents'=>$request->input("firstname"),
+                    ],
+                    [
+                    'name'=>'lastname',
+                    'contents'=>$request->input("lastname"),
+                    ],
+                    [
+                    'name'=>'country',
+                    'contents'=>$request->input("country"),
+                    ],
+                
+                    [
+                    'name'=>'gender',
+                    'contents'=>$request->input("gender"),
+                    ],
+                    [
+                    'name'=>'email',
+                    'contents'=>$request->input("email"),
+                    ],
+                    [
+                    'name'=>'dob',
+                    'contents'=>$request->input("dob"),
+                    ],
+                    [
+                    'name'=>'password',
+                    'contents'=>$request->input("password"),
+                    ],
+                    [
+                    'name'=>'userType',
+                    'contents'=>$request->input("userType"),
+                    ],
+                    [
+                    'name'=>'studentNumber',
+                    'contents'=>$request->input("studentNumber"),
+                    ],
+                    [
+                    'name'=>'degreeType',
+                    'contents'=>$request->input("degreeType"),
+                    ],
+                    [
+                    'name'=>'isGraduated',
+                    'contents'=>$request->input("isGraduated"),
+                    ],
+                    [
+                    'name'=>'graduationDate',
+                    'contents'=>$request->input("graduationDate"),
+                    ],
+                    [
+                    'name'=>'staffType',
+                    'contents'=>$request->input("staffType"),
+                    ],
+                    [
+                    'name'=>'isRetired',
+                    'contents'=>$request->input("isRetired"),
+                    ],
+                    [
+                    'name'=>'retirementDate',
+                    'contents'=>$request->input("retirementDate"),
+                    ],
+                ]
+            ]);
+            return \Response::json(["success"=>true,"response"=>$response], 200);
+        }catch(\Exception $e){
+            return \Response::json(["success"=>false,"errors"=>json_decode($e->getResponse()->getBody()->getContents())], 400);
         }
-    }
        
     }
 
     function login(Request $request){
-
+        $url = "http://localhost:4200/api/v1/auth/login";
+        $client = new \GuzzleHttp\Client();
+           try{
+            $response = $client->request('POST', $url, [
+                'form_params' => [
+                    'email' => $request->get('email'),
+                    'password' => $request->get('password'),
+                ]
+            ]);
+            $cookie = $response->getHeaders()["Set-Cookie"];
+            $accessToken = explode(";", explode("=",$cookie[0])[1])[0];
+            $sessionToken = explode(";", explode("=",$cookie[1])[1])[0];
+            
+            return redirect("profile")->withCookie(\Cookie::forever('accessToken', $accessToken))->withCookie(\Cookie::forever('sessionToken', $sessionToken));  
+           }
+           catch(\Exception $ex) {
+            $response = $ex->getResponse();
+            $jsonBody =  $response->getBody();
+            $errors = \json_decode($jsonBody)->error;
+            return view("auth/login",["errors"=>$errors]);
+        }
+        
     }
 }
