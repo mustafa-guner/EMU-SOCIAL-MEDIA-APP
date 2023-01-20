@@ -311,7 +311,7 @@ class RegistrationFormWithSteps {
                 const { firstname, lastname, email, country, dob, gender } =
                 personalInformationFormData;
                 const { usertypeid } = ademicInformationFormData;
-                console.log(personalInformationFormData, ademicInformationFormData);
+
                 previewSection.innerHTML = `
            <div class="step-form">
            <div class="step-row final-step-rows">
