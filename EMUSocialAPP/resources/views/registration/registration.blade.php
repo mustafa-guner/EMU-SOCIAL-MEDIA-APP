@@ -13,6 +13,10 @@
 
     {{-- Styles for registration page --}}
     <link rel="stylesheet" href="{{ asset('assets/css/registration.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.0/sweetalert2.min.css"
+        integrity="sha512-NvuRGlPf6cHpxQqBGnPe7fPoACpyrjhlSNeXVUY7BZAj1nNhuNpRBq3osC4yr2vswUEuHq2HtCsY2vfLNCndYA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -25,7 +29,8 @@
             </p>
             <hr>
         </diV>
-        <form id="registration-form" class="registration-form" action="/registration" method="post">
+        <form id="registration-form" class="registration-form" enctype="multipart/form-data" action=""
+            method="post">
             {{ csrf_field() }}
             <div class="steps">
                 <div id="step-1" class="personal-information-step step show">
@@ -69,7 +74,8 @@
                             <div class="step-row">
                                 <div class="step-label">
                                     <label>Password</label>
-                                    <input type="password" class="step-input" name="password" id="password">
+                                    <input type="password" value="asdf1234" class="step-input" name="password"
+                                        id="password">
 
                                 </div>
                                 <div class="step-label">
@@ -160,15 +166,17 @@
                             <div id="student-status" class="step-row academic-information-status activated">
                                 <div class="step-label">
                                     <label for="student-number">Student Number</label>
-                                    <input id="student-number" name="student-number" type="number"
+                                    <input value="17330118" id="student-number" name="student-number" type="number"
                                         class="step-input">
 
                                 </div>
                                 <div class="step-label">
                                     <label for="academic-degree">Academic Degree</label>
-                                    <select id="academic-degree" name="academic-degree"
-                                        data-selected="masters-degree">
-                                        <option value="masters-degree">Master's degree</option>
+                                    <select id="academic-degree" name="academic-degree" data-selected="bachleor">
+                                        <option selected value="associate">Associate Degree</option>
+                                        <option value="bachelor">Undergraduate Degree</option>
+                                        <option value="masters">Masters Degree</option>
+                                        <option value="doctorate">Doctorate Degree</option>
                                     </select>
 
                                 </div>
@@ -246,11 +254,15 @@
 
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.0/sweetalert2.min.js"
+    integrity="sha512-IYzd4A07K9kxY3b8YIXi8L0BmUPVvPlI+YpLOzKrIKA3sQ4gt43dYp+y6ip7C7LRLXYfMHikpxeprZh7dYQn+g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {{-- Local Storage Class for the application --}}
 <script src={{ asset('assets/js/LocalRepository.js') }}></script>
 {{-- Registration page actions script --}}
 <script src={{ asset('assets/js/Registration.js') }}></script>
-
 {{-- Ion icon CDN for icons --}}
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
