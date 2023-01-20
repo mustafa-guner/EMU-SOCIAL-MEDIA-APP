@@ -94,7 +94,7 @@ class _AuthController extends Controller{
                     ],
                 ]
             ]);
-            return \Response::json(["success"=>true,"response"=>$response], 200);
+            return \Response::json(["success"=>true,"response"=>\json_decode($response->getBody()->getContents())], 201);
         }catch(\Exception $e){
             return \Response::json(["success"=>false,"errors"=>json_decode($e->getResponse()->getBody()->getContents())], 400);
         }
