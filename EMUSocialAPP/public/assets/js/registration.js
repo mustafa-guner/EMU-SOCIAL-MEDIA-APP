@@ -370,9 +370,13 @@ class RegistrationFormWithSteps {
                     <label>Retirement Date</label>
                     <p>${ademicInformationFormData.retirementdate}</p>
                 </div>
-                <div class="Retirement State">
-                    <label>Dob</label>
-                    <p>${ademicInformationFormData.isretired}</p>
+                <div class="step-label">
+                    <label>Retirement State</label>
+                    <p>${
+                        ademicInformationFormData.isretired == "notRetired"
+                            ? "Not Retired Yet"
+                            : ademicInformationFormData.isretired
+                    }</p>
                 </div>
                 <div class="step-label">
                     <label>Staff Type</label>
