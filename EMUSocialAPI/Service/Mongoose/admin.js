@@ -4,20 +4,21 @@ const Student = require("../../Models/Mongoose/Student");
 const CustomError = require("../../Helpers/CustomError");
 const { options, cloudinary } = require("../../Config/cloudinaryConfig");
 const { updateRequiredUserTypeModel } = require("../../Helpers/admin");
-
+const { sendActivationConfirmEmail } = require("../../Helpers/email");
 module.exports = {
     toggleActivateUser: async(req) => {
         const user = await User.findById(req.params.id);
-
+        let isUserActivated = user.isActive;
         if (!user)
             throw new CustomError("User is not found with associated ID.", 404);
         user.isActive = !user.isActive;
         user.editedById = req.user.id;
         await user.save();
+        if (user.isActive) await sendActivationConfirmEmail(user);
         return {
             success: true,
             message: `${
-        user.isActive ? "Account is active." : "Account is inactive."
+        user.isActive ? "Account is activated." : "Account is de-activated."
       }`,
         };
     },
@@ -82,7 +83,15 @@ module.exports = {
         if (req.body.lastname) userField["lastname"] = req.body.lastname;
         if (req.body.lastname) userField["lastname"] = req.body.lastname;
         if (req.body.dob) userField["dob"] = req.body.dob;
-        if (req.body.email) userField["email"] = req.body.email;
+        if (req.body.email) {
+            const isEmailAlreadyInUse = await User.findOne({ email: req.body.email });
+            if (isEmailAlreadyInUse)
+                throw new CustomError(
+                    "Email is already in use.Please try different one.",
+                    400
+                );
+            else userField["email"] = req.body.email;
+        }
         if (req.body.password) userField["password"] = req.body.password;
         if (req.body.role) userField["role"] = req.body.role;
         if (req.body.userType) userField["userType"] = req.body.userType;
