@@ -28,14 +28,14 @@
                                 <img src="https://media.istockphoto.com/id/1338134336/photo/headshot-portrait-african-30s-man-smile-look-at-camera.jpg?b=1&s=170667a&w=0&k=20&c=j-oMdWCMLx5rIx-_W33o3q3aW9CiAWEvv9XrJQ3fTMU=" alt="">
                             </div>
                             <a href="">
-                                <h4 class="name">Hasan Reponsive</h4>
+                                <h4 class="name">John Doe</h4>
                             </a>
                             <hr>
                         </div>
                         <div class="chat-people-mid">
                             <div class="chat-area-container">
-                                <label class="sent-message" for="">Naban kuzii duvumcuklav?</label>
-                                <label class="income-message" for="">Yebb bro. Nolsun aha kosturma. Sen naan cuz?</label>
+                                <label class="sent-message" for="">Lorem ipsum dolor sit amet?</label>
+                                <label class="income-message" for="">Modi atque unde nostrum deserunt dolor.</label>
                             </div>
                         </div>
                         <div class="char-people-bot">

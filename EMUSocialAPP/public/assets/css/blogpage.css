@@ -26,8 +26,8 @@ body .main-container .left-section .page-header {
 }
 body .main-container .left-section #standalone-container {
   width: 1060.8px;
-  min-height: 544px;
-  max-height: 544px;
+  min-height: 595px;
+  max-height: 595px;
   border-radius: 12px;
   overflow: hidden;
   background-color: #FFFFFF;
@@ -63,6 +63,40 @@ body .main-container .left-section #standalone-container .title-input input::pla
   color: rgba(0, 0, 0, 0.363);
   font-size: 18px;
 }
+body .main-container .left-section #standalone-container .thumbnail-img-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+body .main-container .left-section #standalone-container .thumbnail-img-input input[type=file] {
+  display: none;
+}
+body .main-container .left-section #standalone-container .thumbnail-img-input .file-upload {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  padding: 0.4rem;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #4495ff;
+  border-radius: 8px;
+  border: 1px solid #4495ff;
+}
+body .main-container .left-section #standalone-container .thumbnail-img-input .file-upload:hover {
+  background: #FFFFFF;
+  color: #4495ff;
+}
+body .main-container .left-section #standalone-container .thumbnail-img-input .file-upload ion-icon {
+  font-size: large;
+  margin-right: 0.3rem;
+}
+body .main-container .left-section #standalone-container .thumbnail-img-input .file-upload p {
+  font-size: 16px;
+}
 body .main-container .left-section #standalone-container #toolbar-container {
   font-size: 10px;
 }
@@ -72,7 +106,7 @@ body .main-container .left-section #standalone-container #editor-container {
 }
 body .main-container .left-section #standalone-container .bottom-section {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   padding: 1.5rem 0;
 }
 body .main-container .left-section #standalone-container .bottom-section .category-selection {
@@ -101,18 +135,27 @@ body .main-container .left-section #standalone-container .bottom-section .catego
   justify-content: flex-start;
   align-items: center;
 }
+body .main-container .left-section #standalone-container .bottom-section #error-message {
+  margin-left: 1rem;
+  color: #F25370;
+}
+body .main-container .left-section #standalone-container .bottom-section .buttons {
+  margin-left: auto;
+}
 body .main-container .left-section #standalone-container .bottom-section .buttons #publish-btn {
   cursor: pointer;
   height: 45px;
   width: 100px;
   background: #36C857;
   color: #FFFFFF;
-  padding: 0.3rem;
+  padding: 0.6rem 1rem;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid #36C857;
 }
 body .main-container .left-section #standalone-container .bottom-section .buttons #publish-btn:hover {
-  font-weight: bold;
   background: #FFFFFF;
   color: #36C857;
   border: 2px solid #36C857;
@@ -124,7 +167,7 @@ body .main-container .right-section .page-header {
   margin: 1.3rem auto;
 }
 body .main-container .right-section .recent-posts-container {
-  height: 544px;
+  height: 595px;
   width: 707.2px;
   border-radius: 12px;
   overflow-x: hidden;

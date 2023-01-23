@@ -23,69 +23,79 @@
             <div class="page-header">
                 <h2>Create New Post</h2>
             </div>
-            <form action="">
+            <form id="blogForm" action="">
                 <div id="standalone-container">
                     <div class="title-input">
                         <input id="title" type="text" placeholder="Enter your blog title...">
                     </div>
+                    <div class="thumbnail-img-input">
+                        <label for="file-upload" class="file-upload">
+                            <ion-icon name="image-outline"></ion-icon>
+                            <p>Choose a thumbnail image</p>
+                            <input id="file-upload" type="file" name="upload" ref="fileInput" required  onchange="getFileName()">
+                        </label>
+                        <span id="fileName"></span>
+                    </div>
                     <div id="toolbar-container">
                         <span class="ql-formats">
-                        <select class="ql-font"></select>
-                        <select class="ql-size"></select>
+                            <select class="ql-font"></select>
+                            <select class="ql-size"></select>
                         </span>
                         <span class="ql-formats">
-                        <button class="ql-bold"></button>
-                        <button class="ql-italic"></button>
-                        <button class="ql-underline"></button>
-                        <button class="ql-strike"></button>
+                            <button class="ql-bold"></button>
+                            <button class="ql-italic"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-strike"></button>
                         </span>
                         <span class="ql-formats">
-                        <select class="ql-color"></select>
-                        <select class="ql-background"></select>
+                            <select class="ql-color"></select>
+                            <select class="ql-background"></select>
                         </span>
                         <span class="ql-formats">
-                        <button class="ql-script" value="sub"></button>
-                        <button class="ql-script" value="super"></button>
+                            <button class="ql-script" value="sub"></button>
+                            <button class="ql-script" value="super"></button>
                         </span>
                         <span class="ql-formats">
-                        <button class="ql-header" value="1"></button>
-                        <button class="ql-header" value="2"></button>
-                        <button class="ql-blockquote"></button>
-                        <button class="ql-code-block"></button>
+                            <button class="ql-header" value="1"></button>
+                            <button class="ql-header" value="2"></button>
+                            <button class="ql-blockquote"></button>
+                            <button class="ql-code-block"></button>
                         </span>
                         <span class="ql-formats">
-                        <button class="ql-list" value="ordered"></button>
-                        <button class="ql-list" value="bullet"></button>
-                        <button class="ql-indent" value="-1"></button>
-                        <button class="ql-indent" value="+1"></button>
+                            <button class="ql-list" value="ordered"></button>
+                            <button class="ql-list" value="bullet"></button>
+                            <button class="ql-indent" value="-1"></button>
+                            <button class="ql-indent" value="+1"></button>
                         </span>
                         <span class="ql-formats">
-                        <button class="ql-direction" value="rtl"></button>
-                        <select class="ql-align"></select>
+                            <button class="ql-direction" value="rtl"></button>
+                            <select class="ql-align"></select>
                         </span>
                         <span class="ql-formats">
-                        <button class="ql-link"></button>
-                        <button class="ql-image"></button>
-                        <button class="ql-video"></button>
-                        <button class="ql-formula"></button>
+                            <button class="ql-link"></button>
+                            <button class="ql-image"></button>
+                            <button class="ql-video"></button>
+                            <button class="ql-formula"></button>
                         </span>
                         <span class="ql-formats">
-                        <button class="ql-clean"></button>
+                            <button class="ql-clean"></button>
                         </span>
                     </div>
-                    <div id="editor-container"></div>
+                    <div id="editor-container">
+                    </div>
                     <div class="bottom-section">
                         <div class="category-selection">
                             <p>Select Your Post Type:</p>
                             <div class="blog-post-radio">
-                                <input type="radio" id="blog-post" name="post-type" checked>
+                                <input id="blog-post" type="radio" value="blog-post"  name="post-type" checked>
                                 <label for="blog-post">Blog Post</label>
                             </div>
                             <div class="job-post-radio">
-                                <input type="radio" id="job-post" name="post-type">
+                                <input id="job-post" type="radio" value="job-post" name="post-type">
                                 <label for="job-post">Job Post</label>
                             </div>
                         </div>
+                        <p id="error-message"></p>
                         <div class="buttons">
                             <button id="publish-btn" type="button">Publish</button>
                         </div>
@@ -117,7 +127,18 @@
             </div>
         </div>
     </div>
-  
+
+    <script>
+
+    </script>
+
+    <script>
+        function getFileName(){
+        var x = document.getElementById('file-upload')
+        x.style.visibility = 'collapse'
+        document.getElementById('fileName').innerHTML = x.value.split('\\').pop()
+        }
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.0/sweetalert2.min.js" integrity="sha512-IYzd4A07K9kxY3b8YIXi8L0BmUPVvPlI+YpLOzKrIKA3sQ4gt43dYp+y6ip7C7LRLXYfMHikpxeprZh7dYQn+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -173,6 +194,7 @@
 
         const publishPostBtn = document.getElementById("publish-btn")                
         publishPostBtn.addEventListener("click",function(){
+            
                 const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
                     confirmButton: 'btn btn-success my-btn-confirm',
@@ -181,23 +203,47 @@
                 buttonsStyling: false
                 })
 
-                swalWithBootstrapButtons.fire({
-                title: 'Are you sure to publish it?',
-                text: "",
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, publish it!',
-                cancelButtonText: 'No, cancel!',
-                reverseButtons: true
-                }).then((result) => {
-                if (result.isConfirmed) {
-                    swalWithBootstrapButtons.fire(
-                    'Published!',
-                    'Your post has been published.',
-                    'success'
-                    )
-                } 
-                })
+                const titleInput = document.getElementById("title");
+                const thumbnailInput = document.getElementById("file-upload");
+                const descriptionArea = document.querySelector(".ql-editor");
+                const BlogType = document.querySelector("input[name='post-type']:checked");
+
+                const title = titleInput.value;
+                const thumbnailImage = thumbnailInput.value;
+                const description = descriptionArea.value;
+                const selectedBlogType = BlogType.value;
+
+                const errorMessage = document.getElementById("error-message");
+                
+                if(title == "" || thumbnailImage == "" || description == "" || selectedBlogType == "") {
+                    
+                    errorMessage.innerText = ""
+
+                    return errorMessage.innerText = "**Please fill all the required fields."
+                }
+                else{
+                    errorMessage.innerText = ""
+                    swalWithBootstrapButtons.fire({
+                    title: 'Are you sure to publish it?',
+                    text: "",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, publish it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        swalWithBootstrapButtons.fire(
+                        'Published!',
+                        `Post with the title <span style="font-weight: bold;">${title}</span> has been published.`,
+                        'success'
+                        )
+                    } 
+                    })
+                }
+
+
+
             })
     </script>
     <script src="{{ asset('assets/js/navbar.js') }}"></script>

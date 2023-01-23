@@ -26,8 +26,8 @@ body {
             }
             #standalone-container{
                 width: 1060.8px;
-                min-height: 544px;
-                max-height: 544px;
+                min-height: 595px;
+                max-height: 595px;
                 border-radius: 12px;
                 overflow: hidden;
                 background-color: #FFFFFF;
@@ -54,6 +54,46 @@ body {
                     }
                 }
             }
+            .thumbnail-img-input{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 1.3rem;
+                input[type="file"] {
+                    display: none;
+                }
+                .file-upload{
+                    align-self: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width:250px;
+                    padding: 0.4rem;
+                    margin-right: 0.3rem;
+                    cursor: pointer;
+                    color: #FFFFFF;
+                    background-color: #4495ff;
+                    border-radius: 8px;
+                    border: 1px solid #4495ff;
+                    &:hover{
+                        background: #FFFFFF;
+                        color: #4495ff;
+                    }  
+                    ion-icon{
+                        font-size: large;
+                        margin-right: 0.3rem;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                }
+                // .thumbnail-img-info{
+                //     margin: 0.5rem 0 1rem 0; 
+                //     font-size: small;
+                //     font-style: italic;
+                //     color: rgba(0, 0, 0, 0.658);
+                // }
+            }
             #toolbar-container{
                 font-size: 10px;
             }
@@ -63,7 +103,7 @@ body {
             }
             .bottom-section{
                 display: flex;
-                justify-content: space-between;
+                align-items: center;
                 padding: 1.5rem 0;
                 .category-selection{
                     display: flex;
@@ -92,18 +132,25 @@ body {
                         align-items: center;
                     }
                 }
+                #error-message{
+                    margin-left: 1rem;
+                    color: #F25370;
+                }
                 .buttons{
+                    margin-left: auto;
                     #publish-btn{
                         cursor: pointer;
                         height: 45px;
                         width: 100px;
                         background: #36C857;
                         color: #FFFFFF;
-                        padding: 0.3rem;
+                        padding: 0.6rem 1rem;
                         border: none;
-                        border-radius: 12px;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        text-decoration: none;
+                        border: 2px solid #36C857;
                         &:hover{
-                            font-weight: bold;
                             background: #FFFFFF;
                             color: #36C857;
                             border: 2px solid #36C857;
@@ -121,7 +168,7 @@ body {
                 margin: 1.3rem auto;
             }
             .recent-posts-container{
-                height: 544px;
+                height: 595px;
                 width: 707.2px;
                 border-radius: 12px;
                 overflow-x: hidden;
