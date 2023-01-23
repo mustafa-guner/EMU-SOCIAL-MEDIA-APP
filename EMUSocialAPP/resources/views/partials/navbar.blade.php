@@ -1,4 +1,4 @@
-<nav>
+<nav class="main-nav">
     <div class="container">
         <div class="nav-left">
             <a href="/home" class="home-btn" type="button"><ion-icon name="home"></ion-icon></a>
@@ -244,3 +244,20 @@
         </div>
     </div>
 </div>
+
+<!-- Mobile Navbar -->
+<nav class="mobile-nav">
+        <a href="/home"><h1 class="logo">EMU APP</h1></a>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+            <a href="/home" class="home-btn" type="button">Home</a>
+            <a class="chat-btn" href="/chat" type="button">Chat</a>
+            <a href="">Notifications</a>
+            <a href="/profile">Your Profile</a>
+            <a href="" type="button" data-toggle="modal" data-target="#changePassword" data-whatever="@mdo">Change Password</a>
+            <a href="">Logout</a>
+        </ul>
+</nav> 

@@ -1,10 +1,19 @@
-nav {
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.main-nav {
   background-color: #FFFFFF;
   max-width: 100%;
   height: 110px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-nav .container {
+.main-nav .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
@@ -12,12 +21,12 @@ nav .container {
   max-width: 1800px;
   height: 100%;
 }
-nav .container .nav-left {
+.main-nav .container .nav-left {
   display: flex;
   align-items: center;
   justify-self: flex-start;
 }
-nav .container .nav-left a {
+.main-nav .container .nav-left a {
   text-decoration: none;
   cursor: pointer;
   display: flex;
@@ -33,11 +42,11 @@ nav .container .nav-left a {
   border: 0.1px solid #012246;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-nav .container .nav-left a:hover {
+.main-nav .container .nav-left a:hover {
   color: #FFFFFF;
   background-color: #012246;
 }
-nav .container .nav-left input {
+.main-nav .container .nav-left input {
   margin: 0.8rem;
   padding: 0.2rem 0.7rem 0.2rem 1rem;
   height: 45px;
@@ -49,26 +58,26 @@ nav .container .nav-left input {
   background-color: #F0F2F5;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-nav .container .nav-left input::-moz-placeholder {
+.main-nav .container .nav-left input::-moz-placeholder {
   color: rgba(0, 0, 0, 0.363);
 }
-nav .container .nav-left input:-ms-input-placeholder {
+.main-nav .container .nav-left input:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.363);
 }
-nav .container .nav-left input::placeholder {
+.main-nav .container .nav-left input::placeholder {
   color: rgba(0, 0, 0, 0.363);
 }
-nav .container .nav-logo {
+.main-nav .container .nav-logo {
   font-family: "Caveat", cursive !important;
   justify-self: center;
   font-size: 36px;
 }
-nav .container .nav-logo a {
+.main-nav .container .nav-logo a {
   color: #012246;
   text-shadow: 0 0 3px #012246;
   text-decoration: none;
 }
-nav .container .nav-right {
+.main-nav .container .nav-right {
   justify-self: flex-end;
   display: flex;
   align-items: center;
@@ -76,7 +85,7 @@ nav .container .nav-right {
   height: 100%;
   width: 200px;
 }
-nav .container .nav-right .chat-btn {
+.main-nav .container .nav-right .chat-btn {
   text-decoration: none;
   cursor: pointer;
   display: flex;
@@ -92,15 +101,15 @@ nav .container .nav-right .chat-btn {
   border: 0.1px solid #012246;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-nav .container .nav-right .chat-btn:hover {
+.main-nav .container .nav-right .chat-btn:hover {
   color: #FFFFFF;
   background-color: #012246;
 }
-nav .container .nav-right .dropdown-notifications {
+.main-nav .container .nav-right .dropdown-notifications {
   float: right;
   position: relative;
 }
-nav .container .nav-right .dropdown-notifications .dropbtn-notifications {
+.main-nav .container .nav-right .dropdown-notifications .dropbtn-notifications {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -115,14 +124,14 @@ nav .container .nav-right .dropdown-notifications .dropbtn-notifications {
   border: 0.1px solid #012246;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-nav .container .nav-right .dropdown-notifications .dropbtn-notifications:hover {
+.main-nav .container .nav-right .dropdown-notifications .dropbtn-notifications:hover {
   color: #FFFFFF;
   background-color: #012246;
 }
-nav .container .nav-right .dropdown-notifications .dropbtn-notifications ion-icon {
+.main-nav .container .nav-right .dropdown-notifications .dropbtn-notifications ion-icon {
   pointer-events: none;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications {
   display: none;
   position: absolute;
   background-color: #FFFFFF;
@@ -133,30 +142,30 @@ nav .container .nav-right .dropdown-notifications .dropdown-content-notification
   right: 0;
   z-index: 1;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications.show-notifications {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications.show-notifications {
   display: block;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header {
   padding: 0.7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.137);
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header p {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header p {
   font-weight: bold;
   font-size: 30px;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header a {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .header a {
   color: black;
   font-size: large;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification {
   background-color: #F0F2F5;
   display: grid;
   grid-template-columns: 0fr 3fr;
@@ -164,7 +173,7 @@ nav .container .nav-right .dropdown-notifications .dropdown-content-notification
   border-bottom: 1px solid rgba(0, 0, 0, 0.137);
   position: relative;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .profile-img {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .profile-img {
   margin: 0 0.5rem;
   justify-self: center;
   height: 60px;
@@ -173,26 +182,26 @@ nav .container .nav-right .dropdown-notifications .dropdown-content-notification
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .profile-img img {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .profile-img img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .name-container-people {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .name-container-people {
   padding: 0.5rem 0rem 0.5rem 0.3rem;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .name-container-people .name a {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .name-container-people .name a {
   text-decoration: none;
   color: black;
   font-size: 18px;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .name-container-people .notification-content {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .name-container-people .notification-content {
   font-size: small;
   color: rgba(0, 0, 0, 0.6);
   font-size: 15px;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .notification-date {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .standart-notification .notification-date {
   position: absolute;
   top: 15px;
   right: 16px;
@@ -201,7 +210,7 @@ nav .container .nav-right .dropdown-notifications .dropdown-content-notification
   font-size: small;
   color: rgba(0, 0, 0, 0.748);
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification {
   background-color: #F0F2F5;
   display: grid;
   grid-template-columns: 0fr 3fr 1fr;
@@ -209,7 +218,7 @@ nav .container .nav-right .dropdown-notifications .dropdown-content-notification
   border-bottom: 1px solid rgba(0, 0, 0, 0.137);
   position: relative;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .profile-img {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .profile-img {
   margin: 0 0.5rem;
   justify-self: center;
   height: 60px;
@@ -218,26 +227,26 @@ nav .container .nav-right .dropdown-notifications .dropdown-content-notification
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .profile-img img {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .profile-img img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people {
   padding: 0.5rem 0rem 0.5rem 0.3rem;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people .name a {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people .name a {
   text-decoration: none;
   color: black;
   font-size: 18px;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people .notification-content {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .name-container-people .notification-content {
   font-size: small;
   color: rgba(0, 0, 0, 0.6);
   font-size: 15px;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .notification-date {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .notification-date {
   position: absolute;
   top: 8px;
   right: 16px;
@@ -246,44 +255,44 @@ nav .container .nav-right .dropdown-notifications .dropdown-content-notification
   font-size: small;
   color: rgba(0, 0, 0, 0.748);
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons {
   margin-top: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel {
   display: flex;
   color: #FFFFFF;
   padding: 0.4rem;
   background-color: #FF2B2B;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel:hover {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel:hover {
   background-color: #ff4f4f;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel ion-icon {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .cancel ion-icon {
   align-self: center;
   font-size: x-large;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm {
   display: flex;
   color: #FFFFFF;
   padding: 0.4rem;
   background-color: #36C857;
   margin-left: 0.3rem;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm:hover {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm:hover {
   background-color: #5bc974;
 }
-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm ion-icon {
+.main-nav .container .nav-right .dropdown-notifications .dropdown-content-notifications .all-notifications .friend-request-notification .buttons .confirm ion-icon {
   align-self: center;
   font-size: x-large;
 }
-nav .container .nav-right .dropdown-person {
+.main-nav .container .nav-right .dropdown-person {
   float: right;
   position: relative;
 }
-nav .container .nav-right .dropdown-person .dropbtn-person {
+.main-nav .container .nav-right .dropdown-person .dropbtn-person {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -298,14 +307,14 @@ nav .container .nav-right .dropdown-person .dropbtn-person {
   border: 0.1px solid #012246;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-nav .container .nav-right .dropdown-person .dropbtn-person:hover {
+.main-nav .container .nav-right .dropdown-person .dropbtn-person:hover {
   color: #FFFFFF;
   background-color: #012246;
 }
-nav .container .nav-right .dropdown-person .dropbtn-person ion-icon {
+.main-nav .container .nav-right .dropdown-person .dropbtn-person ion-icon {
   pointer-events: none;
 }
-nav .container .nav-right .dropdown-person .dropdown-content-person {
+.main-nav .container .nav-right .dropdown-person .dropdown-content-person {
   display: none;
   position: absolute;
   background-color: #FFFFFF;
@@ -316,7 +325,7 @@ nav .container .nav-right .dropdown-person .dropdown-content-person {
   right: 0;
   z-index: 1;
 }
-nav .container .nav-right .dropdown-person .dropdown-content-person a {
+.main-nav .container .nav-right .dropdown-person .dropdown-content-person a {
   text-align: center;
   color: black;
   padding: 12px 16px;
@@ -324,10 +333,10 @@ nav .container .nav-right .dropdown-person .dropdown-content-person a {
   display: block;
   border-bottom: 1px solid rgba(0, 0, 0, 0.137);
 }
-nav .container .nav-right .dropdown-person .dropdown-content-person a:hover {
+.main-nav .container .nav-right .dropdown-person .dropdown-content-person a:hover {
   background-color: #ddd;
 }
-nav .container .nav-right .dropdown-person .dropdown-content-person.show-person {
+.main-nav .container .nav-right .dropdown-person .dropdown-content-person.show-person {
   display: block;
 }
 
@@ -503,4 +512,129 @@ nav .container .nav-right .dropdown-person .dropdown-content-person.show-person 
 .modal-notification .modal-main-content .all-notifications .friend-request-notification .buttons .confirm ion-icon {
   align-self: center;
   font-size: x-large;
+}
+
+@media screen and (max-width: 860px) {
+  .modal-dialog {
+    width: 360px !important;
+  }
+  .modal-header h1 {
+    font-size: 30px !important;
+  }
+  .close-btn {
+    top: 9px !important;
+    right: 12px !important;
+  }
+  .old-pwd-input {
+    width: 100% !important;
+  }
+  .new-pwd-input {
+    width: 100% !important;
+  }
+  .modal-footer {
+    justify-content: center !important;
+  }
+  .main-nav {
+    display: none;
+  }
+  .logo {
+    font-family: "Caveat", cursive !important;
+    vertical-align: center;
+    text-align: center;
+  }
+  html, body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    height: 100%;
+  }
+  .mobile-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #012246;
+    color: #FFF;
+    height: 50px;
+    padding: 1em;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-button-container {
+    display: flex;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  .menu-button::before {
+    content: "";
+    margin-top: -8px;
+  }
+  .menu-button::after {
+    content: "";
+    margin-top: 8px;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  #menu-toggle ~ .menu a {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu a {
+    border: 1px solid #ccc;
+    height: 3em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: #012246;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .menu > a:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
 }/*# sourceMappingURL=navbar.css.map */
