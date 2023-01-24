@@ -3,18 +3,21 @@ const Staff = require("../../Models/Mongoose/Staff");
 const Student = require("../../Models/Mongoose/Student");
 const CustomError = require("../../Helpers/CustomError");
 const { options, cloudinary } = require("../../Config/cloudinaryConfig");
-const { updateRequiredUserTypeModel } = require("../../Helpers/admin");
+const {
+    updateRequiredUserTypeModel,
+    getUserByID,
+    getStaffByID,
+    getStudentByID,
+} = require("../../Helpers/admin");
 const { sendActivationConfirmEmail } = require("../../Helpers/email");
 module.exports = {
     toggleActivateUser: async(req) => {
-        const user = await User.findById(req.params.id);
-        let isUserActivated = user.isActive;
-        if (!user)
-            throw new CustomError("User is not found with associated ID.", 404);
+        const user = await getUserByID(req.params.id);
         user.isActive = !user.isActive;
-        user.editedById = req.user.id;
+        user.activatedById = req.user.id;
+        user.activatedAt = Date.now();
         await user.save();
-        if (user.isActive) await sendActivationConfirmEmail(user);
+        //if (user.isActive) await sendActivationConfirmEmail(user);
         return {
             success: true,
             message: `${
@@ -22,7 +25,26 @@ module.exports = {
       }`,
         };
     },
-
+    getAllStudents: async(req) => {
+        const students = await Student.find({});
+        return { success: true, students: students };
+    },
+    getAllStaffs: async(req) => {
+        const staffs = await Staff.find({});
+        return { success: true, staffs: staffs };
+    },
+    getStudentByID: async(req) => {
+        const student = await getStudentByID(req.params.id);
+        return { success: true, student: student };
+    },
+    getStaffByID: async(req) => {
+        const staff = await getStaffByID(req.params.id);
+        return { success: true, staff: staff };
+    },
+    getUserByID: async(req) => {
+        const user = await getUserByID(req.params.id);
+        return { success: true, user: user };
+    },
     getAllUsers: async() => {
         const users = await User.find();
         return { success: true, users };
@@ -30,9 +52,7 @@ module.exports = {
 
     /*@TODO:UPDATE USER */
     updateUser: async(req) => {
-        const user = await User.findById(req.params.id);
-        if (!user)
-            throw new CustomError("User is not found with associated ID.", 404);
+        const user = await getUserByID(req.params.id);
 
         let updatedUserTypeModel;
         //if request has user type with different than the current user's type
@@ -78,14 +98,14 @@ module.exports = {
             );
         }
 
-        let userField = {};
+        let userField = { editedById: req.user.id };
         if (req.body.firstname) userField["firstname"] = req.body.firstname;
         if (req.body.lastname) userField["lastname"] = req.body.lastname;
-        if (req.body.lastname) userField["lastname"] = req.body.lastname;
+        if (req.body.country) userField["country"] = req.body.country;
         if (req.body.dob) userField["dob"] = req.body.dob;
         if (req.body.email) {
             const isEmailAlreadyInUse = await User.findOne({ email: req.body.email });
-            if (isEmailAlreadyInUse)
+            if (isEmailAlreadyInUse && req.body.email !== isEmailAlreadyInUse.email)
                 throw new CustomError(
                     "Email is already in use.Please try different one.",
                     400
@@ -119,8 +139,7 @@ module.exports = {
         return { success: true, user: { updatedUser }, updatedUserTypeModel };
     },
     removeUser: async(req) => {
-        const user = await User.findById(req.params.id);
-        if (!user) throw new Error("User is not found with associated ID.");
+        const user = await getUserByID(req.params.id);
 
         if (user.userType == "student")
             await Student.findOneAndRemove({ userId: user.id });
