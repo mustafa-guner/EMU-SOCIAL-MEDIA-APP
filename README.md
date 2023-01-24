@@ -29,3 +29,20 @@ information and resources and for students to access information.
 <h2 aling="center"> Purpose </h2>
 The purpose of the social media app for the IT department of Emu University is to improve communication and collaboration among students, staff, and faculty by providing a centralized platform for sharing information, discussing class material, and collaborating on projects. Additionally, the app aims to increase student engagement by creating a sense of community among students and keeping them informed about events, opportunities, and resources within the IT department. The app also aims to enhance recruitment and outreach efforts by reaching out to prospective students and promoting programs and resources to a wider audience. The app will provide a cost-effective and efficient way for the IT department to disseminate information and resources, and for students to access information. Overall, the purpose of the app is to improve communication and collaboration within the IT department and the university community and to provide a platform for students and the IT department to engage in meaningful ways.
 </p>
+<h1 aling="center"> Development Methodology </h1>
+<h2> Programming Languages</h2>
+<p>In our project we use JavaScript for frontend and backend develop, for our base level
+application (for gateway) we use PHP (Laravel), on the database side we use NoSQL and
+MongoDB. Some of our backend functions written in C# .net but in the middle of the development 
+process our team have decided to switch our code base form .net to NodeJS because of some scalability. </p>
+<h2> System Architecture and Processing Methods </h2>
+<p>In our project we use scrum architecture and methodology </p>
+<h2> Database Management Systems</h2>
+<p> NoSQL and MongoDB (mongo atlas and aws cloud)
+since we have complicated data structure for our web app, we decided to use no relational SQL
+collections because we have 2 type of users such as stuff and students
+and they have their own models and NoSQL makes it easier to process our data.</p>
+<h2> Hardware and Communication Platform</h2>
+<p> For the hardware we use our personal computers to develop our project, for
+communication some weeks we make some meetings at the school but mostly we use discord
+for online meetings. </p>
