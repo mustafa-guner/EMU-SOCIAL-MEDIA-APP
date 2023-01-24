@@ -20,8 +20,9 @@ use App\Http\Controllers\_AuthController;
 
 Route::get('/',[ProfileController::class, 'getprofileDetails']);
 
-Route::get('/login', function () {
-    if($_COOKIE["accessToken"] || $_COOKIE["sessionToken"])  return redirect("profile");
+Route::get('/login', function (Request $request) {
+    
+    if($_COOKIE && $_COOKIE["accessToken"] !== undefined || $_COOKIE &&  $_COOKIE["sessionToken"] !== undefined)  return redirect("profile");
     return view('auth/login',["errors"=>[]]);
 })->name('login');
 

@@ -14,7 +14,7 @@ async function getUserByID(id) {
         user = {...user, ...student };
     }
 
-    openEditModal(id, user);
+    return openEditModal(id, user);
 }
 
 function openRemoveSwall(userId, refreshPage) {
@@ -151,7 +151,7 @@ function openEditModal(id, user) {
         </div>
     </div>
     <div class="close-btn">
-        <button type="button" class="close close-btn" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="cancel-cross" class="close close-btn" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -192,7 +192,7 @@ function openEditModal(id, user) {
                 <select id="edit-country"  class="edit-input" disabled>
                     <option ${
                         user.country == "cyprus" ? "selected" : "   "
-                    } value="turkey">Turkey</option>
+                    } value="turkey">turkey</option>
                     <option value="cyprus" ${
                         user.country == "cyprus" ? "selected" : "   "
                     }>Cyprus</option>
@@ -203,8 +203,8 @@ function openEditModal(id, user) {
                 <select id="edit-gender"  class="edit-input" disabled>
                 <option ${
                     user.gender == "male" ? "selected" : "   "
-                } value="turkey">Male</option>
-                <option value="cyprus" ${
+                } value="male">Male</option>
+                <option value="female" ${
                     user.gender == "female" ? "selected" : "   "
                 }>Female</option>
                 </select>
@@ -277,7 +277,7 @@ function openEditModal(id, user) {
     <button type="button" id="activation" class="activation-btn ${
         user.isActive ? "deactivate" : "activate"
     }">${user.isActive ? "DeActivate" : "Activate"}</button>
-   <div> <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+   <div> <button type="button" id="close-btn" class="btn btn-close" >Close</button>
    <button type="button" id="update-btn" class="btn btn-save-changes">Save
        Changes</button></div>
 </div>
@@ -294,6 +294,12 @@ function openEditModal(id, user) {
         `#edit-${user._id}`
     );
 
+    $("#close-btn").click(function () {
+        $("#edit-user-modal").modal("hide");
+    });
+    $("#cancel-cross").click(function () {
+        $("#edit-user-modal").modal("hide");
+    });
     const removeUserBtn = currentUserEditModalContent.querySelector(
         `#remove-${user._id}`
     );
@@ -348,7 +354,7 @@ function openEditModal(id, user) {
             this.classList.add("activate");
             this.innerText = "Activate";
         }
-        const URL = `http://localhost:8000/api/admin/toggle-activation-user/${id}`;
+        const URL = `http://127.0.0.1:8000/api/admin/toggle-activation-user/${id}`;
         return $.ajax({
             url: URL,
             cache: false,
@@ -466,7 +472,7 @@ function submitUpdateForm(userId) {
                 );
         }
 
-        const URL = `http://localhost:8000/api/admin/update-user/${userId}`;
+        const URL = `http://127.0.0.1:8000/api/admin/update-user/${userId}`;
         return $.ajax({
             url: URL,
             cache: false,
@@ -479,6 +485,7 @@ function submitUpdateForm(userId) {
             data: formData,
             type: "POST",
             success: async function (response) {
+                console.log(response);
                 Swal.fire({
                     position: "top-center",
                     icon: "success",
@@ -616,7 +623,7 @@ function getAssociatedUserTypeFields(user, userType, statefulUserType) {
             <option value="servant" ${
                 user.staffType == "servant" ? "selected" : ""
             }>Servant</option>
-            <option value="notRetired" ${
+            <option value="instructor" ${
                 user.staffType == "instructor" ? "selected" : ""
             }>Instructor</option>
         </select>
