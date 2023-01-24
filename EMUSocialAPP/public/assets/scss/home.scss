@@ -666,3 +666,176 @@ body {
         }
     }
 }
+
+@media screen and (max-width: 860px) {
+    .header{
+        display: none !important;
+    }
+    .main-container{
+        display: block !important;
+        grid-gap: 0px !important;
+    }
+    .grid-left{
+        display: none !important;
+    }
+    .grid-right{
+        display: none !important;
+    }
+    .grid-middle{
+        padding: 0 0.5rem;
+        margin-top: 32px;
+        width: 100% !important;
+        .new-post-container{
+            height: 100% !important;
+            .new-post-header{
+                margin-left: 0 !important;
+                font-size: 13px !important;
+            }
+            .new-post-input-container{
+                margin: 0 auto !important;
+                justify-content: center !important;
+                grid-template-columns: 15% 80% !important;
+                padding: 0 0.5rem !important;
+                .new-post-profile-img{
+                    display: flex !important;
+                    justify-content: center !important;
+                    margin: 0!important;
+                    width: 50px !important;
+                    height: 50px !important;
+                }
+                input {
+                    padding: 0.5rem !important;
+                    font-size: medium !important;
+                    &::placeholder {
+                        color: rgba(0, 0, 0, 0.363);
+                    }
+                }
+            }
+            .new-post-buttons{
+                margin-top: 0.5rem !important;
+                margin-right: 1rem !important;
+                button{
+                    font-size: larger !important;
+                    width: 30px !important;
+                }
+            }
+        }
+        .post-container{
+            .top-part{
+                button{
+                    top: 20px;
+                    right: 15px;
+                }
+            }
+            .main-content{
+                display: block !important;
+                position: relative !important;
+                margin-top: 1rem !important;
+                .post-profile-img{
+                    width: 50px !important;
+                    height: 50px !important;
+                }
+                .post-content{
+                    .name{
+                        font-size: 19px !important;
+                        position: absolute !important;
+                        top: 0px !important;
+                        left: 75px !important;
+                    }
+                    .description{
+                        font-size: medium !important;
+                        padding: 0 1rem !important;
+                        line-height: 1.5rem !important;
+                        width: 100%;
+                        margin-top: 0 !important;
+                    }
+                }
+                .post-time{
+                    height: 100% !important;
+                    padding-top: 0 !important;
+                    margin-right: 0 !important;
+                    position: absolute !important;
+                    font-size: small !important;
+                    top: 28px !important;
+                    left: 75px !important;
+                }
+            }
+            .likes-and-comments{
+                margin-right: 1rem !important;
+                margin-top: 1rem !important;
+                .likes{
+                    font-size: 13px !important;
+                    margin-right: 0.5rem !important;
+                }
+                .comments{
+                    font-size: 13px !important;
+                }
+            }
+        }
+        .club-post-container{
+            .top-part{
+                button{
+                    top: 20px;
+                    right: 15px;
+                }
+            }
+            .club-post-profile{
+                margin: 0.5rem 0 !important;
+                .club-post-profile-img{
+                    width: 50px !important;
+                    height: 50px !important;
+                }
+                .club-header{
+                    font-size: 13px !important;
+                }
+            }
+            .main-content{
+                display: block !important;
+                position: relative !important;
+                margin-top: 1rem !important;
+                .post-profile-img{
+                    margin: 0 !important;
+                    margin-left: 1rem !important;
+                    width: 50px !important;
+                    height: 50px !important;
+                }
+                .post-content{
+                    .name{
+                        font-size: 19px !important;
+                        position: absolute !important;
+                        top: 0px !important;
+                        left: 75px !important;
+                    }
+                    .description{
+                        font-size: medium !important;
+                        padding: 0 1rem !important;
+                        line-height: 1.5rem !important;
+                        width: 100%;
+                        margin-top: 0 !important;
+                    }
+                }
+                .post-time{
+                    height: 100% !important;
+                    padding-top: 0 !important;
+                    margin-right: 0 !important;
+                    position: absolute !important;
+                    font-size: small !important;
+                    top: 28px !important;
+                    left: 75px !important;
+                }
+            }
+            .likes-and-comments{
+                margin-right: 1rem !important;
+                margin-top: 1rem !important;
+                .likes{
+                    font-size: 13px !important;
+                    margin-right: 0.5rem !important;
+                }
+                .comments{
+                    font-size: 13px !important;
+                }
+            }
+        }
+    }
+
+}

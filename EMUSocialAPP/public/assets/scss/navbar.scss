@@ -519,6 +519,8 @@ a{
 
 //Mobile Navbar
 @media screen and (max-width: 860px) {
+
+    // Change Password Modal
     .modal-dialog{
         width: 360px !important;
     }
@@ -539,6 +541,9 @@ a{
     }
     .modal-footer{
         justify-content: center !important;
+    // End Change Password Modal
+
+    //NAVBARS
     }
     .main-nav{
         display: none;
@@ -572,6 +577,7 @@ a{
         width: 100%;
         justify-content: center;
         align-items: center;
+        z-index: 1000;
     }
     .menu-button-container {
         display: flex;
@@ -648,4 +654,5 @@ a{
     margin-top: 0px;
     transform: rotate(-405deg);
     }
+    // END NAVBARS
 }

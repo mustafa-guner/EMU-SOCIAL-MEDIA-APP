@@ -681,4 +681,170 @@ body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:
   background: #FFFFFF;
   color: #2F55AC;
   border: 2px solid #2F55AC;
+}
+
+@media screen and (max-width: 860px) {
+  .header {
+    display: none !important;
+  }
+  .main-container {
+    display: block !important;
+    grid-gap: 0px !important;
+  }
+  .grid-left {
+    display: none !important;
+  }
+  .grid-right {
+    display: none !important;
+  }
+  .grid-middle {
+    padding: 0 0.5rem;
+    margin-top: 32px;
+    width: 100% !important;
+  }
+  .grid-middle .new-post-container {
+    height: 100% !important;
+  }
+  .grid-middle .new-post-container .new-post-header {
+    margin-left: 0 !important;
+    font-size: 13px !important;
+  }
+  .grid-middle .new-post-container .new-post-input-container {
+    margin: 0 auto !important;
+    justify-content: center !important;
+    grid-template-columns: 15% 80% !important;
+    padding: 0 0.5rem !important;
+  }
+  .grid-middle .new-post-container .new-post-input-container .new-post-profile-img {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .grid-middle .new-post-container .new-post-input-container input {
+    padding: 0.5rem !important;
+    font-size: medium !important;
+  }
+  .grid-middle .new-post-container .new-post-input-container input::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.363);
+  }
+  .grid-middle .new-post-container .new-post-input-container input:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.363);
+  }
+  .grid-middle .new-post-container .new-post-input-container input::placeholder {
+    color: rgba(0, 0, 0, 0.363);
+  }
+  .grid-middle .new-post-container .new-post-buttons {
+    margin-top: 0.5rem !important;
+    margin-right: 1rem !important;
+  }
+  .grid-middle .new-post-container .new-post-buttons button {
+    font-size: larger !important;
+    width: 30px !important;
+  }
+  .grid-middle .post-container .top-part button {
+    top: 20px;
+    right: 15px;
+  }
+  .grid-middle .post-container .main-content {
+    display: block !important;
+    position: relative !important;
+    margin-top: 1rem !important;
+  }
+  .grid-middle .post-container .main-content .post-profile-img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .grid-middle .post-container .main-content .post-content .name {
+    font-size: 19px !important;
+    position: absolute !important;
+    top: 0px !important;
+    left: 75px !important;
+  }
+  .grid-middle .post-container .main-content .post-content .description {
+    font-size: medium !important;
+    padding: 0 1rem !important;
+    line-height: 1.5rem !important;
+    width: 100%;
+    margin-top: 0 !important;
+  }
+  .grid-middle .post-container .main-content .post-time {
+    height: 100% !important;
+    padding-top: 0 !important;
+    margin-right: 0 !important;
+    position: absolute !important;
+    font-size: small !important;
+    top: 28px !important;
+    left: 75px !important;
+  }
+  .grid-middle .post-container .likes-and-comments {
+    margin-right: 1rem !important;
+    margin-top: 1rem !important;
+  }
+  .grid-middle .post-container .likes-and-comments .likes {
+    font-size: 13px !important;
+    margin-right: 0.5rem !important;
+  }
+  .grid-middle .post-container .likes-and-comments .comments {
+    font-size: 13px !important;
+  }
+  .grid-middle .club-post-container .top-part button {
+    top: 20px;
+    right: 15px;
+  }
+  .grid-middle .club-post-container .club-post-profile {
+    margin: 0.5rem 0 !important;
+  }
+  .grid-middle .club-post-container .club-post-profile .club-post-profile-img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .grid-middle .club-post-container .club-post-profile .club-header {
+    font-size: 13px !important;
+  }
+  .grid-middle .club-post-container .main-content {
+    display: block !important;
+    position: relative !important;
+    margin-top: 1rem !important;
+  }
+  .grid-middle .club-post-container .main-content .post-profile-img {
+    margin: 0 !important;
+    margin-left: 1rem !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .grid-middle .club-post-container .main-content .post-content .name {
+    font-size: 19px !important;
+    position: absolute !important;
+    top: 0px !important;
+    left: 75px !important;
+  }
+  .grid-middle .club-post-container .main-content .post-content .description {
+    font-size: medium !important;
+    padding: 0 1rem !important;
+    line-height: 1.5rem !important;
+    width: 100%;
+    margin-top: 0 !important;
+  }
+  .grid-middle .club-post-container .main-content .post-time {
+    height: 100% !important;
+    padding-top: 0 !important;
+    margin-right: 0 !important;
+    position: absolute !important;
+    font-size: small !important;
+    top: 28px !important;
+    left: 75px !important;
+  }
+  .grid-middle .club-post-container .likes-and-comments {
+    margin-right: 1rem !important;
+    margin-top: 1rem !important;
+  }
+  .grid-middle .club-post-container .likes-and-comments .likes {
+    font-size: 13px !important;
+    margin-right: 0.5rem !important;
+  }
+  .grid-middle .club-post-container .likes-and-comments .comments {
+    font-size: 13px !important;
+  }
 }/*# sourceMappingURL=home.css.map */

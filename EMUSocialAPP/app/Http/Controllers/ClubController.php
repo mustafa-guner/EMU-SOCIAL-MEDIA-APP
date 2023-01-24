@@ -77,7 +77,7 @@ class ClubController extends Controller{
                     'postername' => $user["clubname"], 
                     'posterimage' => "https://scontent.fecn6-1.fna.fbcdn.net/v/t31.18172-8/11406200_10152977119843479_1787168405226911316_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=vmSMbXsJNz0AX9z1JgB&_nc_ht=scontent.fecn6-1.fna&oh=00_AfAZVmZQG5_104Fvx-LBuAAe7BmhcjUX3nDRFlhPH3AO0w&oe=63CD98B0",
                     'postdesc' => 'Lorem ipsum dolor sit amet.',
-                    'posttime' => '22:55 PM',
+                    'posttime' => '2h ago',
                     'postlikes' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                     'postcomments' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                 ),
@@ -88,7 +88,7 @@ class ClubController extends Controller{
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. agna aliqua. Ut enim ad minim veniam, 
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-                    'posttime' => '04:23 AM',
+                    'posttime' => '5d ago',
                     'postlikes' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                     'postcomments' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                 )

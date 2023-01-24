@@ -90,7 +90,7 @@ class HomeController extends Controller{
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. agna aliqua. Ut enim ad minim veniam, 
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-                    'posttime' => '04:23 AM',
+                    'posttime' => '5h ago',
                     'postlikes' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                     'postcomments' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                 )
@@ -111,7 +111,7 @@ class HomeController extends Controller{
                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. agna aliqua. Ut enim ad minim veniam, 
                                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-                    'posttime' => '04:23 AM',
+                    'posttime' => '2d ago',
                     'postlikes' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                     'postcomments' => array('user1' => 'user1', 'user2' => 'user2', 'user3' => 'user3'),
                 )
