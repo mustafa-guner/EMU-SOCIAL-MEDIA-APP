@@ -16,7 +16,7 @@ module.exports = {
             const { accessToken, sessionToken } = loginResponse;
             const isEnvironmentProduction = () =>
                 process.env.NODE_ENV == "production";
-
+            console.log(accessToken + sessionToken);
             return res
                 .cookie("accessToken", accessToken, {
                     sameSite: true,

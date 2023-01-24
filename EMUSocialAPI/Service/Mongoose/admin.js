@@ -104,6 +104,7 @@ module.exports = {
         if (req.body.lastname) userField["lastname"] = req.body.lastname;
         if (req.body.country) userField["country"] = req.body.country;
         if (req.body.dob) userField["dob"] = req.body.dob;
+        if (req.body.gender) userField["gender"] = req.body.gender;
         if (req.body.email) {
             const isEmailAlreadyInUse = await User.findOne({ email: req.body.email });
             if (isEmailAlreadyInUse && req.body.email !== isEmailAlreadyInUse.email)

@@ -30,7 +30,8 @@ module.exports = {
     verifyAdminRoute: async(req, res, next) => {
         try {
             const user = await User.findById(req.user.id);
-            if (user.role !== "admin" && user.role != "superadmin")
+            console.log(req.user.id);
+            if (user.role && user.role !== "admin" && user.role != "superadmin")
                 return next(
                     new CustomError(
                         "You need admin permission to access this route.",
