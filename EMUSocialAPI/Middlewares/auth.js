@@ -7,8 +7,7 @@ module.exports = {
         if (
             req.cookies == undefined ||
             (req.cookies == null &&
-                ((req.cookies && !req.cookies.accessToken) ||
-                    (req.cookies && !req.cookies.sessionToken)))
+                (!req.cookies.accessToken || !req.cookies.sessionToken))
         )
             return next(new CustomError("You are not authorized.", 401));
 
@@ -31,7 +30,8 @@ module.exports = {
     verifyAdminRoute: async(req, res, next) => {
         try {
             const user = await User.findById(req.user.id);
-            if (user.role !== "admin" && user.role != "superadmin")
+            console.log(req.user.id);
+            if (user.role && user.role !== "admin" && user.role != "superadmin")
                 return next(
                     new CustomError(
                         "You need admin permission to access this route.",

@@ -1,9 +1,10 @@
 const Student = require("../Models/Mongoose/Student");
+const User = require("../Models/Mongoose/User");
 const Staff = require("../Models/Mongoose/Staff");
+const CustomError = require("./CustomError");
 
 const updateStudentModel = async(req) => {
     const studentUser = await Student.findOne({ userId: req.params.id });
-    console.log(studentUser);
     let studentField = {};
     if (req.body.studentNumber)
         studentField.studentNumber = req.body.studentNumber;
@@ -41,5 +42,27 @@ module.exports = {
                 throw new CustomError("Please enter valid user type.", 400);
         }
         return updatedModel;
+    },
+
+    getUserByID: async(id) => {
+        const user = await User.findById(id).populate([
+            "editedById",
+            "activatedById",
+        ]);
+        if (!user)
+            throw new CustomError("User is not found with associated ID.", 404);
+        return user;
+    },
+    getStudentByID: async(id) => {
+        const student = await Student.findOne({ userId: id });
+        if (!student)
+            throw new CustomError("Student is not found with associated ID.", 404);
+        return student;
+    },
+    getStaffByID: async(id) => {
+        const staff = await Staff.findOne({ userId: id });
+        if (!staff)
+            throw new CustomError("Staff is not found with associated ID.", 404);
+        return staff;
     },
 };

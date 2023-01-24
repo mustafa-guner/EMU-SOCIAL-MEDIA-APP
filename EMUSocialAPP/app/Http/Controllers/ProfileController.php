@@ -9,19 +9,22 @@ use Illuminate\Support\Facades\Http;
 class ProfileController extends Controller{
 
     function getprofileDetails(Request $request){      
-
-        # User Details
-        $firstname = "James";
-        $lastname = "Robert";
-        $fullname = $firstname . " " . $lastname;
-        $dob = Carbon::parse('28-09-1999')->age;
-        $gender = "Male";
-        $country = "Cyprus";
-        $graduation = "2025";
-        $academiccareer = "Instractor";
-        $degree = "Master";
-        $profileimg = "https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg";
-
+        if(!isset($_COOKIE["accessToken"]) ||!isset($_COOKIE["sessionToken"]) )  return redirect("login")->with("errors",["Your session is expired. Please login."]);
+        $accessToken = $_COOKIE["accessToken"];
+        $sessionToken = $_COOKIE["sessionToken"];
+        $curlHandler = curl_init();
+        curl_setopt_array($curlHandler, [
+        CURLOPT_URL => 'http://localhost:4200/api/v1/profiles/me',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_COOKIE => "accessToken={$accessToken};sessionToken={$sessionToken}",
+        ]);
+        
+        $response = curl_exec($curlHandler);
+        if(!json_decode($response)->success) return redirect("login");
+        curl_close($curlHandler);
+        $myUserDetails = json_decode($response)->profileDetails->profile->userId;
+        $myProfile = json_decode($response)->profileDetails->profile;
+        $myPersonalDetails = json_decode($response)->profileDetails->personalDetails;
 
         # Profile Details
         $desc = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -100,8 +103,8 @@ class ProfileController extends Controller{
             )
         );
 
-        $profile = ["connectnumber"=>$connectnumber,"desc"=>$desc,"department"=>$department,"postnumber"=>$postnumber,"clubnumber"=>$clubnumber,"coverimage"=>$coverimage,"clubs"=>$clubs,"friends"=>$friends,"commonconnects"=>$commonconnects];
-        $user = ["fullname"=>$fullname, "firstname"=>$firstname,"dob"=>$dob,"gender"=>$gender,"country"=>$country,"graduation"=>$graduation,"academiccareer"=>$academiccareer,"degree"=>$degree,"profileimg"=>$profileimg];
+        $profile = ["connectnumber"=>$connectnumber,"desc"=>"desc","department"=>$department,"postnumber"=>$postnumber,"clubnumber"=>$clubnumber,"coverimage"=>$myProfile->coverImage,"clubs"=>$clubs,"friends"=>$friends,"commonconnects"=>$commonconnects];
+        $user = ["fullname"=>$myUserDetails->firstname." ".$myUserDetails->lastname, "firstname"=>$myUserDetails->lastname,"dob"=>"1999-09-28","gender"=>"male","country"=>"Cyprus","graduation"=>"false","academiccareer"=>$myUserDetails->userType,"degree"=>false,"profileimg"=>$myUserDetails->profileImage];
        
         # Post Details
         function getpostcontent($user) {

@@ -263,45 +263,133 @@ class RegistrationFormWithSteps {
     /* BASIC COMMANDS OF THE REGISTRATION F ORM */
 
     goNext() {
-        const currentStep = this.FormSteps.getCurrentStep();
-        const currentStepTitle = this.FormSteps.getCurrentStepTitle();
+            const currentStep = this.FormSteps.getCurrentStep();
+            const currentStepTitle = this.FormSteps.getCurrentStepTitle();
 
-        const { stepTitle, inputs } = currentStep;
+            const { stepTitle, inputs } = currentStep;
 
-        let associatedInputs = inputs;
+            let associatedInputs = inputs;
 
-        if (stepTitle === "academicInformation") {
-            const selectedUserType = currentStep.userType.find(
-                (type) => type.selected === true
-            );
+            if (stepTitle === "academicInformation") {
+                const selectedUserType = currentStep.userType.find(
+                    (type) => type.selected === true
+                );
 
-            associatedInputs = [
-                ...inputs,
-                ...selectedUserType.assoicatedInputs,
-            ];
+                associatedInputs = [
+                    ...inputs,
+                    ...selectedUserType.assoicatedInputs,
+                ];
+            }
+
+            //validate all the inputs
+            const inputsToValidate =
+                VALIDATIONS.Inputs.validateInputs(associatedInputs);
+
+            const isThereAnyError = !VALIDATIONS.Inputs.areInputsValid(inputsToValidate);
+
+            //Toggles errorMessages because of errors
+            if (isThereAnyError) return this.toggleErrorMessages(inputsToValidate);
+
+            //Removes all the error messages from UI after successfull continue event
+            this.toggleErrorMessages(inputsToValidate);
+
+            //get validated inputs and make it array of key value pair objects
+            const validatedInputs =
+                VALIDATIONS.Inputs.getValidatedFormData(inputsToValidate);
+
+            //Save validated inputs to localstorage by their stepTitles
+            LocalRepository.createRepository(currentStepTitle, validatedInputs);
+            //Go next step
+            this.FormSteps.goNextStep();
+
+            if (this.FormSteps.getCurrentStepTitle() === "lastStep") {
+                const lastStep = document.querySelector("#lastStep");
+                const previewSection = lastStep.querySelector("#final-preview");
+                //GET SAVED DATA FROM LOCAL STORAGE
+                let [personalInformationFormData, ademicInformationFormData] =
+                this.fetchFromLocalStorageOnLoad();
+                const { firstname, lastname, email, country, dob, gender } =
+                personalInformationFormData;
+                const { usertypeid } = ademicInformationFormData;
+
+                previewSection.innerHTML = `
+           <div class="step-form">
+           <div class="step-row final-step-rows">
+               <div class="step-label">
+                   <div class="label">Firstname</div>
+                   <p>${firstname}</p>
+               </div>
+                <div class="step-label">
+                   <label>Lastname</label>
+                   <p>${lastname}</p>
+               </div>
+                <div class="step-label">
+                    <label>Email</label>
+                    <p>${email}</p>
+                </div>
+                <div class="step-label">
+                    <label>Country</label>
+                    <p>${country}</p>
+                </div>
+                <div class="step-label">
+                    <label>Gender</label>
+                    <p>${gender}</p>
+                </div>
+                <div class="step-label">
+                    <label>Dob</label>
+                    <p>${dob}</p>
+                </div>
+
+                <div class="step-label">
+                    <label>Academic Career</label>
+                    <p>${usertypeid}</p>
+                </div>
+                ${
+                    usertypeid == "student"
+                        ? ` 
+                <div class="step-label">
+                    <label>Student Number</label>
+                    <p>${ademicInformationFormData.studentnumber}</p>
+                </div>
+                <div class="step-label">
+                    <label>Graduation Status</label>
+                    <p>${ademicInformationFormData.isgraduated}</p>
+                </div>
+                <div class="step-label">
+                    <label>Graduation Date</label>
+                    <p>${ademicInformationFormData.graduationdate}</p>
+                </div>
+                <div class="step-label">
+                    <label>Degree Type</label>
+                    <p>${ademicInformationFormData.degreetype}</p>
+                </div>
+            
+            `
+                        : `
+            <div class="step-label">
+                    <label>Retirement Date</label>
+                    <p>${ademicInformationFormData.retirementdate}</p>
+                </div>
+                <div class="step-label">
+                    <label>Retirement State</label>
+                    <p>${
+                        ademicInformationFormData.isretired == "notRetired"
+                            ? "Not Retired Yet"
+                            : ademicInformationFormData.isretired
+                    }</p>
+                </div>
+                <div class="step-label">
+                    <label>Staff Type</label>
+                    <p>${ademicInformationFormData.stafftype}</p>
+                </div>
+            `
+                }
+               
+           </div>
+       </div>
+           
+           `;
         }
-
-        //validate all the inputs
-        const inputsToValidate =
-            VALIDATIONS.Inputs.validateInputs(associatedInputs);
-
-        const isThereAnyError = !VALIDATIONS.Inputs.areInputsValid(inputsToValidate);
-
-        //Toggles errorMessages because of errors
-        if (isThereAnyError) return this.toggleErrorMessages(inputsToValidate);
-
-        //Removes all the error messages from UI after successfull continue event
-        this.toggleErrorMessages(inputsToValidate);
-
-        //get validated inputs and make it array of key value pair objects
-        const validatedInputs =
-            VALIDATIONS.Inputs.getValidatedFormData(inputsToValidate);
-
-        //Save validated inputs to localstorage by their stepTitles
-        LocalRepository.createRepository(currentStepTitle, validatedInputs);
-        //Go next step
-        this.FormSteps.goNextStep();
-
         //Switch to another step
         this.switchStep();
     }
@@ -362,7 +450,7 @@ class RegistrationFormWithSteps {
             ) {
                 const parentElement =
                     invalidInput.input[0].parentElement.parentElement
-                    .parentElement.parentElement;
+                        .parentElement.parentElement;
 
                 const lastChild =
                     parentElement.children[parentElement.children.length - 1];
@@ -397,7 +485,8 @@ class RegistrationFormWithSteps {
                 if (isErrorDiv && isInputEmail && !isEmailValid) {
                     self.removeErrorMessage(lastChild);
                     self.printErrorMessage(parentElement, invalidInput);
-                } else if (!isErrorDiv &&
+                } else if (
+                    !isErrorDiv &&
                     isInputEmail &&
                     !isEmailValid &&
                     !isInputEmpty
@@ -413,7 +502,7 @@ class RegistrationFormWithSteps {
         const currentStepNumber = this.FormSteps.currentStepNumber;
         const stepsSize = this.FormSteps.steps.length;
         const { hideSteps, showStep, addStepCountNumberToStep } =
-        RegistrationFormUIEvent;
+            RegistrationFormUIEvent;
 
         hideSteps(this.FormSteps.steps);
         showStep(currentStep.selector);
@@ -453,7 +542,7 @@ class RegistrationFormWithSteps {
         const academicInformation = LocalRepository.getValueFromRepositoryByID(
             "academicInformation"
         );
-        return [{...personalInformation }, {...academicInformation }];
+        return [{ ...personalInformation }, { ...academicInformation }];
     }
 
     loadData(inputs, data) {
@@ -546,10 +635,11 @@ class RegistrationFormWithSteps {
 
     findMissingSteps() {
         return this.FormSteps.steps.filter((step) => {
-            return (!step.isLastStep &&
+            return (
+                !step.isLastStep &&
                 step.inputs.some((input) => {
                     const { isInputType, areRadioInputsChecked } =
-                    VALIDATIONS.Inputs;
+                        VALIDATIONS.Inputs;
                     const { isArray } = VALIDATIONS.Array;
                     const checkInputFileEmpty =
                         isInputType(input.input, "file") &&
@@ -572,7 +662,7 @@ class RegistrationFormWithSteps {
     createYourProfile(e) {
         e.preventDefault();
         const { hideSteps, showStep } = RegistrationFormUIEvent;
-
+        const self = this;
         const missingSteps = this.findMissingSteps();
 
         if (missingSteps.length > 0) {
@@ -587,10 +677,6 @@ class RegistrationFormWithSteps {
 
             this.toggleErrorMessages(inputsToValidate);
         } else {
-            console.log(
-                "PROFILE CREATION REQUEST HAS BEEN SEND TO ADMINSTRATIVE"
-            );
-
             const personalInformationInputs =
                 this.FormSteps.getInputsByStepTitle(
                     "personalInformation"
@@ -626,57 +712,115 @@ class RegistrationFormWithSteps {
                 ...validatedAcademicDetails,
                 userTypeID: academicInformation.type,
             };
+
             let requestBody = {
                 ...validatedPersonalInformationInputs,
                 ...validatedAcademicDetails,
             };
 
-            console.log(requestBody);
-            let token = document
-                .querySelector('meta[name="csrf-token"]')
-                .getAttribute("content");
+            const {
+                firstname,
+                lastname,
+                email,
+                password,
+                country,
+                dob,
+                gender,
+                userTypeID,
+            } = requestBody;
 
-            return fetch("http://127.0.0.1:8000/register-new-user", {
-                    method: "POST",
-                    credentials: "same-origin",
-                    headers: {
-                        "Content-type": "application/json",
-                        Accept: "application/json, text-plain, */*",
-                        "X-Requested-With": "XMLHttpRequest",
-                        "X-CSRF-TOKEN": token,
-                    },
-                    body: JSON.stringify(requestBody),
-                })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                    //Remove all the error messages from registration form
-                    RegistrationFormUIEvent.removeAllErrorMessages(
-                        "error-message"
+            const URL = "http://127.0.0.1:8000/registration";
+            let form_data = new FormData(); //this.registrationForm
+            var file = $("#profile-image")[0].files[0];
+            var imageType = /image. */;
+            if (!file.type.match(imageType)) return;
+
+            //Personal Information
+            form_data.append("firstname", firstname);
+            form_data.append("lastname", lastname);
+            form_data.append("email", email);
+            form_data.append("password", password);
+            form_data.append("country", country);
+            form_data.append("dob", dob);
+            form_data.append("gender", gender);
+            form_data.append("userType", userTypeID);
+            form_data.append("profileImage", file);
+
+            if (userTypeID == "student") {
+                form_data.append("studentNumber", requestBody.studentnumber);
+                form_data.append("degreeType", requestBody.degreetype);
+                form_data.append(
+                    "isGraduated",
+                    requestBody.isgraduated == "notGraduated" ? false : true
+                );
+                form_data.append("graduationDate", requestBody.graduationdate);
+            } else if (userTypeID == "staff") {
+                form_data.append(
+                    "isRetired",
+                    requestBody.isretired == "notRetired" ? false : true
+                );
+                form_data.append("retirementDate", requestBody.retirementdate);
+                form_data.append("staffType", requestBody.stafftype);
+            }
+
+            return $.ajax({
+                url: URL,
+                cache: false,
+                contentType: false,
+                crossDomain: true,
+                processData: false,
+                data: form_data,
+                type: "POST",
+                success: function (response) {
+                    //Clear local storage after sending data to server side and receiving success response.
+                    self.FormSteps.steps.map((step) =>
+                        LocalRepository.removeRepositoryByID(step.stepTitle)
                     );
 
-                    //Clear local storage before send the data to server side
-                    // this.FormSteps.steps.map((step) =>
-                    //     LocalRepository.removeRepositoryByID(step.stepTitle)
-                    // );
-                })
-                .catch((err) => console.log(err));
+                    startConfetti();
+                    setTimeout(() => {
+                        stopConfetti();
+                    }, 3000);
+
+                    return Swal.fire({
+                        icon: "success",
+                        title: "Congratulations!",
+                        text: response.response.message,
+                    });
+                },
+                error: function (error) {
+                    if (
+                        error.responseJSON &&
+                        error.responseJSON.errors &&
+                        error.responseJSON.errors.error
+                    ) {
+                        return Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            html: error.responseJSON.errors.error.map(
+                                (errorMessage) =>
+                                    `<p style="font-weight:bold;">${errorMessage}</p>`
+                            ),
+                        });
+                    }
+
+                    console.log(error);
+                },
+            });
         }
     }
 
     runOnLoad() {
         let [personalInformationFormData, ademicInformationFormData] =
-        this.fetchFromLocalStorageOnLoad();
+            this.fetchFromLocalStorageOnLoad();
         const currentStep = this.FormSteps.getCurrentStep();
         const currentStepNumber = this.FormSteps.currentStepNumber;
         const stepsSize = this.FormSteps.steps.length;
-
         RegistrationFormUIEvent.addStepCountNumberToStep({
             size: stepsSize,
             currentStepNumber: currentStepNumber,
             id: currentStep.selector.id,
         });
-
         const isThereAnyPersonalInformationFormData =
             Object.keys(personalInformationFormData).length > 0;
         const isThereAnyAcademicInformationFormData =
@@ -705,16 +849,16 @@ class RegistrationFormWithSteps {
 
     selectUserTypeOnClick(input) {
         const self = this;
-        input.addEventListener("click", function(e) {
+        input.addEventListener("click", function (e) {
             let currentStep = self.FormSteps.getCurrentStep();
             const staffInputs = document.querySelector("#staff-status");
             const studentInputs = document.querySelector("#student-status");
             if (input.id == "staff") {
                 const updatedUserType = currentStep.userType.map((type) => {
                     if (type.type == "staff")
-                        return (type = {...type, selected: true });
+                        return (type = { ...type, selected: true });
                     if (type.type === "student")
-                        return (type = {...type, selected: false });
+                        return (type = { ...type, selected: false });
                 });
 
                 if (!staffInputs.classList.contains("activated")) {
@@ -729,9 +873,9 @@ class RegistrationFormWithSteps {
             } else if (input.id === "student") {
                 const updatedUserType = currentStep.userType.map((type) => {
                     if (type.type == "student")
-                        return (type = {...type, selected: true });
+                        return (type = { ...type, selected: true });
                     if (type.type === "staff")
-                        return (type = {...type, selected: false });
+                        return (type = { ...type, selected: false });
                 });
 
                 if (!studentInputs.classList.contains("activated")) {
@@ -778,15 +922,15 @@ class RegistrationFormWithSteps {
             VALIDATIONS.Array.isObjectsOfArray(array) &&
             array.some(
                 (obj) =>
-                keysRequiredForStep.some((key) =>
-                    Object.keys(obj).includes(key)
-                ) &&
-                VALIDATIONS.Array.isObjectsOfArray(obj["inputs"]) &&
-                keysRequiredForInputs.some((k) =>
-                    obj["inputs"].some((item) =>
-                        Object.keys(item).includes(k)
+                    keysRequiredForStep.some((key) =>
+                        Object.keys(obj).includes(key)
+                    ) &&
+                    VALIDATIONS.Array.isObjectsOfArray(obj["inputs"]) &&
+                    keysRequiredForInputs.some((k) =>
+                        obj["inputs"].some((item) =>
+                            Object.keys(item).includes(k)
+                        )
                     )
-                )
             )
         );
     }
@@ -806,11 +950,13 @@ class RegistrationFormWithSteps {
     }
 }
 
-const STEPS = [{
+const STEPS = [
+    {
         stepTitle: "personalInformation",
         selector: document.querySelector("#step-1"),
         isLastStep: false,
-        inputs: [{
+        inputs: [
+            {
                 label: "firstname",
                 input: document.querySelector("input[name='firstname']"),
             },
@@ -847,10 +993,12 @@ const STEPS = [{
         stepTitle: "academicInformation",
         selector: document.querySelector("#step-2"),
         isLastStep: false,
-        userType: [{
+        userType: [
+            {
                 selected: false,
                 type: "staff",
-                assoicatedInputs: [{
+                assoicatedInputs: [
+                    {
                         label: "isRetired",
                         input: document.querySelector(
                             "select[name='staff-status']"
@@ -874,7 +1022,8 @@ const STEPS = [{
             {
                 selected: true,
                 type: "student",
-                assoicatedInputs: [{
+                assoicatedInputs: [
+                    {
                         label: "isGraduated",
                         input: document.querySelector(
                             "select[name='student-status']"
@@ -902,7 +1051,8 @@ const STEPS = [{
                 ],
             },
         ],
-        inputs: [{
+        inputs: [
+            {
                 label: "userTypeID",
                 input: Array.from(
                     document.querySelectorAll("input[name='career']")

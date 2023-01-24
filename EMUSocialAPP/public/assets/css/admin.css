@@ -109,11 +109,19 @@
   font-weight: normal;
   font-size: 15px;
 }
-.container .table-container table td.action-btns .edit-btn {
-  color: #1A5CFF;
+
+.container .table-container table td.action-btns button {
+  cursor: pointer;
+  background: none !important;
+  border: none !important;
 }
-.container .table-container table td.action-btns .remove-btn {
-  color: #FF2B2B;
+
+.container .table-container table td.action-btns button.edit-btn {
+  color: #000000;
+}
+
+.container .table-container table td.action-btns button.remove-btn {
+  color: #FF2B2B !important;
   margin-left: 1rem;
 }
 .container .table-container table td.status span {
@@ -207,4 +215,206 @@
 }
 .container .table-container .dataTables_filter label input:focus {
   outline: none !important;
-}/*# sourceMappingURL=admin.css.map */
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start !important;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .profile-image {
+  border: 1px solid #EDF1FD !important;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail {
+  margin-left: .4rem;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail .user-status {
+  font-weight: bold;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.3rem;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 9px !important;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail .user-status.active {
+  background-color: #96F7C3;
+  color: #15B36A;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail .user-status.pending {
+  background-color: #F7D6D9;
+  color: #FF0000;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail h2.user-fullname {
+  color: #1D2129;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail .registration-details {
+  display: flex;
+  align-items: center;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail .registration-details .registration-detail-label {
+  color: #AFAFAF;
+  margin-right: .3rem;
+  font-size: 12px;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .user-detail .registration-details .registration-date {
+  font-size: 15px;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .edit-actions button {
+  border: none !important;
+  font-weight: bold;
+  background: none !important;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .edit-actions button.remove-btn {
+  color: #FF0000;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .edit-actions button.edit-btn {
+  margin-left: .3rem;
+  color: #1D2129;
+}
+
+#edit-user-modal .modal-dialog .modal-content .modal-header .close-btn {
+  margin-left: auto;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content {
+  padding: .4rem;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col .col-title,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col .col-title {
+  margin: 1rem 0;
+  font-weight: bold;
+  color: #1D2129;
+  font-size: 16px;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col label.edit-input-label,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col label.edit-input-label {
+  color: #AFAFAF;
+  display: block;
+  font-size: 12px;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col .perma-data,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col .perma-data {
+  font-size: 12px;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col .edit-content,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col .edit-content {
+  margin: 0 .8rem .5rem 0;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col .edit-content input:disabled,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col .edit-content select:disabled,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col .edit-content input:disabled,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col .edit-content select:disabled {
+  background: none !important;
+  border: none !important;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col .edit-content input,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col .edit-content input {
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid #717F8C;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .edit-modal-col #stateful-user-type,
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col #stateful-user-type {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .edit-modal-row .double-col {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .modal-footer {
+  justify-content: space-between !important;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .modal-footer button.activation-btn {
+  cursor: pointer;
+  padding: .6rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .modal-footer button.activation-btn.activate {
+  border: 1px solid #15B36A;
+  color: #15B36A;
+  background: white;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .modal-footer button.activation-btn.deactivate {
+  border: 1px solid #FF0000;
+  color: #FF0000;
+  background: white;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .modal-footer .btn-save-changes {
+  cursor: pointer;
+  background: #15B36A;
+  color: #FFFFFF;
+  padding: .6rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+#edit-user-modal .modal-dialog .modal-content .main-content form .modal-footer .btn-close {
+  cursor: pointer;
+  background: #FF2B2B;
+  color: #FFFFFF;
+  padding: .6rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 1000px !important;
+  }
+}
+/*# sourceMappingURL=admin.css.map */

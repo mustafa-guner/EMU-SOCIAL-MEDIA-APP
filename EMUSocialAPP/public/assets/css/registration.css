@@ -132,6 +132,11 @@
 .container .registration-form .steps .step .step-content .step-form .step-row.academic-information-status.activated {
   display: grid !important;
 }
+
+.container .registration-form .steps .step .step-content .step-form .step-row.final-step-rows {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
 .container .registration-form .steps .step.show {
   display: flex;
   -webkit-animation: fadeIn 0.2s;

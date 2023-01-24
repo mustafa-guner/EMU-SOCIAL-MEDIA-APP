@@ -39,7 +39,9 @@
                             </div>
                         </div>
                         <div class="desc">
-                            <p>{{ $profile['desc'] }}</p>
+                            @if ($profile['desc'])
+                                <p>{{ $profile['desc'] }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="buttons">
