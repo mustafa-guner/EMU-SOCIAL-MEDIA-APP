@@ -1,7 +1,11 @@
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/EMU_Cyprus.svg/1200px-EMU_Cyprus.svg.png" width="200" height="200">
+  <h1 align="center">Eastern Mediterranean University</h1>
 </p>
-<h1 align="center">Eastern Mediterranean University</h1>
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/70344991/214446296-ebe387e9-23ab-473b-ade1-3ce12756c44e.png" width="350" height="150">
+    <h1 align="center">EMU APP - Cypsoft</h1>
+<p>
 <h1 aling="center"> Introduction </h1>
 <p>Today, using social media has become very popular in society and is also used in 
 higher education. many social media platforms are used for communication and universities 
