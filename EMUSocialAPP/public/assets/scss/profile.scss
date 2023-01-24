@@ -235,7 +235,6 @@ body{
         width: 368px;
         margin-top: 2rem;
     }
-
     .bottom-section{
         margin-top: 2rem;
         display: grid;
@@ -470,11 +469,11 @@ body{
                     }
                 }
             }
-            
             .show-more{
                 padding: 1rem;
                 margin-left: 1rem;
                 font-size: small;
+                text-decoration: underline;
                 a{
                     color: black;
                 }
@@ -660,6 +659,296 @@ body{
                     background: #FFFFFF;
                     color: #2F55AC;
                     border: 2px solid #2F55AC;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .connect-people-container{
+        display: none;
+    }
+    .clubs-for-you-container{
+        display: none;
+    }
+    #main-section{
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding: 0.5rem !important;
+        padding-top: 1rem !important;
+        .profile-container{
+            width: 370px !important;
+            height: 680px !important;
+            .profile-bg-img{
+                height: 270px !important;
+            }
+            .profile-informations{
+                grid-template-columns: 1fr !important;
+                .profile-img{
+                    img{
+                        height: 180px !important;
+                        width: 180px !important;
+                        position: absolute !important;
+                        top: -130px !important;
+                        left: 90px !important; 
+                        // transform: translate(50% 50%);
+                    }
+                }
+            }
+            .infos{
+                margin-left: 0 !important;
+                margin-top: 3rem !important;
+                padding: 0 1rem !important;
+                h1{
+                    font-size: 35px !important;
+                    text-align: center !important;
+                    margin-bottom: 0.5rem !important;
+                }
+                .icons{
+                    display: grid !important;
+                    grid-template-columns: 1.5fr 1.5fr !important;
+                    .contact-number{
+                        justify-content: flex-end !important;
+                        font-size: small !important;
+                        ion-icon{
+                            font-size: medium !important;
+                        }
+                    }
+                    .status{
+                        justify-content: flex-start !important;
+                        font-size: small !important;
+                        ion-icon{
+                            font-size: medium !important;
+                        }
+                    }
+                }
+                .desc{
+                    font-size: small !important;
+                }
+            }
+            .buttons{
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                margin-right: 0 !important;
+                margin-top: 1rem !important;
+                .edit-btn{
+                    position: absolute;
+                    top: -230px !important;
+                    right: 10px !important;
+                }
+                .common-connect{
+                    display: none !important;
+                    }
+                .main-btns{
+                    .chat-btn{
+                        margin-right: 0.5rem !important;
+                    }
+                    .connect-btn{
+                        margin-right: 0 !important;
+                        margin-left: 0.5rem !important;
+                    }
+                }
+            }
+            hr{
+                margin-top: 6rem !important;
+                width: 100% !important;
+            }
+            .profile-sections-navbar{
+                button{
+                    margin: 0.5rem !important;
+                    padding: 0.5rem !important;
+                    font-size: medium !important;
+                }
+            }
+        }
+        .bottom-section{
+            margin-top: 1rem !important;
+            grid-template-columns: 1fr !important;
+            grid-gap: 16px !important;
+            .profile-section-container{
+                width: 370px !important;
+                .profile-section-header{
+                    margin-left: 0 !important;
+                    font-size: small !important;
+                }
+                .profile-section-clubs-content{
+                    .join-club{
+                        padding: 0 0.5rem !important;
+                        grid-template-columns: 0.2fr 1.8fr 0.8fr !important;
+                        .club-img{
+                            margin: 0 !important;
+                            height: 50px !important;
+                            width: 50px !important;
+                        }
+                        .name-container-club{
+                            padding: 0.5rem !important;
+                            .name{
+                                font-size: small !important;
+
+                            }
+                            .members{
+                                font-size: 12px !important;
+                            }
+                        }
+                        .join-now-btn{
+                            height: 30px !important;
+                            width: 65px !important;
+                            font-size: 12px !important;
+                            border-radius: 8px !important;
+                        }
+                    }
+                }
+                .profile-section-friends-content{
+                    .connect-person{
+                        padding: 0.8rem 0.5rem !important;
+                        grid-template-columns: 0.1fr 1fr 0.5fr !important;
+                        .profile-img{
+                            margin: 0 !important;
+                            height: 50px !important;
+                            width: 50px !important;
+                            border-radius: 100%;
+                        }
+                        .name-container-people{
+                            .name{
+                                font-size: small !important;
+
+                            }
+                            .username{
+                                font-size: 12px !important;
+                            }
+                        }
+                        .person-status{
+                            display: none;
+                        }
+                        .btns{
+                            .chat-btn{
+                                height: 25px !important;
+                                width: 35px !important;
+                                font-size: small !important;
+                                border: none;
+                                border-radius: 8px !important;
+                            }
+                            .connet-btn{
+                                height: 25px !important;
+                                width: 55px !important;
+                                font-size: 10px !important;
+                                border-radius: 8px !important;
+
+                            }
+                        }
+                    }
+                }
+            }
+            .bottom-right-section{
+                width: 370px !important;
+                .new-post-container{
+                    width: 370px !important;
+                    height: 167px !important;
+                    margin-bottom: 1rem !important;
+                    .new-post-header{
+                        margin-left: 0 !important;
+                        font-size: 13px !important;
+                    }
+                    .new-post-input-container{
+                        margin: 0 auto !important;
+                        justify-content: center !important;
+                        grid-template-columns: 15% 80% !important;
+                        padding: 0 0.5rem !important;
+                        .new-post-profile-img{
+                            display: flex !important;
+                            justify-content: center !important;
+                            margin: 0!important;
+                            width: 50px !important;
+                            height: 50px !important;
+                        }
+                        input {
+                            margin-left: 0.3rem !important;
+                            padding: 0.5rem !important;
+                            font-size: medium !important;
+                            &::placeholder {
+                                color: rgba(0, 0, 0, 0.363);
+                            }
+                        }
+                    }
+                    .new-post-buttons{
+                        margin-top: 0.5rem !important;
+                        margin-right: 1rem !important;
+                        button{
+                            font-size: larger !important;
+                            width: 30px !important;
+                        }
+                    }
+                }
+                .post-container{
+                    width: 370px !important;
+                    margin-bottom: 1rem !important;
+                    .top-part{
+                        button{
+                            top: 20px;
+                            right: 15px;
+                        }
+                    }
+                    .main-content{
+                        display: block !important;
+                        position: relative !important;
+                        margin-top: 1rem !important;
+                        .post-profile-img{
+                            width: 50px !important;
+                            height: 50px !important;
+                        }
+                        .post-content{
+                            .name{
+                                font-size: 19px !important;
+                                position: absolute !important;
+                                top: 0px !important;
+                                left: 75px !important;
+                            }
+                            .description{
+                                font-size: medium !important;
+                                padding: 0 1rem !important;
+                                line-height: 1.5rem !important;
+                                width: 100%;
+                                margin-top: 0 !important;
+                            }
+                        }
+                        .post-time{
+                            height: 100% !important;
+                            padding-top: 0 !important;
+                            margin-right: 0 !important;
+                            position: absolute !important;
+                            font-size: small !important;
+                            top: 28px !important;
+                            left: 75px !important;
+                        }
+                    }
+                    .likes-and-comments{
+                        margin-right: 1rem !important;
+                        margin-top: 1rem !important;
+                        .likes{
+                            font-size: 13px !important;
+                            margin-right: 0.5rem !important;
+                        }
+                        .comments{
+                            font-size: 13px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Edit Profile Modal
+    .modal-edit-profile{
+        .desc-section{
+            .content{
+                .desc-textarea{
+                    textarea{
+                        width: 300px !important;
+                        height: 150px !important;
+                        font-size: 13px !important;
+                    }
                 }
             }
         }

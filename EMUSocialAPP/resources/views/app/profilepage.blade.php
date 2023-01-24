@@ -59,11 +59,11 @@
                             <a href="">{{ count($profile['commonconnects']) }} common connect</a>
                         </div>
                         <div class="main-btns">
-                            <button>
+                            <button class="chat-btn">
                                 <ion-icon name="mail-outline"></ion-icon>
                                 <p>Chat</p>
                             </button>
-                            <button>
+                            <button class="connect-btn">
                                 <ion-icon name="link"></ion-icon>
                                 <p>Connect</p>
                             </button>

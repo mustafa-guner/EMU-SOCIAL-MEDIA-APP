@@ -699,11 +699,12 @@ body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:
   }
   .grid-middle {
     padding: 0 0.5rem;
-    margin-top: 32px;
+    margin-top: 1rem !important;
     width: 100% !important;
   }
   .grid-middle .new-post-container {
     height: 100% !important;
+    margin-bottom: 1rem !important;
   }
   .grid-middle .new-post-container .new-post-header {
     margin-left: 0 !important;
@@ -723,6 +724,7 @@ body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:
     height: 50px !important;
   }
   .grid-middle .new-post-container .new-post-input-container input {
+    margin-left: 0.3rem !important;
     padding: 0.5rem !important;
     font-size: medium !important;
   }
@@ -742,6 +744,9 @@ body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:
   .grid-middle .new-post-container .new-post-buttons button {
     font-size: larger !important;
     width: 30px !important;
+  }
+  .grid-middle .post-container {
+    margin-bottom: 1rem !important;
   }
   .grid-middle .post-container .top-part button {
     top: 20px;
@@ -788,6 +793,9 @@ body .clubs-for-you-container .private-clubs-container .join-club .join-now-btn:
   }
   .grid-middle .post-container .likes-and-comments .comments {
     font-size: 13px !important;
+  }
+  .grid-middle .club-post-container {
+    margin-bottom: 1rem !important;
   }
   .grid-middle .club-post-container .top-part button {
     top: 20px;

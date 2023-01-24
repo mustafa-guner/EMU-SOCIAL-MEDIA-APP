@@ -131,7 +131,6 @@ body {
                                 color: #2E7CE8;
                                 ion-icon{
                                     align-self: center;
-    
                                 }
                             }
                         }
@@ -219,7 +218,7 @@ body {
                     border-bottom: 1px solid rgba(0, 0, 0, 0.137);
                     .person-container{
                         display: grid;
-                        grid-template-columns: 0fr 0.5fr 2.8fr 0.5fr 0.1fr;
+                        grid-template-columns: 0fr 0.5fr 2.8fr 0.5fr;
                         align-items: center;
                         cursor: pointer;
                         input{
@@ -261,12 +260,12 @@ body {
                             align-self: center;
                             font-size: small;
                         }
-                        ion-icon{
-                            justify-self: center;
-                            align-self: center;
-                            color: #2E7CE8;
-                            font-size: 13px;
-                        }
+                        // ion-icon{
+                        //     justify-self: center;
+                        //     align-self: center;
+                        //     color: #2E7CE8;
+                        //     font-size: 13px;
+                        // }
                     }
                 }
                 .chat-people-seen{
@@ -275,7 +274,7 @@ body {
                     border-bottom: 1px solid rgba(0, 0, 0, 0.137);
                     .person-container{
                         display: grid;
-                        grid-template-columns: 0fr 0.5fr 2.8fr 0.5fr 0.1fr;
+                        grid-template-columns: 0fr 0.5fr 2.8fr 0.5fr;
                         align-items: center;
                         cursor: pointer;
                         input{
@@ -321,4 +320,130 @@ body {
             }
         }
     } 
+}
+
+
+@media screen and (max-width: 860px) {
+    .main-container{
+        display: block !important;
+        .left-section{
+            margin-top: 0.5rem !important;
+            padding: 0.5rem !important;
+            .page-header{
+                display: none;
+            }
+            .left-section-container{
+                width: 100% !important;
+                min-height: 100% !important;
+                max-height: 100% !important;
+                .chat-container{
+                    .chat-people-top{
+                        padding: 0.5rem 0.5rem !important;
+                        h4{
+                            font-size: 25px !important;
+                        }
+                    }
+                    .chat-people-mid{
+                        .chat-area-container{
+                            padding: 0 0.3rem !important;
+                            .sent-message{
+                                margin-bottom: 0.5rem !important;
+                            }
+                            .income-message{
+                                margin-bottom: 0.5rem !important;
+
+                            }
+                        }
+                    }
+                    .char-people-bot{
+                        .chat-textarea-section{
+                            padding: 1rem !important;
+                            textarea{
+                                padding: 0.3rem !important;
+                            }
+                            button{
+                                font-size: 30px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right-section{
+            padding: 0.5rem !important;
+            .page-header{
+                display: none;
+            }
+            .right-section-container{
+                width: 100% !important;
+                min-height: 100% !important;
+                max-height: 100% !important;
+                .chats-header-section{
+                    padding: 0 1rem;
+                    display: grid !important;
+                    grid-template-columns: 1fr 0.3fr !important;
+                    align-items: center;
+                    .total-chat-number{
+                        position: relative !important;
+                        top: 0 !important;
+                        right: 0 !important;
+                        width: 100% !important;
+                        padding: 1.5rem 0 1rem 0 !important;
+                        text-align: center !important;
+                        font-size: small !important;
+                    }
+                    .title-input{
+                        input{
+                            width: 100% !important;
+                            font-size: 18px !important;
+                        }
+                    }
+                }
+                .chats-selection-section{
+                    padding: 0 0.5rem 0.8rem 0.5rem !important;
+                    .remove-chats-btn{
+                        width: 80px !important;
+                    }
+                }
+                .chat-people{
+                    padding: 0 0.5rem !important;
+                    .person-container{
+                        .profile-img {
+                            margin: 0 0.3rem !important;
+                            height: 50px !important;
+                            width: 50px !important;
+                        }
+                        .name-container-people {
+                            .chat-desc {
+                                font-size: 12px !important;
+                            }
+                        }
+                        .chat-date{
+                            align-self: center !important;
+                            text-align: center !important;
+                        }
+                    }
+                }
+                .chat-people-seen{
+                    padding: 0 0.5rem !important;
+                    .person-container{
+                        .profile-img {
+                            margin: 0 0.3rem !important;
+                            height: 50px !important;
+                            width: 50px !important;
+                        }
+                        .name-container-people {
+                            .chat-desc {
+                                font-size: 12px !important;
+                            }
+                        }
+                        .chat-date{
+                            align-self: center !important;
+                            text-align: center !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

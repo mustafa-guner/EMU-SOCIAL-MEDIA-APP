@@ -55,10 +55,10 @@
             <div class="right-section-container">
                 <form action="">
                     <div class="chats-header-section">
-                        <p class="total-chat-number">Total 12 Chats</p>
                         <div class="title-input">
                             <input id="title" type="text" placeholder="Search among your friends...">
                         </div>
+                        <p class="total-chat-number">Total 12 Chats</p>
                     </div>
                     <div class="chats-selection-section">
                         <div class="select-all-checkbox">
@@ -77,8 +77,7 @@
                                 <h4 class="name"><a href="">John Doe</a></h4>
                                 <p class="chat-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis officia provident natus ducimus...</p>
                             </div>
-                            <p class="chat-date">5 hours ago</p>
-                            <ion-icon name="ellipse"></ion-icon>
+                            <p class="chat-date">5h ago</p>
                         </div>
                     </div>
                     <div class="chat-people-seen">
@@ -91,7 +90,7 @@
                                 <h4 class="name"><a href="">John Doe</a></h4>
                                 <p class="chat-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis officia provident natus ducimus...</p>
                             </div>
-                            <p class="chat-date">5 hours ago</p>
+                            <p class="chat-date">5h ago</p>
                         </div>
                     </div>
                     <div class="chat-people">
@@ -104,8 +103,7 @@
                                 <h4 class="name"><a href="">John Doe</a></h4>
                                 <p class="chat-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis officia provident natus ducimus...</p>
                             </div>
-                            <p class="chat-date">5 hours ago</p>
-                            <ion-icon name="ellipse"></ion-icon>
+                            <p class="chat-date">5h ago</p>
                         </div>
                     </div>
                     <div class="chat-people-seen">
@@ -118,7 +116,7 @@
                                 <h4 class="name"><a href="">John Doe</a></h4>
                                 <p class="chat-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis officia provident natus ducimus...</p>
                             </div>
-                            <p class="chat-date">5 hours ago</p>
+                            <p class="chat-date">5h ago</p>
                         </div>
                     </div>
                     <div class="chat-people">
@@ -131,36 +129,7 @@
                                 <h4 class="name"><a href="">John Doe</a></h4>
                                 <p class="chat-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis officia provident natus ducimus...</p>
                             </div>
-                            <p class="chat-date">5 hours ago</p>
-                            <ion-icon name="ellipse"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="chat-people">
-                        <div class="person-container">
-                            <input type="checkbox">
-                            <div class="profile-img">
-                                <img src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=170667a&w=0&k=20&c=MRMqc79PuLmQfxJ99fTfGqHL07EDHqHLWg0Tb4rPXQc=" alt="profile-img">
-                            </div>
-                            <div class="name-container-people">
-                                <h4 class="name"><a href="">John Doe</a></h4>
-                                <p class="chat-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis officia provident natus ducimus...</p>
-                            </div>
-                            <p class="chat-date">5 hours ago</p>
-                            <ion-icon name="ellipse"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="chat-people">
-                        <div class="person-container">
-                            <input type="checkbox">
-                            <div class="profile-img">
-                                <img src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=170667a&w=0&k=20&c=MRMqc79PuLmQfxJ99fTfGqHL07EDHqHLWg0Tb4rPXQc=" alt="profile-img">
-                            </div>
-                            <div class="name-container-people">
-                                <h4 class="name"><a href="">John Doe</a></h4>
-                                <p class="chat-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis officia provident natus ducimus...</p>
-                            </div>
-                            <p class="chat-date">5 hours ago</p>
-                            <ion-icon name="ellipse"></ion-icon>
+                            <p class="chat-date">5h ago</p>
                         </div>
                     </div>
                 </form>

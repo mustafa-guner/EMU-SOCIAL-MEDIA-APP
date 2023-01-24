@@ -683,10 +683,11 @@ body {
     }
     .grid-middle{
         padding: 0 0.5rem;
-        margin-top: 32px;
+        margin-top: 1rem !important;
         width: 100% !important;
         .new-post-container{
             height: 100% !important;
+            margin-bottom: 1rem !important;
             .new-post-header{
                 margin-left: 0 !important;
                 font-size: 13px !important;
@@ -704,6 +705,7 @@ body {
                     height: 50px !important;
                 }
                 input {
+                    margin-left: 0.3rem !important;
                     padding: 0.5rem !important;
                     font-size: medium !important;
                     &::placeholder {
@@ -721,6 +723,7 @@ body {
             }
         }
         .post-container{
+            margin-bottom: 1rem !important;
             .top-part{
                 button{
                     top: 20px;
@@ -773,6 +776,7 @@ body {
             }
         }
         .club-post-container{
+            margin-bottom: 1rem !important;
             .top-part{
                 button{
                     top: 20px;

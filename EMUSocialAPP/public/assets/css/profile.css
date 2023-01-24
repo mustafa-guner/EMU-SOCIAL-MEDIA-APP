@@ -478,6 +478,7 @@ body {
   padding: 1rem;
   margin-left: 1rem;
   font-size: small;
+  text-decoration: underline;
 }
 #main-section .bottom-section .profile-section-container .show-more a {
   color: black;
@@ -657,4 +658,268 @@ body {
   background: #FFFFFF;
   color: #2F55AC;
   border: 2px solid #2F55AC;
+}
+
+@media screen and (max-width: 860px) {
+  .connect-people-container {
+    display: none;
+  }
+  .clubs-for-you-container {
+    display: none;
+  }
+  #main-section {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    padding: 0.5rem !important;
+    padding-top: 1rem !important;
+  }
+  #main-section .profile-container {
+    width: 370px !important;
+    height: 680px !important;
+  }
+  #main-section .profile-container .profile-bg-img {
+    height: 270px !important;
+  }
+  #main-section .profile-container .profile-informations {
+    grid-template-columns: 1fr !important;
+  }
+  #main-section .profile-container .profile-informations .profile-img img {
+    height: 180px !important;
+    width: 180px !important;
+    position: absolute !important;
+    top: -130px !important;
+    left: 90px !important;
+  }
+  #main-section .profile-container .infos {
+    margin-left: 0 !important;
+    margin-top: 3rem !important;
+    padding: 0 1rem !important;
+  }
+  #main-section .profile-container .infos h1 {
+    font-size: 35px !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+  #main-section .profile-container .infos .icons {
+    display: grid !important;
+    grid-template-columns: 1.5fr 1.5fr !important;
+  }
+  #main-section .profile-container .infos .icons .contact-number {
+    justify-content: flex-end !important;
+    font-size: small !important;
+  }
+  #main-section .profile-container .infos .icons .contact-number ion-icon {
+    font-size: medium !important;
+  }
+  #main-section .profile-container .infos .icons .status {
+    justify-content: flex-start !important;
+    font-size: small !important;
+  }
+  #main-section .profile-container .infos .icons .status ion-icon {
+    font-size: medium !important;
+  }
+  #main-section .profile-container .infos .desc {
+    font-size: small !important;
+  }
+  #main-section .profile-container .buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-right: 0 !important;
+    margin-top: 1rem !important;
+  }
+  #main-section .profile-container .buttons .edit-btn {
+    position: absolute;
+    top: -230px !important;
+    right: 10px !important;
+  }
+  #main-section .profile-container .buttons .common-connect {
+    display: none !important;
+  }
+  #main-section .profile-container .buttons .main-btns .chat-btn {
+    margin-right: 0.5rem !important;
+  }
+  #main-section .profile-container .buttons .main-btns .connect-btn {
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
+  }
+  #main-section .profile-container hr {
+    margin-top: 6rem !important;
+    width: 100% !important;
+  }
+  #main-section .profile-container .profile-sections-navbar button {
+    margin: 0.5rem !important;
+    padding: 0.5rem !important;
+    font-size: medium !important;
+  }
+  #main-section .bottom-section {
+    margin-top: 1rem !important;
+    grid-template-columns: 1fr !important;
+    grid-gap: 16px !important;
+  }
+  #main-section .bottom-section .profile-section-container {
+    width: 370px !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-header {
+    margin-left: 0 !important;
+    font-size: small !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club {
+    padding: 0 0.5rem !important;
+    grid-template-columns: 0.2fr 1.8fr 0.8fr !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .club-img {
+    margin: 0 !important;
+    height: 50px !important;
+    width: 50px !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club {
+    padding: 0.5rem !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .name {
+    font-size: small !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .name-container-club .members {
+    font-size: 12px !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-clubs-content .join-club .join-now-btn {
+    height: 30px !important;
+    width: 65px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person {
+    padding: 0.8rem 0.5rem !important;
+    grid-template-columns: 0.1fr 1fr 0.5fr !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .profile-img {
+    margin: 0 !important;
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 100%;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people .name {
+    font-size: small !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .name-container-people .username {
+    font-size: 12px !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .person-status {
+    display: none;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .chat-btn {
+    height: 25px !important;
+    width: 35px !important;
+    font-size: small !important;
+    border: none;
+    border-radius: 8px !important;
+  }
+  #main-section .bottom-section .profile-section-container .profile-section-friends-content .connect-person .btns .connet-btn {
+    height: 25px !important;
+    width: 55px !important;
+    font-size: 10px !important;
+    border-radius: 8px !important;
+  }
+  #main-section .bottom-section .bottom-right-section {
+    width: 370px !important;
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container {
+    width: 370px !important;
+    height: 167px !important;
+    margin-bottom: 1rem !important;
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-header {
+    margin-left: 0 !important;
+    font-size: 13px !important;
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-input-container {
+    margin: 0 auto !important;
+    justify-content: center !important;
+    grid-template-columns: 15% 80% !important;
+    padding: 0 0.5rem !important;
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-input-container .new-post-profile-img {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-input-container input {
+    margin-left: 0.3rem !important;
+    padding: 0.5rem !important;
+    font-size: medium !important;
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-input-container input::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.363);
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-input-container input:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.363);
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-input-container input::placeholder {
+    color: rgba(0, 0, 0, 0.363);
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-buttons {
+    margin-top: 0.5rem !important;
+    margin-right: 1rem !important;
+  }
+  #main-section .bottom-section .bottom-right-section .new-post-container .new-post-buttons button {
+    font-size: larger !important;
+    width: 30px !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container {
+    width: 370px !important;
+    margin-bottom: 1rem !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .top-part button {
+    top: 20px;
+    right: 15px;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .main-content {
+    display: block !important;
+    position: relative !important;
+    margin-top: 1rem !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .main-content .post-profile-img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .main-content .post-content .name {
+    font-size: 19px !important;
+    position: absolute !important;
+    top: 0px !important;
+    left: 75px !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .main-content .post-content .description {
+    font-size: medium !important;
+    padding: 0 1rem !important;
+    line-height: 1.5rem !important;
+    width: 100%;
+    margin-top: 0 !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .main-content .post-time {
+    height: 100% !important;
+    padding-top: 0 !important;
+    margin-right: 0 !important;
+    position: absolute !important;
+    font-size: small !important;
+    top: 28px !important;
+    left: 75px !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .likes-and-comments {
+    margin-right: 1rem !important;
+    margin-top: 1rem !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .likes-and-comments .likes {
+    font-size: 13px !important;
+    margin-right: 0.5rem !important;
+  }
+  #main-section .bottom-section .bottom-right-section .post-container .likes-and-comments .comments {
+    font-size: 13px !important;
+  }
+  .modal-edit-profile .desc-section .content .desc-textarea textarea {
+    width: 300px !important;
+    height: 150px !important;
+    font-size: 13px !important;
+  }
 }/*# sourceMappingURL=profile.css.map */
