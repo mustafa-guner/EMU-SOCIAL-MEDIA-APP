@@ -55,6 +55,9 @@ const userSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
+
+    activatedById: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    activatedAt: Date,
     country: {
         type: String,
         required: [true, "Please select your country"],
