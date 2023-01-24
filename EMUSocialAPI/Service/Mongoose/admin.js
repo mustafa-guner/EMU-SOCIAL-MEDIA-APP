@@ -1,5 +1,6 @@
 const User = require("../../Models/Mongoose/User");
 const Staff = require("../../Models/Mongoose/Staff");
+const Profile = require("../../Models/Mongoose/Profile");
 const Student = require("../../Models/Mongoose/Student");
 const CustomError = require("../../Helpers/CustomError");
 const { options, cloudinary } = require("../../Config/cloudinaryConfig");
@@ -140,13 +141,16 @@ module.exports = {
     },
     removeUser: async(req) => {
         const user = await getUserByID(req.params.id);
+        if (req.params.id == req.user.id)
+            throw new CustomError("You are not allowed to remove yourself.", 400);
 
         if (user.userType == "student")
-            await Student.findOneAndRemove({ userId: user.id });
+            await Student.findOneAndRemove({ userId: req.params.id });
 
         if (user.userType == "staff")
-            await Staff.findOneAndRemove({ userId: user.id });
+            await Staff.findOneAndRemove({ userId: req.params.id });
 
+        await Profile.findOneAndRemove({ userId: req.params.id });
         await User.findByIdAndDelete(req.params.id);
         return { success: true, message: `${user.email} is removed.` };
     },
