@@ -17,6 +17,78 @@ async function getUserByID(id) {
     openEditModal(id, user);
 }
 
+function openRemoveSwall(userId, refreshPage) {
+    const swallModal = Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+    }).then(async(result) => {
+        if (result.isConfirmed) {
+            const response = await removeUserByID(userId);
+            return new Promise((resolve, reject) => {
+                if (response.success) {
+                    return resolve(response.success);
+                } else {
+                    return reject(response.error);
+                }
+            });
+        } else return false;
+    });
+
+    if (refreshPage) {
+        return swallModal.then(() => {
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "User has been deleted.",
+                showConfirmButton: false,
+                timer: 1500,
+            }).then(
+                () => (window.location = `http://127.0.0.1:8000/admin/accounts`)
+            );
+        });
+    } else {
+        return swallModal
+            .then((isRemoveEventFired) =>
+                isRemoveEventFired ?
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "User has been deleted.",
+                    showConfirmButton: false,
+                    timer: 1500,
+                }).then(
+                    () =>
+                    (window.location = `http://127.0.0.1:8000/admin/accounts`)
+                ) :
+                ""
+            )
+
+        .catch((err) =>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                html: err.map(
+                    (errorMessage) =>
+                    `<p style="font-weight:bold;">${errorMessage}</p>`
+                ),
+            })
+        );
+    }
+}
+
+async function removeUserByID(id) {
+    const removeUserResponse = await fetch(
+        `http://127.0.0.1:8000/api/admin/remove-user/${id}`, { method: "DELETE" }
+    );
+    const data = await removeUserResponse.json();
+    return data;
+}
+
 async function getStudentByUserID(userID) {
     const studentAPIResponse = await fetch(
         `http://127.0.0.1:8000/api/admin/students/${userID}`
@@ -70,8 +142,12 @@ function openEditModal(id, user) {
             <div id="user-register-date" class="registration-date">${registrationDate}</div>
         </div>
         <div class="edit-actions">
-            <button class="remove-btn">Remove</button>
-            <button id="edit-${user._id}" class="edit-btn">Edit</button>
+            <button type="button" id="remove-${
+                user._id
+            }" class="remove-btn">Remove</button>
+            <button type="button" id="edit-${
+                user._id
+            }" class="edit-btn">Edit</button>
         </div>
     </div>
     <div class="close-btn">
@@ -218,7 +294,12 @@ function openEditModal(id, user) {
         `#edit-${user._id}`
     );
 
+    const removeUserBtn = currentUserEditModalContent.querySelector(
+        `#remove-${user._id}`
+    );
+    removeUserBtn.addEventListener("click", () => openRemoveSwall(id, true));
     editUserBtn.addEventListener("click", toggleEditFields);
+
     const enableFormFields = (formElementTypes) => {
         return formElementTypes.forEach((elementType) => {
             const allInputs =
@@ -252,7 +333,6 @@ function openEditModal(id, user) {
 
     const toggleActivationButton = document.querySelector("#activation");
     toggleActivationButton.addEventListener("click", function () {
-        console.log(this);
         if (
             this.innerText == "Activate" &&
             this.classList.contains("activate")
@@ -520,6 +600,9 @@ function getAssociatedUserTypeFields(user, userType, statefulUserType) {
             <option value="retired" ${
                 user.isRetired ? "selected" : ""
             }>Retired</option>
+
+
+
             <option value="notRetired" ${
                 !user.isRetired ? "selected" : ""
             }>Not Retired</option>

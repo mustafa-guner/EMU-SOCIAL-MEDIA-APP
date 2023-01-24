@@ -131,7 +131,8 @@
 
                             <!--Actions-->
                             <td class="action-btns">
-                                <button class="remove-btn btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <button id="removeUserBtn" onclick="openRemoveSwall('{{ $user->_id }}',false);"
+                                    class="remove-btn btn"><i class="fa fa-times" aria-hidden="true"></i></button>
                                 <button id="user-edit-btn-{{ $user->_id }}" data-target="#edit-user-modal"
                                     data-toggle="modal" onclick="getUserByID('{{ $user->_id }}');" type="button"
                                     class="edit-btn btn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
