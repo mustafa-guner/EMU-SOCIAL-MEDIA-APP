@@ -26,6 +26,6 @@ In addition, there will be fast communication and a smooth connection environmen
 of emergency or aid campaigns.
 The application will be a free and efficient tool for the IT department to communicate 
 information and resources and for students to access information.
-<h2 aling="center"> Porpose </h2>
+<h2 aling="center"> Purpose </h2>
 The purpose of the social media app for the IT department of Emu University is to improve communication and collaboration among students, staff, and faculty by providing a centralized platform for sharing information, discussing class material, and collaborating on projects. Additionally, the app aims to increase student engagement by creating a sense of community among students and keeping them informed about events, opportunities, and resources within the IT department. The app also aims to enhance recruitment and outreach efforts by reaching out to prospective students and promoting programs and resources to a wider audience. The app will provide a cost-effective and efficient way for the IT department to disseminate information and resources, and for students to access information. Overall, the purpose of the app is to improve communication and collaboration within the IT department and the university community and to provide a platform for students and the IT department to engage in meaningful ways.
 </p>
