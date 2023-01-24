@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{{asset('assets/css/login.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
 </head>
+
 <body>
     <div class="container">
         <div class="form-container">
             <div class="top">
                 <div class="logo">
-                    <img src="{{asset('assets/images/Emu-dau-logo.png')}}" alt="">
+                    <img src="{{ asset('assets/images/Emu-dau-logo.png') }}" alt="">
                 </div>
                 <div class="header">
                     <h2>EMUBOOK</h2>
                 </div>
             </div>
             <div class="login-form">
-                <form action="">
+                <form action="/login" method="POST">
+                    {{ csrf_field() }}
                     <div class="stdno-container">
-                        <label class="stdno-lbl" for="stdno-input">Student No / E-mail</label>
-                        <input type="text" id="stdno-input" name="stdno" placeholder="Enter std number or e-mail">
-                        <p class="error-message">Email address or student number is required*</p>
+                        <label class="stdno-lbl" for="email-input">E-mail</label>
+                        <input type="email" id="stdno-input" name="email" placeholder="Enter e-mail">
+
+
                     </div>
                     <div class="passwrd-container">
                         <label class="passwrd-lbl" for="passwrd-input">Password</label>
-                        <input type="password" id="passwrd-input" name="passwrd" placeholder="Enter Password">
-                        <p class="error-message">Password is required*</p>
+                        <input type="password" id="passwrd-input" name="password" placeholder="Enter Password">
+
                     </div>
                     <div class="remember-me-check">
                         <input type="checkbox" id="remember-me-input" name="remember-me" value="remember-me">
@@ -42,13 +46,23 @@
                             <a href="/registration">Don't have account? Register here.</a>
                         </div>
                     </div>
-                    <div class="recaptcha"><p>Google ReCaptcha</p></div>
+                    <div class="recaptcha">
+                        <p>Google ReCaptcha</p>
+                    </div>
+
+                    @if (count($errors) > 0)
+                        @foreach ($errors as $error)
+                            <p class="error-message">{{ $error }}</p>
+                        @endforeach
+                    @endif
+
                     <div class="login-btn">
-                        <a href="/home"><button type="button">Login</button></a>
+                        <button type="submit">Login</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </body>
+
 </html>

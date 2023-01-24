@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: [true, "Firstname is required."],
+        required: [true, "Email is required."],
         unique: [true, "Email should be unique"],
         index: true,
     },
@@ -21,10 +21,13 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, "Firstname is required."],
+        required: [true, "Password is required."],
         select: false,
     },
-
+    dob: {
+        type: Date,
+        required: [true, "Please provide your birthdate"],
+    },
     role: {
         type: String,
         enum: ["superadmin", "admin", "user"],
@@ -34,7 +37,11 @@ const userSchema = mongoose.Schema({
         type: String,
         enum: ["student", "staff"],
     },
-
+    gender: {
+        type: String,
+        enum: ["male", "female"],
+        required: [true, "Please select your gender."],
+    },
     isActive: {
         type: Boolean,
         default: false,
@@ -49,10 +56,27 @@ const userSchema = mongoose.Schema({
         ref: "User",
     },
 
+    activatedById: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    activatedAt: Date,
+    country: {
+        type: String,
+        required: [true, "Please select your country"],
+    },
     registeredAt: {
         type: Date,
         default: Date.now(),
     },
 });
+
+// userSchema.pre("save", async function(next) {
+//     try {
+//         if (!this.isModified("password")) return next();
+//         const password = await bcrypt.hash(this.password, 10);
+//         this.password = password;
+//         return next();
+//     } catch (error) {
+//         console.log(error);
+//     }
+// });
 
 module.exports = mongoose.model("User", userSchema);

@@ -6,7 +6,6 @@ module.exports = {
 
         const payload = {
             id: user.id,
-            email: user.id,
         };
         const token = jwt.sign(payload, JWT_SECRET);
 

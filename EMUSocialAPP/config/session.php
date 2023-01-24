@@ -142,7 +142,9 @@ return [
     |
     */
 
-    'path' => '/',
+    // 'path' => '/',
+    'path' => '/;SameSite=None; secure',
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -157,6 +159,7 @@ return [
 
     'domain' => env('SESSION_DOMAIN'),
 
+
     /*
     |--------------------------------------------------------------------------
     | HTTPS Only Cookies
@@ -168,7 +171,8 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    // 'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -196,6 +200,7 @@ return [
     |
     */
 
-    'same_site' => 'lax',
+    // 'same_site' => 'lax',
+    'same_site' => null,
 
 ];
