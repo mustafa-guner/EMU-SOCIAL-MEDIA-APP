@@ -28,4 +28,16 @@ The application will be a free and efficient tool for the IT department to commu
 information and resources and for students to access information.
 <h2 aling="center"> Purpose </h2>
 The purpose of the social media app for the IT department of Emu University is to improve communication and collaboration among students, staff, and faculty by providing a centralized platform for sharing information, discussing class material, and collaborating on projects. Additionally, the app aims to increase student engagement by creating a sense of community among students and keeping them informed about events, opportunities, and resources within the IT department. The app also aims to enhance recruitment and outreach efforts by reaching out to prospective students and promoting programs and resources to a wider audience. The app will provide a cost-effective and efficient way for the IT department to disseminate information and resources, and for students to access information. Overall, the purpose of the app is to improve communication and collaboration within the IT department and the university community and to provide a platform for students and the IT department to engage in meaningful ways.
+<h1 aling="center">Key Project Benefits</h1>
+Key Project Benefits
+The social media app will make it easier for students and teachers to connect and work together, which will boost communication within the university community.
+Increased student involvement: The app will give students a way to connect with faculty, staff, and other students, which will foster a feeling of community and increase participation.
+Information accessibility: The app will give students quick and simple access to crucial data like class schedules, due dates, and events.
+Opportunities for professional growth: By connecting students with alumni and possible employers, the app offers chances for networking and professional development.
+Transparency will be improved thanks to the app, which will give students a forum to voice their opinions on matters pertaining to their universities. This will increase accountability and transparency.
+Better event management: Students will be able to RSVP, track and organize events, lower costs generally, and boost event participation with the help of the app.
+Better student retention: The app can aid in raising retention rates by giving students a sense of belonging and connection to the university.
+Savings on costs: The institution will be able to save money by using the app instead of more conventional communication channels including mailings, flyers, and printed materials.
+Engagement of alumni: The app will give alumni a way to stay in touch with the school, which will promote engagement and support.
+Better data collection: The app can assist in gathering information on student behaviour and participation that can be utilized to enhance university services and procedures.
 </p>
