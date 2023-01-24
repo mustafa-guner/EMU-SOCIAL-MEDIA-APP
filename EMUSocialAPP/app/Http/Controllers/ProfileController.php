@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Http;
 class ProfileController extends Controller{
 
     function getprofileDetails(Request $request){      
-    
         if(!isset($_COOKIE["accessToken"]) ||!isset($_COOKIE["sessionToken"]) )  return redirect("login")->with("errors",["Your session is expired. Please login."]);
         $accessToken = $_COOKIE["accessToken"];
         $sessionToken = $_COOKIE["sessionToken"];
@@ -18,25 +17,14 @@ class ProfileController extends Controller{
         CURLOPT_URL => 'http://localhost:4200/api/v1/profiles/me',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_COOKIE => "accessToken={$accessToken};sessionToken={$sessionToken}",
-        /**
-         * Or set header
-         * CURLOPT_HTTPHEADER => [
-               'Cookie: foo=bar;baz=foo',
-           ]
-         */
         ]);
         
         $response = curl_exec($curlHandler);
-       
         if(!json_decode($response)->success) return redirect("login");
         curl_close($curlHandler);
         $myUserDetails = json_decode($response)->profileDetails->profile->userId;
         $myProfile = json_decode($response)->profileDetails->profile;
         $myPersonalDetails = json_decode($response)->profileDetails->personalDetails;
-
-        
-        
-
 
         # Profile Details
         $desc = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
