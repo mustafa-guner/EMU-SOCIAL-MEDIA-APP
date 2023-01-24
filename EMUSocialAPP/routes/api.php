@@ -93,3 +93,21 @@ Route::post("/admin/toggle-activation-user/{userId}",function (Request $request)
     $result = json_decode($response);
     return $result;
 });
+
+Route::delete("/admin/remove-user/{userId}",function (Request $request){
+    $accessToken = $_COOKIE["accessToken"];
+    $sessionToken = $_COOKIE["sessionToken"];
+
+    $curlHandler = curl_init();
+    curl_setopt($curlHandler, CURLOPT_CUSTOMREQUEST, "DELETE");
+    curl_setopt_array($curlHandler, [
+    CURLOPT_URL => 'http://localhost:4200/api/v1/admin/remove-user/'.$request->userId,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_COOKIE => "accessToken={$accessToken};sessionToken={$sessionToken}",
+     ]);
+     curl_setopt($curlHandler, CURLOPT_POSTFIELDS, $request->all());
+    $response = curl_exec($curlHandler);
+    curl_close($curlHandler);
+    $result = json_decode($response);
+    return $result;
+});
